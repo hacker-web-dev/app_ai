@@ -1,0 +1,517 @@
+Service Description,Service Code,Setting,Standard Charge,Insurance,Plan Name,Negotiated Amount,Comments,Hospital Name,Hospital ID,Postal Code,City,State,Latitude,Longitude
+TRILOCK SCAPHOID PLATE,C1713,BOTH,1672.59,Amerihealth,Amerihealth Medicare,1481.85,"This service costs $1672.59 as standard price when patient does not have any insurance.
+Same service costs $1481.85 if patient has 'Amerihealth Medicare' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+TRILOCK SCAPHOID PLATE,C1713,BOTH,1672.59,Amerihealth,Amerihealth Commercial,1538.98,"This service costs $1672.59 as standard price when patient does not have any insurance.
+Same service costs $1538.98 if patient has 'Amerihealth Commercial' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+TRILOCK SCAPHOID PLATE,C1713,BOTH,1672.59,,,,Standard charge with no insurance.,Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+2D ECHO,93306,OUTPATIENT,863.73,Highmark,Highmark ACA Products PROF,602.57,"This service costs $863.73 as standard price when patient does not have any insurance.
+Same service costs $602.57 if patient has 'Highmark ACA Products PROF' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+2D ECHO,93306,OUTPATIENT,863.73,Highmark,Highmark Medicare,447.58,"This service costs $863.73 as standard price when patient does not have any insurance.
+Same service costs $447.58 if patient has 'Highmark Medicare' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+2D ECHO,93306,OUTPATIENT,863.73,,,,Standard charge with no insurance.,Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+2D ECHO,93306,OUTPATIENT,863.73,United Healthcare,United Healthcare Medicaid,511.77,"This service costs $863.73 as standard price when patient does not have any insurance.
+Same service costs $511.77 if patient has 'United Healthcare Medicaid' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+2D ECHO,93306,OUTPATIENT,863.73,,,,Standard charge with no insurance.,Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+BASIC METABOLIC PANEL,80048,BOTH,773.03,Humana,Humana Medicare PPO,523.98,"This service costs $773.03 as standard price when patient does not have any insurance.
+Same service costs $523.98 if patient has 'Humana Medicare PPO' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+BASIC METABOLIC PANEL,80048,BOTH,773.03,Humana,Humana Commercial,687.2,"This service costs $773.03 as standard price when patient does not have any insurance.
+Same service costs $687.2 if patient has 'Humana Commercial' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+BASIC METABOLIC PANEL,80048,BOTH,773.03,,,,Standard charge with no insurance.,Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+TRILOCK GRIDPL,C1713,BOTH,1332.12,Humana,Humana Commercial,1011.18,"This service costs $1332.12 as standard price when patient does not have any insurance.
+Same service costs $1011.18 if patient has 'Humana Commercial' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+TRILOCK GRIDPL,C1713,BOTH,1332.12,,,,Standard charge with no insurance.,Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+ABDOMINAL CT SCAN,74150,BOTH,1155.66,Aetna,Aetna Medicare,631.3,"This service costs $1155.66 as standard price when patient does not have any insurance.
+Same service costs $631.3 if patient has 'Aetna Medicare' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+ABDOMINAL CT SCAN,74150,BOTH,1155.66,Aetna,Aetna Medicaid CHIP,1033.73,"This service costs $1155.66 as standard price when patient does not have any insurance.
+Same service costs $1033.73 if patient has 'Aetna Medicaid CHIP' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+ABDOMINAL CT SCAN,74150,BOTH,1155.66,Aetna,Aetna Commercial,808.45,"This service costs $1155.66 as standard price when patient does not have any insurance.
+Same service costs $808.45 if patient has 'Aetna Commercial' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+ABDOMINAL CT SCAN,74150,BOTH,1155.66,,,,Standard charge with no insurance.,Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+CHEST X-RAY,71045,BOTH,716.42,,,,"Only standard charge and no price with insurance – meaning this service is provided by the hospital directly, and not through any insurance.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+ACETYLCYSTEINE NON-COMP UNIT,J7608,OUTPATIENT,607.42,Humana,Humana Commercial,560.94,"This service costs $607.42 as standard price when patient does not have any insurance.
+Same service costs $560.94 if patient has 'Humana Commercial' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+ACETYLCYSTEINE NON-COMP UNIT,J7608,INPATIENT,607.42,Humana,Humana Commercial,560.94,"This service costs $607.42 as standard price when patient does not have any insurance.
+Same service costs $560.94 if patient has 'Humana Commercial' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+ACETYLCYSTEINE NON-COMP UNIT,J7608,OUTPATIENT,607.42,Humana,Humana Medicare HMO,375.65,"This service costs $607.42 as standard price when patient does not have any insurance.
+Same service costs $375.65 if patient has 'Humana Medicare HMO' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+ACETYLCYSTEINE NON-COMP UNIT,J7608,INPATIENT,607.42,Humana,Humana Medicare HMO,375.65,"This service costs $607.42 as standard price when patient does not have any insurance.
+Same service costs $375.65 if patient has 'Humana Medicare HMO' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+ACETYLCYSTEINE NON-COMP UNIT,J7608,OUTPATIENT,607.42,Humana,Humana Medicare PPO,400.9,"This service costs $607.42 as standard price when patient does not have any insurance.
+Same service costs $400.9 if patient has 'Humana Medicare PPO' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+ACETYLCYSTEINE NON-COMP UNIT,J7608,INPATIENT,607.42,Humana,Humana Medicare PPO,400.9,"This service costs $607.42 as standard price when patient does not have any insurance.
+Same service costs $400.9 if patient has 'Humana Medicare PPO' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+ACETYLCYSTEINE NON-COMP UNIT,J7608,OUTPATIENT,607.42,,,,Standard charge with no insurance.,Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+ACETYLCYSTEINE NON-COMP UNIT,J7608,INPATIENT,607.42,,,,Standard charge with no insurance.,Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+ACETYLCYSTEINE NON-COMP UNIT,J7608,OUTPATIENT,607.42,Aetna,Aetna Commercial,431.21,"This service costs $607.42 as standard price when patient does not have any insurance.
+Same service costs $431.21 if patient has 'Aetna Commercial' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+ACETYLCYSTEINE NON-COMP UNIT,J7608,INPATIENT,607.42,Aetna,Aetna Commercial,431.21,"This service costs $607.42 as standard price when patient does not have any insurance.
+Same service costs $431.21 if patient has 'Aetna Commercial' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+ACETYLCYSTEINE NON-COMP UNIT,J7608,OUTPATIENT,607.42,Aetna,Aetna Medicaid CHIP,453.81,"This service costs $607.42 as standard price when patient does not have any insurance.
+Same service costs $453.81 if patient has 'Aetna Medicaid CHIP' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+ACETYLCYSTEINE NON-COMP UNIT,J7608,INPATIENT,607.42,Aetna,Aetna Medicaid CHIP,453.81,"This service costs $607.42 as standard price when patient does not have any insurance.
+Same service costs $453.81 if patient has 'Aetna Medicaid CHIP' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+ACETYLCYSTEINE NON-COMP UNIT,J7608,OUTPATIENT,607.42,Aetna,Aetna Medicare,458.65,"This service costs $607.42 as standard price when patient does not have any insurance.
+Same service costs $458.65 if patient has 'Aetna Medicare' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+ACETYLCYSTEINE NON-COMP UNIT,J7608,INPATIENT,607.42,Aetna,Aetna Medicare,458.65,"This service costs $607.42 as standard price when patient does not have any insurance.
+Same service costs $458.65 if patient has 'Aetna Medicare' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+ACETYLCYSTEINE NON-COMP UNIT,J7608,OUTPATIENT,607.42,,,,Standard charge with no insurance.,Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+ACETYLCYSTEINE NON-COMP UNIT,J7608,INPATIENT,607.42,,,,Standard charge with no insurance.,Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+1 CC STERILE SYRINGE&NEEDLE,A4206,INPATIENT,670.17,Amerihealth,Amerihealth Medicare,489.07,"This service costs $670.17 as standard price when patient does not have any insurance.
+Same service costs $489.07 if patient has 'Amerihealth Medicare' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+1 CC STERILE SYRINGE&NEEDLE,A4206,OUTPATIENT,670.17,Amerihealth,Amerihealth Medicare,489.07,"This service costs $670.17 as standard price when patient does not have any insurance.
+Same service costs $489.07 if patient has 'Amerihealth Medicare' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+1 CC STERILE SYRINGE&NEEDLE,A4206,INPATIENT,670.17,Amerihealth,Amerihealth Medicaid HC,594.98,"This service costs $670.17 as standard price when patient does not have any insurance.
+Same service costs $594.98 if patient has 'Amerihealth Medicaid HC' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+1 CC STERILE SYRINGE&NEEDLE,A4206,OUTPATIENT,670.17,Amerihealth,Amerihealth Medicaid HC,594.98,"This service costs $670.17 as standard price when patient does not have any insurance.
+Same service costs $594.98 if patient has 'Amerihealth Medicaid HC' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+1 CC STERILE SYRINGE&NEEDLE,A4206,INPATIENT,670.17,,,,Standard charge with no insurance.,Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+1 CC STERILE SYRINGE&NEEDLE,A4206,OUTPATIENT,670.17,,,,Standard charge with no insurance.,Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+1 CC STERILE SYRINGE&NEEDLE,A4206,INPATIENT,670.17,Highmark,Highmark Medicare,446.17,"This service costs $670.17 as standard price when patient does not have any insurance.
+Same service costs $446.17 if patient has 'Highmark Medicare' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+1 CC STERILE SYRINGE&NEEDLE,A4206,OUTPATIENT,670.17,Highmark,Highmark Medicare,446.17,"This service costs $670.17 as standard price when patient does not have any insurance.
+Same service costs $446.17 if patient has 'Highmark Medicare' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+1 CC STERILE SYRINGE&NEEDLE,A4206,INPATIENT,670.17,,,,Standard charge with no insurance.,Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+1 CC STERILE SYRINGE&NEEDLE,A4206,OUTPATIENT,670.17,,,,Standard charge with no insurance.,Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+CHG MRI BRAIN,70551,OUTPATIENT,1569.55,Amerihealth,Amerihealth Medicare,1452.67,"This service costs $1569.55 as standard price when patient does not have any insurance.
+Same service costs $1452.67 if patient has 'Amerihealth Medicare' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+CHG MRI BRAIN,70551,OUTPATIENT,1569.55,Amerihealth,Amerihealth Medicaid HC,1043.87,"This service costs $1569.55 as standard price when patient does not have any insurance.
+Same service costs $1043.87 if patient has 'Amerihealth Medicaid HC' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+CHG MRI BRAIN,70551,OUTPATIENT,1569.55,Amerihealth,Amerihealth Commercial,826.82,"This service costs $1569.55 as standard price when patient does not have any insurance.
+Same service costs $826.82 if patient has 'Amerihealth Commercial' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+CHG MRI BRAIN,70551,OUTPATIENT,1569.55,,,,Standard charge with no insurance.,Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+CHG MRI BRAIN,70551,OUTPATIENT,1569.55,United Healthcare,United Healthcare CHIP,1321.12,"This service costs $1569.55 as standard price when patient does not have any insurance.
+Same service costs $1321.12 if patient has 'United Healthcare CHIP' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+CHG MRI BRAIN,70551,OUTPATIENT,1569.55,,,,Standard charge with no insurance.,Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+CHG MRI BRAIN,70551,OUTPATIENT,1569.55,Aetna,Aetna Medicaid CHIP,1012.78,"This service costs $1569.55 as standard price when patient does not have any insurance.
+Same service costs $1012.78 if patient has 'Aetna Medicaid CHIP' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+CHG MRI BRAIN,70551,OUTPATIENT,1569.55,,,,Standard charge with no insurance.,Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+COMPLETE BLOOD COUNT,85025,BOTH,632.46,,,,"Only standard charge and no price with insurance – meaning this service is provided by the hospital directly, and not through any insurance.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+ABDOMINAL CT SCAN,74150,BOTH,706.4,Highmark,Highmark ACA Products PROF,421.55,"This service costs $706.4 as standard price when patient does not have any insurance.
+Same service costs $421.55 if patient has 'Highmark ACA Products PROF' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+ABDOMINAL CT SCAN,74150,BOTH,706.4,Highmark,Highmark Medicare,390.3,"This service costs $706.4 as standard price when patient does not have any insurance.
+Same service costs $390.3 if patient has 'Highmark Medicare' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+ABDOMINAL CT SCAN,74150,BOTH,706.4,Highmark,Highmark Commercial PROF,611.64,"This service costs $706.4 as standard price when patient does not have any insurance.
+Same service costs $611.64 if patient has 'Highmark Commercial PROF' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+ABDOMINAL CT SCAN,74150,BOTH,706.4,,,,Standard charge with no insurance.,Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+ABDOMINAL CT SCAN,74150,BOTH,706.4,United Healthcare,United Healthcare Commercial,477.6,"This service costs $706.4 as standard price when patient does not have any insurance.
+Same service costs $477.6 if patient has 'United Healthcare Commercial' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+ABDOMINAL CT SCAN,74150,BOTH,706.4,United Healthcare,United Healthcare Medicaid,540.87,"This service costs $706.4 as standard price when patient does not have any insurance.
+Same service costs $540.87 if patient has 'United Healthcare Medicaid' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+ABDOMINAL CT SCAN,74150,BOTH,706.4,United Healthcare,United Healthcare CHIP,466.11,"This service costs $706.4 as standard price when patient does not have any insurance.
+Same service costs $466.11 if patient has 'United Healthcare CHIP' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+ABDOMINAL CT SCAN,74150,BOTH,706.4,,,,Standard charge with no insurance.,Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+ABDOMINAL CT SCAN,74150,BOTH,706.4,Aetna,Aetna Medicaid CHIP,374.29,"This service costs $706.4 as standard price when patient does not have any insurance.
+Same service costs $374.29 if patient has 'Aetna Medicaid CHIP' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+ABDOMINAL CT SCAN,74150,BOTH,706.4,Aetna,Aetna Medicare,633.75,"This service costs $706.4 as standard price when patient does not have any insurance.
+Same service costs $633.75 if patient has 'Aetna Medicare' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+ABDOMINAL CT SCAN,74150,BOTH,706.4,Aetna,Aetna Commercial,583.39,"This service costs $706.4 as standard price when patient does not have any insurance.
+Same service costs $583.39 if patient has 'Aetna Commercial' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+ABDOMINAL CT SCAN,74150,BOTH,706.4,,,,Standard charge with no insurance.,Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+BASIC METABOLIC PANEL,80048,BOTH,960.21,Aetna,Aetna Commercial,749.94,"This service costs $960.21 as standard price when patient does not have any insurance.
+Same service costs $749.94 if patient has 'Aetna Commercial' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+BASIC METABOLIC PANEL,80048,BOTH,960.21,Aetna,Aetna Medicaid CHIP,820.41,"This service costs $960.21 as standard price when patient does not have any insurance.
+Same service costs $820.41 if patient has 'Aetna Medicaid CHIP' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+BASIC METABOLIC PANEL,80048,BOTH,960.21,Aetna,Aetna Medicare,908.71,"This service costs $960.21 as standard price when patient does not have any insurance.
+Same service costs $908.71 if patient has 'Aetna Medicare' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+BASIC METABOLIC PANEL,80048,BOTH,960.21,,,,Standard charge with no insurance.,Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+BASIC METABOLIC PANEL,80048,BOTH,960.21,Amerihealth,Amerihealth Medicaid HC,630.23,"This service costs $960.21 as standard price when patient does not have any insurance.
+Same service costs $630.23 if patient has 'Amerihealth Medicaid HC' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+BASIC METABOLIC PANEL,80048,BOTH,960.21,Amerihealth,Amerihealth Commercial,642.04,"This service costs $960.21 as standard price when patient does not have any insurance.
+Same service costs $642.04 if patient has 'Amerihealth Commercial' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+BASIC METABOLIC PANEL,80048,BOTH,960.21,,,,Standard charge with no insurance.,Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+TRILOCK GRIDPL,C1713,BOTH,761.68,Highmark,Highmark ACA Products PROF,501.64,"This service costs $761.68 as standard price when patient does not have any insurance.
+Same service costs $501.64 if patient has 'Highmark ACA Products PROF' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+TRILOCK GRIDPL,C1713,BOTH,761.68,Highmark,Highmark Commercial PROF,452.6,"This service costs $761.68 as standard price when patient does not have any insurance.
+Same service costs $452.6 if patient has 'Highmark Commercial PROF' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+TRILOCK GRIDPL,C1713,BOTH,761.68,,,,Standard charge with no insurance.,Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+TRILOCK GRIDPL,C1713,BOTH,761.68,United Healthcare,United Healthcare Medicaid,545.82,"This service costs $761.68 as standard price when patient does not have any insurance.
+Same service costs $545.82 if patient has 'United Healthcare Medicaid' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+TRILOCK GRIDPL,C1713,BOTH,761.68,United Healthcare,United Healthcare CHIP,500.95,"This service costs $761.68 as standard price when patient does not have any insurance.
+Same service costs $500.95 if patient has 'United Healthcare CHIP' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+TRILOCK GRIDPL,C1713,BOTH,761.68,United Healthcare,United Healthcare Commercial,492.3,"This service costs $761.68 as standard price when patient does not have any insurance.
+Same service costs $492.3 if patient has 'United Healthcare Commercial' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+TRILOCK GRIDPL,C1713,BOTH,761.68,,,,Standard charge with no insurance.,Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+COMPLETE BLOOD COUNT,85025,BOTH,940.72,Highmark,Highmark ACA Products PROF,788.39,"This service costs $940.72 as standard price when patient does not have any insurance.
+Same service costs $788.39 if patient has 'Highmark ACA Products PROF' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+COMPLETE BLOOD COUNT,85025,BOTH,940.72,Highmark,Highmark Medicare,664.32,"This service costs $940.72 as standard price when patient does not have any insurance.
+Same service costs $664.32 if patient has 'Highmark Medicare' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+COMPLETE BLOOD COUNT,85025,BOTH,940.72,,,,Standard charge with no insurance.,Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+COMPLETE BLOOD COUNT,85025,BOTH,940.72,Aetna,Aetna Commercial,569.81,"This service costs $940.72 as standard price when patient does not have any insurance.
+Same service costs $569.81 if patient has 'Aetna Commercial' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+COMPLETE BLOOD COUNT,85025,BOTH,940.72,,,,Standard charge with no insurance.,Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+1 CC STERILE SYRINGE&NEEDLE,A4206,INPATIENT,1086.06,Highmark,Highmark ACA Products PROF,751.77,"This service costs $1086.06 as standard price when patient does not have any insurance.
+Same service costs $751.77 if patient has 'Highmark ACA Products PROF' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+1 CC STERILE SYRINGE&NEEDLE,A4206,OUTPATIENT,1086.06,Highmark,Highmark ACA Products PROF,751.77,"This service costs $1086.06 as standard price when patient does not have any insurance.
+Same service costs $751.77 if patient has 'Highmark ACA Products PROF' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+1 CC STERILE SYRINGE&NEEDLE,A4206,INPATIENT,1086.06,,,,Standard charge with no insurance.,Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+1 CC STERILE SYRINGE&NEEDLE,A4206,OUTPATIENT,1086.06,,,,Standard charge with no insurance.,Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+1 CC STERILE SYRINGE&NEEDLE,A4206,INPATIENT,1086.06,United Healthcare,United Healthcare Commercial,546.45,"This service costs $1086.06 as standard price when patient does not have any insurance.
+Same service costs $546.45 if patient has 'United Healthcare Commercial' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+1 CC STERILE SYRINGE&NEEDLE,A4206,OUTPATIENT,1086.06,United Healthcare,United Healthcare Commercial,546.45,"This service costs $1086.06 as standard price when patient does not have any insurance.
+Same service costs $546.45 if patient has 'United Healthcare Commercial' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+1 CC STERILE SYRINGE&NEEDLE,A4206,INPATIENT,1086.06,United Healthcare,United Healthcare Medicaid,906.09,"This service costs $1086.06 as standard price when patient does not have any insurance.
+Same service costs $906.09 if patient has 'United Healthcare Medicaid' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+1 CC STERILE SYRINGE&NEEDLE,A4206,OUTPATIENT,1086.06,United Healthcare,United Healthcare Medicaid,906.09,"This service costs $1086.06 as standard price when patient does not have any insurance.
+Same service costs $906.09 if patient has 'United Healthcare Medicaid' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+1 CC STERILE SYRINGE&NEEDLE,A4206,INPATIENT,1086.06,,,,Standard charge with no insurance.,Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+1 CC STERILE SYRINGE&NEEDLE,A4206,OUTPATIENT,1086.06,,,,Standard charge with no insurance.,Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+1 CC STERILE SYRINGE&NEEDLE,A4206,INPATIENT,1086.06,Aetna,Aetna Medicare,941.24,"This service costs $1086.06 as standard price when patient does not have any insurance.
+Same service costs $941.24 if patient has 'Aetna Medicare' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+1 CC STERILE SYRINGE&NEEDLE,A4206,OUTPATIENT,1086.06,Aetna,Aetna Medicare,941.24,"This service costs $1086.06 as standard price when patient does not have any insurance.
+Same service costs $941.24 if patient has 'Aetna Medicare' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+1 CC STERILE SYRINGE&NEEDLE,A4206,INPATIENT,1086.06,,,,Standard charge with no insurance.,Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+1 CC STERILE SYRINGE&NEEDLE,A4206,OUTPATIENT,1086.06,,,,Standard charge with no insurance.,Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+CHG MRI BRAIN,70551,OUTPATIENT,415.57,Humana,Humana Medicare PPO,265.57,"This service costs $415.57 as standard price when patient does not have any insurance.
+Same service costs $265.57 if patient has 'Humana Medicare PPO' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+CHG MRI BRAIN,70551,OUTPATIENT,415.57,Humana,Humana Commercial,374.6,"This service costs $415.57 as standard price when patient does not have any insurance.
+Same service costs $374.6 if patient has 'Humana Commercial' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+CHG MRI BRAIN,70551,OUTPATIENT,415.57,,,,Standard charge with no insurance.,Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+CHG MRI BRAIN,70551,OUTPATIENT,1557.67,Humana,Humana Medicare HMO,1217.65,"This service costs $1557.67 as standard price when patient does not have any insurance.
+Same service costs $1217.65 if patient has 'Humana Medicare HMO' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+CHG MRI BRAIN,70551,OUTPATIENT,1557.67,Humana,Humana Commercial,959.03,"This service costs $1557.67 as standard price when patient does not have any insurance.
+Same service costs $959.03 if patient has 'Humana Commercial' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+CHG MRI BRAIN,70551,OUTPATIENT,1557.67,,,,Standard charge with no insurance.,Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+CHG MRI BRAIN,70551,OUTPATIENT,1557.67,Aetna,Aetna Medicaid CHIP,1386.93,"This service costs $1557.67 as standard price when patient does not have any insurance.
+Same service costs $1386.93 if patient has 'Aetna Medicaid CHIP' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+CHG MRI BRAIN,70551,OUTPATIENT,1557.67,Aetna,Aetna Medicare,1364.77,"This service costs $1557.67 as standard price when patient does not have any insurance.
+Same service costs $1364.77 if patient has 'Aetna Medicare' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+CHG MRI BRAIN,70551,OUTPATIENT,1557.67,Aetna,Aetna Commercial,1228.16,"This service costs $1557.67 as standard price when patient does not have any insurance.
+Same service costs $1228.16 if patient has 'Aetna Commercial' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+CHG MRI BRAIN,70551,OUTPATIENT,1557.67,,,,Standard charge with no insurance.,Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+CHG MRI BRAIN,70551,OUTPATIENT,1557.67,Amerihealth,Amerihealth Medicare,1159.0,"This service costs $1557.67 as standard price when patient does not have any insurance.
+Same service costs $1159.0 if patient has 'Amerihealth Medicare' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+CHG MRI BRAIN,70551,OUTPATIENT,1557.67,Amerihealth,Amerihealth Medicaid HC,917.27,"This service costs $1557.67 as standard price when patient does not have any insurance.
+Same service costs $917.27 if patient has 'Amerihealth Medicaid HC' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+CHG MRI BRAIN,70551,OUTPATIENT,1557.67,,,,Standard charge with no insurance.,Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+COMPLETE BLOOD COUNT,85025,BOTH,1585.27,United Healthcare,United Healthcare CHIP,1403.44,"This service costs $1585.27 as standard price when patient does not have any insurance.
+Same service costs $1403.44 if patient has 'United Healthcare CHIP' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+COMPLETE BLOOD COUNT,85025,BOTH,1585.27,United Healthcare,United Healthcare Commercial,1334.19,"This service costs $1585.27 as standard price when patient does not have any insurance.
+Same service costs $1334.19 if patient has 'United Healthcare Commercial' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+COMPLETE BLOOD COUNT,85025,BOTH,1585.27,United Healthcare,United Healthcare Medicaid,1069.8,"This service costs $1585.27 as standard price when patient does not have any insurance.
+Same service costs $1069.8 if patient has 'United Healthcare Medicaid' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+COMPLETE BLOOD COUNT,85025,BOTH,1585.27,,,,Standard charge with no insurance.,Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+COMPLETE BLOOD COUNT,85025,BOTH,1585.27,Humana,Humana Medicare HMO,1254.54,"This service costs $1585.27 as standard price when patient does not have any insurance.
+Same service costs $1254.54 if patient has 'Humana Medicare HMO' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+COMPLETE BLOOD COUNT,85025,BOTH,1585.27,Humana,Humana Medicare PPO,988.6,"This service costs $1585.27 as standard price when patient does not have any insurance.
+Same service costs $988.6 if patient has 'Humana Medicare PPO' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+COMPLETE BLOOD COUNT,85025,BOTH,1585.27,Humana,Humana Commercial,891.65,"This service costs $1585.27 as standard price when patient does not have any insurance.
+Same service costs $891.65 if patient has 'Humana Commercial' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+COMPLETE BLOOD COUNT,85025,BOTH,1585.27,,,,Standard charge with no insurance.,Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+CHEST X-RAY,71045,BOTH,42.84,Humana,Humana Medicare PPO,21.74,"This service costs $42.84 as standard price when patient does not have any insurance.
+Same service costs $21.74 if patient has 'Humana Medicare PPO' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+CHEST X-RAY,71045,BOTH,42.84,Humana,Humana Commercial,35.57,"This service costs $42.84 as standard price when patient does not have any insurance.
+Same service costs $35.57 if patient has 'Humana Commercial' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+CHEST X-RAY,71045,BOTH,42.84,Humana,Humana Medicare HMO,30.1,"This service costs $42.84 as standard price when patient does not have any insurance.
+Same service costs $30.1 if patient has 'Humana Medicare HMO' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+CHEST X-RAY,71045,BOTH,42.84,,,,Standard charge with no insurance.,Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+COMPLETE BLOOD COUNT,85025,BOTH,1606.47,Amerihealth,Amerihealth Commercial,1367.79,"This service costs $1606.47 as standard price when patient does not have any insurance.
+Same service costs $1367.79 if patient has 'Amerihealth Commercial' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+COMPLETE BLOOD COUNT,85025,BOTH,1606.47,Amerihealth,Amerihealth Medicaid HC,1014.67,"This service costs $1606.47 as standard price when patient does not have any insurance.
+Same service costs $1014.67 if patient has 'Amerihealth Medicaid HC' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+COMPLETE BLOOD COUNT,85025,BOTH,1606.47,Amerihealth,Amerihealth Medicare,809.58,"This service costs $1606.47 as standard price when patient does not have any insurance.
+Same service costs $809.58 if patient has 'Amerihealth Medicare' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+COMPLETE BLOOD COUNT,85025,BOTH,1606.47,,,,Standard charge with no insurance.,Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+COMPLETE BLOOD COUNT,85025,BOTH,1606.47,Aetna,Aetna Commercial,995.65,"This service costs $1606.47 as standard price when patient does not have any insurance.
+Same service costs $995.65 if patient has 'Aetna Commercial' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+COMPLETE BLOOD COUNT,85025,BOTH,1606.47,Aetna,Aetna Medicaid CHIP,1088.16,"This service costs $1606.47 as standard price when patient does not have any insurance.
+Same service costs $1088.16 if patient has 'Aetna Medicaid CHIP' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+COMPLETE BLOOD COUNT,85025,BOTH,1606.47,Aetna,Aetna Medicare,948.15,"This service costs $1606.47 as standard price when patient does not have any insurance.
+Same service costs $948.15 if patient has 'Aetna Medicare' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+COMPLETE BLOOD COUNT,85025,BOTH,1606.47,,,,Standard charge with no insurance.,Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+COMPLETE BLOOD COUNT,85025,BOTH,1606.47,United Healthcare,United Healthcare Medicaid,1168.36,"This service costs $1606.47 as standard price when patient does not have any insurance.
+Same service costs $1168.36 if patient has 'United Healthcare Medicaid' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+COMPLETE BLOOD COUNT,85025,BOTH,1606.47,United Healthcare,United Healthcare Commercial,1523.94,"This service costs $1606.47 as standard price when patient does not have any insurance.
+Same service costs $1523.94 if patient has 'United Healthcare Commercial' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+COMPLETE BLOOD COUNT,85025,BOTH,1606.47,,,,Standard charge with no insurance.,Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+1 CC STERILE SYRINGE&NEEDLE,A4206,INPATIENT,1015.53,,,,"Only standard charge and no price with insurance – meaning this service is provided by the hospital directly, and not through any insurance.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+1 CC STERILE SYRINGE&NEEDLE,A4206,OUTPATIENT,1015.53,,,,"Only standard charge and no price with insurance – meaning this service is provided by the hospital directly, and not through any insurance.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+2D ECHO,93306,OUTPATIENT,658.95,Highmark,Highmark Commercial PROF,340.2,"This service costs $658.95 as standard price when patient does not have any insurance.
+Same service costs $340.2 if patient has 'Highmark Commercial PROF' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+2D ECHO,93306,OUTPATIENT,658.95,Highmark,Highmark Medicare,565.54,"This service costs $658.95 as standard price when patient does not have any insurance.
+Same service costs $565.54 if patient has 'Highmark Medicare' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+2D ECHO,93306,OUTPATIENT,658.95,,,,Standard charge with no insurance.,Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+2D ECHO,93306,OUTPATIENT,658.95,Aetna,Aetna Commercial,470.58,"This service costs $658.95 as standard price when patient does not have any insurance.
+Same service costs $470.58 if patient has 'Aetna Commercial' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+2D ECHO,93306,OUTPATIENT,658.95,Aetna,Aetna Medicare,370.46,"This service costs $658.95 as standard price when patient does not have any insurance.
+Same service costs $370.46 if patient has 'Aetna Medicare' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+2D ECHO,93306,OUTPATIENT,658.95,Aetna,Aetna Medicaid CHIP,357.59,"This service costs $658.95 as standard price when patient does not have any insurance.
+Same service costs $357.59 if patient has 'Aetna Medicaid CHIP' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+2D ECHO,93306,OUTPATIENT,658.95,,,,Standard charge with no insurance.,Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+CHEST X-RAY,71045,BOTH,1735.46,,,,"Only standard charge and no price with insurance – meaning this service is provided by the hospital directly, and not through any insurance.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+TRILOCK SCAPHOID PLATE,C1713,BOTH,724.66,,,,"Only standard charge and no price with insurance – meaning this service is provided by the hospital directly, and not through any insurance.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+TRILOCK GRIDPL,C1713,BOTH,1121.18,Highmark,Highmark Commercial PROF,776.79,"This service costs $1121.18 as standard price when patient does not have any insurance.
+Same service costs $776.79 if patient has 'Highmark Commercial PROF' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+TRILOCK GRIDPL,C1713,BOTH,1121.18,Highmark,Highmark ACA Products PROF,964.79,"This service costs $1121.18 as standard price when patient does not have any insurance.
+Same service costs $964.79 if patient has 'Highmark ACA Products PROF' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+TRILOCK GRIDPL,C1713,BOTH,1121.18,Highmark,Highmark Medicare,1059.58,"This service costs $1121.18 as standard price when patient does not have any insurance.
+Same service costs $1059.58 if patient has 'Highmark Medicare' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+TRILOCK GRIDPL,C1713,BOTH,1121.18,,,,Standard charge with no insurance.,Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+TRILOCK GRIDPL,C1713,BOTH,1121.18,Amerihealth,Amerihealth Commercial,1060.32,"This service costs $1121.18 as standard price when patient does not have any insurance.
+Same service costs $1060.32 if patient has 'Amerihealth Commercial' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+TRILOCK GRIDPL,C1713,BOTH,1121.18,,,,Standard charge with no insurance.,Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+CHG MRI BRAIN,70551,OUTPATIENT,1710.09,Humana,Humana Medicare PPO,1311.59,"This service costs $1710.09 as standard price when patient does not have any insurance.
+Same service costs $1311.59 if patient has 'Humana Medicare PPO' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+CHG MRI BRAIN,70551,OUTPATIENT,1710.09,Humana,Humana Commercial,1245.66,"This service costs $1710.09 as standard price when patient does not have any insurance.
+Same service costs $1245.66 if patient has 'Humana Commercial' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+CHG MRI BRAIN,70551,OUTPATIENT,1710.09,Humana,Humana Medicare HMO,1576.7,"This service costs $1710.09 as standard price when patient does not have any insurance.
+Same service costs $1576.7 if patient has 'Humana Medicare HMO' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+CHG MRI BRAIN,70551,OUTPATIENT,1710.09,,,,Standard charge with no insurance.,Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+TRILOCK GRIDPL,C1713,BOTH,1007.17,Highmark,Highmark Commercial PROF,517.12,"This service costs $1007.17 as standard price when patient does not have any insurance.
+Same service costs $517.12 if patient has 'Highmark Commercial PROF' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+TRILOCK GRIDPL,C1713,BOTH,1007.17,Highmark,Highmark ACA Products PROF,874.96,"This service costs $1007.17 as standard price when patient does not have any insurance.
+Same service costs $874.96 if patient has 'Highmark ACA Products PROF' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+TRILOCK GRIDPL,C1713,BOTH,1007.17,,,,Standard charge with no insurance.,Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+TRILOCK GRIDPL,C1713,BOTH,1007.17,United Healthcare,United Healthcare CHIP,944.68,"This service costs $1007.17 as standard price when patient does not have any insurance.
+Same service costs $944.68 if patient has 'United Healthcare CHIP' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+TRILOCK GRIDPL,C1713,BOTH,1007.17,,,,Standard charge with no insurance.,Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+BASIC METABOLIC PANEL,80048,BOTH,1775.41,Aetna,Aetna Medicaid CHIP,953.76,"This service costs $1775.41 as standard price when patient does not have any insurance.
+Same service costs $953.76 if patient has 'Aetna Medicaid CHIP' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+BASIC METABOLIC PANEL,80048,BOTH,1775.41,Aetna,Aetna Commercial,1039.4,"This service costs $1775.41 as standard price when patient does not have any insurance.
+Same service costs $1039.4 if patient has 'Aetna Commercial' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+BASIC METABOLIC PANEL,80048,BOTH,1775.41,,,,Standard charge with no insurance.,Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+BASIC METABOLIC PANEL,80048,BOTH,1775.41,Amerihealth,Amerihealth Medicaid HC,1365.3,"This service costs $1775.41 as standard price when patient does not have any insurance.
+Same service costs $1365.3 if patient has 'Amerihealth Medicaid HC' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+BASIC METABOLIC PANEL,80048,BOTH,1775.41,Amerihealth,Amerihealth Medicare,1215.54,"This service costs $1775.41 as standard price when patient does not have any insurance.
+Same service costs $1215.54 if patient has 'Amerihealth Medicare' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+BASIC METABOLIC PANEL,80048,BOTH,1775.41,Amerihealth,Amerihealth Commercial,984.44,"This service costs $1775.41 as standard price when patient does not have any insurance.
+Same service costs $984.44 if patient has 'Amerihealth Commercial' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+BASIC METABOLIC PANEL,80048,BOTH,1775.41,,,,Standard charge with no insurance.,Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+1 CC STERILE SYRINGE&NEEDLE,A4206,INPATIENT,880.91,,,,"Only standard charge and no price with insurance – meaning this service is provided by the hospital directly, and not through any insurance.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+1 CC STERILE SYRINGE&NEEDLE,A4206,OUTPATIENT,880.91,,,,"Only standard charge and no price with insurance – meaning this service is provided by the hospital directly, and not through any insurance.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+COMPLETE BLOOD COUNT,85025,BOTH,1680.96,,,,"Only standard charge and no price with insurance – meaning this service is provided by the hospital directly, and not through any insurance.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+COMPLETE BLOOD COUNT,85025,BOTH,1152.52,,,,"Only standard charge and no price with insurance – meaning this service is provided by the hospital directly, and not through any insurance.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+COMPLETE BLOOD COUNT,85025,BOTH,1036.7,Humana,Humana Medicare PPO,696.86,"This service costs $1036.7 as standard price when patient does not have any insurance.
+Same service costs $696.86 if patient has 'Humana Medicare PPO' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+COMPLETE BLOOD COUNT,85025,BOTH,1036.7,,,,Standard charge with no insurance.,Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+COMPLETE BLOOD COUNT,85025,BOTH,1036.7,Amerihealth,Amerihealth Medicaid HC,731.95,"This service costs $1036.7 as standard price when patient does not have any insurance.
+Same service costs $731.95 if patient has 'Amerihealth Medicaid HC' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+COMPLETE BLOOD COUNT,85025,BOTH,1036.7,Amerihealth,Amerihealth Commercial,539.91,"This service costs $1036.7 as standard price when patient does not have any insurance.
+Same service costs $539.91 if patient has 'Amerihealth Commercial' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+COMPLETE BLOOD COUNT,85025,BOTH,1036.7,Amerihealth,Amerihealth Medicare,552.45,"This service costs $1036.7 as standard price when patient does not have any insurance.
+Same service costs $552.45 if patient has 'Amerihealth Medicare' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+COMPLETE BLOOD COUNT,85025,BOTH,1036.7,,,,Standard charge with no insurance.,Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+TRILOCK GRIDPL,C1713,BOTH,910.07,United Healthcare,United Healthcare Commercial,831.75,"This service costs $910.07 as standard price when patient does not have any insurance.
+Same service costs $831.75 if patient has 'United Healthcare Commercial' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+TRILOCK GRIDPL,C1713,BOTH,910.07,United Healthcare,United Healthcare Medicaid,480.5,"This service costs $910.07 as standard price when patient does not have any insurance.
+Same service costs $480.5 if patient has 'United Healthcare Medicaid' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+TRILOCK GRIDPL,C1713,BOTH,910.07,,,,Standard charge with no insurance.,Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+1 CC STERILE SYRINGE&NEEDLE,A4206,INPATIENT,1626.55,Amerihealth,Amerihealth Medicare,1059.75,"This service costs $1626.55 as standard price when patient does not have any insurance.
+Same service costs $1059.75 if patient has 'Amerihealth Medicare' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+1 CC STERILE SYRINGE&NEEDLE,A4206,OUTPATIENT,1626.55,Amerihealth,Amerihealth Medicare,1059.75,"This service costs $1626.55 as standard price when patient does not have any insurance.
+Same service costs $1059.75 if patient has 'Amerihealth Medicare' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+1 CC STERILE SYRINGE&NEEDLE,A4206,INPATIENT,1626.55,Amerihealth,Amerihealth Medicaid HC,1430.44,"This service costs $1626.55 as standard price when patient does not have any insurance.
+Same service costs $1430.44 if patient has 'Amerihealth Medicaid HC' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+1 CC STERILE SYRINGE&NEEDLE,A4206,OUTPATIENT,1626.55,Amerihealth,Amerihealth Medicaid HC,1430.44,"This service costs $1626.55 as standard price when patient does not have any insurance.
+Same service costs $1430.44 if patient has 'Amerihealth Medicaid HC' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+1 CC STERILE SYRINGE&NEEDLE,A4206,INPATIENT,1626.55,Amerihealth,Amerihealth Commercial,1284.82,"This service costs $1626.55 as standard price when patient does not have any insurance.
+Same service costs $1284.82 if patient has 'Amerihealth Commercial' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+1 CC STERILE SYRINGE&NEEDLE,A4206,OUTPATIENT,1626.55,Amerihealth,Amerihealth Commercial,1284.82,"This service costs $1626.55 as standard price when patient does not have any insurance.
+Same service costs $1284.82 if patient has 'Amerihealth Commercial' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+1 CC STERILE SYRINGE&NEEDLE,A4206,INPATIENT,1626.55,,,,Standard charge with no insurance.,Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+1 CC STERILE SYRINGE&NEEDLE,A4206,OUTPATIENT,1626.55,,,,Standard charge with no insurance.,Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+1 CC STERILE SYRINGE&NEEDLE,A4206,INPATIENT,1626.55,Humana,Humana Commercial,861.05,"This service costs $1626.55 as standard price when patient does not have any insurance.
+Same service costs $861.05 if patient has 'Humana Commercial' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+1 CC STERILE SYRINGE&NEEDLE,A4206,OUTPATIENT,1626.55,Humana,Humana Commercial,861.05,"This service costs $1626.55 as standard price when patient does not have any insurance.
+Same service costs $861.05 if patient has 'Humana Commercial' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+1 CC STERILE SYRINGE&NEEDLE,A4206,INPATIENT,1626.55,Humana,Humana Medicare PPO,1110.43,"This service costs $1626.55 as standard price when patient does not have any insurance.
+Same service costs $1110.43 if patient has 'Humana Medicare PPO' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+1 CC STERILE SYRINGE&NEEDLE,A4206,OUTPATIENT,1626.55,Humana,Humana Medicare PPO,1110.43,"This service costs $1626.55 as standard price when patient does not have any insurance.
+Same service costs $1110.43 if patient has 'Humana Medicare PPO' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+1 CC STERILE SYRINGE&NEEDLE,A4206,INPATIENT,1626.55,Humana,Humana Medicare HMO,951.58,"This service costs $1626.55 as standard price when patient does not have any insurance.
+Same service costs $951.58 if patient has 'Humana Medicare HMO' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+1 CC STERILE SYRINGE&NEEDLE,A4206,OUTPATIENT,1626.55,Humana,Humana Medicare HMO,951.58,"This service costs $1626.55 as standard price when patient does not have any insurance.
+Same service costs $951.58 if patient has 'Humana Medicare HMO' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+1 CC STERILE SYRINGE&NEEDLE,A4206,INPATIENT,1626.55,,,,Standard charge with no insurance.,Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+1 CC STERILE SYRINGE&NEEDLE,A4206,OUTPATIENT,1626.55,,,,Standard charge with no insurance.,Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+1 CC STERILE SYRINGE&NEEDLE,A4206,INPATIENT,1626.55,United Healthcare,United Healthcare Commercial,1512.82,"This service costs $1626.55 as standard price when patient does not have any insurance.
+Same service costs $1512.82 if patient has 'United Healthcare Commercial' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+1 CC STERILE SYRINGE&NEEDLE,A4206,OUTPATIENT,1626.55,United Healthcare,United Healthcare Commercial,1512.82,"This service costs $1626.55 as standard price when patient does not have any insurance.
+Same service costs $1512.82 if patient has 'United Healthcare Commercial' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+1 CC STERILE SYRINGE&NEEDLE,A4206,INPATIENT,1626.55,United Healthcare,United Healthcare Medicaid,1280.12,"This service costs $1626.55 as standard price when patient does not have any insurance.
+Same service costs $1280.12 if patient has 'United Healthcare Medicaid' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+1 CC STERILE SYRINGE&NEEDLE,A4206,OUTPATIENT,1626.55,United Healthcare,United Healthcare Medicaid,1280.12,"This service costs $1626.55 as standard price when patient does not have any insurance.
+Same service costs $1280.12 if patient has 'United Healthcare Medicaid' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+1 CC STERILE SYRINGE&NEEDLE,A4206,INPATIENT,1626.55,,,,Standard charge with no insurance.,Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+1 CC STERILE SYRINGE&NEEDLE,A4206,OUTPATIENT,1626.55,,,,Standard charge with no insurance.,Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+TRILOCK GRIDPL,C1713,BOTH,670.33,Highmark,Highmark Medicare,603.44,"This service costs $670.33 as standard price when patient does not have any insurance.
+Same service costs $603.44 if patient has 'Highmark Medicare' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+TRILOCK GRIDPL,C1713,BOTH,670.33,Highmark,Highmark ACA Products PROF,585.31,"This service costs $670.33 as standard price when patient does not have any insurance.
+Same service costs $585.31 if patient has 'Highmark ACA Products PROF' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+TRILOCK GRIDPL,C1713,BOTH,670.33,,,,Standard charge with no insurance.,Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+TRILOCK GRIDPL,C1713,BOTH,670.33,Humana,Humana Commercial,432.02,"This service costs $670.33 as standard price when patient does not have any insurance.
+Same service costs $432.02 if patient has 'Humana Commercial' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+TRILOCK GRIDPL,C1713,BOTH,670.33,Humana,Humana Medicare HMO,403.25,"This service costs $670.33 as standard price when patient does not have any insurance.
+Same service costs $403.25 if patient has 'Humana Medicare HMO' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+TRILOCK GRIDPL,C1713,BOTH,670.33,Humana,Humana Medicare PPO,380.03,"This service costs $670.33 as standard price when patient does not have any insurance.
+Same service costs $380.03 if patient has 'Humana Medicare PPO' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+TRILOCK GRIDPL,C1713,BOTH,670.33,,,,Standard charge with no insurance.,Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+TRILOCK GRIDPL,C1713,BOTH,670.33,Amerihealth,Amerihealth Medicaid HC,610.23,"This service costs $670.33 as standard price when patient does not have any insurance.
+Same service costs $610.23 if patient has 'Amerihealth Medicaid HC' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+TRILOCK GRIDPL,C1713,BOTH,670.33,Amerihealth,Amerihealth Commercial,600.27,"This service costs $670.33 as standard price when patient does not have any insurance.
+Same service costs $600.27 if patient has 'Amerihealth Commercial' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+TRILOCK GRIDPL,C1713,BOTH,670.33,Amerihealth,Amerihealth Medicare,489.37,"This service costs $670.33 as standard price when patient does not have any insurance.
+Same service costs $489.37 if patient has 'Amerihealth Medicare' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+TRILOCK GRIDPL,C1713,BOTH,670.33,,,,Standard charge with no insurance.,Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+ACETYLCYSTEINE NON-COMP UNIT,J7608,OUTPATIENT,1358.26,,,,"Only standard charge and no price with insurance – meaning this service is provided by the hospital directly, and not through any insurance.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+ACETYLCYSTEINE NON-COMP UNIT,J7608,INPATIENT,1358.26,,,,"Only standard charge and no price with insurance – meaning this service is provided by the hospital directly, and not through any insurance.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+CHEST X-RAY,71045,BOTH,1118.89,Humana,Humana Medicare HMO,741.1,"This service costs $1118.89 as standard price when patient does not have any insurance.
+Same service costs $741.1 if patient has 'Humana Medicare HMO' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+CHEST X-RAY,71045,BOTH,1118.89,Humana,Humana Commercial,929.37,"This service costs $1118.89 as standard price when patient does not have any insurance.
+Same service costs $929.37 if patient has 'Humana Commercial' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+CHEST X-RAY,71045,BOTH,1118.89,Humana,Humana Medicare PPO,793.31,"This service costs $1118.89 as standard price when patient does not have any insurance.
+Same service costs $793.31 if patient has 'Humana Medicare PPO' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+CHEST X-RAY,71045,BOTH,1118.89,,,,Standard charge with no insurance.,Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+CHEST X-RAY,71045,BOTH,1118.89,Aetna,Aetna Commercial,614.54,"This service costs $1118.89 as standard price when patient does not have any insurance.
+Same service costs $614.54 if patient has 'Aetna Commercial' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+CHEST X-RAY,71045,BOTH,1118.89,,,,Standard charge with no insurance.,Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+CHEST X-RAY,71045,BOTH,1118.89,United Healthcare,United Healthcare CHIP,898.41,"This service costs $1118.89 as standard price when patient does not have any insurance.
+Same service costs $898.41 if patient has 'United Healthcare CHIP' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+CHEST X-RAY,71045,BOTH,1118.89,,,,Standard charge with no insurance.,Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+BASIC METABOLIC PANEL,80048,BOTH,1021.68,Highmark,Highmark Commercial PROF,542.8,"This service costs $1021.68 as standard price when patient does not have any insurance.
+Same service costs $542.8 if patient has 'Highmark Commercial PROF' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+BASIC METABOLIC PANEL,80048,BOTH,1021.68,,,,Standard charge with no insurance.,Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+BASIC METABOLIC PANEL,80048,BOTH,1021.68,Amerihealth,Amerihealth Commercial,665.45,"This service costs $1021.68 as standard price when patient does not have any insurance.
+Same service costs $665.45 if patient has 'Amerihealth Commercial' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+BASIC METABOLIC PANEL,80048,BOTH,1021.68,,,,Standard charge with no insurance.,Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+BASIC METABOLIC PANEL,80048,BOTH,1021.68,Humana,Humana Medicare HMO,628.46,"This service costs $1021.68 as standard price when patient does not have any insurance.
+Same service costs $628.46 if patient has 'Humana Medicare HMO' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+BASIC METABOLIC PANEL,80048,BOTH,1021.68,Humana,Humana Medicare PPO,830.59,"This service costs $1021.68 as standard price when patient does not have any insurance.
+Same service costs $830.59 if patient has 'Humana Medicare PPO' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+BASIC METABOLIC PANEL,80048,BOTH,1021.68,,,,Standard charge with no insurance.,Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+1 CC STERILE SYRINGE&NEEDLE,A4206,INPATIENT,1414.17,Aetna,Aetna Medicaid CHIP,1168.12,"This service costs $1414.17 as standard price when patient does not have any insurance.
+Same service costs $1168.12 if patient has 'Aetna Medicaid CHIP' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+1 CC STERILE SYRINGE&NEEDLE,A4206,OUTPATIENT,1414.17,Aetna,Aetna Medicaid CHIP,1168.12,"This service costs $1414.17 as standard price when patient does not have any insurance.
+Same service costs $1168.12 if patient has 'Aetna Medicaid CHIP' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+1 CC STERILE SYRINGE&NEEDLE,A4206,INPATIENT,1414.17,Aetna,Aetna Commercial,1257.18,"This service costs $1414.17 as standard price when patient does not have any insurance.
+Same service costs $1257.18 if patient has 'Aetna Commercial' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+1 CC STERILE SYRINGE&NEEDLE,A4206,OUTPATIENT,1414.17,Aetna,Aetna Commercial,1257.18,"This service costs $1414.17 as standard price when patient does not have any insurance.
+Same service costs $1257.18 if patient has 'Aetna Commercial' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+1 CC STERILE SYRINGE&NEEDLE,A4206,INPATIENT,1414.17,Aetna,Aetna Medicare,942.07,"This service costs $1414.17 as standard price when patient does not have any insurance.
+Same service costs $942.07 if patient has 'Aetna Medicare' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+1 CC STERILE SYRINGE&NEEDLE,A4206,OUTPATIENT,1414.17,Aetna,Aetna Medicare,942.07,"This service costs $1414.17 as standard price when patient does not have any insurance.
+Same service costs $942.07 if patient has 'Aetna Medicare' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+1 CC STERILE SYRINGE&NEEDLE,A4206,INPATIENT,1414.17,,,,Standard charge with no insurance.,Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+1 CC STERILE SYRINGE&NEEDLE,A4206,OUTPATIENT,1414.17,,,,Standard charge with no insurance.,Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+1 CC STERILE SYRINGE&NEEDLE,A4206,INPATIENT,1414.17,Humana,Humana Medicare HMO,877.24,"This service costs $1414.17 as standard price when patient does not have any insurance.
+Same service costs $877.24 if patient has 'Humana Medicare HMO' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+1 CC STERILE SYRINGE&NEEDLE,A4206,OUTPATIENT,1414.17,Humana,Humana Medicare HMO,877.24,"This service costs $1414.17 as standard price when patient does not have any insurance.
+Same service costs $877.24 if patient has 'Humana Medicare HMO' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+1 CC STERILE SYRINGE&NEEDLE,A4206,INPATIENT,1414.17,,,,Standard charge with no insurance.,Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+1 CC STERILE SYRINGE&NEEDLE,A4206,OUTPATIENT,1414.17,,,,Standard charge with no insurance.,Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+1 CC STERILE SYRINGE&NEEDLE,A4206,INPATIENT,1414.17,United Healthcare,United Healthcare Medicaid,1158.44,"This service costs $1414.17 as standard price when patient does not have any insurance.
+Same service costs $1158.44 if patient has 'United Healthcare Medicaid' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+1 CC STERILE SYRINGE&NEEDLE,A4206,OUTPATIENT,1414.17,United Healthcare,United Healthcare Medicaid,1158.44,"This service costs $1414.17 as standard price when patient does not have any insurance.
+Same service costs $1158.44 if patient has 'United Healthcare Medicaid' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+1 CC STERILE SYRINGE&NEEDLE,A4206,INPATIENT,1414.17,,,,Standard charge with no insurance.,Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+1 CC STERILE SYRINGE&NEEDLE,A4206,OUTPATIENT,1414.17,,,,Standard charge with no insurance.,Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+2D ECHO,93306,OUTPATIENT,1804.86,Aetna,Aetna Medicaid CHIP,1017.19,"This service costs $1804.86 as standard price when patient does not have any insurance.
+Same service costs $1017.19 if patient has 'Aetna Medicaid CHIP' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+2D ECHO,93306,OUTPATIENT,1804.86,Aetna,Aetna Commercial,1668.26,"This service costs $1804.86 as standard price when patient does not have any insurance.
+Same service costs $1668.26 if patient has 'Aetna Commercial' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+2D ECHO,93306,OUTPATIENT,1804.86,Aetna,Aetna Medicare,1472.36,"This service costs $1804.86 as standard price when patient does not have any insurance.
+Same service costs $1472.36 if patient has 'Aetna Medicare' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+2D ECHO,93306,OUTPATIENT,1804.86,,,,Standard charge with no insurance.,Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+COMPLETE BLOOD COUNT,85025,BOTH,546.31,United Healthcare,United Healthcare Commercial,341.73,"This service costs $546.31 as standard price when patient does not have any insurance.
+Same service costs $341.73 if patient has 'United Healthcare Commercial' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+COMPLETE BLOOD COUNT,85025,BOTH,546.31,United Healthcare,United Healthcare Medicaid,401.88,"This service costs $546.31 as standard price when patient does not have any insurance.
+Same service costs $401.88 if patient has 'United Healthcare Medicaid' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+COMPLETE BLOOD COUNT,85025,BOTH,546.31,,,,Standard charge with no insurance.,Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+COMPLETE BLOOD COUNT,85025,BOTH,546.31,Humana,Humana Commercial,311.43,"This service costs $546.31 as standard price when patient does not have any insurance.
+Same service costs $311.43 if patient has 'Humana Commercial' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+COMPLETE BLOOD COUNT,85025,BOTH,546.31,Humana,Humana Medicare HMO,491.99,"This service costs $546.31 as standard price when patient does not have any insurance.
+Same service costs $491.99 if patient has 'Humana Medicare HMO' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+COMPLETE BLOOD COUNT,85025,BOTH,546.31,Humana,Humana Medicare PPO,378.36,"This service costs $546.31 as standard price when patient does not have any insurance.
+Same service costs $378.36 if patient has 'Humana Medicare PPO' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+COMPLETE BLOOD COUNT,85025,BOTH,546.31,,,,Standard charge with no insurance.,Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+ABDOMINAL CT SCAN,74150,BOTH,1998.89,Amerihealth,Amerihealth Commercial,1092.57,"This service costs $1998.89 as standard price when patient does not have any insurance.
+Same service costs $1092.57 if patient has 'Amerihealth Commercial' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+ABDOMINAL CT SCAN,74150,BOTH,1998.89,Amerihealth,Amerihealth Medicare,1074.63,"This service costs $1998.89 as standard price when patient does not have any insurance.
+Same service costs $1074.63 if patient has 'Amerihealth Medicare' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+ABDOMINAL CT SCAN,74150,BOTH,1998.89,Amerihealth,Amerihealth Medicaid HC,1364.27,"This service costs $1998.89 as standard price when patient does not have any insurance.
+Same service costs $1364.27 if patient has 'Amerihealth Medicaid HC' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+ABDOMINAL CT SCAN,74150,BOTH,1998.89,,,,Standard charge with no insurance.,Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+ABDOMINAL CT SCAN,74150,BOTH,1998.89,Humana,Humana Medicare PPO,1193.02,"This service costs $1998.89 as standard price when patient does not have any insurance.
+Same service costs $1193.02 if patient has 'Humana Medicare PPO' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+ABDOMINAL CT SCAN,74150,BOTH,1998.89,Humana,Humana Medicare HMO,1856.49,"This service costs $1998.89 as standard price when patient does not have any insurance.
+Same service costs $1856.49 if patient has 'Humana Medicare HMO' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+ABDOMINAL CT SCAN,74150,BOTH,1998.89,Humana,Humana Commercial,1188.43,"This service costs $1998.89 as standard price when patient does not have any insurance.
+Same service costs $1188.43 if patient has 'Humana Commercial' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+ABDOMINAL CT SCAN,74150,BOTH,1998.89,,,,Standard charge with no insurance.,Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+CHG MRI BRAIN,70551,OUTPATIENT,866.28,Humana,Humana Commercial,682.25,"This service costs $866.28 as standard price when patient does not have any insurance.
+Same service costs $682.25 if patient has 'Humana Commercial' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+CHG MRI BRAIN,70551,OUTPATIENT,866.28,,,,Standard charge with no insurance.,Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+CHG MRI BRAIN,70551,OUTPATIENT,866.28,Aetna,Aetna Medicaid CHIP,801.07,"This service costs $866.28 as standard price when patient does not have any insurance.
+Same service costs $801.07 if patient has 'Aetna Medicaid CHIP' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+CHG MRI BRAIN,70551,OUTPATIENT,866.28,Aetna,Aetna Commercial,696.37,"This service costs $866.28 as standard price when patient does not have any insurance.
+Same service costs $696.37 if patient has 'Aetna Commercial' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+CHG MRI BRAIN,70551,OUTPATIENT,866.28,Aetna,Aetna Medicare,619.85,"This service costs $866.28 as standard price when patient does not have any insurance.
+Same service costs $619.85 if patient has 'Aetna Medicare' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+CHG MRI BRAIN,70551,OUTPATIENT,866.28,,,,Standard charge with no insurance.,Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+CHG MRI BRAIN,70551,OUTPATIENT,866.28,United Healthcare,United Healthcare CHIP,602.3,"This service costs $866.28 as standard price when patient does not have any insurance.
+Same service costs $602.3 if patient has 'United Healthcare CHIP' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+CHG MRI BRAIN,70551,OUTPATIENT,866.28,United Healthcare,United Healthcare Medicaid,727.21,"This service costs $866.28 as standard price when patient does not have any insurance.
+Same service costs $727.21 if patient has 'United Healthcare Medicaid' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+CHG MRI BRAIN,70551,OUTPATIENT,866.28,United Healthcare,United Healthcare Commercial,776.97,"This service costs $866.28 as standard price when patient does not have any insurance.
+Same service costs $776.97 if patient has 'United Healthcare Commercial' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+CHG MRI BRAIN,70551,OUTPATIENT,866.28,,,,Standard charge with no insurance.,Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+1 CC STERILE SYRINGE&NEEDLE,A4206,INPATIENT,1207.36,Highmark,Highmark Commercial PROF,864.27,"This service costs $1207.36 as standard price when patient does not have any insurance.
+Same service costs $864.27 if patient has 'Highmark Commercial PROF' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+1 CC STERILE SYRINGE&NEEDLE,A4206,OUTPATIENT,1207.36,Highmark,Highmark Commercial PROF,864.27,"This service costs $1207.36 as standard price when patient does not have any insurance.
+Same service costs $864.27 if patient has 'Highmark Commercial PROF' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+1 CC STERILE SYRINGE&NEEDLE,A4206,INPATIENT,1207.36,,,,Standard charge with no insurance.,Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+1 CC STERILE SYRINGE&NEEDLE,A4206,OUTPATIENT,1207.36,,,,Standard charge with no insurance.,Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+ACETYLCYSTEINE NON-COMP UNIT,J7608,OUTPATIENT,1856.26,Humana,Humana Medicare HMO,1760.35,"This service costs $1856.26 as standard price when patient does not have any insurance.
+Same service costs $1760.35 if patient has 'Humana Medicare HMO' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+ACETYLCYSTEINE NON-COMP UNIT,J7608,INPATIENT,1856.26,Humana,Humana Medicare HMO,1760.35,"This service costs $1856.26 as standard price when patient does not have any insurance.
+Same service costs $1760.35 if patient has 'Humana Medicare HMO' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+ACETYLCYSTEINE NON-COMP UNIT,J7608,OUTPATIENT,1856.26,,,,Standard charge with no insurance.,Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+ACETYLCYSTEINE NON-COMP UNIT,J7608,INPATIENT,1856.26,,,,Standard charge with no insurance.,Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+ACETYLCYSTEINE NON-COMP UNIT,J7608,OUTPATIENT,1856.26,United Healthcare,United Healthcare CHIP,1233.14,"This service costs $1856.26 as standard price when patient does not have any insurance.
+Same service costs $1233.14 if patient has 'United Healthcare CHIP' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+ACETYLCYSTEINE NON-COMP UNIT,J7608,INPATIENT,1856.26,United Healthcare,United Healthcare CHIP,1233.14,"This service costs $1856.26 as standard price when patient does not have any insurance.
+Same service costs $1233.14 if patient has 'United Healthcare CHIP' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+ACETYLCYSTEINE NON-COMP UNIT,J7608,OUTPATIENT,1856.26,,,,Standard charge with no insurance.,Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+ACETYLCYSTEINE NON-COMP UNIT,J7608,INPATIENT,1856.26,,,,Standard charge with no insurance.,Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+ACETYLCYSTEINE NON-COMP UNIT,J7608,OUTPATIENT,301.06,Amerihealth,Amerihealth Medicare,228.39,"This service costs $301.06 as standard price when patient does not have any insurance.
+Same service costs $228.39 if patient has 'Amerihealth Medicare' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+ACETYLCYSTEINE NON-COMP UNIT,J7608,INPATIENT,301.06,Amerihealth,Amerihealth Medicare,228.39,"This service costs $301.06 as standard price when patient does not have any insurance.
+Same service costs $228.39 if patient has 'Amerihealth Medicare' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+ACETYLCYSTEINE NON-COMP UNIT,J7608,OUTPATIENT,301.06,,,,Standard charge with no insurance.,Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+ACETYLCYSTEINE NON-COMP UNIT,J7608,INPATIENT,301.06,,,,Standard charge with no insurance.,Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+TRILOCK GRIDPL,C1713,BOTH,1027.54,Humana,Humana Commercial,957.68,"This service costs $1027.54 as standard price when patient does not have any insurance.
+Same service costs $957.68 if patient has 'Humana Commercial' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+TRILOCK GRIDPL,C1713,BOTH,1027.54,Humana,Humana Medicare HMO,544.12,"This service costs $1027.54 as standard price when patient does not have any insurance.
+Same service costs $544.12 if patient has 'Humana Medicare HMO' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+TRILOCK GRIDPL,C1713,BOTH,1027.54,Humana,Humana Medicare PPO,692.83,"This service costs $1027.54 as standard price when patient does not have any insurance.
+Same service costs $692.83 if patient has 'Humana Medicare PPO' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+TRILOCK GRIDPL,C1713,BOTH,1027.54,,,,Standard charge with no insurance.,Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+TRILOCK GRIDPL,C1713,BOTH,1027.54,United Healthcare,United Healthcare CHIP,890.18,"This service costs $1027.54 as standard price when patient does not have any insurance.
+Same service costs $890.18 if patient has 'United Healthcare CHIP' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+TRILOCK GRIDPL,C1713,BOTH,1027.54,,,,Standard charge with no insurance.,Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+TRILOCK GRIDPL,C1713,BOTH,1027.54,Highmark,Highmark Medicare,821.29,"This service costs $1027.54 as standard price when patient does not have any insurance.
+Same service costs $821.29 if patient has 'Highmark Medicare' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+TRILOCK GRIDPL,C1713,BOTH,1027.54,Highmark,Highmark ACA Products PROF,554.03,"This service costs $1027.54 as standard price when patient does not have any insurance.
+Same service costs $554.03 if patient has 'Highmark ACA Products PROF' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+TRILOCK GRIDPL,C1713,BOTH,1027.54,Highmark,Highmark Commercial PROF,641.22,"This service costs $1027.54 as standard price when patient does not have any insurance.
+Same service costs $641.22 if patient has 'Highmark Commercial PROF' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+TRILOCK GRIDPL,C1713,BOTH,1027.54,,,,Standard charge with no insurance.,Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+ABDOMINAL CT SCAN,74150,BOTH,1710.28,,,,"Only standard charge and no price with insurance – meaning this service is provided by the hospital directly, and not through any insurance.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+CHEST X-RAY,71045,BOTH,1250.51,Amerihealth,Amerihealth Medicare,691.45,"This service costs $1250.51 as standard price when patient does not have any insurance.
+Same service costs $691.45 if patient has 'Amerihealth Medicare' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+CHEST X-RAY,71045,BOTH,1250.51,,,,Standard charge with no insurance.,Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+CHEST X-RAY,71045,BOTH,1250.51,Humana,Humana Medicare PPO,645.82,"This service costs $1250.51 as standard price when patient does not have any insurance.
+Same service costs $645.82 if patient has 'Humana Medicare PPO' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+CHEST X-RAY,71045,BOTH,1250.51,Humana,Humana Medicare HMO,1153.72,"This service costs $1250.51 as standard price when patient does not have any insurance.
+Same service costs $1153.72 if patient has 'Humana Medicare HMO' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+CHEST X-RAY,71045,BOTH,1250.51,Humana,Humana Commercial,873.74,"This service costs $1250.51 as standard price when patient does not have any insurance.
+Same service costs $873.74 if patient has 'Humana Commercial' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+CHEST X-RAY,71045,BOTH,1250.51,,,,Standard charge with no insurance.,Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+TRILOCK SCAPHOID PLATE,C1713,BOTH,1817.23,Amerihealth,Amerihealth Medicaid HC,1501.86,"This service costs $1817.23 as standard price when patient does not have any insurance.
+Same service costs $1501.86 if patient has 'Amerihealth Medicaid HC' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+TRILOCK SCAPHOID PLATE,C1713,BOTH,1817.23,,,,Standard charge with no insurance.,Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+TRILOCK SCAPHOID PLATE,C1713,BOTH,1817.23,Aetna,Aetna Medicare,1132.2,"This service costs $1817.23 as standard price when patient does not have any insurance.
+Same service costs $1132.2 if patient has 'Aetna Medicare' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+TRILOCK SCAPHOID PLATE,C1713,BOTH,1817.23,,,,Standard charge with no insurance.,Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+TRILOCK SCAPHOID PLATE,C1713,BOTH,1817.23,Humana,Humana Medicare HMO,1006.26,"This service costs $1817.23 as standard price when patient does not have any insurance.
+Same service costs $1006.26 if patient has 'Humana Medicare HMO' insurance plan.",Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467
+TRILOCK SCAPHOID PLATE,C1713,BOTH,1817.23,,,,Standard charge with no insurance.,Medical Center,hospital2,19106,Philadelphia,PA,39.9496,-75.1467

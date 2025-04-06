@@ -1,0 +1,472 @@
+Service Description,Service Code,Setting,Standard Charge,Insurance,Plan Name,Negotiated Amount,Comments,Hospital Name,Hospital ID,Postal Code,City,State,Latitude,Longitude
+2D ECHO,93306,OUTPATIENT,1123.57,,,,"Only standard charge and no price with insurance – meaning this service is provided by the hospital directly, and not through any insurance.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+TRILOCK GRIDPL,C1713,BOTH,433.94,Amerihealth,Amerihealth Commercial,392.61,"This service costs $433.94 as standard price when patient does not have any insurance.
+Same service costs $392.61 if patient has 'Amerihealth Commercial' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+TRILOCK GRIDPL,C1713,BOTH,433.94,Amerihealth,Amerihealth Medicare,231.57,"This service costs $433.94 as standard price when patient does not have any insurance.
+Same service costs $231.57 if patient has 'Amerihealth Medicare' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+TRILOCK GRIDPL,C1713,BOTH,433.94,Amerihealth,Amerihealth Medicaid HC,347.48,"This service costs $433.94 as standard price when patient does not have any insurance.
+Same service costs $347.48 if patient has 'Amerihealth Medicaid HC' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+TRILOCK GRIDPL,C1713,BOTH,433.94,,,,Standard charge with no insurance.,Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+TRILOCK GRIDPL,C1713,BOTH,433.94,United Healthcare,United Healthcare CHIP,277.89,"This service costs $433.94 as standard price when patient does not have any insurance.
+Same service costs $277.89 if patient has 'United Healthcare CHIP' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+TRILOCK GRIDPL,C1713,BOTH,433.94,,,,Standard charge with no insurance.,Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+BASIC METABOLIC PANEL,80048,BOTH,1465.55,United Healthcare,United Healthcare CHIP,979.27,"This service costs $1465.55 as standard price when patient does not have any insurance.
+Same service costs $979.27 if patient has 'United Healthcare CHIP' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+BASIC METABOLIC PANEL,80048,BOTH,1465.55,United Healthcare,United Healthcare Commercial,1300.58,"This service costs $1465.55 as standard price when patient does not have any insurance.
+Same service costs $1300.58 if patient has 'United Healthcare Commercial' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+BASIC METABOLIC PANEL,80048,BOTH,1465.55,United Healthcare,United Healthcare Medicaid,1179.12,"This service costs $1465.55 as standard price when patient does not have any insurance.
+Same service costs $1179.12 if patient has 'United Healthcare Medicaid' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+BASIC METABOLIC PANEL,80048,BOTH,1465.55,,,,Standard charge with no insurance.,Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+BASIC METABOLIC PANEL,80048,BOTH,1465.55,Highmark,Highmark Commercial PROF,893.15,"This service costs $1465.55 as standard price when patient does not have any insurance.
+Same service costs $893.15 if patient has 'Highmark Commercial PROF' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+BASIC METABOLIC PANEL,80048,BOTH,1465.55,Highmark,Highmark ACA Products PROF,978.77,"This service costs $1465.55 as standard price when patient does not have any insurance.
+Same service costs $978.77 if patient has 'Highmark ACA Products PROF' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+BASIC METABOLIC PANEL,80048,BOTH,1465.55,,,,Standard charge with no insurance.,Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+BASIC METABOLIC PANEL,80048,BOTH,1465.55,Humana,Humana Commercial,1335.89,"This service costs $1465.55 as standard price when patient does not have any insurance.
+Same service costs $1335.89 if patient has 'Humana Commercial' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+BASIC METABOLIC PANEL,80048,BOTH,1465.55,Humana,Humana Medicare HMO,961.3,"This service costs $1465.55 as standard price when patient does not have any insurance.
+Same service costs $961.3 if patient has 'Humana Medicare HMO' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+BASIC METABOLIC PANEL,80048,BOTH,1465.55,,,,Standard charge with no insurance.,Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+CHEST X-RAY,71045,BOTH,1981.35,,,,"Only standard charge and no price with insurance – meaning this service is provided by the hospital directly, and not through any insurance.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+ABDOMINAL CT SCAN,74150,BOTH,709.16,,,,"Only standard charge and no price with insurance – meaning this service is provided by the hospital directly, and not through any insurance.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+CHG MRI BRAIN,70551,OUTPATIENT,1441.45,Aetna,Aetna Commercial,996.5,"This service costs $1441.45 as standard price when patient does not have any insurance.
+Same service costs $996.5 if patient has 'Aetna Commercial' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+CHG MRI BRAIN,70551,OUTPATIENT,1441.45,,,,Standard charge with no insurance.,Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+CHG MRI BRAIN,70551,OUTPATIENT,1441.45,Humana,Humana Medicare PPO,846.51,"This service costs $1441.45 as standard price when patient does not have any insurance.
+Same service costs $846.51 if patient has 'Humana Medicare PPO' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+CHG MRI BRAIN,70551,OUTPATIENT,1441.45,Humana,Humana Commercial,1155.18,"This service costs $1441.45 as standard price when patient does not have any insurance.
+Same service costs $1155.18 if patient has 'Humana Commercial' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+CHG MRI BRAIN,70551,OUTPATIENT,1441.45,Humana,Humana Medicare HMO,1020.07,"This service costs $1441.45 as standard price when patient does not have any insurance.
+Same service costs $1020.07 if patient has 'Humana Medicare HMO' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+CHG MRI BRAIN,70551,OUTPATIENT,1441.45,,,,Standard charge with no insurance.,Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+COMPLETE BLOOD COUNT,85025,BOTH,1807.08,,,,"Only standard charge and no price with insurance – meaning this service is provided by the hospital directly, and not through any insurance.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+TRILOCK SCAPHOID PLATE,C1713,BOTH,614.77,Humana,Humana Commercial,460.63,"This service costs $614.77 as standard price when patient does not have any insurance.
+Same service costs $460.63 if patient has 'Humana Commercial' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+TRILOCK SCAPHOID PLATE,C1713,BOTH,614.77,Humana,Humana Medicare PPO,398.06,"This service costs $614.77 as standard price when patient does not have any insurance.
+Same service costs $398.06 if patient has 'Humana Medicare PPO' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+TRILOCK SCAPHOID PLATE,C1713,BOTH,614.77,,,,Standard charge with no insurance.,Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+TRILOCK SCAPHOID PLATE,C1713,BOTH,614.77,United Healthcare,United Healthcare Medicaid,494.74,"This service costs $614.77 as standard price when patient does not have any insurance.
+Same service costs $494.74 if patient has 'United Healthcare Medicaid' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+TRILOCK SCAPHOID PLATE,C1713,BOTH,614.77,,,,Standard charge with no insurance.,Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+TRILOCK SCAPHOID PLATE,C1713,BOTH,614.77,Amerihealth,Amerihealth Medicare,535.81,"This service costs $614.77 as standard price when patient does not have any insurance.
+Same service costs $535.81 if patient has 'Amerihealth Medicare' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+TRILOCK SCAPHOID PLATE,C1713,BOTH,614.77,Amerihealth,Amerihealth Medicaid HC,402.31,"This service costs $614.77 as standard price when patient does not have any insurance.
+Same service costs $402.31 if patient has 'Amerihealth Medicaid HC' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+TRILOCK SCAPHOID PLATE,C1713,BOTH,614.77,,,,Standard charge with no insurance.,Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+ACETYLCYSTEINE NON-COMP UNIT,J7608,OUTPATIENT,1512.89,Humana,Humana Medicare HMO,912.02,"This service costs $1512.89 as standard price when patient does not have any insurance.
+Same service costs $912.02 if patient has 'Humana Medicare HMO' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+ACETYLCYSTEINE NON-COMP UNIT,J7608,INPATIENT,1512.89,Humana,Humana Medicare HMO,912.02,"This service costs $1512.89 as standard price when patient does not have any insurance.
+Same service costs $912.02 if patient has 'Humana Medicare HMO' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+ACETYLCYSTEINE NON-COMP UNIT,J7608,OUTPATIENT,1512.89,Humana,Humana Medicare PPO,1380.89,"This service costs $1512.89 as standard price when patient does not have any insurance.
+Same service costs $1380.89 if patient has 'Humana Medicare PPO' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+ACETYLCYSTEINE NON-COMP UNIT,J7608,INPATIENT,1512.89,Humana,Humana Medicare PPO,1380.89,"This service costs $1512.89 as standard price when patient does not have any insurance.
+Same service costs $1380.89 if patient has 'Humana Medicare PPO' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+ACETYLCYSTEINE NON-COMP UNIT,J7608,OUTPATIENT,1512.89,Humana,Humana Commercial,1247.97,"This service costs $1512.89 as standard price when patient does not have any insurance.
+Same service costs $1247.97 if patient has 'Humana Commercial' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+ACETYLCYSTEINE NON-COMP UNIT,J7608,INPATIENT,1512.89,Humana,Humana Commercial,1247.97,"This service costs $1512.89 as standard price when patient does not have any insurance.
+Same service costs $1247.97 if patient has 'Humana Commercial' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+ACETYLCYSTEINE NON-COMP UNIT,J7608,OUTPATIENT,1512.89,,,,Standard charge with no insurance.,Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+ACETYLCYSTEINE NON-COMP UNIT,J7608,INPATIENT,1512.89,,,,Standard charge with no insurance.,Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+ACETYLCYSTEINE NON-COMP UNIT,J7608,OUTPATIENT,1512.89,United Healthcare,United Healthcare CHIP,1141.0,"This service costs $1512.89 as standard price when patient does not have any insurance.
+Same service costs $1141.0 if patient has 'United Healthcare CHIP' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+ACETYLCYSTEINE NON-COMP UNIT,J7608,INPATIENT,1512.89,United Healthcare,United Healthcare CHIP,1141.0,"This service costs $1512.89 as standard price when patient does not have any insurance.
+Same service costs $1141.0 if patient has 'United Healthcare CHIP' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+ACETYLCYSTEINE NON-COMP UNIT,J7608,OUTPATIENT,1512.89,,,,Standard charge with no insurance.,Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+ACETYLCYSTEINE NON-COMP UNIT,J7608,INPATIENT,1512.89,,,,Standard charge with no insurance.,Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+ACETYLCYSTEINE NON-COMP UNIT,J7608,OUTPATIENT,1512.89,Amerihealth,Amerihealth Medicare,1306.87,"This service costs $1512.89 as standard price when patient does not have any insurance.
+Same service costs $1306.87 if patient has 'Amerihealth Medicare' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+ACETYLCYSTEINE NON-COMP UNIT,J7608,INPATIENT,1512.89,Amerihealth,Amerihealth Medicare,1306.87,"This service costs $1512.89 as standard price when patient does not have any insurance.
+Same service costs $1306.87 if patient has 'Amerihealth Medicare' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+ACETYLCYSTEINE NON-COMP UNIT,J7608,OUTPATIENT,1512.89,Amerihealth,Amerihealth Commercial,939.02,"This service costs $1512.89 as standard price when patient does not have any insurance.
+Same service costs $939.02 if patient has 'Amerihealth Commercial' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+ACETYLCYSTEINE NON-COMP UNIT,J7608,INPATIENT,1512.89,Amerihealth,Amerihealth Commercial,939.02,"This service costs $1512.89 as standard price when patient does not have any insurance.
+Same service costs $939.02 if patient has 'Amerihealth Commercial' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+ACETYLCYSTEINE NON-COMP UNIT,J7608,OUTPATIENT,1512.89,Amerihealth,Amerihealth Medicaid HC,908.68,"This service costs $1512.89 as standard price when patient does not have any insurance.
+Same service costs $908.68 if patient has 'Amerihealth Medicaid HC' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+ACETYLCYSTEINE NON-COMP UNIT,J7608,INPATIENT,1512.89,Amerihealth,Amerihealth Medicaid HC,908.68,"This service costs $1512.89 as standard price when patient does not have any insurance.
+Same service costs $908.68 if patient has 'Amerihealth Medicaid HC' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+ACETYLCYSTEINE NON-COMP UNIT,J7608,OUTPATIENT,1512.89,,,,Standard charge with no insurance.,Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+ACETYLCYSTEINE NON-COMP UNIT,J7608,INPATIENT,1512.89,,,,Standard charge with no insurance.,Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+1 CC STERILE SYRINGE&NEEDLE,A4206,INPATIENT,914.26,Humana,Humana Medicare PPO,864.62,"This service costs $914.26 as standard price when patient does not have any insurance.
+Same service costs $864.62 if patient has 'Humana Medicare PPO' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+1 CC STERILE SYRINGE&NEEDLE,A4206,OUTPATIENT,914.26,Humana,Humana Medicare PPO,864.62,"This service costs $914.26 as standard price when patient does not have any insurance.
+Same service costs $864.62 if patient has 'Humana Medicare PPO' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+1 CC STERILE SYRINGE&NEEDLE,A4206,INPATIENT,914.26,Humana,Humana Commercial,779.93,"This service costs $914.26 as standard price when patient does not have any insurance.
+Same service costs $779.93 if patient has 'Humana Commercial' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+1 CC STERILE SYRINGE&NEEDLE,A4206,OUTPATIENT,914.26,Humana,Humana Commercial,779.93,"This service costs $914.26 as standard price when patient does not have any insurance.
+Same service costs $779.93 if patient has 'Humana Commercial' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+1 CC STERILE SYRINGE&NEEDLE,A4206,INPATIENT,914.26,Humana,Humana Medicare HMO,824.86,"This service costs $914.26 as standard price when patient does not have any insurance.
+Same service costs $824.86 if patient has 'Humana Medicare HMO' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+1 CC STERILE SYRINGE&NEEDLE,A4206,OUTPATIENT,914.26,Humana,Humana Medicare HMO,824.86,"This service costs $914.26 as standard price when patient does not have any insurance.
+Same service costs $824.86 if patient has 'Humana Medicare HMO' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+1 CC STERILE SYRINGE&NEEDLE,A4206,INPATIENT,914.26,,,,Standard charge with no insurance.,Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+1 CC STERILE SYRINGE&NEEDLE,A4206,OUTPATIENT,914.26,,,,Standard charge with no insurance.,Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+BASIC METABOLIC PANEL,80048,BOTH,1736.95,Humana,Humana Medicare PPO,1192.77,"This service costs $1736.95 as standard price when patient does not have any insurance.
+Same service costs $1192.77 if patient has 'Humana Medicare PPO' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+BASIC METABOLIC PANEL,80048,BOTH,1736.95,Humana,Humana Medicare HMO,1212.99,"This service costs $1736.95 as standard price when patient does not have any insurance.
+Same service costs $1212.99 if patient has 'Humana Medicare HMO' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+BASIC METABOLIC PANEL,80048,BOTH,1736.95,Humana,Humana Commercial,945.24,"This service costs $1736.95 as standard price when patient does not have any insurance.
+Same service costs $945.24 if patient has 'Humana Commercial' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+BASIC METABOLIC PANEL,80048,BOTH,1736.95,,,,Standard charge with no insurance.,Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+BASIC METABOLIC PANEL,80048,BOTH,629.87,Humana,Humana Commercial,498.01,"This service costs $629.87 as standard price when patient does not have any insurance.
+Same service costs $498.01 if patient has 'Humana Commercial' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+BASIC METABOLIC PANEL,80048,BOTH,629.87,,,,Standard charge with no insurance.,Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+BASIC METABOLIC PANEL,80048,BOTH,629.87,Highmark,Highmark Commercial PROF,364.73,"This service costs $629.87 as standard price when patient does not have any insurance.
+Same service costs $364.73 if patient has 'Highmark Commercial PROF' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+BASIC METABOLIC PANEL,80048,BOTH,629.87,,,,Standard charge with no insurance.,Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+1 CC STERILE SYRINGE&NEEDLE,A4206,INPATIENT,340.18,Amerihealth,Amerihealth Medicare,234.71,"This service costs $340.18 as standard price when patient does not have any insurance.
+Same service costs $234.71 if patient has 'Amerihealth Medicare' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+1 CC STERILE SYRINGE&NEEDLE,A4206,OUTPATIENT,340.18,Amerihealth,Amerihealth Medicare,234.71,"This service costs $340.18 as standard price when patient does not have any insurance.
+Same service costs $234.71 if patient has 'Amerihealth Medicare' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+1 CC STERILE SYRINGE&NEEDLE,A4206,INPATIENT,340.18,Amerihealth,Amerihealth Medicaid HC,236.58,"This service costs $340.18 as standard price when patient does not have any insurance.
+Same service costs $236.58 if patient has 'Amerihealth Medicaid HC' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+1 CC STERILE SYRINGE&NEEDLE,A4206,OUTPATIENT,340.18,Amerihealth,Amerihealth Medicaid HC,236.58,"This service costs $340.18 as standard price when patient does not have any insurance.
+Same service costs $236.58 if patient has 'Amerihealth Medicaid HC' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+1 CC STERILE SYRINGE&NEEDLE,A4206,INPATIENT,340.18,,,,Standard charge with no insurance.,Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+1 CC STERILE SYRINGE&NEEDLE,A4206,OUTPATIENT,340.18,,,,Standard charge with no insurance.,Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+ACETYLCYSTEINE NON-COMP UNIT,J7608,OUTPATIENT,1046.27,Humana,Humana Medicare HMO,681.0,"This service costs $1046.27 as standard price when patient does not have any insurance.
+Same service costs $681.0 if patient has 'Humana Medicare HMO' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+ACETYLCYSTEINE NON-COMP UNIT,J7608,INPATIENT,1046.27,Humana,Humana Medicare HMO,681.0,"This service costs $1046.27 as standard price when patient does not have any insurance.
+Same service costs $681.0 if patient has 'Humana Medicare HMO' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+ACETYLCYSTEINE NON-COMP UNIT,J7608,OUTPATIENT,1046.27,Humana,Humana Medicare PPO,590.23,"This service costs $1046.27 as standard price when patient does not have any insurance.
+Same service costs $590.23 if patient has 'Humana Medicare PPO' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+ACETYLCYSTEINE NON-COMP UNIT,J7608,INPATIENT,1046.27,Humana,Humana Medicare PPO,590.23,"This service costs $1046.27 as standard price when patient does not have any insurance.
+Same service costs $590.23 if patient has 'Humana Medicare PPO' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+ACETYLCYSTEINE NON-COMP UNIT,J7608,OUTPATIENT,1046.27,,,,Standard charge with no insurance.,Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+ACETYLCYSTEINE NON-COMP UNIT,J7608,INPATIENT,1046.27,,,,Standard charge with no insurance.,Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+ACETYLCYSTEINE NON-COMP UNIT,J7608,OUTPATIENT,1046.27,Amerihealth,Amerihealth Medicare,603.04,"This service costs $1046.27 as standard price when patient does not have any insurance.
+Same service costs $603.04 if patient has 'Amerihealth Medicare' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+ACETYLCYSTEINE NON-COMP UNIT,J7608,INPATIENT,1046.27,Amerihealth,Amerihealth Medicare,603.04,"This service costs $1046.27 as standard price when patient does not have any insurance.
+Same service costs $603.04 if patient has 'Amerihealth Medicare' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+ACETYLCYSTEINE NON-COMP UNIT,J7608,OUTPATIENT,1046.27,Amerihealth,Amerihealth Commercial,694.23,"This service costs $1046.27 as standard price when patient does not have any insurance.
+Same service costs $694.23 if patient has 'Amerihealth Commercial' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+ACETYLCYSTEINE NON-COMP UNIT,J7608,INPATIENT,1046.27,Amerihealth,Amerihealth Commercial,694.23,"This service costs $1046.27 as standard price when patient does not have any insurance.
+Same service costs $694.23 if patient has 'Amerihealth Commercial' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+ACETYLCYSTEINE NON-COMP UNIT,J7608,OUTPATIENT,1046.27,Amerihealth,Amerihealth Medicaid HC,621.39,"This service costs $1046.27 as standard price when patient does not have any insurance.
+Same service costs $621.39 if patient has 'Amerihealth Medicaid HC' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+ACETYLCYSTEINE NON-COMP UNIT,J7608,INPATIENT,1046.27,Amerihealth,Amerihealth Medicaid HC,621.39,"This service costs $1046.27 as standard price when patient does not have any insurance.
+Same service costs $621.39 if patient has 'Amerihealth Medicaid HC' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+ACETYLCYSTEINE NON-COMP UNIT,J7608,OUTPATIENT,1046.27,,,,Standard charge with no insurance.,Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+ACETYLCYSTEINE NON-COMP UNIT,J7608,INPATIENT,1046.27,,,,Standard charge with no insurance.,Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+ACETYLCYSTEINE NON-COMP UNIT,J7608,OUTPATIENT,73.32,United Healthcare,United Healthcare Commercial,40.19,"This service costs $73.32 as standard price when patient does not have any insurance.
+Same service costs $40.19 if patient has 'United Healthcare Commercial' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+ACETYLCYSTEINE NON-COMP UNIT,J7608,INPATIENT,73.32,United Healthcare,United Healthcare Commercial,40.19,"This service costs $73.32 as standard price when patient does not have any insurance.
+Same service costs $40.19 if patient has 'United Healthcare Commercial' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+ACETYLCYSTEINE NON-COMP UNIT,J7608,OUTPATIENT,73.32,United Healthcare,United Healthcare Medicaid,65.15,"This service costs $73.32 as standard price when patient does not have any insurance.
+Same service costs $65.15 if patient has 'United Healthcare Medicaid' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+ACETYLCYSTEINE NON-COMP UNIT,J7608,INPATIENT,73.32,United Healthcare,United Healthcare Medicaid,65.15,"This service costs $73.32 as standard price when patient does not have any insurance.
+Same service costs $65.15 if patient has 'United Healthcare Medicaid' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+ACETYLCYSTEINE NON-COMP UNIT,J7608,OUTPATIENT,73.32,,,,Standard charge with no insurance.,Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+ACETYLCYSTEINE NON-COMP UNIT,J7608,INPATIENT,73.32,,,,Standard charge with no insurance.,Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+ACETYLCYSTEINE NON-COMP UNIT,J7608,OUTPATIENT,73.32,Humana,Humana Medicare PPO,46.54,"This service costs $73.32 as standard price when patient does not have any insurance.
+Same service costs $46.54 if patient has 'Humana Medicare PPO' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+ACETYLCYSTEINE NON-COMP UNIT,J7608,INPATIENT,73.32,Humana,Humana Medicare PPO,46.54,"This service costs $73.32 as standard price when patient does not have any insurance.
+Same service costs $46.54 if patient has 'Humana Medicare PPO' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+ACETYLCYSTEINE NON-COMP UNIT,J7608,OUTPATIENT,73.32,Humana,Humana Medicare HMO,48.71,"This service costs $73.32 as standard price when patient does not have any insurance.
+Same service costs $48.71 if patient has 'Humana Medicare HMO' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+ACETYLCYSTEINE NON-COMP UNIT,J7608,INPATIENT,73.32,Humana,Humana Medicare HMO,48.71,"This service costs $73.32 as standard price when patient does not have any insurance.
+Same service costs $48.71 if patient has 'Humana Medicare HMO' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+ACETYLCYSTEINE NON-COMP UNIT,J7608,OUTPATIENT,73.32,Humana,Humana Commercial,47.93,"This service costs $73.32 as standard price when patient does not have any insurance.
+Same service costs $47.93 if patient has 'Humana Commercial' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+ACETYLCYSTEINE NON-COMP UNIT,J7608,INPATIENT,73.32,Humana,Humana Commercial,47.93,"This service costs $73.32 as standard price when patient does not have any insurance.
+Same service costs $47.93 if patient has 'Humana Commercial' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+ACETYLCYSTEINE NON-COMP UNIT,J7608,OUTPATIENT,73.32,,,,Standard charge with no insurance.,Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+ACETYLCYSTEINE NON-COMP UNIT,J7608,INPATIENT,73.32,,,,Standard charge with no insurance.,Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+ACETYLCYSTEINE NON-COMP UNIT,J7608,OUTPATIENT,73.32,Highmark,Highmark ACA Products PROF,69.54,"This service costs $73.32 as standard price when patient does not have any insurance.
+Same service costs $69.54 if patient has 'Highmark ACA Products PROF' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+ACETYLCYSTEINE NON-COMP UNIT,J7608,INPATIENT,73.32,Highmark,Highmark ACA Products PROF,69.54,"This service costs $73.32 as standard price when patient does not have any insurance.
+Same service costs $69.54 if patient has 'Highmark ACA Products PROF' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+ACETYLCYSTEINE NON-COMP UNIT,J7608,OUTPATIENT,73.32,,,,Standard charge with no insurance.,Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+ACETYLCYSTEINE NON-COMP UNIT,J7608,INPATIENT,73.32,,,,Standard charge with no insurance.,Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+BASIC METABOLIC PANEL,80048,BOTH,644.42,,,,"Only standard charge and no price with insurance – meaning this service is provided by the hospital directly, and not through any insurance.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+ACETYLCYSTEINE NON-COMP UNIT,J7608,OUTPATIENT,1172.54,,,,"Only standard charge and no price with insurance – meaning this service is provided by the hospital directly, and not through any insurance.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+ACETYLCYSTEINE NON-COMP UNIT,J7608,INPATIENT,1172.54,,,,"Only standard charge and no price with insurance – meaning this service is provided by the hospital directly, and not through any insurance.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+TRILOCK GRIDPL,C1713,BOTH,1473.52,Highmark,Highmark ACA Products PROF,1157.14,"This service costs $1473.52 as standard price when patient does not have any insurance.
+Same service costs $1157.14 if patient has 'Highmark ACA Products PROF' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+TRILOCK GRIDPL,C1713,BOTH,1473.52,Highmark,Highmark Medicare,1223.24,"This service costs $1473.52 as standard price when patient does not have any insurance.
+Same service costs $1223.24 if patient has 'Highmark Medicare' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+TRILOCK GRIDPL,C1713,BOTH,1473.52,,,,Standard charge with no insurance.,Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+TRILOCK GRIDPL,C1713,BOTH,1473.52,Aetna,Aetna Commercial,896.18,"This service costs $1473.52 as standard price when patient does not have any insurance.
+Same service costs $896.18 if patient has 'Aetna Commercial' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+TRILOCK GRIDPL,C1713,BOTH,1473.52,Aetna,Aetna Medicaid CHIP,1143.04,"This service costs $1473.52 as standard price when patient does not have any insurance.
+Same service costs $1143.04 if patient has 'Aetna Medicaid CHIP' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+TRILOCK GRIDPL,C1713,BOTH,1473.52,,,,Standard charge with no insurance.,Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+TRILOCK GRIDPL,C1713,BOTH,1473.52,Amerihealth,Amerihealth Medicare,796.02,"This service costs $1473.52 as standard price when patient does not have any insurance.
+Same service costs $796.02 if patient has 'Amerihealth Medicare' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+TRILOCK GRIDPL,C1713,BOTH,1473.52,Amerihealth,Amerihealth Medicaid HC,1239.89,"This service costs $1473.52 as standard price when patient does not have any insurance.
+Same service costs $1239.89 if patient has 'Amerihealth Medicaid HC' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+TRILOCK GRIDPL,C1713,BOTH,1473.52,,,,Standard charge with no insurance.,Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+2D ECHO,93306,OUTPATIENT,1306.23,Amerihealth,Amerihealth Medicaid HC,1152.53,"This service costs $1306.23 as standard price when patient does not have any insurance.
+Same service costs $1152.53 if patient has 'Amerihealth Medicaid HC' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+2D ECHO,93306,OUTPATIENT,1306.23,,,,Standard charge with no insurance.,Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+2D ECHO,93306,OUTPATIENT,1306.23,Aetna,Aetna Commercial,928.88,"This service costs $1306.23 as standard price when patient does not have any insurance.
+Same service costs $928.88 if patient has 'Aetna Commercial' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+2D ECHO,93306,OUTPATIENT,1306.23,Aetna,Aetna Medicare,1042.95,"This service costs $1306.23 as standard price when patient does not have any insurance.
+Same service costs $1042.95 if patient has 'Aetna Medicare' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+2D ECHO,93306,OUTPATIENT,1306.23,,,,Standard charge with no insurance.,Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+2D ECHO,93306,OUTPATIENT,1306.23,Humana,Humana Medicare HMO,842.48,"This service costs $1306.23 as standard price when patient does not have any insurance.
+Same service costs $842.48 if patient has 'Humana Medicare HMO' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+2D ECHO,93306,OUTPATIENT,1306.23,Humana,Humana Commercial,1140.66,"This service costs $1306.23 as standard price when patient does not have any insurance.
+Same service costs $1140.66 if patient has 'Humana Commercial' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+2D ECHO,93306,OUTPATIENT,1306.23,Humana,Humana Medicare PPO,1115.07,"This service costs $1306.23 as standard price when patient does not have any insurance.
+Same service costs $1115.07 if patient has 'Humana Medicare PPO' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+2D ECHO,93306,OUTPATIENT,1306.23,,,,Standard charge with no insurance.,Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+ACETYLCYSTEINE NON-COMP UNIT,J7608,OUTPATIENT,1245.47,Amerihealth,Amerihealth Medicaid HC,1077.57,"This service costs $1245.47 as standard price when patient does not have any insurance.
+Same service costs $1077.57 if patient has 'Amerihealth Medicaid HC' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+ACETYLCYSTEINE NON-COMP UNIT,J7608,INPATIENT,1245.47,Amerihealth,Amerihealth Medicaid HC,1077.57,"This service costs $1245.47 as standard price when patient does not have any insurance.
+Same service costs $1077.57 if patient has 'Amerihealth Medicaid HC' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+ACETYLCYSTEINE NON-COMP UNIT,J7608,OUTPATIENT,1245.47,,,,Standard charge with no insurance.,Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+ACETYLCYSTEINE NON-COMP UNIT,J7608,INPATIENT,1245.47,,,,Standard charge with no insurance.,Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+ACETYLCYSTEINE NON-COMP UNIT,J7608,OUTPATIENT,1245.47,Aetna,Aetna Medicare,1016.38,"This service costs $1245.47 as standard price when patient does not have any insurance.
+Same service costs $1016.38 if patient has 'Aetna Medicare' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+ACETYLCYSTEINE NON-COMP UNIT,J7608,INPATIENT,1245.47,Aetna,Aetna Medicare,1016.38,"This service costs $1245.47 as standard price when patient does not have any insurance.
+Same service costs $1016.38 if patient has 'Aetna Medicare' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+ACETYLCYSTEINE NON-COMP UNIT,J7608,OUTPATIENT,1245.47,,,,Standard charge with no insurance.,Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+ACETYLCYSTEINE NON-COMP UNIT,J7608,INPATIENT,1245.47,,,,Standard charge with no insurance.,Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+TRILOCK GRIDPL,C1713,BOTH,868.82,Amerihealth,Amerihealth Commercial,607.46,"This service costs $868.82 as standard price when patient does not have any insurance.
+Same service costs $607.46 if patient has 'Amerihealth Commercial' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+TRILOCK GRIDPL,C1713,BOTH,868.82,Amerihealth,Amerihealth Medicaid HC,689.35,"This service costs $868.82 as standard price when patient does not have any insurance.
+Same service costs $689.35 if patient has 'Amerihealth Medicaid HC' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+TRILOCK GRIDPL,C1713,BOTH,868.82,,,,Standard charge with no insurance.,Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+TRILOCK GRIDPL,C1713,BOTH,868.82,Humana,Humana Medicare PPO,551.77,"This service costs $868.82 as standard price when patient does not have any insurance.
+Same service costs $551.77 if patient has 'Humana Medicare PPO' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+TRILOCK GRIDPL,C1713,BOTH,868.82,,,,Standard charge with no insurance.,Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+TRILOCK GRIDPL,C1713,BOTH,868.82,United Healthcare,United Healthcare Medicaid,583.47,"This service costs $868.82 as standard price when patient does not have any insurance.
+Same service costs $583.47 if patient has 'United Healthcare Medicaid' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+TRILOCK GRIDPL,C1713,BOTH,868.82,,,,Standard charge with no insurance.,Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+CHEST X-RAY,71045,BOTH,1629.94,Humana,Humana Medicare PPO,1302.75,"This service costs $1629.94 as standard price when patient does not have any insurance.
+Same service costs $1302.75 if patient has 'Humana Medicare PPO' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+CHEST X-RAY,71045,BOTH,1629.94,Humana,Humana Medicare HMO,1411.01,"This service costs $1629.94 as standard price when patient does not have any insurance.
+Same service costs $1411.01 if patient has 'Humana Medicare HMO' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+CHEST X-RAY,71045,BOTH,1629.94,,,,Standard charge with no insurance.,Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+TRILOCK SCAPHOID PLATE,C1713,BOTH,354.78,Humana,Humana Commercial,260.28,"This service costs $354.78 as standard price when patient does not have any insurance.
+Same service costs $260.28 if patient has 'Humana Commercial' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+TRILOCK SCAPHOID PLATE,C1713,BOTH,354.78,,,,Standard charge with no insurance.,Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+TRILOCK SCAPHOID PLATE,C1713,BOTH,354.78,Aetna,Aetna Medicare,326.56,"This service costs $354.78 as standard price when patient does not have any insurance.
+Same service costs $326.56 if patient has 'Aetna Medicare' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+TRILOCK SCAPHOID PLATE,C1713,BOTH,354.78,,,,Standard charge with no insurance.,Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+TRILOCK SCAPHOID PLATE,C1713,BOTH,1905.27,Humana,Humana Commercial,1089.16,"This service costs $1905.27 as standard price when patient does not have any insurance.
+Same service costs $1089.16 if patient has 'Humana Commercial' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+TRILOCK SCAPHOID PLATE,C1713,BOTH,1905.27,,,,Standard charge with no insurance.,Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+TRILOCK SCAPHOID PLATE,C1713,BOTH,1905.27,Aetna,Aetna Medicare,1792.77,"This service costs $1905.27 as standard price when patient does not have any insurance.
+Same service costs $1792.77 if patient has 'Aetna Medicare' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+TRILOCK SCAPHOID PLATE,C1713,BOTH,1905.27,,,,Standard charge with no insurance.,Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+TRILOCK SCAPHOID PLATE,C1713,BOTH,1905.27,Amerihealth,Amerihealth Commercial,1547.24,"This service costs $1905.27 as standard price when patient does not have any insurance.
+Same service costs $1547.24 if patient has 'Amerihealth Commercial' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+TRILOCK SCAPHOID PLATE,C1713,BOTH,1905.27,Amerihealth,Amerihealth Medicare,1153.06,"This service costs $1905.27 as standard price when patient does not have any insurance.
+Same service costs $1153.06 if patient has 'Amerihealth Medicare' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+TRILOCK SCAPHOID PLATE,C1713,BOTH,1905.27,Amerihealth,Amerihealth Medicaid HC,1558.18,"This service costs $1905.27 as standard price when patient does not have any insurance.
+Same service costs $1558.18 if patient has 'Amerihealth Medicaid HC' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+TRILOCK SCAPHOID PLATE,C1713,BOTH,1905.27,,,,Standard charge with no insurance.,Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+2D ECHO,93306,OUTPATIENT,618.85,,,,"Only standard charge and no price with insurance – meaning this service is provided by the hospital directly, and not through any insurance.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+CHEST X-RAY,71045,BOTH,1691.35,Highmark,Highmark Commercial PROF,1115.91,"This service costs $1691.35 as standard price when patient does not have any insurance.
+Same service costs $1115.91 if patient has 'Highmark Commercial PROF' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+CHEST X-RAY,71045,BOTH,1691.35,Highmark,Highmark ACA Products PROF,1289.82,"This service costs $1691.35 as standard price when patient does not have any insurance.
+Same service costs $1289.82 if patient has 'Highmark ACA Products PROF' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+CHEST X-RAY,71045,BOTH,1691.35,,,,Standard charge with no insurance.,Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+CHEST X-RAY,71045,BOTH,1691.35,United Healthcare,United Healthcare Commercial,1579.2,"This service costs $1691.35 as standard price when patient does not have any insurance.
+Same service costs $1579.2 if patient has 'United Healthcare Commercial' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+CHEST X-RAY,71045,BOTH,1691.35,United Healthcare,United Healthcare CHIP,1316.95,"This service costs $1691.35 as standard price when patient does not have any insurance.
+Same service costs $1316.95 if patient has 'United Healthcare CHIP' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+CHEST X-RAY,71045,BOTH,1691.35,United Healthcare,United Healthcare Medicaid,1249.13,"This service costs $1691.35 as standard price when patient does not have any insurance.
+Same service costs $1249.13 if patient has 'United Healthcare Medicaid' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+CHEST X-RAY,71045,BOTH,1691.35,,,,Standard charge with no insurance.,Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+TRILOCK SCAPHOID PLATE,C1713,BOTH,1956.75,Humana,Humana Commercial,1056.51,"This service costs $1956.75 as standard price when patient does not have any insurance.
+Same service costs $1056.51 if patient has 'Humana Commercial' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+TRILOCK SCAPHOID PLATE,C1713,BOTH,1956.75,Humana,Humana Medicare PPO,1446.35,"This service costs $1956.75 as standard price when patient does not have any insurance.
+Same service costs $1446.35 if patient has 'Humana Medicare PPO' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+TRILOCK SCAPHOID PLATE,C1713,BOTH,1956.75,,,,Standard charge with no insurance.,Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+BASIC METABOLIC PANEL,80048,BOTH,49.66,Humana,Humana Commercial,33.75,"This service costs $49.66 as standard price when patient does not have any insurance.
+Same service costs $33.75 if patient has 'Humana Commercial' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+BASIC METABOLIC PANEL,80048,BOTH,49.66,Humana,Humana Medicare PPO,34.68,"This service costs $49.66 as standard price when patient does not have any insurance.
+Same service costs $34.68 if patient has 'Humana Medicare PPO' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+BASIC METABOLIC PANEL,80048,BOTH,49.66,,,,Standard charge with no insurance.,Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+BASIC METABOLIC PANEL,80048,BOTH,49.66,Highmark,Highmark ACA Products PROF,45.8,"This service costs $49.66 as standard price when patient does not have any insurance.
+Same service costs $45.8 if patient has 'Highmark ACA Products PROF' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+BASIC METABOLIC PANEL,80048,BOTH,49.66,,,,Standard charge with no insurance.,Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+TRILOCK SCAPHOID PLATE,C1713,BOTH,1357.99,United Healthcare,United Healthcare CHIP,817.43,"This service costs $1357.99 as standard price when patient does not have any insurance.
+Same service costs $817.43 if patient has 'United Healthcare CHIP' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+TRILOCK SCAPHOID PLATE,C1713,BOTH,1357.99,United Healthcare,United Healthcare Medicaid,775.2,"This service costs $1357.99 as standard price when patient does not have any insurance.
+Same service costs $775.2 if patient has 'United Healthcare Medicaid' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+TRILOCK SCAPHOID PLATE,C1713,BOTH,1357.99,,,,Standard charge with no insurance.,Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+TRILOCK SCAPHOID PLATE,C1713,BOTH,1357.99,Highmark,Highmark Medicare,1287.02,"This service costs $1357.99 as standard price when patient does not have any insurance.
+Same service costs $1287.02 if patient has 'Highmark Medicare' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+TRILOCK SCAPHOID PLATE,C1713,BOTH,1357.99,Highmark,Highmark Commercial PROF,681.69,"This service costs $1357.99 as standard price when patient does not have any insurance.
+Same service costs $681.69 if patient has 'Highmark Commercial PROF' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+TRILOCK SCAPHOID PLATE,C1713,BOTH,1357.99,Highmark,Highmark ACA Products PROF,1251.27,"This service costs $1357.99 as standard price when patient does not have any insurance.
+Same service costs $1251.27 if patient has 'Highmark ACA Products PROF' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+TRILOCK SCAPHOID PLATE,C1713,BOTH,1357.99,,,,Standard charge with no insurance.,Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+TRILOCK SCAPHOID PLATE,C1713,BOTH,1357.99,Amerihealth,Amerihealth Medicare,802.2,"This service costs $1357.99 as standard price when patient does not have any insurance.
+Same service costs $802.2 if patient has 'Amerihealth Medicare' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+TRILOCK SCAPHOID PLATE,C1713,BOTH,1357.99,Amerihealth,Amerihealth Medicaid HC,859.09,"This service costs $1357.99 as standard price when patient does not have any insurance.
+Same service costs $859.09 if patient has 'Amerihealth Medicaid HC' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+TRILOCK SCAPHOID PLATE,C1713,BOTH,1357.99,Amerihealth,Amerihealth Commercial,965.73,"This service costs $1357.99 as standard price when patient does not have any insurance.
+Same service costs $965.73 if patient has 'Amerihealth Commercial' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+TRILOCK SCAPHOID PLATE,C1713,BOTH,1357.99,,,,Standard charge with no insurance.,Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+TRILOCK SCAPHOID PLATE,C1713,BOTH,1597.51,Aetna,Aetna Commercial,1093.98,"This service costs $1597.51 as standard price when patient does not have any insurance.
+Same service costs $1093.98 if patient has 'Aetna Commercial' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+TRILOCK SCAPHOID PLATE,C1713,BOTH,1597.51,Aetna,Aetna Medicare,1448.35,"This service costs $1597.51 as standard price when patient does not have any insurance.
+Same service costs $1448.35 if patient has 'Aetna Medicare' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+TRILOCK SCAPHOID PLATE,C1713,BOTH,1597.51,Aetna,Aetna Medicaid CHIP,1039.9,"This service costs $1597.51 as standard price when patient does not have any insurance.
+Same service costs $1039.9 if patient has 'Aetna Medicaid CHIP' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+TRILOCK SCAPHOID PLATE,C1713,BOTH,1597.51,,,,Standard charge with no insurance.,Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+CHEST X-RAY,71045,BOTH,1949.37,Amerihealth,Amerihealth Medicaid HC,1515.84,"This service costs $1949.37 as standard price when patient does not have any insurance.
+Same service costs $1515.84 if patient has 'Amerihealth Medicaid HC' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+CHEST X-RAY,71045,BOTH,1949.37,Amerihealth,Amerihealth Medicare,1739.61,"This service costs $1949.37 as standard price when patient does not have any insurance.
+Same service costs $1739.61 if patient has 'Amerihealth Medicare' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+CHEST X-RAY,71045,BOTH,1949.37,Amerihealth,Amerihealth Commercial,1557.36,"This service costs $1949.37 as standard price when patient does not have any insurance.
+Same service costs $1557.36 if patient has 'Amerihealth Commercial' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+CHEST X-RAY,71045,BOTH,1949.37,,,,Standard charge with no insurance.,Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+CHEST X-RAY,71045,BOTH,1387.92,United Healthcare,United Healthcare CHIP,903.53,"This service costs $1387.92 as standard price when patient does not have any insurance.
+Same service costs $903.53 if patient has 'United Healthcare CHIP' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+CHEST X-RAY,71045,BOTH,1387.92,United Healthcare,United Healthcare Medicaid,902.19,"This service costs $1387.92 as standard price when patient does not have any insurance.
+Same service costs $902.19 if patient has 'United Healthcare Medicaid' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+CHEST X-RAY,71045,BOTH,1387.92,United Healthcare,United Healthcare Commercial,704.5,"This service costs $1387.92 as standard price when patient does not have any insurance.
+Same service costs $704.5 if patient has 'United Healthcare Commercial' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+CHEST X-RAY,71045,BOTH,1387.92,,,,Standard charge with no insurance.,Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+CHEST X-RAY,71045,BOTH,1387.92,Highmark,Highmark ACA Products PROF,844.57,"This service costs $1387.92 as standard price when patient does not have any insurance.
+Same service costs $844.57 if patient has 'Highmark ACA Products PROF' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+CHEST X-RAY,71045,BOTH,1387.92,,,,Standard charge with no insurance.,Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+CHEST X-RAY,71045,BOTH,1387.92,Humana,Humana Medicare PPO,1311.06,"This service costs $1387.92 as standard price when patient does not have any insurance.
+Same service costs $1311.06 if patient has 'Humana Medicare PPO' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+CHEST X-RAY,71045,BOTH,1387.92,Humana,Humana Medicare HMO,772.24,"This service costs $1387.92 as standard price when patient does not have any insurance.
+Same service costs $772.24 if patient has 'Humana Medicare HMO' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+CHEST X-RAY,71045,BOTH,1387.92,Humana,Humana Commercial,810.5,"This service costs $1387.92 as standard price when patient does not have any insurance.
+Same service costs $810.5 if patient has 'Humana Commercial' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+CHEST X-RAY,71045,BOTH,1387.92,,,,Standard charge with no insurance.,Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+COMPLETE BLOOD COUNT,85025,BOTH,1294.64,Humana,Humana Commercial,1137.91,"This service costs $1294.64 as standard price when patient does not have any insurance.
+Same service costs $1137.91 if patient has 'Humana Commercial' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+COMPLETE BLOOD COUNT,85025,BOTH,1294.64,Humana,Humana Medicare PPO,1065.87,"This service costs $1294.64 as standard price when patient does not have any insurance.
+Same service costs $1065.87 if patient has 'Humana Medicare PPO' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+COMPLETE BLOOD COUNT,85025,BOTH,1294.64,,,,Standard charge with no insurance.,Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+CHG MRI BRAIN,70551,OUTPATIENT,1823.44,Highmark,Highmark Commercial PROF,1186.92,"This service costs $1823.44 as standard price when patient does not have any insurance.
+Same service costs $1186.92 if patient has 'Highmark Commercial PROF' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+CHG MRI BRAIN,70551,OUTPATIENT,1823.44,,,,Standard charge with no insurance.,Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+CHG MRI BRAIN,70551,OUTPATIENT,1823.44,United Healthcare,United Healthcare CHIP,1592.92,"This service costs $1823.44 as standard price when patient does not have any insurance.
+Same service costs $1592.92 if patient has 'United Healthcare CHIP' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+CHG MRI BRAIN,70551,OUTPATIENT,1823.44,,,,Standard charge with no insurance.,Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+TRILOCK SCAPHOID PLATE,C1713,BOTH,736.02,Humana,Humana Commercial,385.03,"This service costs $736.02 as standard price when patient does not have any insurance.
+Same service costs $385.03 if patient has 'Humana Commercial' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+TRILOCK SCAPHOID PLATE,C1713,BOTH,736.02,Humana,Humana Medicare HMO,498.46,"This service costs $736.02 as standard price when patient does not have any insurance.
+Same service costs $498.46 if patient has 'Humana Medicare HMO' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+TRILOCK SCAPHOID PLATE,C1713,BOTH,736.02,Humana,Humana Medicare PPO,424.28,"This service costs $736.02 as standard price when patient does not have any insurance.
+Same service costs $424.28 if patient has 'Humana Medicare PPO' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+TRILOCK SCAPHOID PLATE,C1713,BOTH,736.02,,,,Standard charge with no insurance.,Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+TRILOCK GRIDPL,C1713,BOTH,58.43,Highmark,Highmark ACA Products PROF,44.59,"This service costs $58.43 as standard price when patient does not have any insurance.
+Same service costs $44.59 if patient has 'Highmark ACA Products PROF' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+TRILOCK GRIDPL,C1713,BOTH,58.43,Highmark,Highmark Medicare,51.1,"This service costs $58.43 as standard price when patient does not have any insurance.
+Same service costs $51.1 if patient has 'Highmark Medicare' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+TRILOCK GRIDPL,C1713,BOTH,58.43,,,,Standard charge with no insurance.,Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+ABDOMINAL CT SCAN,74150,BOTH,1047.34,Amerihealth,Amerihealth Medicare,981.93,"This service costs $1047.34 as standard price when patient does not have any insurance.
+Same service costs $981.93 if patient has 'Amerihealth Medicare' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+ABDOMINAL CT SCAN,74150,BOTH,1047.34,Amerihealth,Amerihealth Medicaid HC,680.59,"This service costs $1047.34 as standard price when patient does not have any insurance.
+Same service costs $680.59 if patient has 'Amerihealth Medicaid HC' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+ABDOMINAL CT SCAN,74150,BOTH,1047.34,Amerihealth,Amerihealth Commercial,892.37,"This service costs $1047.34 as standard price when patient does not have any insurance.
+Same service costs $892.37 if patient has 'Amerihealth Commercial' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+ABDOMINAL CT SCAN,74150,BOTH,1047.34,,,,Standard charge with no insurance.,Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+ABDOMINAL CT SCAN,74150,BOTH,1047.34,Highmark,Highmark Medicare,751.01,"This service costs $1047.34 as standard price when patient does not have any insurance.
+Same service costs $751.01 if patient has 'Highmark Medicare' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+ABDOMINAL CT SCAN,74150,BOTH,1047.34,Highmark,Highmark ACA Products PROF,871.13,"This service costs $1047.34 as standard price when patient does not have any insurance.
+Same service costs $871.13 if patient has 'Highmark ACA Products PROF' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+ABDOMINAL CT SCAN,74150,BOTH,1047.34,,,,Standard charge with no insurance.,Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+ABDOMINAL CT SCAN,74150,BOTH,1047.34,Aetna,Aetna Medicaid CHIP,848.02,"This service costs $1047.34 as standard price when patient does not have any insurance.
+Same service costs $848.02 if patient has 'Aetna Medicaid CHIP' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+ABDOMINAL CT SCAN,74150,BOTH,1047.34,Aetna,Aetna Commercial,979.4,"This service costs $1047.34 as standard price when patient does not have any insurance.
+Same service costs $979.4 if patient has 'Aetna Commercial' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+ABDOMINAL CT SCAN,74150,BOTH,1047.34,Aetna,Aetna Medicare,583.3,"This service costs $1047.34 as standard price when patient does not have any insurance.
+Same service costs $583.3 if patient has 'Aetna Medicare' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+ABDOMINAL CT SCAN,74150,BOTH,1047.34,,,,Standard charge with no insurance.,Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+CHG MRI BRAIN,70551,OUTPATIENT,1453.48,Aetna,Aetna Medicaid CHIP,1305.11,"This service costs $1453.48 as standard price when patient does not have any insurance.
+Same service costs $1305.11 if patient has 'Aetna Medicaid CHIP' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+CHG MRI BRAIN,70551,OUTPATIENT,1453.48,Aetna,Aetna Commercial,1114.94,"This service costs $1453.48 as standard price when patient does not have any insurance.
+Same service costs $1114.94 if patient has 'Aetna Commercial' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+CHG MRI BRAIN,70551,OUTPATIENT,1453.48,Aetna,Aetna Medicare,1313.91,"This service costs $1453.48 as standard price when patient does not have any insurance.
+Same service costs $1313.91 if patient has 'Aetna Medicare' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+CHG MRI BRAIN,70551,OUTPATIENT,1453.48,,,,Standard charge with no insurance.,Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+CHG MRI BRAIN,70551,OUTPATIENT,1453.48,Amerihealth,Amerihealth Commercial,929.58,"This service costs $1453.48 as standard price when patient does not have any insurance.
+Same service costs $929.58 if patient has 'Amerihealth Commercial' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+CHG MRI BRAIN,70551,OUTPATIENT,1453.48,Amerihealth,Amerihealth Medicaid HC,1235.49,"This service costs $1453.48 as standard price when patient does not have any insurance.
+Same service costs $1235.49 if patient has 'Amerihealth Medicaid HC' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+CHG MRI BRAIN,70551,OUTPATIENT,1453.48,,,,Standard charge with no insurance.,Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+TRILOCK SCAPHOID PLATE,C1713,BOTH,1210.21,,,,"Only standard charge and no price with insurance – meaning this service is provided by the hospital directly, and not through any insurance.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+ACETYLCYSTEINE NON-COMP UNIT,J7608,OUTPATIENT,406.05,United Healthcare,United Healthcare Commercial,310.65,"This service costs $406.05 as standard price when patient does not have any insurance.
+Same service costs $310.65 if patient has 'United Healthcare Commercial' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+ACETYLCYSTEINE NON-COMP UNIT,J7608,INPATIENT,406.05,United Healthcare,United Healthcare Commercial,310.65,"This service costs $406.05 as standard price when patient does not have any insurance.
+Same service costs $310.65 if patient has 'United Healthcare Commercial' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+ACETYLCYSTEINE NON-COMP UNIT,J7608,OUTPATIENT,406.05,United Healthcare,United Healthcare Medicaid,207.75,"This service costs $406.05 as standard price when patient does not have any insurance.
+Same service costs $207.75 if patient has 'United Healthcare Medicaid' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+ACETYLCYSTEINE NON-COMP UNIT,J7608,INPATIENT,406.05,United Healthcare,United Healthcare Medicaid,207.75,"This service costs $406.05 as standard price when patient does not have any insurance.
+Same service costs $207.75 if patient has 'United Healthcare Medicaid' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+ACETYLCYSTEINE NON-COMP UNIT,J7608,OUTPATIENT,406.05,,,,Standard charge with no insurance.,Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+ACETYLCYSTEINE NON-COMP UNIT,J7608,INPATIENT,406.05,,,,Standard charge with no insurance.,Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+1 CC STERILE SYRINGE&NEEDLE,A4206,INPATIENT,929.09,Amerihealth,Amerihealth Medicare,538.82,"This service costs $929.09 as standard price when patient does not have any insurance.
+Same service costs $538.82 if patient has 'Amerihealth Medicare' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+1 CC STERILE SYRINGE&NEEDLE,A4206,OUTPATIENT,929.09,Amerihealth,Amerihealth Medicare,538.82,"This service costs $929.09 as standard price when patient does not have any insurance.
+Same service costs $538.82 if patient has 'Amerihealth Medicare' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+1 CC STERILE SYRINGE&NEEDLE,A4206,INPATIENT,929.09,Amerihealth,Amerihealth Medicaid HC,706.36,"This service costs $929.09 as standard price when patient does not have any insurance.
+Same service costs $706.36 if patient has 'Amerihealth Medicaid HC' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+1 CC STERILE SYRINGE&NEEDLE,A4206,OUTPATIENT,929.09,Amerihealth,Amerihealth Medicaid HC,706.36,"This service costs $929.09 as standard price when patient does not have any insurance.
+Same service costs $706.36 if patient has 'Amerihealth Medicaid HC' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+1 CC STERILE SYRINGE&NEEDLE,A4206,INPATIENT,929.09,Amerihealth,Amerihealth Commercial,756.71,"This service costs $929.09 as standard price when patient does not have any insurance.
+Same service costs $756.71 if patient has 'Amerihealth Commercial' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+1 CC STERILE SYRINGE&NEEDLE,A4206,OUTPATIENT,929.09,Amerihealth,Amerihealth Commercial,756.71,"This service costs $929.09 as standard price when patient does not have any insurance.
+Same service costs $756.71 if patient has 'Amerihealth Commercial' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+1 CC STERILE SYRINGE&NEEDLE,A4206,INPATIENT,929.09,,,,Standard charge with no insurance.,Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+1 CC STERILE SYRINGE&NEEDLE,A4206,OUTPATIENT,929.09,,,,Standard charge with no insurance.,Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+1 CC STERILE SYRINGE&NEEDLE,A4206,INPATIENT,929.09,Aetna,Aetna Commercial,580.46,"This service costs $929.09 as standard price when patient does not have any insurance.
+Same service costs $580.46 if patient has 'Aetna Commercial' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+1 CC STERILE SYRINGE&NEEDLE,A4206,OUTPATIENT,929.09,Aetna,Aetna Commercial,580.46,"This service costs $929.09 as standard price when patient does not have any insurance.
+Same service costs $580.46 if patient has 'Aetna Commercial' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+1 CC STERILE SYRINGE&NEEDLE,A4206,INPATIENT,929.09,Aetna,Aetna Medicaid CHIP,490.55,"This service costs $929.09 as standard price when patient does not have any insurance.
+Same service costs $490.55 if patient has 'Aetna Medicaid CHIP' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+1 CC STERILE SYRINGE&NEEDLE,A4206,OUTPATIENT,929.09,Aetna,Aetna Medicaid CHIP,490.55,"This service costs $929.09 as standard price when patient does not have any insurance.
+Same service costs $490.55 if patient has 'Aetna Medicaid CHIP' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+1 CC STERILE SYRINGE&NEEDLE,A4206,INPATIENT,929.09,,,,Standard charge with no insurance.,Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+1 CC STERILE SYRINGE&NEEDLE,A4206,OUTPATIENT,929.09,,,,Standard charge with no insurance.,Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+1 CC STERILE SYRINGE&NEEDLE,A4206,INPATIENT,929.09,Humana,Humana Medicare PPO,791.89,"This service costs $929.09 as standard price when patient does not have any insurance.
+Same service costs $791.89 if patient has 'Humana Medicare PPO' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+1 CC STERILE SYRINGE&NEEDLE,A4206,OUTPATIENT,929.09,Humana,Humana Medicare PPO,791.89,"This service costs $929.09 as standard price when patient does not have any insurance.
+Same service costs $791.89 if patient has 'Humana Medicare PPO' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+1 CC STERILE SYRINGE&NEEDLE,A4206,INPATIENT,929.09,Humana,Humana Medicare HMO,831.17,"This service costs $929.09 as standard price when patient does not have any insurance.
+Same service costs $831.17 if patient has 'Humana Medicare HMO' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+1 CC STERILE SYRINGE&NEEDLE,A4206,OUTPATIENT,929.09,Humana,Humana Medicare HMO,831.17,"This service costs $929.09 as standard price when patient does not have any insurance.
+Same service costs $831.17 if patient has 'Humana Medicare HMO' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+1 CC STERILE SYRINGE&NEEDLE,A4206,INPATIENT,929.09,Humana,Humana Commercial,479.98,"This service costs $929.09 as standard price when patient does not have any insurance.
+Same service costs $479.98 if patient has 'Humana Commercial' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+1 CC STERILE SYRINGE&NEEDLE,A4206,OUTPATIENT,929.09,Humana,Humana Commercial,479.98,"This service costs $929.09 as standard price when patient does not have any insurance.
+Same service costs $479.98 if patient has 'Humana Commercial' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+1 CC STERILE SYRINGE&NEEDLE,A4206,INPATIENT,929.09,,,,Standard charge with no insurance.,Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+1 CC STERILE SYRINGE&NEEDLE,A4206,OUTPATIENT,929.09,,,,Standard charge with no insurance.,Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+BASIC METABOLIC PANEL,80048,BOTH,1494.85,,,,"Only standard charge and no price with insurance – meaning this service is provided by the hospital directly, and not through any insurance.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+TRILOCK GRIDPL,C1713,BOTH,1540.49,,,,"Only standard charge and no price with insurance – meaning this service is provided by the hospital directly, and not through any insurance.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+2D ECHO,93306,OUTPATIENT,367.9,,,,"Only standard charge and no price with insurance – meaning this service is provided by the hospital directly, and not through any insurance.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+TRILOCK GRIDPL,C1713,BOTH,1637.66,Highmark,Highmark Commercial PROF,928.04,"This service costs $1637.66 as standard price when patient does not have any insurance.
+Same service costs $928.04 if patient has 'Highmark Commercial PROF' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+TRILOCK GRIDPL,C1713,BOTH,1637.66,,,,Standard charge with no insurance.,Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+ABDOMINAL CT SCAN,74150,BOTH,493.45,United Healthcare,United Healthcare Medicaid,364.95,"This service costs $493.45 as standard price when patient does not have any insurance.
+Same service costs $364.95 if patient has 'United Healthcare Medicaid' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+ABDOMINAL CT SCAN,74150,BOTH,493.45,,,,Standard charge with no insurance.,Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+BASIC METABOLIC PANEL,80048,BOTH,1193.08,United Healthcare,United Healthcare Medicaid,945.21,"This service costs $1193.08 as standard price when patient does not have any insurance.
+Same service costs $945.21 if patient has 'United Healthcare Medicaid' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+BASIC METABOLIC PANEL,80048,BOTH,1193.08,,,,Standard charge with no insurance.,Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+CHEST X-RAY,71045,BOTH,1683.03,,,,"Only standard charge and no price with insurance – meaning this service is provided by the hospital directly, and not through any insurance.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+TRILOCK SCAPHOID PLATE,C1713,BOTH,1072.33,,,,"Only standard charge and no price with insurance – meaning this service is provided by the hospital directly, and not through any insurance.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+CHEST X-RAY,71045,BOTH,875.65,United Healthcare,United Healthcare CHIP,673.83,"This service costs $875.65 as standard price when patient does not have any insurance.
+Same service costs $673.83 if patient has 'United Healthcare CHIP' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+CHEST X-RAY,71045,BOTH,875.65,United Healthcare,United Healthcare Commercial,567.14,"This service costs $875.65 as standard price when patient does not have any insurance.
+Same service costs $567.14 if patient has 'United Healthcare Commercial' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+CHEST X-RAY,71045,BOTH,875.65,United Healthcare,United Healthcare Medicaid,549.13,"This service costs $875.65 as standard price when patient does not have any insurance.
+Same service costs $549.13 if patient has 'United Healthcare Medicaid' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+CHEST X-RAY,71045,BOTH,875.65,,,,Standard charge with no insurance.,Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+CHEST X-RAY,71045,BOTH,875.65,Highmark,Highmark ACA Products PROF,740.68,"This service costs $875.65 as standard price when patient does not have any insurance.
+Same service costs $740.68 if patient has 'Highmark ACA Products PROF' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+CHEST X-RAY,71045,BOTH,875.65,Highmark,Highmark Medicare,632.77,"This service costs $875.65 as standard price when patient does not have any insurance.
+Same service costs $632.77 if patient has 'Highmark Medicare' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+CHEST X-RAY,71045,BOTH,875.65,Highmark,Highmark Commercial PROF,790.26,"This service costs $875.65 as standard price when patient does not have any insurance.
+Same service costs $790.26 if patient has 'Highmark Commercial PROF' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+CHEST X-RAY,71045,BOTH,875.65,,,,Standard charge with no insurance.,Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+CHEST X-RAY,71045,BOTH,875.65,Amerihealth,Amerihealth Medicare,458.32,"This service costs $875.65 as standard price when patient does not have any insurance.
+Same service costs $458.32 if patient has 'Amerihealth Medicare' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+CHEST X-RAY,71045,BOTH,875.65,Amerihealth,Amerihealth Commercial,652.78,"This service costs $875.65 as standard price when patient does not have any insurance.
+Same service costs $652.78 if patient has 'Amerihealth Commercial' insurance plan.",Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628
+CHEST X-RAY,71045,BOTH,875.65,,,,Standard charge with no insurance.,Regional Medical Center,hospital4,19102,Philadelphia,PA,39.9507,-75.1628

@@ -1,0 +1,502 @@
+Service Description,Service Code,Setting,Standard Charge,Insurance,Plan Name,Negotiated Amount,Comments,Hospital Name,Hospital ID,Postal Code,City,State,Latitude,Longitude
+CHG MRI BRAIN,70551,OUTPATIENT,1060.13,Aetna,Aetna Medicaid CHIP,654.78,"This service costs $1060.13 as standard price when patient does not have any insurance.
+Same service costs $654.78 if patient has 'Aetna Medicaid CHIP' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+CHG MRI BRAIN,70551,OUTPATIENT,1060.13,Aetna,Aetna Medicare,836.39,"This service costs $1060.13 as standard price when patient does not have any insurance.
+Same service costs $836.39 if patient has 'Aetna Medicare' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+CHG MRI BRAIN,70551,OUTPATIENT,1060.13,,,,Standard charge with no insurance.,Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+CHG MRI BRAIN,70551,OUTPATIENT,1060.13,United Healthcare,United Healthcare Commercial,567.6,"This service costs $1060.13 as standard price when patient does not have any insurance.
+Same service costs $567.6 if patient has 'United Healthcare Commercial' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+CHG MRI BRAIN,70551,OUTPATIENT,1060.13,,,,Standard charge with no insurance.,Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+CHG MRI BRAIN,70551,OUTPATIENT,1060.13,Amerihealth,Amerihealth Medicaid HC,761.32,"This service costs $1060.13 as standard price when patient does not have any insurance.
+Same service costs $761.32 if patient has 'Amerihealth Medicaid HC' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+CHG MRI BRAIN,70551,OUTPATIENT,1060.13,Amerihealth,Amerihealth Commercial,652.81,"This service costs $1060.13 as standard price when patient does not have any insurance.
+Same service costs $652.81 if patient has 'Amerihealth Commercial' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+CHG MRI BRAIN,70551,OUTPATIENT,1060.13,,,,Standard charge with no insurance.,Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+2D ECHO,93306,OUTPATIENT,1666.51,Aetna,Aetna Commercial,1036.35,"This service costs $1666.51 as standard price when patient does not have any insurance.
+Same service costs $1036.35 if patient has 'Aetna Commercial' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+2D ECHO,93306,OUTPATIENT,1666.51,Aetna,Aetna Medicaid CHIP,1380.39,"This service costs $1666.51 as standard price when patient does not have any insurance.
+Same service costs $1380.39 if patient has 'Aetna Medicaid CHIP' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+2D ECHO,93306,OUTPATIENT,1666.51,Aetna,Aetna Medicare,882.83,"This service costs $1666.51 as standard price when patient does not have any insurance.
+Same service costs $882.83 if patient has 'Aetna Medicare' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+2D ECHO,93306,OUTPATIENT,1666.51,,,,Standard charge with no insurance.,Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+2D ECHO,93306,OUTPATIENT,1666.51,Humana,Humana Medicare PPO,975.9,"This service costs $1666.51 as standard price when patient does not have any insurance.
+Same service costs $975.9 if patient has 'Humana Medicare PPO' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+2D ECHO,93306,OUTPATIENT,1666.51,Humana,Humana Commercial,1393.13,"This service costs $1666.51 as standard price when patient does not have any insurance.
+Same service costs $1393.13 if patient has 'Humana Commercial' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+2D ECHO,93306,OUTPATIENT,1666.51,,,,Standard charge with no insurance.,Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+COMPLETE BLOOD COUNT,85025,BOTH,1419.78,Humana,Humana Commercial,801.94,"This service costs $1419.78 as standard price when patient does not have any insurance.
+Same service costs $801.94 if patient has 'Humana Commercial' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+COMPLETE BLOOD COUNT,85025,BOTH,1419.78,Humana,Humana Medicare HMO,998.75,"This service costs $1419.78 as standard price when patient does not have any insurance.
+Same service costs $998.75 if patient has 'Humana Medicare HMO' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+COMPLETE BLOOD COUNT,85025,BOTH,1419.78,,,,Standard charge with no insurance.,Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+COMPLETE BLOOD COUNT,85025,BOTH,1419.78,Amerihealth,Amerihealth Medicaid HC,1182.91,"This service costs $1419.78 as standard price when patient does not have any insurance.
+Same service costs $1182.91 if patient has 'Amerihealth Medicaid HC' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+COMPLETE BLOOD COUNT,85025,BOTH,1419.78,Amerihealth,Amerihealth Medicare,901.12,"This service costs $1419.78 as standard price when patient does not have any insurance.
+Same service costs $901.12 if patient has 'Amerihealth Medicare' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+COMPLETE BLOOD COUNT,85025,BOTH,1419.78,,,,Standard charge with no insurance.,Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+ABDOMINAL CT SCAN,74150,BOTH,1346.52,Amerihealth,Amerihealth Medicare,762.79,"This service costs $1346.52 as standard price when patient does not have any insurance.
+Same service costs $762.79 if patient has 'Amerihealth Medicare' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+ABDOMINAL CT SCAN,74150,BOTH,1346.52,,,,Standard charge with no insurance.,Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+CHEST X-RAY,71045,BOTH,937.23,Aetna,Aetna Commercial,794.01,"This service costs $937.23 as standard price when patient does not have any insurance.
+Same service costs $794.01 if patient has 'Aetna Commercial' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+CHEST X-RAY,71045,BOTH,937.23,,,,Standard charge with no insurance.,Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+TRILOCK GRIDPL,C1713,BOTH,1456.63,Highmark,Highmark Medicare,1079.24,"This service costs $1456.63 as standard price when patient does not have any insurance.
+Same service costs $1079.24 if patient has 'Highmark Medicare' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+TRILOCK GRIDPL,C1713,BOTH,1456.63,,,,Standard charge with no insurance.,Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+TRILOCK GRIDPL,C1713,BOTH,1456.63,Amerihealth,Amerihealth Medicaid HC,888.37,"This service costs $1456.63 as standard price when patient does not have any insurance.
+Same service costs $888.37 if patient has 'Amerihealth Medicaid HC' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+TRILOCK GRIDPL,C1713,BOTH,1456.63,,,,Standard charge with no insurance.,Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+TRILOCK GRIDPL,C1713,BOTH,1456.63,Humana,Humana Medicare PPO,1240.78,"This service costs $1456.63 as standard price when patient does not have any insurance.
+Same service costs $1240.78 if patient has 'Humana Medicare PPO' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+TRILOCK GRIDPL,C1713,BOTH,1456.63,,,,Standard charge with no insurance.,Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+BASIC METABOLIC PANEL,80048,BOTH,1075.55,Aetna,Aetna Commercial,937.51,"This service costs $1075.55 as standard price when patient does not have any insurance.
+Same service costs $937.51 if patient has 'Aetna Commercial' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+BASIC METABOLIC PANEL,80048,BOTH,1075.55,Aetna,Aetna Medicare,844.01,"This service costs $1075.55 as standard price when patient does not have any insurance.
+Same service costs $844.01 if patient has 'Aetna Medicare' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+BASIC METABOLIC PANEL,80048,BOTH,1075.55,,,,Standard charge with no insurance.,Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+BASIC METABOLIC PANEL,80048,BOTH,1075.55,Humana,Humana Medicare PPO,978.11,"This service costs $1075.55 as standard price when patient does not have any insurance.
+Same service costs $978.11 if patient has 'Humana Medicare PPO' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+BASIC METABOLIC PANEL,80048,BOTH,1075.55,,,,Standard charge with no insurance.,Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+BASIC METABOLIC PANEL,80048,BOTH,1075.55,Highmark,Highmark ACA Products PROF,620.69,"This service costs $1075.55 as standard price when patient does not have any insurance.
+Same service costs $620.69 if patient has 'Highmark ACA Products PROF' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+BASIC METABOLIC PANEL,80048,BOTH,1075.55,,,,Standard charge with no insurance.,Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+1 CC STERILE SYRINGE&NEEDLE,A4206,INPATIENT,59.54,Humana,Humana Medicare PPO,50.27,"This service costs $59.54 as standard price when patient does not have any insurance.
+Same service costs $50.27 if patient has 'Humana Medicare PPO' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+1 CC STERILE SYRINGE&NEEDLE,A4206,OUTPATIENT,59.54,Humana,Humana Medicare PPO,50.27,"This service costs $59.54 as standard price when patient does not have any insurance.
+Same service costs $50.27 if patient has 'Humana Medicare PPO' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+1 CC STERILE SYRINGE&NEEDLE,A4206,INPATIENT,59.54,Humana,Humana Commercial,34.12,"This service costs $59.54 as standard price when patient does not have any insurance.
+Same service costs $34.12 if patient has 'Humana Commercial' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+1 CC STERILE SYRINGE&NEEDLE,A4206,OUTPATIENT,59.54,Humana,Humana Commercial,34.12,"This service costs $59.54 as standard price when patient does not have any insurance.
+Same service costs $34.12 if patient has 'Humana Commercial' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+1 CC STERILE SYRINGE&NEEDLE,A4206,INPATIENT,59.54,Humana,Humana Medicare HMO,31.19,"This service costs $59.54 as standard price when patient does not have any insurance.
+Same service costs $31.19 if patient has 'Humana Medicare HMO' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+1 CC STERILE SYRINGE&NEEDLE,A4206,OUTPATIENT,59.54,Humana,Humana Medicare HMO,31.19,"This service costs $59.54 as standard price when patient does not have any insurance.
+Same service costs $31.19 if patient has 'Humana Medicare HMO' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+1 CC STERILE SYRINGE&NEEDLE,A4206,INPATIENT,59.54,,,,Standard charge with no insurance.,Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+1 CC STERILE SYRINGE&NEEDLE,A4206,OUTPATIENT,59.54,,,,Standard charge with no insurance.,Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+1 CC STERILE SYRINGE&NEEDLE,A4206,INPATIENT,59.54,United Healthcare,United Healthcare CHIP,49.27,"This service costs $59.54 as standard price when patient does not have any insurance.
+Same service costs $49.27 if patient has 'United Healthcare CHIP' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+1 CC STERILE SYRINGE&NEEDLE,A4206,OUTPATIENT,59.54,United Healthcare,United Healthcare CHIP,49.27,"This service costs $59.54 as standard price when patient does not have any insurance.
+Same service costs $49.27 if patient has 'United Healthcare CHIP' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+1 CC STERILE SYRINGE&NEEDLE,A4206,INPATIENT,59.54,United Healthcare,United Healthcare Medicaid,38.45,"This service costs $59.54 as standard price when patient does not have any insurance.
+Same service costs $38.45 if patient has 'United Healthcare Medicaid' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+1 CC STERILE SYRINGE&NEEDLE,A4206,OUTPATIENT,59.54,United Healthcare,United Healthcare Medicaid,38.45,"This service costs $59.54 as standard price when patient does not have any insurance.
+Same service costs $38.45 if patient has 'United Healthcare Medicaid' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+1 CC STERILE SYRINGE&NEEDLE,A4206,INPATIENT,59.54,United Healthcare,United Healthcare Commercial,56.05,"This service costs $59.54 as standard price when patient does not have any insurance.
+Same service costs $56.05 if patient has 'United Healthcare Commercial' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+1 CC STERILE SYRINGE&NEEDLE,A4206,OUTPATIENT,59.54,United Healthcare,United Healthcare Commercial,56.05,"This service costs $59.54 as standard price when patient does not have any insurance.
+Same service costs $56.05 if patient has 'United Healthcare Commercial' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+1 CC STERILE SYRINGE&NEEDLE,A4206,INPATIENT,59.54,,,,Standard charge with no insurance.,Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+1 CC STERILE SYRINGE&NEEDLE,A4206,OUTPATIENT,59.54,,,,Standard charge with no insurance.,Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+1 CC STERILE SYRINGE&NEEDLE,A4206,INPATIENT,59.54,Amerihealth,Amerihealth Medicaid HC,35.45,"This service costs $59.54 as standard price when patient does not have any insurance.
+Same service costs $35.45 if patient has 'Amerihealth Medicaid HC' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+1 CC STERILE SYRINGE&NEEDLE,A4206,OUTPATIENT,59.54,Amerihealth,Amerihealth Medicaid HC,35.45,"This service costs $59.54 as standard price when patient does not have any insurance.
+Same service costs $35.45 if patient has 'Amerihealth Medicaid HC' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+1 CC STERILE SYRINGE&NEEDLE,A4206,INPATIENT,59.54,Amerihealth,Amerihealth Commercial,30.11,"This service costs $59.54 as standard price when patient does not have any insurance.
+Same service costs $30.11 if patient has 'Amerihealth Commercial' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+1 CC STERILE SYRINGE&NEEDLE,A4206,OUTPATIENT,59.54,Amerihealth,Amerihealth Commercial,30.11,"This service costs $59.54 as standard price when patient does not have any insurance.
+Same service costs $30.11 if patient has 'Amerihealth Commercial' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+1 CC STERILE SYRINGE&NEEDLE,A4206,INPATIENT,59.54,Amerihealth,Amerihealth Medicare,48.9,"This service costs $59.54 as standard price when patient does not have any insurance.
+Same service costs $48.9 if patient has 'Amerihealth Medicare' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+1 CC STERILE SYRINGE&NEEDLE,A4206,OUTPATIENT,59.54,Amerihealth,Amerihealth Medicare,48.9,"This service costs $59.54 as standard price when patient does not have any insurance.
+Same service costs $48.9 if patient has 'Amerihealth Medicare' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+1 CC STERILE SYRINGE&NEEDLE,A4206,INPATIENT,59.54,,,,Standard charge with no insurance.,Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+1 CC STERILE SYRINGE&NEEDLE,A4206,OUTPATIENT,59.54,,,,Standard charge with no insurance.,Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+TRILOCK SCAPHOID PLATE,C1713,BOTH,421.79,United Healthcare,United Healthcare Commercial,334.18,"This service costs $421.79 as standard price when patient does not have any insurance.
+Same service costs $334.18 if patient has 'United Healthcare Commercial' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+TRILOCK SCAPHOID PLATE,C1713,BOTH,421.79,United Healthcare,United Healthcare CHIP,242.07,"This service costs $421.79 as standard price when patient does not have any insurance.
+Same service costs $242.07 if patient has 'United Healthcare CHIP' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+TRILOCK SCAPHOID PLATE,C1713,BOTH,421.79,,,,Standard charge with no insurance.,Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+TRILOCK SCAPHOID PLATE,C1713,BOTH,421.79,Highmark,Highmark Commercial PROF,279.45,"This service costs $421.79 as standard price when patient does not have any insurance.
+Same service costs $279.45 if patient has 'Highmark Commercial PROF' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+TRILOCK SCAPHOID PLATE,C1713,BOTH,421.79,Highmark,Highmark Medicare,283.04,"This service costs $421.79 as standard price when patient does not have any insurance.
+Same service costs $283.04 if patient has 'Highmark Medicare' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+TRILOCK SCAPHOID PLATE,C1713,BOTH,421.79,,,,Standard charge with no insurance.,Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+TRILOCK SCAPHOID PLATE,C1713,BOTH,421.79,Aetna,Aetna Commercial,256.8,"This service costs $421.79 as standard price when patient does not have any insurance.
+Same service costs $256.8 if patient has 'Aetna Commercial' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+TRILOCK SCAPHOID PLATE,C1713,BOTH,421.79,,,,Standard charge with no insurance.,Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+ACETYLCYSTEINE NON-COMP UNIT,J7608,OUTPATIENT,1966.24,Aetna,Aetna Medicare,1003.33,"This service costs $1966.24 as standard price when patient does not have any insurance.
+Same service costs $1003.33 if patient has 'Aetna Medicare' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+ACETYLCYSTEINE NON-COMP UNIT,J7608,INPATIENT,1966.24,Aetna,Aetna Medicare,1003.33,"This service costs $1966.24 as standard price when patient does not have any insurance.
+Same service costs $1003.33 if patient has 'Aetna Medicare' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+ACETYLCYSTEINE NON-COMP UNIT,J7608,OUTPATIENT,1966.24,Aetna,Aetna Medicaid CHIP,1002.88,"This service costs $1966.24 as standard price when patient does not have any insurance.
+Same service costs $1002.88 if patient has 'Aetna Medicaid CHIP' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+ACETYLCYSTEINE NON-COMP UNIT,J7608,INPATIENT,1966.24,Aetna,Aetna Medicaid CHIP,1002.88,"This service costs $1966.24 as standard price when patient does not have any insurance.
+Same service costs $1002.88 if patient has 'Aetna Medicaid CHIP' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+ACETYLCYSTEINE NON-COMP UNIT,J7608,OUTPATIENT,1966.24,Aetna,Aetna Commercial,1673.88,"This service costs $1966.24 as standard price when patient does not have any insurance.
+Same service costs $1673.88 if patient has 'Aetna Commercial' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+ACETYLCYSTEINE NON-COMP UNIT,J7608,INPATIENT,1966.24,Aetna,Aetna Commercial,1673.88,"This service costs $1966.24 as standard price when patient does not have any insurance.
+Same service costs $1673.88 if patient has 'Aetna Commercial' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+ACETYLCYSTEINE NON-COMP UNIT,J7608,OUTPATIENT,1966.24,,,,Standard charge with no insurance.,Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+ACETYLCYSTEINE NON-COMP UNIT,J7608,INPATIENT,1966.24,,,,Standard charge with no insurance.,Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+ACETYLCYSTEINE NON-COMP UNIT,J7608,OUTPATIENT,1966.24,United Healthcare,United Healthcare Medicaid,1730.4,"This service costs $1966.24 as standard price when patient does not have any insurance.
+Same service costs $1730.4 if patient has 'United Healthcare Medicaid' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+ACETYLCYSTEINE NON-COMP UNIT,J7608,INPATIENT,1966.24,United Healthcare,United Healthcare Medicaid,1730.4,"This service costs $1966.24 as standard price when patient does not have any insurance.
+Same service costs $1730.4 if patient has 'United Healthcare Medicaid' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+ACETYLCYSTEINE NON-COMP UNIT,J7608,OUTPATIENT,1966.24,United Healthcare,United Healthcare Commercial,1487.42,"This service costs $1966.24 as standard price when patient does not have any insurance.
+Same service costs $1487.42 if patient has 'United Healthcare Commercial' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+ACETYLCYSTEINE NON-COMP UNIT,J7608,INPATIENT,1966.24,United Healthcare,United Healthcare Commercial,1487.42,"This service costs $1966.24 as standard price when patient does not have any insurance.
+Same service costs $1487.42 if patient has 'United Healthcare Commercial' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+ACETYLCYSTEINE NON-COMP UNIT,J7608,OUTPATIENT,1966.24,United Healthcare,United Healthcare CHIP,1191.23,"This service costs $1966.24 as standard price when patient does not have any insurance.
+Same service costs $1191.23 if patient has 'United Healthcare CHIP' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+ACETYLCYSTEINE NON-COMP UNIT,J7608,INPATIENT,1966.24,United Healthcare,United Healthcare CHIP,1191.23,"This service costs $1966.24 as standard price when patient does not have any insurance.
+Same service costs $1191.23 if patient has 'United Healthcare CHIP' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+ACETYLCYSTEINE NON-COMP UNIT,J7608,OUTPATIENT,1966.24,,,,Standard charge with no insurance.,Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+ACETYLCYSTEINE NON-COMP UNIT,J7608,INPATIENT,1966.24,,,,Standard charge with no insurance.,Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+ACETYLCYSTEINE NON-COMP UNIT,J7608,OUTPATIENT,1966.24,Humana,Humana Medicare PPO,1191.24,"This service costs $1966.24 as standard price when patient does not have any insurance.
+Same service costs $1191.24 if patient has 'Humana Medicare PPO' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+ACETYLCYSTEINE NON-COMP UNIT,J7608,INPATIENT,1966.24,Humana,Humana Medicare PPO,1191.24,"This service costs $1966.24 as standard price when patient does not have any insurance.
+Same service costs $1191.24 if patient has 'Humana Medicare PPO' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+ACETYLCYSTEINE NON-COMP UNIT,J7608,OUTPATIENT,1966.24,,,,Standard charge with no insurance.,Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+ACETYLCYSTEINE NON-COMP UNIT,J7608,INPATIENT,1966.24,,,,Standard charge with no insurance.,Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+COMPLETE BLOOD COUNT,85025,BOTH,307.48,,,,"Only standard charge and no price with insurance – meaning this service is provided by the hospital directly, and not through any insurance.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+COMPLETE BLOOD COUNT,85025,BOTH,1980.02,United Healthcare,United Healthcare Medicaid,1496.52,"This service costs $1980.02 as standard price when patient does not have any insurance.
+Same service costs $1496.52 if patient has 'United Healthcare Medicaid' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+COMPLETE BLOOD COUNT,85025,BOTH,1980.02,United Healthcare,United Healthcare Commercial,1834.49,"This service costs $1980.02 as standard price when patient does not have any insurance.
+Same service costs $1834.49 if patient has 'United Healthcare Commercial' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+COMPLETE BLOOD COUNT,85025,BOTH,1980.02,,,,Standard charge with no insurance.,Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+COMPLETE BLOOD COUNT,85025,BOTH,1980.02,Aetna,Aetna Medicaid CHIP,1335.74,"This service costs $1980.02 as standard price when patient does not have any insurance.
+Same service costs $1335.74 if patient has 'Aetna Medicaid CHIP' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+COMPLETE BLOOD COUNT,85025,BOTH,1980.02,Aetna,Aetna Medicare,1306.91,"This service costs $1980.02 as standard price when patient does not have any insurance.
+Same service costs $1306.91 if patient has 'Aetna Medicare' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+COMPLETE BLOOD COUNT,85025,BOTH,1980.02,,,,Standard charge with no insurance.,Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+2D ECHO,93306,OUTPATIENT,585.29,Highmark,Highmark Medicare,553.13,"This service costs $585.29 as standard price when patient does not have any insurance.
+Same service costs $553.13 if patient has 'Highmark Medicare' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+2D ECHO,93306,OUTPATIENT,585.29,,,,Standard charge with no insurance.,Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+2D ECHO,93306,OUTPATIENT,585.29,Humana,Humana Medicare PPO,514.72,"This service costs $585.29 as standard price when patient does not have any insurance.
+Same service costs $514.72 if patient has 'Humana Medicare PPO' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+2D ECHO,93306,OUTPATIENT,585.29,,,,Standard charge with no insurance.,Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+CHEST X-RAY,71045,BOTH,542.74,Humana,Humana Commercial,468.85,"This service costs $542.74 as standard price when patient does not have any insurance.
+Same service costs $468.85 if patient has 'Humana Commercial' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+CHEST X-RAY,71045,BOTH,542.74,Humana,Humana Medicare HMO,422.43,"This service costs $542.74 as standard price when patient does not have any insurance.
+Same service costs $422.43 if patient has 'Humana Medicare HMO' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+CHEST X-RAY,71045,BOTH,542.74,,,,Standard charge with no insurance.,Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+CHEST X-RAY,71045,BOTH,542.74,Amerihealth,Amerihealth Medicare,436.34,"This service costs $542.74 as standard price when patient does not have any insurance.
+Same service costs $436.34 if patient has 'Amerihealth Medicare' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+CHEST X-RAY,71045,BOTH,542.74,,,,Standard charge with no insurance.,Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+CHEST X-RAY,71045,BOTH,542.74,United Healthcare,United Healthcare Medicaid,465.25,"This service costs $542.74 as standard price when patient does not have any insurance.
+Same service costs $465.25 if patient has 'United Healthcare Medicaid' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+CHEST X-RAY,71045,BOTH,542.74,United Healthcare,United Healthcare CHIP,290.98,"This service costs $542.74 as standard price when patient does not have any insurance.
+Same service costs $290.98 if patient has 'United Healthcare CHIP' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+CHEST X-RAY,71045,BOTH,542.74,United Healthcare,United Healthcare Commercial,288.48,"This service costs $542.74 as standard price when patient does not have any insurance.
+Same service costs $288.48 if patient has 'United Healthcare Commercial' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+CHEST X-RAY,71045,BOTH,542.74,,,,Standard charge with no insurance.,Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+BASIC METABOLIC PANEL,80048,BOTH,1375.65,Amerihealth,Amerihealth Commercial,973.64,"This service costs $1375.65 as standard price when patient does not have any insurance.
+Same service costs $973.64 if patient has 'Amerihealth Commercial' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+BASIC METABOLIC PANEL,80048,BOTH,1375.65,Amerihealth,Amerihealth Medicaid HC,853.31,"This service costs $1375.65 as standard price when patient does not have any insurance.
+Same service costs $853.31 if patient has 'Amerihealth Medicaid HC' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+BASIC METABOLIC PANEL,80048,BOTH,1375.65,Amerihealth,Amerihealth Medicare,1106.09,"This service costs $1375.65 as standard price when patient does not have any insurance.
+Same service costs $1106.09 if patient has 'Amerihealth Medicare' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+BASIC METABOLIC PANEL,80048,BOTH,1375.65,,,,Standard charge with no insurance.,Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+BASIC METABOLIC PANEL,80048,BOTH,1375.65,Aetna,Aetna Medicare,706.7,"This service costs $1375.65 as standard price when patient does not have any insurance.
+Same service costs $706.7 if patient has 'Aetna Medicare' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+BASIC METABOLIC PANEL,80048,BOTH,1375.65,Aetna,Aetna Medicaid CHIP,1019.77,"This service costs $1375.65 as standard price when patient does not have any insurance.
+Same service costs $1019.77 if patient has 'Aetna Medicaid CHIP' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+BASIC METABOLIC PANEL,80048,BOTH,1375.65,Aetna,Aetna Commercial,1286.46,"This service costs $1375.65 as standard price when patient does not have any insurance.
+Same service costs $1286.46 if patient has 'Aetna Commercial' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+BASIC METABOLIC PANEL,80048,BOTH,1375.65,,,,Standard charge with no insurance.,Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+BASIC METABOLIC PANEL,80048,BOTH,1375.65,Highmark,Highmark Commercial PROF,804.83,"This service costs $1375.65 as standard price when patient does not have any insurance.
+Same service costs $804.83 if patient has 'Highmark Commercial PROF' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+BASIC METABOLIC PANEL,80048,BOTH,1375.65,Highmark,Highmark ACA Products PROF,1163.21,"This service costs $1375.65 as standard price when patient does not have any insurance.
+Same service costs $1163.21 if patient has 'Highmark ACA Products PROF' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+BASIC METABOLIC PANEL,80048,BOTH,1375.65,Highmark,Highmark Medicare,1277.07,"This service costs $1375.65 as standard price when patient does not have any insurance.
+Same service costs $1277.07 if patient has 'Highmark Medicare' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+BASIC METABOLIC PANEL,80048,BOTH,1375.65,,,,Standard charge with no insurance.,Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+2D ECHO,93306,OUTPATIENT,1213.48,,,,"Only standard charge and no price with insurance – meaning this service is provided by the hospital directly, and not through any insurance.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+ACETYLCYSTEINE NON-COMP UNIT,J7608,OUTPATIENT,1606.67,,,,"Only standard charge and no price with insurance – meaning this service is provided by the hospital directly, and not through any insurance.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+ACETYLCYSTEINE NON-COMP UNIT,J7608,INPATIENT,1606.67,,,,"Only standard charge and no price with insurance – meaning this service is provided by the hospital directly, and not through any insurance.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+CHG MRI BRAIN,70551,OUTPATIENT,1824.03,United Healthcare,United Healthcare Medicaid,1606.39,"This service costs $1824.03 as standard price when patient does not have any insurance.
+Same service costs $1606.39 if patient has 'United Healthcare Medicaid' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+CHG MRI BRAIN,70551,OUTPATIENT,1824.03,United Healthcare,United Healthcare CHIP,1307.79,"This service costs $1824.03 as standard price when patient does not have any insurance.
+Same service costs $1307.79 if patient has 'United Healthcare CHIP' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+CHG MRI BRAIN,70551,OUTPATIENT,1824.03,United Healthcare,United Healthcare Commercial,1174.82,"This service costs $1824.03 as standard price when patient does not have any insurance.
+Same service costs $1174.82 if patient has 'United Healthcare Commercial' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+CHG MRI BRAIN,70551,OUTPATIENT,1824.03,,,,Standard charge with no insurance.,Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+ABDOMINAL CT SCAN,74150,BOTH,342.1,,,,"Only standard charge and no price with insurance – meaning this service is provided by the hospital directly, and not through any insurance.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+ABDOMINAL CT SCAN,74150,BOTH,1827.19,Amerihealth,Amerihealth Commercial,1480.14,"This service costs $1827.19 as standard price when patient does not have any insurance.
+Same service costs $1480.14 if patient has 'Amerihealth Commercial' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+ABDOMINAL CT SCAN,74150,BOTH,1827.19,,,,Standard charge with no insurance.,Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+ACETYLCYSTEINE NON-COMP UNIT,J7608,OUTPATIENT,1028.67,,,,"Only standard charge and no price with insurance – meaning this service is provided by the hospital directly, and not through any insurance.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+ACETYLCYSTEINE NON-COMP UNIT,J7608,INPATIENT,1028.67,,,,"Only standard charge and no price with insurance – meaning this service is provided by the hospital directly, and not through any insurance.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+CHEST X-RAY,71045,BOTH,476.78,United Healthcare,United Healthcare Commercial,356.33,"This service costs $476.78 as standard price when patient does not have any insurance.
+Same service costs $356.33 if patient has 'United Healthcare Commercial' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+CHEST X-RAY,71045,BOTH,476.78,United Healthcare,United Healthcare Medicaid,262.19,"This service costs $476.78 as standard price when patient does not have any insurance.
+Same service costs $262.19 if patient has 'United Healthcare Medicaid' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+CHEST X-RAY,71045,BOTH,476.78,,,,Standard charge with no insurance.,Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+2D ECHO,93306,OUTPATIENT,1132.13,United Healthcare,United Healthcare Commercial,633.16,"This service costs $1132.13 as standard price when patient does not have any insurance.
+Same service costs $633.16 if patient has 'United Healthcare Commercial' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+2D ECHO,93306,OUTPATIENT,1132.13,United Healthcare,United Healthcare CHIP,797.63,"This service costs $1132.13 as standard price when patient does not have any insurance.
+Same service costs $797.63 if patient has 'United Healthcare CHIP' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+2D ECHO,93306,OUTPATIENT,1132.13,,,,Standard charge with no insurance.,Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+2D ECHO,93306,OUTPATIENT,1132.13,Amerihealth,Amerihealth Commercial,880.0,"This service costs $1132.13 as standard price when patient does not have any insurance.
+Same service costs $880.0 if patient has 'Amerihealth Commercial' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+2D ECHO,93306,OUTPATIENT,1132.13,Amerihealth,Amerihealth Medicare,842.12,"This service costs $1132.13 as standard price when patient does not have any insurance.
+Same service costs $842.12 if patient has 'Amerihealth Medicare' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+2D ECHO,93306,OUTPATIENT,1132.13,,,,Standard charge with no insurance.,Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+COMPLETE BLOOD COUNT,85025,BOTH,1301.05,Highmark,Highmark Medicare,792.57,"This service costs $1301.05 as standard price when patient does not have any insurance.
+Same service costs $792.57 if patient has 'Highmark Medicare' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+COMPLETE BLOOD COUNT,85025,BOTH,1301.05,Highmark,Highmark ACA Products PROF,700.05,"This service costs $1301.05 as standard price when patient does not have any insurance.
+Same service costs $700.05 if patient has 'Highmark ACA Products PROF' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+COMPLETE BLOOD COUNT,85025,BOTH,1301.05,Highmark,Highmark Commercial PROF,907.15,"This service costs $1301.05 as standard price when patient does not have any insurance.
+Same service costs $907.15 if patient has 'Highmark Commercial PROF' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+COMPLETE BLOOD COUNT,85025,BOTH,1301.05,,,,Standard charge with no insurance.,Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+COMPLETE BLOOD COUNT,85025,BOTH,1301.05,Humana,Humana Medicare PPO,959.57,"This service costs $1301.05 as standard price when patient does not have any insurance.
+Same service costs $959.57 if patient has 'Humana Medicare PPO' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+COMPLETE BLOOD COUNT,85025,BOTH,1301.05,,,,Standard charge with no insurance.,Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+1 CC STERILE SYRINGE&NEEDLE,A4206,INPATIENT,897.0,,,,"Only standard charge and no price with insurance – meaning this service is provided by the hospital directly, and not through any insurance.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+1 CC STERILE SYRINGE&NEEDLE,A4206,OUTPATIENT,897.0,,,,"Only standard charge and no price with insurance – meaning this service is provided by the hospital directly, and not through any insurance.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+TRILOCK SCAPHOID PLATE,C1713,BOTH,356.23,United Healthcare,United Healthcare CHIP,208.32,"This service costs $356.23 as standard price when patient does not have any insurance.
+Same service costs $208.32 if patient has 'United Healthcare CHIP' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+TRILOCK SCAPHOID PLATE,C1713,BOTH,356.23,United Healthcare,United Healthcare Commercial,323.35,"This service costs $356.23 as standard price when patient does not have any insurance.
+Same service costs $323.35 if patient has 'United Healthcare Commercial' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+TRILOCK SCAPHOID PLATE,C1713,BOTH,356.23,United Healthcare,United Healthcare Medicaid,306.48,"This service costs $356.23 as standard price when patient does not have any insurance.
+Same service costs $306.48 if patient has 'United Healthcare Medicaid' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+TRILOCK SCAPHOID PLATE,C1713,BOTH,356.23,,,,Standard charge with no insurance.,Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+TRILOCK SCAPHOID PLATE,C1713,BOTH,356.23,Amerihealth,Amerihealth Commercial,201.72,"This service costs $356.23 as standard price when patient does not have any insurance.
+Same service costs $201.72 if patient has 'Amerihealth Commercial' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+TRILOCK SCAPHOID PLATE,C1713,BOTH,356.23,,,,Standard charge with no insurance.,Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+1 CC STERILE SYRINGE&NEEDLE,A4206,INPATIENT,1844.89,,,,"Only standard charge and no price with insurance – meaning this service is provided by the hospital directly, and not through any insurance.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+1 CC STERILE SYRINGE&NEEDLE,A4206,OUTPATIENT,1844.89,,,,"Only standard charge and no price with insurance – meaning this service is provided by the hospital directly, and not through any insurance.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+ABDOMINAL CT SCAN,74150,BOTH,1366.73,Humana,Humana Medicare HMO,1184.86,"This service costs $1366.73 as standard price when patient does not have any insurance.
+Same service costs $1184.86 if patient has 'Humana Medicare HMO' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+ABDOMINAL CT SCAN,74150,BOTH,1366.73,Humana,Humana Medicare PPO,1064.41,"This service costs $1366.73 as standard price when patient does not have any insurance.
+Same service costs $1064.41 if patient has 'Humana Medicare PPO' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+ABDOMINAL CT SCAN,74150,BOTH,1366.73,Humana,Humana Commercial,978.55,"This service costs $1366.73 as standard price when patient does not have any insurance.
+Same service costs $978.55 if patient has 'Humana Commercial' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+ABDOMINAL CT SCAN,74150,BOTH,1366.73,,,,Standard charge with no insurance.,Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+ACETYLCYSTEINE NON-COMP UNIT,J7608,OUTPATIENT,27.47,Aetna,Aetna Medicare,17.48,"This service costs $27.47 as standard price when patient does not have any insurance.
+Same service costs $17.48 if patient has 'Aetna Medicare' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+ACETYLCYSTEINE NON-COMP UNIT,J7608,INPATIENT,27.47,Aetna,Aetna Medicare,17.48,"This service costs $27.47 as standard price when patient does not have any insurance.
+Same service costs $17.48 if patient has 'Aetna Medicare' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+ACETYLCYSTEINE NON-COMP UNIT,J7608,OUTPATIENT,27.47,Aetna,Aetna Medicaid CHIP,16.38,"This service costs $27.47 as standard price when patient does not have any insurance.
+Same service costs $16.38 if patient has 'Aetna Medicaid CHIP' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+ACETYLCYSTEINE NON-COMP UNIT,J7608,INPATIENT,27.47,Aetna,Aetna Medicaid CHIP,16.38,"This service costs $27.47 as standard price when patient does not have any insurance.
+Same service costs $16.38 if patient has 'Aetna Medicaid CHIP' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+ACETYLCYSTEINE NON-COMP UNIT,J7608,OUTPATIENT,27.47,,,,Standard charge with no insurance.,Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+ACETYLCYSTEINE NON-COMP UNIT,J7608,INPATIENT,27.47,,,,Standard charge with no insurance.,Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+ACETYLCYSTEINE NON-COMP UNIT,J7608,OUTPATIENT,27.47,Highmark,Highmark Medicare,14.38,"This service costs $27.47 as standard price when patient does not have any insurance.
+Same service costs $14.38 if patient has 'Highmark Medicare' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+ACETYLCYSTEINE NON-COMP UNIT,J7608,INPATIENT,27.47,Highmark,Highmark Medicare,14.38,"This service costs $27.47 as standard price when patient does not have any insurance.
+Same service costs $14.38 if patient has 'Highmark Medicare' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+ACETYLCYSTEINE NON-COMP UNIT,J7608,OUTPATIENT,27.47,Highmark,Highmark Commercial PROF,25.17,"This service costs $27.47 as standard price when patient does not have any insurance.
+Same service costs $25.17 if patient has 'Highmark Commercial PROF' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+ACETYLCYSTEINE NON-COMP UNIT,J7608,INPATIENT,27.47,Highmark,Highmark Commercial PROF,25.17,"This service costs $27.47 as standard price when patient does not have any insurance.
+Same service costs $25.17 if patient has 'Highmark Commercial PROF' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+ACETYLCYSTEINE NON-COMP UNIT,J7608,OUTPATIENT,27.47,Highmark,Highmark ACA Products PROF,18.14,"This service costs $27.47 as standard price when patient does not have any insurance.
+Same service costs $18.14 if patient has 'Highmark ACA Products PROF' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+ACETYLCYSTEINE NON-COMP UNIT,J7608,INPATIENT,27.47,Highmark,Highmark ACA Products PROF,18.14,"This service costs $27.47 as standard price when patient does not have any insurance.
+Same service costs $18.14 if patient has 'Highmark ACA Products PROF' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+ACETYLCYSTEINE NON-COMP UNIT,J7608,OUTPATIENT,27.47,,,,Standard charge with no insurance.,Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+ACETYLCYSTEINE NON-COMP UNIT,J7608,INPATIENT,27.47,,,,Standard charge with no insurance.,Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+1 CC STERILE SYRINGE&NEEDLE,A4206,INPATIENT,1857.75,,,,"Only standard charge and no price with insurance – meaning this service is provided by the hospital directly, and not through any insurance.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+1 CC STERILE SYRINGE&NEEDLE,A4206,OUTPATIENT,1857.75,,,,"Only standard charge and no price with insurance – meaning this service is provided by the hospital directly, and not through any insurance.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+ABDOMINAL CT SCAN,74150,BOTH,1839.51,Amerihealth,Amerihealth Commercial,953.82,"This service costs $1839.51 as standard price when patient does not have any insurance.
+Same service costs $953.82 if patient has 'Amerihealth Commercial' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+ABDOMINAL CT SCAN,74150,BOTH,1839.51,,,,Standard charge with no insurance.,Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+ABDOMINAL CT SCAN,74150,BOTH,1839.51,United Healthcare,United Healthcare Medicaid,1153.75,"This service costs $1839.51 as standard price when patient does not have any insurance.
+Same service costs $1153.75 if patient has 'United Healthcare Medicaid' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+ABDOMINAL CT SCAN,74150,BOTH,1839.51,United Healthcare,United Healthcare CHIP,1591.66,"This service costs $1839.51 as standard price when patient does not have any insurance.
+Same service costs $1591.66 if patient has 'United Healthcare CHIP' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+ABDOMINAL CT SCAN,74150,BOTH,1839.51,,,,Standard charge with no insurance.,Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+ABDOMINAL CT SCAN,74150,BOTH,1839.51,Aetna,Aetna Commercial,1436.21,"This service costs $1839.51 as standard price when patient does not have any insurance.
+Same service costs $1436.21 if patient has 'Aetna Commercial' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+ABDOMINAL CT SCAN,74150,BOTH,1839.51,Aetna,Aetna Medicaid CHIP,1335.88,"This service costs $1839.51 as standard price when patient does not have any insurance.
+Same service costs $1335.88 if patient has 'Aetna Medicaid CHIP' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+ABDOMINAL CT SCAN,74150,BOTH,1839.51,,,,Standard charge with no insurance.,Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+TRILOCK GRIDPL,C1713,BOTH,1996.47,Amerihealth,Amerihealth Commercial,1102.35,"This service costs $1996.47 as standard price when patient does not have any insurance.
+Same service costs $1102.35 if patient has 'Amerihealth Commercial' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+TRILOCK GRIDPL,C1713,BOTH,1996.47,,,,Standard charge with no insurance.,Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+TRILOCK GRIDPL,C1713,BOTH,1996.47,United Healthcare,United Healthcare Medicaid,1481.41,"This service costs $1996.47 as standard price when patient does not have any insurance.
+Same service costs $1481.41 if patient has 'United Healthcare Medicaid' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+TRILOCK GRIDPL,C1713,BOTH,1996.47,,,,Standard charge with no insurance.,Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+TRILOCK GRIDPL,C1713,BOTH,470.49,United Healthcare,United Healthcare Commercial,265.97,"This service costs $470.49 as standard price when patient does not have any insurance.
+Same service costs $265.97 if patient has 'United Healthcare Commercial' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+TRILOCK GRIDPL,C1713,BOTH,470.49,United Healthcare,United Healthcare CHIP,365.94,"This service costs $470.49 as standard price when patient does not have any insurance.
+Same service costs $365.94 if patient has 'United Healthcare CHIP' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+TRILOCK GRIDPL,C1713,BOTH,470.49,United Healthcare,United Healthcare Medicaid,244.4,"This service costs $470.49 as standard price when patient does not have any insurance.
+Same service costs $244.4 if patient has 'United Healthcare Medicaid' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+TRILOCK GRIDPL,C1713,BOTH,470.49,,,,Standard charge with no insurance.,Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+TRILOCK GRIDPL,C1713,BOTH,470.49,Aetna,Aetna Medicare,328.65,"This service costs $470.49 as standard price when patient does not have any insurance.
+Same service costs $328.65 if patient has 'Aetna Medicare' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+TRILOCK GRIDPL,C1713,BOTH,470.49,,,,Standard charge with no insurance.,Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+1 CC STERILE SYRINGE&NEEDLE,A4206,INPATIENT,617.26,Amerihealth,Amerihealth Commercial,539.97,"This service costs $617.26 as standard price when patient does not have any insurance.
+Same service costs $539.97 if patient has 'Amerihealth Commercial' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+1 CC STERILE SYRINGE&NEEDLE,A4206,OUTPATIENT,617.26,Amerihealth,Amerihealth Commercial,539.97,"This service costs $617.26 as standard price when patient does not have any insurance.
+Same service costs $539.97 if patient has 'Amerihealth Commercial' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+1 CC STERILE SYRINGE&NEEDLE,A4206,INPATIENT,617.26,Amerihealth,Amerihealth Medicare,533.05,"This service costs $617.26 as standard price when patient does not have any insurance.
+Same service costs $533.05 if patient has 'Amerihealth Medicare' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+1 CC STERILE SYRINGE&NEEDLE,A4206,OUTPATIENT,617.26,Amerihealth,Amerihealth Medicare,533.05,"This service costs $617.26 as standard price when patient does not have any insurance.
+Same service costs $533.05 if patient has 'Amerihealth Medicare' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+1 CC STERILE SYRINGE&NEEDLE,A4206,INPATIENT,617.26,,,,Standard charge with no insurance.,Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+1 CC STERILE SYRINGE&NEEDLE,A4206,OUTPATIENT,617.26,,,,Standard charge with no insurance.,Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+1 CC STERILE SYRINGE&NEEDLE,A4206,INPATIENT,617.26,Aetna,Aetna Commercial,512.06,"This service costs $617.26 as standard price when patient does not have any insurance.
+Same service costs $512.06 if patient has 'Aetna Commercial' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+1 CC STERILE SYRINGE&NEEDLE,A4206,OUTPATIENT,617.26,Aetna,Aetna Commercial,512.06,"This service costs $617.26 as standard price when patient does not have any insurance.
+Same service costs $512.06 if patient has 'Aetna Commercial' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+1 CC STERILE SYRINGE&NEEDLE,A4206,INPATIENT,617.26,Aetna,Aetna Medicare,378.43,"This service costs $617.26 as standard price when patient does not have any insurance.
+Same service costs $378.43 if patient has 'Aetna Medicare' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+1 CC STERILE SYRINGE&NEEDLE,A4206,OUTPATIENT,617.26,Aetna,Aetna Medicare,378.43,"This service costs $617.26 as standard price when patient does not have any insurance.
+Same service costs $378.43 if patient has 'Aetna Medicare' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+1 CC STERILE SYRINGE&NEEDLE,A4206,INPATIENT,617.26,,,,Standard charge with no insurance.,Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+1 CC STERILE SYRINGE&NEEDLE,A4206,OUTPATIENT,617.26,,,,Standard charge with no insurance.,Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+1 CC STERILE SYRINGE&NEEDLE,A4206,INPATIENT,617.26,Humana,Humana Medicare HMO,378.32,"This service costs $617.26 as standard price when patient does not have any insurance.
+Same service costs $378.32 if patient has 'Humana Medicare HMO' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+1 CC STERILE SYRINGE&NEEDLE,A4206,OUTPATIENT,617.26,Humana,Humana Medicare HMO,378.32,"This service costs $617.26 as standard price when patient does not have any insurance.
+Same service costs $378.32 if patient has 'Humana Medicare HMO' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+1 CC STERILE SYRINGE&NEEDLE,A4206,INPATIENT,617.26,Humana,Humana Commercial,492.19,"This service costs $617.26 as standard price when patient does not have any insurance.
+Same service costs $492.19 if patient has 'Humana Commercial' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+1 CC STERILE SYRINGE&NEEDLE,A4206,OUTPATIENT,617.26,Humana,Humana Commercial,492.19,"This service costs $617.26 as standard price when patient does not have any insurance.
+Same service costs $492.19 if patient has 'Humana Commercial' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+1 CC STERILE SYRINGE&NEEDLE,A4206,INPATIENT,617.26,Humana,Humana Medicare PPO,482.61,"This service costs $617.26 as standard price when patient does not have any insurance.
+Same service costs $482.61 if patient has 'Humana Medicare PPO' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+1 CC STERILE SYRINGE&NEEDLE,A4206,OUTPATIENT,617.26,Humana,Humana Medicare PPO,482.61,"This service costs $617.26 as standard price when patient does not have any insurance.
+Same service costs $482.61 if patient has 'Humana Medicare PPO' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+1 CC STERILE SYRINGE&NEEDLE,A4206,INPATIENT,617.26,,,,Standard charge with no insurance.,Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+1 CC STERILE SYRINGE&NEEDLE,A4206,OUTPATIENT,617.26,,,,Standard charge with no insurance.,Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+COMPLETE BLOOD COUNT,85025,BOTH,60.23,,,,"Only standard charge and no price with insurance – meaning this service is provided by the hospital directly, and not through any insurance.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+1 CC STERILE SYRINGE&NEEDLE,A4206,INPATIENT,760.76,United Healthcare,United Healthcare CHIP,581.9,"This service costs $760.76 as standard price when patient does not have any insurance.
+Same service costs $581.9 if patient has 'United Healthcare CHIP' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+1 CC STERILE SYRINGE&NEEDLE,A4206,OUTPATIENT,760.76,United Healthcare,United Healthcare CHIP,581.9,"This service costs $760.76 as standard price when patient does not have any insurance.
+Same service costs $581.9 if patient has 'United Healthcare CHIP' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+1 CC STERILE SYRINGE&NEEDLE,A4206,INPATIENT,760.76,,,,Standard charge with no insurance.,Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+1 CC STERILE SYRINGE&NEEDLE,A4206,OUTPATIENT,760.76,,,,Standard charge with no insurance.,Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+BASIC METABOLIC PANEL,80048,BOTH,717.44,,,,"Only standard charge and no price with insurance – meaning this service is provided by the hospital directly, and not through any insurance.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+BASIC METABOLIC PANEL,80048,BOTH,1939.71,Humana,Humana Medicare HMO,981.67,"This service costs $1939.71 as standard price when patient does not have any insurance.
+Same service costs $981.67 if patient has 'Humana Medicare HMO' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+BASIC METABOLIC PANEL,80048,BOTH,1939.71,Humana,Humana Medicare PPO,1010.33,"This service costs $1939.71 as standard price when patient does not have any insurance.
+Same service costs $1010.33 if patient has 'Humana Medicare PPO' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+BASIC METABOLIC PANEL,80048,BOTH,1939.71,,,,Standard charge with no insurance.,Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+BASIC METABOLIC PANEL,80048,BOTH,1939.71,Amerihealth,Amerihealth Commercial,1086.67,"This service costs $1939.71 as standard price when patient does not have any insurance.
+Same service costs $1086.67 if patient has 'Amerihealth Commercial' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+BASIC METABOLIC PANEL,80048,BOTH,1939.71,Amerihealth,Amerihealth Medicare,1830.47,"This service costs $1939.71 as standard price when patient does not have any insurance.
+Same service costs $1830.47 if patient has 'Amerihealth Medicare' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+BASIC METABOLIC PANEL,80048,BOTH,1939.71,Amerihealth,Amerihealth Medicaid HC,1802.88,"This service costs $1939.71 as standard price when patient does not have any insurance.
+Same service costs $1802.88 if patient has 'Amerihealth Medicaid HC' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+BASIC METABOLIC PANEL,80048,BOTH,1939.71,,,,Standard charge with no insurance.,Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+BASIC METABOLIC PANEL,80048,BOTH,1939.71,United Healthcare,United Healthcare Commercial,1803.12,"This service costs $1939.71 as standard price when patient does not have any insurance.
+Same service costs $1803.12 if patient has 'United Healthcare Commercial' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+BASIC METABOLIC PANEL,80048,BOTH,1939.71,United Healthcare,United Healthcare CHIP,1465.51,"This service costs $1939.71 as standard price when patient does not have any insurance.
+Same service costs $1465.51 if patient has 'United Healthcare CHIP' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+BASIC METABOLIC PANEL,80048,BOTH,1939.71,United Healthcare,United Healthcare Medicaid,1545.36,"This service costs $1939.71 as standard price when patient does not have any insurance.
+Same service costs $1545.36 if patient has 'United Healthcare Medicaid' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+BASIC METABOLIC PANEL,80048,BOTH,1939.71,,,,Standard charge with no insurance.,Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+BASIC METABOLIC PANEL,80048,BOTH,257.78,United Healthcare,United Healthcare Commercial,215.45,"This service costs $257.78 as standard price when patient does not have any insurance.
+Same service costs $215.45 if patient has 'United Healthcare Commercial' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+BASIC METABOLIC PANEL,80048,BOTH,257.78,United Healthcare,United Healthcare CHIP,148.47,"This service costs $257.78 as standard price when patient does not have any insurance.
+Same service costs $148.47 if patient has 'United Healthcare CHIP' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+BASIC METABOLIC PANEL,80048,BOTH,257.78,,,,Standard charge with no insurance.,Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+BASIC METABOLIC PANEL,80048,BOTH,257.78,Aetna,Aetna Medicare,186.15,"This service costs $257.78 as standard price when patient does not have any insurance.
+Same service costs $186.15 if patient has 'Aetna Medicare' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+BASIC METABOLIC PANEL,80048,BOTH,257.78,Aetna,Aetna Medicaid CHIP,172.72,"This service costs $257.78 as standard price when patient does not have any insurance.
+Same service costs $172.72 if patient has 'Aetna Medicaid CHIP' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+BASIC METABOLIC PANEL,80048,BOTH,257.78,,,,Standard charge with no insurance.,Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+CHEST X-RAY,71045,BOTH,1991.36,,,,"Only standard charge and no price with insurance – meaning this service is provided by the hospital directly, and not through any insurance.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+TRILOCK SCAPHOID PLATE,C1713,BOTH,1660.98,Humana,Humana Medicare HMO,1518.61,"This service costs $1660.98 as standard price when patient does not have any insurance.
+Same service costs $1518.61 if patient has 'Humana Medicare HMO' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+TRILOCK SCAPHOID PLATE,C1713,BOTH,1660.98,Humana,Humana Medicare PPO,1123.05,"This service costs $1660.98 as standard price when patient does not have any insurance.
+Same service costs $1123.05 if patient has 'Humana Medicare PPO' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+TRILOCK SCAPHOID PLATE,C1713,BOTH,1660.98,,,,Standard charge with no insurance.,Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+TRILOCK SCAPHOID PLATE,C1713,BOTH,1660.98,United Healthcare,United Healthcare Commercial,853.85,"This service costs $1660.98 as standard price when patient does not have any insurance.
+Same service costs $853.85 if patient has 'United Healthcare Commercial' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+TRILOCK SCAPHOID PLATE,C1713,BOTH,1660.98,United Healthcare,United Healthcare CHIP,1028.96,"This service costs $1660.98 as standard price when patient does not have any insurance.
+Same service costs $1028.96 if patient has 'United Healthcare CHIP' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+TRILOCK SCAPHOID PLATE,C1713,BOTH,1660.98,United Healthcare,United Healthcare Medicaid,1221.35,"This service costs $1660.98 as standard price when patient does not have any insurance.
+Same service costs $1221.35 if patient has 'United Healthcare Medicaid' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+TRILOCK SCAPHOID PLATE,C1713,BOTH,1660.98,,,,Standard charge with no insurance.,Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+TRILOCK GRIDPL,C1713,BOTH,1613.59,United Healthcare,United Healthcare CHIP,1248.19,"This service costs $1613.59 as standard price when patient does not have any insurance.
+Same service costs $1248.19 if patient has 'United Healthcare CHIP' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+TRILOCK GRIDPL,C1713,BOTH,1613.59,United Healthcare,United Healthcare Commercial,985.18,"This service costs $1613.59 as standard price when patient does not have any insurance.
+Same service costs $985.18 if patient has 'United Healthcare Commercial' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+TRILOCK GRIDPL,C1713,BOTH,1613.59,,,,Standard charge with no insurance.,Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+TRILOCK GRIDPL,C1713,BOTH,1613.59,Highmark,Highmark Medicare,1303.59,"This service costs $1613.59 as standard price when patient does not have any insurance.
+Same service costs $1303.59 if patient has 'Highmark Medicare' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+TRILOCK GRIDPL,C1713,BOTH,1613.59,Highmark,Highmark ACA Products PROF,981.51,"This service costs $1613.59 as standard price when patient does not have any insurance.
+Same service costs $981.51 if patient has 'Highmark ACA Products PROF' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+TRILOCK GRIDPL,C1713,BOTH,1613.59,Highmark,Highmark Commercial PROF,1083.33,"This service costs $1613.59 as standard price when patient does not have any insurance.
+Same service costs $1083.33 if patient has 'Highmark Commercial PROF' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+TRILOCK GRIDPL,C1713,BOTH,1613.59,,,,Standard charge with no insurance.,Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+2D ECHO,93306,OUTPATIENT,581.62,Highmark,Highmark Medicare,449.4,"This service costs $581.62 as standard price when patient does not have any insurance.
+Same service costs $449.4 if patient has 'Highmark Medicare' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+2D ECHO,93306,OUTPATIENT,581.62,Highmark,Highmark ACA Products PROF,473.68,"This service costs $581.62 as standard price when patient does not have any insurance.
+Same service costs $473.68 if patient has 'Highmark ACA Products PROF' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+2D ECHO,93306,OUTPATIENT,581.62,Highmark,Highmark Commercial PROF,345.69,"This service costs $581.62 as standard price when patient does not have any insurance.
+Same service costs $345.69 if patient has 'Highmark Commercial PROF' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+2D ECHO,93306,OUTPATIENT,581.62,,,,Standard charge with no insurance.,Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+2D ECHO,93306,OUTPATIENT,581.62,United Healthcare,United Healthcare Medicaid,498.2,"This service costs $581.62 as standard price when patient does not have any insurance.
+Same service costs $498.2 if patient has 'United Healthcare Medicaid' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+2D ECHO,93306,OUTPATIENT,581.62,United Healthcare,United Healthcare Commercial,536.98,"This service costs $581.62 as standard price when patient does not have any insurance.
+Same service costs $536.98 if patient has 'United Healthcare Commercial' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+2D ECHO,93306,OUTPATIENT,581.62,,,,Standard charge with no insurance.,Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+2D ECHO,93306,OUTPATIENT,581.62,Aetna,Aetna Medicaid CHIP,343.56,"This service costs $581.62 as standard price when patient does not have any insurance.
+Same service costs $343.56 if patient has 'Aetna Medicaid CHIP' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+2D ECHO,93306,OUTPATIENT,581.62,Aetna,Aetna Medicare,345.58,"This service costs $581.62 as standard price when patient does not have any insurance.
+Same service costs $345.58 if patient has 'Aetna Medicare' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+2D ECHO,93306,OUTPATIENT,581.62,Aetna,Aetna Commercial,493.3,"This service costs $581.62 as standard price when patient does not have any insurance.
+Same service costs $493.3 if patient has 'Aetna Commercial' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+2D ECHO,93306,OUTPATIENT,581.62,,,,Standard charge with no insurance.,Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+TRILOCK GRIDPL,C1713,BOTH,742.77,,,,"Only standard charge and no price with insurance – meaning this service is provided by the hospital directly, and not through any insurance.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+ABDOMINAL CT SCAN,74150,BOTH,502.07,Amerihealth,Amerihealth Medicaid HC,362.11,"This service costs $502.07 as standard price when patient does not have any insurance.
+Same service costs $362.11 if patient has 'Amerihealth Medicaid HC' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+ABDOMINAL CT SCAN,74150,BOTH,502.07,Amerihealth,Amerihealth Commercial,454.46,"This service costs $502.07 as standard price when patient does not have any insurance.
+Same service costs $454.46 if patient has 'Amerihealth Commercial' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+ABDOMINAL CT SCAN,74150,BOTH,502.07,,,,Standard charge with no insurance.,Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+ABDOMINAL CT SCAN,74150,BOTH,502.07,Highmark,Highmark Commercial PROF,453.56,"This service costs $502.07 as standard price when patient does not have any insurance.
+Same service costs $453.56 if patient has 'Highmark Commercial PROF' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+ABDOMINAL CT SCAN,74150,BOTH,502.07,,,,Standard charge with no insurance.,Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+ABDOMINAL CT SCAN,74150,BOTH,502.07,Aetna,Aetna Medicaid CHIP,369.44,"This service costs $502.07 as standard price when patient does not have any insurance.
+Same service costs $369.44 if patient has 'Aetna Medicaid CHIP' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+ABDOMINAL CT SCAN,74150,BOTH,502.07,Aetna,Aetna Commercial,435.9,"This service costs $502.07 as standard price when patient does not have any insurance.
+Same service costs $435.9 if patient has 'Aetna Commercial' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+ABDOMINAL CT SCAN,74150,BOTH,502.07,Aetna,Aetna Medicare,264.31,"This service costs $502.07 as standard price when patient does not have any insurance.
+Same service costs $264.31 if patient has 'Aetna Medicare' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+ABDOMINAL CT SCAN,74150,BOTH,502.07,,,,Standard charge with no insurance.,Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+2D ECHO,93306,OUTPATIENT,1214.84,United Healthcare,United Healthcare Commercial,1139.66,"This service costs $1214.84 as standard price when patient does not have any insurance.
+Same service costs $1139.66 if patient has 'United Healthcare Commercial' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+2D ECHO,93306,OUTPATIENT,1214.84,United Healthcare,United Healthcare CHIP,632.94,"This service costs $1214.84 as standard price when patient does not have any insurance.
+Same service costs $632.94 if patient has 'United Healthcare CHIP' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+2D ECHO,93306,OUTPATIENT,1214.84,,,,Standard charge with no insurance.,Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+2D ECHO,93306,OUTPATIENT,1214.84,Aetna,Aetna Medicaid CHIP,706.17,"This service costs $1214.84 as standard price when patient does not have any insurance.
+Same service costs $706.17 if patient has 'Aetna Medicaid CHIP' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+2D ECHO,93306,OUTPATIENT,1214.84,,,,Standard charge with no insurance.,Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+2D ECHO,93306,OUTPATIENT,1214.84,Amerihealth,Amerihealth Commercial,657.26,"This service costs $1214.84 as standard price when patient does not have any insurance.
+Same service costs $657.26 if patient has 'Amerihealth Commercial' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+2D ECHO,93306,OUTPATIENT,1214.84,,,,Standard charge with no insurance.,Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+2D ECHO,93306,OUTPATIENT,603.04,United Healthcare,United Healthcare CHIP,554.18,"This service costs $603.04 as standard price when patient does not have any insurance.
+Same service costs $554.18 if patient has 'United Healthcare CHIP' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+2D ECHO,93306,OUTPATIENT,603.04,United Healthcare,United Healthcare Medicaid,443.81,"This service costs $603.04 as standard price when patient does not have any insurance.
+Same service costs $443.81 if patient has 'United Healthcare Medicaid' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+2D ECHO,93306,OUTPATIENT,603.04,United Healthcare,United Healthcare Commercial,416.27,"This service costs $603.04 as standard price when patient does not have any insurance.
+Same service costs $416.27 if patient has 'United Healthcare Commercial' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+2D ECHO,93306,OUTPATIENT,603.04,,,,Standard charge with no insurance.,Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+2D ECHO,93306,OUTPATIENT,603.04,Aetna,Aetna Commercial,439.02,"This service costs $603.04 as standard price when patient does not have any insurance.
+Same service costs $439.02 if patient has 'Aetna Commercial' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+2D ECHO,93306,OUTPATIENT,603.04,,,,Standard charge with no insurance.,Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+2D ECHO,93306,OUTPATIENT,603.04,Humana,Humana Medicare PPO,394.19,"This service costs $603.04 as standard price when patient does not have any insurance.
+Same service costs $394.19 if patient has 'Humana Medicare PPO' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+2D ECHO,93306,OUTPATIENT,603.04,,,,Standard charge with no insurance.,Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+ABDOMINAL CT SCAN,74150,BOTH,1692.5,Highmark,Highmark ACA Products PROF,1320.95,"This service costs $1692.5 as standard price when patient does not have any insurance.
+Same service costs $1320.95 if patient has 'Highmark ACA Products PROF' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+ABDOMINAL CT SCAN,74150,BOTH,1692.5,Highmark,Highmark Medicare,1374.47,"This service costs $1692.5 as standard price when patient does not have any insurance.
+Same service costs $1374.47 if patient has 'Highmark Medicare' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+ABDOMINAL CT SCAN,74150,BOTH,1692.5,,,,Standard charge with no insurance.,Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+ABDOMINAL CT SCAN,74150,BOTH,1692.5,Amerihealth,Amerihealth Commercial,888.73,"This service costs $1692.5 as standard price when patient does not have any insurance.
+Same service costs $888.73 if patient has 'Amerihealth Commercial' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+ABDOMINAL CT SCAN,74150,BOTH,1692.5,Amerihealth,Amerihealth Medicaid HC,1341.02,"This service costs $1692.5 as standard price when patient does not have any insurance.
+Same service costs $1341.02 if patient has 'Amerihealth Medicaid HC' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+ABDOMINAL CT SCAN,74150,BOTH,1692.5,,,,Standard charge with no insurance.,Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+ABDOMINAL CT SCAN,74150,BOTH,1692.5,United Healthcare,United Healthcare CHIP,971.33,"This service costs $1692.5 as standard price when patient does not have any insurance.
+Same service costs $971.33 if patient has 'United Healthcare CHIP' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+ABDOMINAL CT SCAN,74150,BOTH,1692.5,,,,Standard charge with no insurance.,Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+2D ECHO,93306,OUTPATIENT,1818.6,Humana,Humana Medicare HMO,1159.04,"This service costs $1818.6 as standard price when patient does not have any insurance.
+Same service costs $1159.04 if patient has 'Humana Medicare HMO' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+2D ECHO,93306,OUTPATIENT,1818.6,,,,Standard charge with no insurance.,Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+2D ECHO,93306,OUTPATIENT,1818.6,Aetna,Aetna Commercial,1532.68,"This service costs $1818.6 as standard price when patient does not have any insurance.
+Same service costs $1532.68 if patient has 'Aetna Commercial' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+2D ECHO,93306,OUTPATIENT,1818.6,,,,Standard charge with no insurance.,Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+2D ECHO,93306,OUTPATIENT,488.11,Highmark,Highmark ACA Products PROF,247.75,"This service costs $488.11 as standard price when patient does not have any insurance.
+Same service costs $247.75 if patient has 'Highmark ACA Products PROF' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+2D ECHO,93306,OUTPATIENT,488.11,Highmark,Highmark Medicare,288.15,"This service costs $488.11 as standard price when patient does not have any insurance.
+Same service costs $288.15 if patient has 'Highmark Medicare' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+2D ECHO,93306,OUTPATIENT,488.11,Highmark,Highmark Commercial PROF,459.04,"This service costs $488.11 as standard price when patient does not have any insurance.
+Same service costs $459.04 if patient has 'Highmark Commercial PROF' insurance plan.",Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594
+2D ECHO,93306,OUTPATIENT,488.11,,,,Standard charge with no insurance.,Community Hospital,hospital3,19107,Philadelphia,PA,39.9483,-75.1594

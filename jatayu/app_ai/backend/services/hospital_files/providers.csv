@@ -1,0 +1,6 @@
+Hospital ID,Hospital Name,Hospital Type,Street,City,State,Postal Code,Latitude,Longitude,Phone,Email,Website,Accepted Insurance
+hospital1,General Hospital,Specialty Center,5040 Main St,Philadelphia,PA,19103,39.9526,-75.1652,(555) 527-4580,info@hospital1.example.com,https://www.hospital1.example.com,"United Healthcare, Humana, Highmark, Amerihealth"
+hospital2,Medical Center,Specialty Center,4695 Main St,Philadelphia,PA,19106,39.9496,-75.1467,(555) 848-6563,info@hospital2.example.com,https://www.hospital2.example.com,"United Healthcare, Humana, Amerihealth"
+hospital3,Community Hospital,Medical Center,8796 Main St,Philadelphia,PA,19107,39.9483,-75.1594,(555) 330-3298,info@hospital3.example.com,https://www.hospital3.example.com,"Highmark, Humana, Amerihealth"
+hospital4,Regional Medical Center,Medical Center,7093 Main St,Philadelphia,PA,19102,39.9507,-75.1628,(555) 535-6960,info@hospital4.example.com,https://www.hospital4.example.com,"Amerihealth, Highmark, Aetna"
+hospital5,University Hospital,Medical Center,5555 Main St,Philadelphia,PA,19146,39.9432,-75.1855,(555) 108-5885,info@hospital5.example.com,https://www.hospital5.example.com,"Amerihealth, United Healthcare, Aetna, Highmark, Humana"
