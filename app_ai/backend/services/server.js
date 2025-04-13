@@ -1,60 +1,470 @@
-// server.js (corrected)
-require('dotenv').config();
+// --- START OF FILE server.js ---
+
+require('dotenv').config(); // Load environment variables from .env file
 const express = require('express');
+const csv = require('csv-parser');
+const fs = require('fs');
 const cors = require('cors');
-const morgan = require('morgan');
-const routes = require('../routes/index'); // Import your routes
 const path = require('path');
+const os = require('os'); // Needed for temporary directory
+const ftp = require('basic-ftp'); // FTP client library
+const { db } = require('./firebase-config');
+const axios = require('axios');
 
-// Create Express app
 const app = express();
-const PORT = process.env.PORT || 3000;
+const port = process.env.PORT || 3000;
 
-// CORS middleware
-app.use(cors({
-  origin: '*', // Allow all origins - customize in production
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization']
-}));
+// FTP Configuration (using environment variables)
+   const ftpConfig = {
+    host: process.env.FTP_HOST || '127.0.0.1',
+    port: parseInt(process.env.FTP_PORT || '21', 10),
+    user: process.env.FTP_USER || 'user',
+    password: process.env.FTP_PASSWORD || 'password',
+ secure: false, // Use true if using FTPS
+};
+const ftpDirectory = '';
+const googleApiKey = "AIzaSyAYNxP68HxL9UKOQ8lN492Fdo_7-dCyJZw"; // Use environment variable
 
-// Add CORS headers manually as a fallback
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*');
-  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
-  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
-  next();
-});
+if (!googleApiKey) {
+  console.error("ERROR: GOOGLE_MAPS_API_KEY environment variable is not set.");
+  // process.exit(1); // Optionally exit if the key is essential
+}
 
+
+// Enable CORS and JSON body parsing
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, 'public')));
 
-// Logging middleware
-app.use(morgan('dev'));
+// --- Helper Functions ---
 
-// Simple test route
-app.get('/test', (req, res) => {
-  res.json({ message: 'Server is running correctly!' });
+// Calculate distance between two points using Haversine formula
+function calculateDistance(lat1, lon1, lat2, lon2) {
+  const R = 6371; // Radius of the earth in km
+  const dLat = (lat2 - lat1) * Math.PI / 180;
+  const dLon = (lon2 - lon1) * Math.PI / 180;
+  const a =
+    Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+    Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+    Math.sin(dLon / 2) * Math.sin(dLon / 2);
+  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  return R * c; // Distance in km
+}
+
+// Function to process a single CSV file and populate Firestore
+async function processCsvFile(filePath) {
+  return new Promise((resolve, reject) => {
+    let batches = [];
+    let currentBatch = db.batch();
+    let batchCount = 0;
+    let totalRecords = 0;
+
+    fs.createReadStream(filePath)
+      .pipe(csv())
+      .on('data', (data) => {
+        // Basic validation: Check if essential fields exist
+        if (!data['Hospital ID'] || !data['Hospital Name'] || !data['Service Description'] || !data['Latitude'] || !data['Longitude']) {
+            console.warn(`Skipping row due to missing essential data in file ${path.basename(filePath)}:`, data);
+            return; // Skip this row
+        }
+
+        const hospitalRef = db.collection('hospitals').doc(); // Generate unique ID
+
+        // Ensure numeric fields are parsed correctly, default to 0 or NaN if invalid
+        const latitude = parseFloat(data['Latitude']);
+        const longitude = parseFloat(data['Longitude']);
+        const standardCharge = parseFloat(data['Standard Charge']);
+        const negotiatedAmount = parseFloat(data['Negotiated Amount']);
+
+        // Skip if location is invalid
+        if (isNaN(latitude) || isNaN(longitude)) {
+            console.warn(`Skipping row due to invalid coordinates in file ${path.basename(filePath)}:`, data);
+            return;
+        }
+
+        // Construct Firestore document data
+        const hospitalData = {
+          hospitalId: data['Hospital ID'] || `GeneratedID_${Date.now()}_${Math.random()}`, // Fallback ID
+          hospitalName: data['Hospital Name'] || 'Unknown Hospital',
+          hospitalType: data['Hospital Type'] || 'N/A',
+          address: {
+            street: data['Street'] || '',
+            city: data['City'] || '',
+            state: data['State'] || '',
+            postalCode: data['Postal Code'] || '',
+          },
+          location: {
+            latitude: latitude,
+            longitude: longitude,
+          },
+          contact: {
+            phone: data['Phone'] || '',
+            email: data['Email'] || '',
+            website: data['Website'] || '',
+          },
+          acceptedInsurance: data['Accepted Insurance'] ? data['Accepted Insurance'].split(',').map(item => item.trim()) : [],
+          service: {
+            description: (data['Service Description'] || 'Unknown Service').toUpperCase(), // Store uppercase for consistent search
+            code: data['Service Code'] || '',
+            setting: data['Setting'] || '',
+          },
+          pricing: {
+            standardCharge: !isNaN(standardCharge) ? standardCharge : null, // Use null if invalid
+            insurance: data['Insurance'] || '',
+            planName: data['Plan Name'] || '',
+            negotiatedAmount: !isNaN(negotiatedAmount) ? negotiatedAmount : null, // Use null if invalid
+            comments: data['Comments'] || '',
+          },
+          // Create search terms array (lowercase for potentially case-insensitive searches later)
+           searchTerms: [
+             (data['Service Description'] || '').toLowerCase(),
+             (data['Hospital Name'] || '').toLowerCase(),
+             (data['City'] || '').toLowerCase(),
+             (data['State'] || '').toLowerCase(),
+             (data['Postal Code'] || '').toString() // Keep postal code as string
+           ].filter(term => term) // Remove empty strings
+        };
+
+        currentBatch.set(hospitalRef, hospitalData);
+        batchCount++;
+        totalRecords++;
+
+        // Firestore has a limit of 500 operations per batch
+        if (batchCount === 450) {
+          batches.push(currentBatch);
+          currentBatch = db.batch(); // Create a new batch
+          batchCount = 0;
+        }
+      })
+      .on('end', async () => {
+        // Add the last batch if it has operations
+        if (batchCount > 0) {
+          batches.push(currentBatch);
+        }
+
+        // Commit all batches
+        try {
+          await Promise.all(batches.map(batch => batch.commit()));
+          console.log(`Committed ${batches.length} batches with ${totalRecords} total records from ${path.basename(filePath)}`);
+          resolve(totalRecords); // Resolve with the number of records processed
+        } catch (error) {
+          console.error(`Error committing batches for ${path.basename(filePath)}:`, error);
+          reject(error); // Reject the promise on error
+        }
+      })
+      .on('error', (error) => {
+        console.error(`Error processing CSV file ${path.basename(filePath)}:`, error);
+        reject(error); // Reject the promise on error
+      });
+  });
+}
+
+
+// --- API Endpoints ---
+
+// Endpoint to trigger FTP download and Firestore population
+app.post('/sync-ftp-data', async (req, res) => {
+  console.log('Starting FTP data sync...');
+  const client = new ftp.Client();
+  client.ftp.verbose = false; // Set true for detailed FTP logs
+  let totalFilesProcessed = 0;
+  let totalRecordsImported = 0;
+  const tempDir = path.join(os.tmpdir(), 'ftp-downloads'); // Create a temporary directory path
+
+  try {
+    // Ensure temporary directory exists
+    if (!fs.existsSync(tempDir)) {
+      fs.mkdirSync(tempDir, { recursive: true });
+      console.log(`Created temporary directory: ${tempDir}`);
+    } else {
+        console.log(`Using existing temporary directory: ${tempDir}`);
+    }
+
+    console.log(`Attempting to connect to FTP server: ${ftpConfig.host}:${ftpConfig.port}`);
+    await client.access(ftpConfig);
+    console.log('FTP connection successful.');
+
+    console.log(`Navigating to directory: ${ftpDirectory}`);
+    await client.cd(ftpDirectory);
+    console.log(`Current directory: ${await client.pwd()}`);
+
+
+    const fileList = await client.list();
+    const csvFiles = fileList.filter(file => file.name.toLowerCase().endsWith('.csv'));
+    console.log(`Found ${csvFiles.length} CSV files in ${ftpDirectory}:`, csvFiles.map(f => f.name));
+
+    if (csvFiles.length === 0) {
+        console.log('No CSV files found on FTP server.');
+        return res.json({ message: 'No CSV files found on FTP server to process.', filesProcessed: 0, recordsImported: 0 });
+    }
+
+    for (const fileInfo of csvFiles) {
+      const remoteFilePath = fileInfo.name; // Already in the correct directory
+      const localFilePath = path.join(tempDir, fileInfo.name);
+
+      console.log(`Downloading ${remoteFilePath} to ${localFilePath}...`);
+      await client.downloadTo(localFilePath, remoteFilePath);
+      console.log(`Downloaded ${fileInfo.name}.`);
+
+      try {
+        console.log(`Processing ${fileInfo.name}...`);
+        const recordsProcessed = await processCsvFile(localFilePath);
+        totalFilesProcessed++;
+        totalRecordsImported += recordsProcessed;
+        console.log(`Finished processing ${fileInfo.name}. Records added: ${recordsProcessed}`);
+      } catch (processingError) {
+        console.error(`Failed to process ${fileInfo.name}:`, processingError);
+        // Decide if you want to stop the whole sync or continue with other files
+        // For now, we log the error and continue
+      } finally {
+        // Clean up the downloaded file
+        try {
+          fs.unlinkSync(localFilePath);
+          console.log(`Deleted temporary file: ${localFilePath}`);
+        } catch (unlinkError) {
+          console.error(`Error deleting temporary file ${localFilePath}:`, unlinkError);
+        }
+      }
+    }
+
+    res.json({
+      message: 'FTP data sync completed.',
+      filesProcessed: totalFilesProcessed,
+      recordsImported: totalRecordsImported,
+    });
+
+  } catch (err) {
+    console.error('FTP Sync Error:', err);
+    res.status(500).json({ error: 'Failed to sync data from FTP server', details: err.message });
+  } finally {
+    // Ensure the client connection is closed
+    if (client.closed === false) {
+      console.log('Closing FTP connection.');
+      await client.close();
+    }
+    // Optional: Clean up the entire temp directory afterwards if needed
+    // fs.rmSync(tempDir, { recursive: true, force: true });
+    // console.log(`Cleaned up temporary directory: ${tempDir}`);
+  }
 });
 
-// Mount API routes - THIS IS THE IMPORTANT PART
-// We mount the router at /api to match your frontend expectations
-app.use('/api', routes);
 
-// 404 handler
-app.use((req, res, next) => {
-  res.status(404).json({ error: 'Route not found' });
+// Endpoint to get location coordinates from postal code
+app.get('/geocode/:postalCode', async (req, res) => {
+  try {
+    const { postalCode } = req.params;
+    if (!googleApiKey) {
+        return res.status(500).json({ error: 'Server configuration error: Missing Geocoding API Key' });
+    }
+
+    console.log(`Geocoding postal code: ${postalCode}`);
+    const response = await axios.get('https://maps.googleapis.com/maps/api/geocode/json', {
+      params: {
+        address: postalCode,
+        key: googleApiKey, // Use the API key from environment variable
+        // Optional: Add component restrictions for better accuracy, e.g., country
+        // components: 'country:US'
+      }
+    });
+
+    if (response.data.status === 'OK' && response.data.results.length > 0) {
+      const location = response.data.results[0].geometry.location;
+      console.log(`Geocoding successful for ${postalCode}:`, location);
+      res.json({
+        latitude: location.lat,
+        longitude: location.lng
+      });
+    } else {
+      console.warn(`Geocoding failed for ${postalCode}: ${response.data.status}`, response.data.error_message || '');
+      res.status(404).json({ error: `Location not found for the postal code ${postalCode}. Status: ${response.data.status}` });
+    }
+  } catch (error) {
+    console.error('Geocoding error:', error.response ? error.response.data : error.message);
+    res.status(500).json({ error: 'Geocoding service failed' });
+  }
+});
+// Endpoint to search for nearby hospitals with specific services
+app.get('/search', async (req, res) => {
+  try {
+    const ftpresponse = await axios.post(url=`http://localhost:${port}/sync-ftp-data`)
+    console.log(ftpresponse.status)
+    const { zipCode, serviceDescription, maxDistance = 30 } = req.query; // Use zipCode and serviceDescription
+
+    if (!zipCode || !serviceDescription) {
+      return res.status(400).json({ error: 'Zip code and service description are required parameters.' });
+    }
+
+    console.log(`Search request received: zipCode=${zipCode}, serviceDescription=${serviceDescription}, maxDistance=${maxDistance}`);
+
+    // 1. Get coordinates for the zip code
+    let userLocation;
+    try {
+      // Use the internal geocode endpoint
+      const geocodeResponse = await axios.get(`http://localhost:${port}/geocode/${zipCode}`);
+      userLocation = geocodeResponse.data;
+      console.log(`User location for ${zipCode}:`, userLocation);
+    } catch (error) {
+      console.error(`Failed to geocode zip code ${zipCode}:`, error.response?.data || error.message);
+      // Check if the error from geocode was 404
+      if (error.response && error.response.status === 404) {
+           return res.status(404).json({ error: `Could not find coordinates for the zip code: ${zipCode}` });
+      }
+      return res.status(500).json({ error: 'Failed to determine location for the zip code' });
+    }
+
+    // 2. Query Firestore for hospitals with the specified service (case-insensitive might require storing lowercase)
+    // We stored service.description in UPPERCASE, so we query with uppercase.
+    const upperServiceDesc = serviceDescription.toUpperCase();
+    console.log(`Querying Firestore for service: ${upperServiceDesc}`);
+
+    const serviceQuery = db.collection('hospitals')
+      .where('service.description', '==', upperServiceDesc);
+
+    const querySnapshot = await serviceQuery.get();
+    console.log(`Firestore query returned ${querySnapshot.size} potential matches for service.`);
+
+
+    if (querySnapshot.empty) {
+        // Optional: Try a broader search (e.g., using searchTerms array) if initial search fails
+         console.log(`No exact match for service description "${upperServiceDesc}". Trying broader search...`);
+         const broaderQuery = db.collection('hospitals')
+              .where('searchTerms', 'array-contains', serviceDescription.toLowerCase()); // Assuming searchTerms are stored lowercase
+         const broaderSnapshot = await broaderQuery.get();
+         console.log(`Broader Firestore query returned ${broaderSnapshot.size} potential matches.`);
+         if (broaderSnapshot.empty) {
+            return res.json({ hospitals: [], message: `No providers found offering '${serviceDescription}'.` });
+         }
+         // If broader search found results, use broaderSnapshot instead
+         // Note: This might return hospitals offering *other* services too if the search term matches other fields.
+         // You might need further filtering here based on the exact service description if using this approach.
+         // For simplicity now, we'll stick to the original exact match logic.
+         // querySnapshot = broaderSnapshot; // Uncomment to use broader results
+
+        // If still using the original logic and it's empty:
+        return res.json({ hospitals: [], message: `No providers found offering '${upperServiceDesc}'.` });
+    }
+
+    // 3. Filter results by distance and prepare the response
+    // Create a map to group hospitals by ID and service
+    const hospitalServiceMap = new Map();
+    const maxDistNum = parseFloat(maxDistance); // Ensure maxDistance is a number
+
+    querySnapshot.forEach(doc => {
+      const hospital = doc.data();
+      
+      // Skip if hospital data or location is incomplete
+      if (!hospital || !hospital.location || typeof hospital.location.latitude !== 'number' || typeof hospital.location.longitude !== 'number') {
+          console.warn(`Skipping hospital doc ID ${doc.id} due to missing/invalid location data.`);
+          return;
+      }
+
+      const distance = calculateDistance(
+        userLocation.latitude,
+        userLocation.longitude,
+        hospital.location.latitude,
+        hospital.location.longitude
+      );
+      
+      // Only include hospitals within the specified distance
+      if (distance <= maxDistNum) {
+        // Create a unique key for each hospital+service combination
+        const mapKey = `${hospital.hospitalId}_${hospital.service.description}`;
+        
+        // Ensure numeric values are properly handled (use null if not a valid number)
+        const standardCharge = (hospital.pricing && typeof hospital.pricing.standardCharge === 'number') ? hospital.pricing.standardCharge : null;
+        const negotiatedAmount = (hospital.pricing && typeof hospital.pricing.negotiatedAmount === 'number') ? hospital.pricing.negotiatedAmount : null;
+        const savings = (standardCharge !== null && negotiatedAmount !== null) ? standardCharge - negotiatedAmount : null;
+
+        const insuranceOption = {
+            insurance: hospital.pricing?.insurance || 'N/A',
+            planName: hospital.pricing?.planName || 'N/A',
+            standardCharge: standardCharge,
+            negotiatedAmount: negotiatedAmount,
+            savings: savings,
+            comments: hospital.pricing?.comments || ''
+        };
+        
+        // Check if this hospital+service already exists in our map
+        if (hospitalServiceMap.has(mapKey)) {
+          const existing = hospitalServiceMap.get(mapKey);
+          
+          // Check if this is actually a new insurance option by comparing insurance+planName
+          // to avoid duplicate entries
+          const isDuplicate = existing.insuranceOptions.some(option => 
+            option.insurance === insuranceOption.insurance && 
+            option.planName === insuranceOption.planName
+          );
+          
+          if (!isDuplicate) {
+            // Only add if this is a new insurance option
+            existing.insuranceOptions.push(insuranceOption);
+          }
+          
+          // Update accepted insurance list if necessary (combine unique values)
+          if (hospital.acceptedInsurance) {
+            hospital.acceptedInsurance.forEach(ins => {
+              if (!existing.acceptedInsurance.includes(ins)) {
+                existing.acceptedInsurance.push(ins);
+              }
+            });
+          }
+          
+          // Keep the existing entry with updates
+          hospitalServiceMap.set(mapKey, existing);
+        } else {
+          // Otherwise, create a new hospital entry
+          hospitalServiceMap.set(mapKey, {
+            // Use Firestore document ID as the primary key for React lists
+            id: doc.id,
+            hospitalId: hospital.hospitalId,
+            hospitalName: hospital.hospitalName,
+            hospitalType: hospital.hospitalType,
+            address: hospital.address,
+            location: hospital.location,
+            contact: hospital.contact,
+            acceptedInsurance: hospital.acceptedInsurance || [], // Ensure it's always an array
+            service: hospital.service, // Includes description, code, setting
+            distance: parseFloat(distance.toFixed(2)), // Keep as number for sorting
+            insuranceOptions: [insuranceOption] // Start with the first option
+          });
+        }
+      }
+    });
+
+    // Convert the map values to an array
+    const nearbyHospitals = Array.from(hospitalServiceMap.values());
+    
+    console.log(`Found ${nearbyHospitals.length} hospitals within ${maxDistNum}km.`);
+    
+    // Log a summary of the first hospital's insurance options if available
+    if (nearbyHospitals.length > 0) {
+      console.log(`First hospital (${nearbyHospitals[0].hospitalName}) has ${nearbyHospitals[0].insuranceOptions.length} insurance options.`);
+      
+      // Log the insurance options with proper formatting to see all details
+      console.log('Insurance options for first hospital:');
+      console.log(JSON.stringify(nearbyHospitals[0].insuranceOptions, null, 2));
+      
+      // For debugging the entire hospital object structure
+      console.log('Full hospital data (first result):');
+      console.log(JSON.stringify(nearbyHospitals[0], null, 2));
+    }
+
+    // Sort by distance (ascending)
+    nearbyHospitals.sort((a, b) => a.distance - b.distance);
+    res.json({ hospitals: nearbyHospitals });
+
+  } catch (error) {
+    console.error('Search endpoint error:', error);
+    res.status(500).json({ error: 'Failed to search for hospitals', details: error.message });
+  }
 });
 
-// Error handler
-app.use((err, req, res, next) => {
-  console.error('Server error:', err);
-  res.status(500).json({ error: err.message || 'Internal server error' });
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`);
+  console.log(`API Endpoints:`);
+  console.log(`  POST /sync-ftp-data  - Trigger data import from FTP`);
+  console.log(`  GET /geocode/:postalCode - Get coordinates for a postal code`);
+  console.log(`  GET /search?zipCode=...&serviceDescription=...&maxDistance=... - Search providers`);
 });
-
-// Start server
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-  console.log(`API endpoints available at http://localhost:${PORT}/api/`);
-});
-
-module.exports = app;
+// --- END OF FILE server.js ---
