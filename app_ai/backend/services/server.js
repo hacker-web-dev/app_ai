@@ -14,13 +14,17 @@ const axios = require('axios');
 const app = express();
 const port = process.env.PORT || 3000;
 
+// Track last FTP sync time to avoid redundant syncs
+let lastFtpSync = 0;
+const FTP_SYNC_INTERVAL = 30 * 60 * 1000; // 30 minutes in milliseconds
+
 // FTP Configuration (using environment variables)
-   const ftpConfig = {
-    host: process.env.FTP_HOST || '127.0.0.1',
-    port: parseInt(process.env.FTP_PORT || '21', 10),
-    user: process.env.FTP_USER || 'user',
-    password: process.env.FTP_PASSWORD || 'password',
- secure: false, // Use true if using FTPS
+const ftpConfig = {
+  host: process.env.FTP_HOST || '127.0.0.1',
+  port: parseInt(process.env.FTP_PORT || '21', 10),
+  user: process.env.FTP_USER || 'user',
+  password: process.env.FTP_PASSWORD || 'password',
+  secure: false, // Use true if using FTPS
 };
 const ftpDirectory = '';
 const googleApiKey = "AIzaSyAYNxP68HxL9UKOQ8lN492Fdo_7-dCyJZw"; // Use environment variable
@@ -29,7 +33,6 @@ if (!googleApiKey) {
   console.error("ERROR: GOOGLE_MAPS_API_KEY environment variable is not set.");
   // process.exit(1); // Optionally exit if the key is essential
 }
-
 
 // Enable CORS and JSON body parsing
 app.use(cors());
@@ -41,6 +44,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Calculate distance between two points using Haversine formula
 function calculateDistance(lat1, lon1, lat2, lon2) {
+  // Check for valid coordinates
+  if (typeof lat1 !== 'number' || typeof lon1 !== 'number' || 
+      typeof lat2 !== 'number' || typeof lon2 !== 'number') {
+    console.error('Invalid coordinates in distance calculation:', { lat1, lon1, lat2, lon2 });
+    return Infinity; // Return a large value for invalid coordinates
+  }
+
   const R = 6371; // Radius of the earth in km
   const dLat = (lat2 - lat1) * Math.PI / 180;
   const dLon = (lon2 - lon1) * Math.PI / 180;
@@ -49,7 +59,12 @@ function calculateDistance(lat1, lon1, lat2, lon2) {
     Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
     Math.sin(dLon / 2) * Math.sin(dLon / 2);
   const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-  return R * c; // Distance in km
+  const distance = R * c; // Distance in km
+  
+  // Log distance for debugging
+  console.log(`Distance calculation: ${lat1},${lon1} to ${lat2},${lon2} = ${distance.toFixed(2)}km`);
+  
+  return distance;
 }
 
 // Function to process a single CSV file and populate Firestore
@@ -160,7 +175,6 @@ async function processCsvFile(filePath) {
   });
 }
 
-
 // --- API Endpoints ---
 
 // Endpoint to trigger FTP download and Firestore population
@@ -173,6 +187,9 @@ app.post('/sync-ftp-data', async (req, res) => {
   const tempDir = path.join(os.tmpdir(), 'ftp-downloads'); // Create a temporary directory path
 
   try {
+    // Update the last sync time
+    lastFtpSync = Date.now();
+    
     // Ensure temporary directory exists
     if (!fs.existsSync(tempDir)) {
       fs.mkdirSync(tempDir, { recursive: true });
@@ -188,7 +205,6 @@ app.post('/sync-ftp-data', async (req, res) => {
     console.log(`Navigating to directory: ${ftpDirectory}`);
     await client.cd(ftpDirectory);
     console.log(`Current directory: ${await client.pwd()}`);
-
 
     const fileList = await client.list();
     const csvFiles = fileList.filter(file => file.name.toLowerCase().endsWith('.csv'));
@@ -249,7 +265,6 @@ app.post('/sync-ftp-data', async (req, res) => {
   }
 });
 
-
 // Endpoint to get location coordinates from postal code
 app.get('/geocode/:postalCode', async (req, res) => {
   try {
@@ -284,11 +299,27 @@ app.get('/geocode/:postalCode', async (req, res) => {
     res.status(500).json({ error: 'Geocoding service failed' });
   }
 });
+
 // Endpoint to search for nearby hospitals with specific services
 app.get('/search', async (req, res) => {
   try {
-    const ftpresponse = await axios.post(url=`http://localhost:${port}/sync-ftp-data`)
-    console.log(ftpresponse.status)
+    // Only sync FTP data if it hasn't been synced recently
+    const currentTime = Date.now();
+    if (currentTime - lastFtpSync > FTP_SYNC_INTERVAL) {
+      console.log('FTP data sync needed (last sync was more than 30 minutes ago)');
+      try {
+        const ftpResponse = await axios.post(`http://localhost:${port}/sync-ftp-data`);
+        if (ftpResponse.status === 200) {
+          console.log('FTP data sync completed successfully');
+        }
+      } catch (ftpError) {
+        console.error('FTP sync error:', ftpError.message);
+        // Continue with search even if FTP sync fails
+      }
+    } else {
+      console.log('Skipping FTP sync - data is recent');
+    }
+
     const { zipCode, serviceDescription, maxDistance = 30 } = req.query; // Use zipCode and serviceDescription
 
     if (!zipCode || !serviceDescription) {
@@ -323,7 +354,6 @@ app.get('/search', async (req, res) => {
 
     const querySnapshot = await serviceQuery.get();
     console.log(`Firestore query returned ${querySnapshot.size} potential matches for service.`);
-
 
     if (querySnapshot.empty) {
         // Optional: Try a broader search (e.g., using searchTerms array) if initial search fails
@@ -397,6 +427,16 @@ app.get('/search', async (req, res) => {
           );
           
           if (!isDuplicate) {
+            // Use the consistent standard charge for this hospital+service
+            if (existing.insuranceOptions.length > 0 && existing.insuranceOptions[0].standardCharge !== null) {
+              insuranceOption.standardCharge = existing.insuranceOptions[0].standardCharge;
+              
+              // Recalculate savings based on consistent standard charge
+              if (insuranceOption.negotiatedAmount !== null) {
+                insuranceOption.savings = insuranceOption.standardCharge - insuranceOption.negotiatedAmount;
+              }
+            }
+            
             // Only add if this is a new insurance option
             existing.insuranceOptions.push(insuranceOption);
           }
