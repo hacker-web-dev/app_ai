@@ -1,27 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Search, DollarSign, Heart, TrendingUp, ShieldCheck, ArrowRight } from 'lucide-react';
 import Navbar from '../components/navbar';
-import ServiceSearchForm from '../components/Servicesearchform'
+
 const LandingPage = ({ dashboardMode = false }) => {
   const navigate = useNavigate();
-
-  // Handle search form submission
-  const handleSearch = (searchData) => {
-    // Navigate to search page with query parameters
-    const searchParams = new URLSearchParams();
-    if (searchData.postalCode) searchParams.set('postal', searchData.postalCode);
-    if (searchData.service) searchParams.set('service', searchData.service);
-    if (searchData.insurance) searchParams.set('insurance', searchData.insurance);
-    
-    navigate(`/search?${searchParams.toString()}`);
-  };
 
   return (
     <div className="min-h-screen bg-gray-50">
       <Navbar />
       
-      {/* Hero Section with Search */}
+      {/* Hero Section with Search Button */}
       <section className="relative bg-gradient-to-br from-indigo-600 to-indigo-800 pt-24 pb-32">
         {/* Background Pattern */}
         <div className="absolute inset-0 bg-grid-white/[0.05] bg-[length:20px_20px]"></div>
@@ -50,11 +39,17 @@ const LandingPage = ({ dashboardMode = false }) => {
                 <div className="text-sm text-indigo-100">Providers Nationwide</div>
               </div>
             </div>
-          </div>
-          
-          {/* Search Box - Positioned to overlap the sections below */}
-          <div className="max-w-2xl mx-auto">
-            <ServiceSearchForm onSearch={handleSearch} />
+            
+            {/* Search Button */}
+            <div className="mt-10">
+              <button 
+                onClick={() => navigate('/search')}
+                className="px-8 py-4 bg-white text-indigo-600 font-bold rounded-lg hover:bg-gray-100 transition-colors flex items-center justify-center mx-auto"
+              >
+                <Search className="mr-2 h-5 w-5" />
+                Search Healthcare Services
+              </button>
+            </div>
           </div>
         </div>
       </section>

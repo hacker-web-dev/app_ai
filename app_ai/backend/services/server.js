@@ -62,7 +62,7 @@ function calculateDistance(lat1, lon1, lat2, lon2) {
   const distance = R * c; // Distance in km
   
   // Log distance for debugging
-  console.log(`Distance calculation: ${lat1},${lon1} to ${lat2},${lon2} = ${distance.toFixed(2)}km`);
+  // console.log(`Distance calculation: ${lat1},${lon1} to ${lat2},${lon2} = ${distance.toFixed(2)}km`);
   
   return distance;
 }
@@ -474,21 +474,21 @@ app.get('/search', async (req, res) => {
 
     // Convert the map values to an array
     const nearbyHospitals = Array.from(hospitalServiceMap.values());
-    
+    console.log(nearbyHospitals)
     console.log(`Found ${nearbyHospitals.length} hospitals within ${maxDistNum}km.`);
     
     // Log a summary of the first hospital's insurance options if available
-    if (nearbyHospitals.length > 0) {
-      console.log(`First hospital (${nearbyHospitals[0].hospitalName}) has ${nearbyHospitals[0].insuranceOptions.length} insurance options.`);
+    // if (nearbyHospitals.length > 0) {
+    //   console.log(`First hospital (${nearbyHospitals[0].hospitalName}) has ${nearbyHospitals[0].insuranceOptions.length} insurance options.`);
       
-      // Log the insurance options with proper formatting to see all details
-      console.log('Insurance options for first hospital:');
-      console.log(JSON.stringify(nearbyHospitals[0].insuranceOptions, null, 2));
+    //   // Log the insurance options with proper formatting to see all details
+    //   console.log('Insurance options for first hospital:');
+    //   console.log(JSON.stringify(nearbyHospitals[0].insuranceOptions, null, 2));
       
-      // For debugging the entire hospital object structure
-      console.log('Full hospital data (first result):');
-      console.log(JSON.stringify(nearbyHospitals[0], null, 2));
-    }
+    //   // For debugging the entire hospital object structure
+    //   console.log('Full hospital data (first result):');
+    //   console.log(JSON.stringify(nearbyHospitals[0], null, 2));
+    // }
 
     // Sort by distance (ascending)
     nearbyHospitals.sort((a, b) => a.distance - b.distance);
