@@ -422,7 +422,7 @@ const SearchPage = () => {
                             <span className="hidden sm:inline">•</span>
                             <span>{formatAddress(provider.address)}</span>
                             <span className="hidden sm:inline">•</span>
-                            <span>{provider.distance.toFixed(1)} km</span>
+                            <span>{(provider.distance * 0.621371).toFixed(1)} miles</span>
                             {provider.service.setting && (
                               <>
                                 <span className="hidden sm:inline">•</span>
