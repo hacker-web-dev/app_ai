@@ -91,6 +91,7 @@ async function processCsvFile(filePath) {
         const longitude = parseFloat(data['Longitude']);
         const standardCharge = parseFloat(data['Standard Charge']);
         const negotiatedAmount = parseFloat(data['Negotiated Amount']);
+        const hospitalRating = parseFloat(data['Hospital Rating'] || 0);
 
         // Skip if location is invalid
         if (isNaN(latitude) || isNaN(longitude)) {
@@ -103,7 +104,7 @@ async function processCsvFile(filePath) {
           hospitalId: data['Hospital ID'] || `GeneratedID_${Date.now()}_${Math.random()}`, // Fallback ID
           hospitalName: data['Hospital Name'] || 'Unknown Hospital',
           hospitalType: data['Hospital Type'] || 'N/A',
-          hospitalRating:data['Hospital Rating'],
+          hospitalRating: !isNaN(hospitalRating) ? hospitalRating : null, // Properly handle rating
           address: {
             street: data['Street'] || '',
             city: data['City'] || '',
@@ -406,6 +407,11 @@ app.get('/search', async (req, res) => {
         const standardCharge = (hospital.pricing && typeof hospital.pricing.standardCharge === 'number') ? hospital.pricing.standardCharge : null;
         const negotiatedAmount = (hospital.pricing && typeof hospital.pricing.negotiatedAmount === 'number') ? hospital.pricing.negotiatedAmount : null;
         const savings = (standardCharge !== null && negotiatedAmount !== null) ? standardCharge - negotiatedAmount : null;
+        
+        // Ensure hospital rating is properly handled
+        const hospitalRating = (typeof hospital.hospitalRating === 'number') ? 
+                             hospital.hospitalRating : 
+                             (typeof hospital.hospitalRating === 'string' ? parseFloat(hospital.hospitalRating) : null);
 
         const insuranceOption = {
             insurance: hospital.pricing?.insurance || 'N/A',
@@ -461,6 +467,7 @@ app.get('/search', async (req, res) => {
             hospitalId: hospital.hospitalId,
             hospitalName: hospital.hospitalName,
             hospitalType: hospital.hospitalType,
+            hospitalRating: hospitalRating, // Include the processed hospital rating
             address: hospital.address,
             location: hospital.location,
             contact: hospital.contact,
@@ -475,21 +482,13 @@ app.get('/search', async (req, res) => {
 
     // Convert the map values to an array
     const nearbyHospitals = Array.from(hospitalServiceMap.values());
-    console.log(nearbyHospitals)
     console.log(`Found ${nearbyHospitals.length} hospitals within ${maxDistNum}km.`);
     
-    // Log a summary of the first hospital's insurance options if available
-    // if (nearbyHospitals.length > 0) {
-    //   console.log(`First hospital (${nearbyHospitals[0].hospitalName}) has ${nearbyHospitals[0].insuranceOptions.length} insurance options.`);
-      
-    //   // Log the insurance options with proper formatting to see all details
-    //   console.log('Insurance options for first hospital:');
-    //   console.log(JSON.stringify(nearbyHospitals[0].insuranceOptions, null, 2));
-      
-    //   // For debugging the entire hospital object structure
-    //   console.log('Full hospital data (first result):');
-    //   console.log(JSON.stringify(nearbyHospitals[0], null, 2));
-    // }
+    // Log a summary of the first hospital's information including rating
+    if (nearbyHospitals.length > 0) {
+      console.log(`First hospital (${nearbyHospitals[0].hospitalName}) has rating: ${nearbyHospitals[0].hospitalRating}`);
+      console.log(`First hospital has ${nearbyHospitals[0].insuranceOptions.length} insurance options.`);
+    }
 
     // Sort by distance (ascending)
     nearbyHospitals.sort((a, b) => a.distance - b.distance);
