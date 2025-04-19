@@ -7,7 +7,8 @@ import {
   ChevronUp,
   ArrowUpDown,
   Check,
-  X
+  X,
+  RefreshCw
 } from 'lucide-react';
 
 const HospitalSelectionTable = ({ 
@@ -46,7 +47,12 @@ const HospitalSelectionTable = ({
   };
 
   // Handle checkbox change
-  const handleCheckboxChange = (providerId) => {
+  const handleCheckboxChange = (providerId, event) => {
+    // Prevent row click from triggering navigation
+    if (event) {
+      event.stopPropagation();
+    }
+    
     const newSelection = {
       ...selectedProviders,
       [providerId]: !selectedProviders[providerId]
@@ -84,12 +90,12 @@ const HospitalSelectionTable = ({
     
     // Notify parent component about selection changes
     const selectedIds = newSelectAll ? Object.keys(newSelection) : [];
-    onSelectionChange(selectedIds);
+    onSelectionChange(selectedIds, false);
   };
 
   // Handle distance slider change
-  const handleDistanceChange = (e) => {
-    onMaxDistanceChange(parseInt(e.target.value, 10));
+  const handleDistanceChange = (value) => {
+    onMaxDistanceChange(value);
   };
 
   // Sort providers
@@ -178,29 +184,37 @@ const HospitalSelectionTable = ({
           <div className="flex flex-col">
             <label className="text-sm font-medium text-gray-700 mb-3 flex justify-between items-center">
               <span>Maximum Distance</span>
-              <span className="text-indigo-600 font-bold text-lg">{maxDistanceFilter} miles</span>
             </label>
-            <div className="w-full flex items-center gap-4">
-              <span className="text-sm text-gray-500 font-medium">5 mi</span>
+            <div className="flex items-center gap-4">
               <input
-                type="range"
-                min="5"
+                type="number"
+                min="1"
                 max="100"
-                step="5"
                 value={maxDistanceFilter}
-                onChange={handleDistanceChange}
-                className="w-full h-3 bg-gray-200 rounded-lg appearance-none cursor-pointer"
+                onChange={(e) => handleDistanceChange(parseInt(e.target.value) || 1)}
+                className="w-16 h-10 px-2 border border-gray-300 rounded-md text-center font-bold text-indigo-700"
               />
-              <span className="text-sm text-gray-500 font-medium">100 mi</span>
+              <span className="text-gray-700">miles</span>
+              <div className="w-full flex items-center gap-2">
+                <span className="text-sm text-gray-500 font-medium">1</span>
+                <input
+                  type="range"
+                  min="1"
+                  max="100"
+                  step="1"
+                  value={maxDistanceFilter}
+                  onChange={(e) => handleDistanceChange(parseInt(e.target.value))}
+                  className="w-full h-3 bg-gray-200 rounded-lg appearance-none cursor-pointer"
+                />
+                <span className="text-sm text-gray-500 font-medium">100</span>
+              </div>
             </div>
             <div className="mt-4 flex justify-center">
               <button 
                 onClick={() => onMaxDistanceChange(maxDistanceFilter)}
                 className="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition-colors flex items-center gap-2"
               >
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                  <path fillRule="evenodd" d="M4 2a1 1 0 011 1v2.101a7.002 7.002 0 0111.601 2.566 1 1 0 11-1.885.666A5.002 5.002 0 005.999 7H9a1 1 0 010 2H4a1 1 0 01-1-1V3a1 1 0 011-1zm.008 9.057a1 1 0 011.276.61A5.002 5.002 0 0014.001 13H11a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0v-2.101a7.002 7.002 0 01-11.601-2.566 1 1 0 01.61-1.276z" clipRule="evenodd" />
-                </svg>
+                <RefreshCw className="h-5 w-5" />
                 Refresh Search
               </button>
             </div>
@@ -237,18 +251,28 @@ const HospitalSelectionTable = ({
             <label className="text-sm font-medium text-gray-700">
               Filter by Distance
             </label>
-            <div className="text-indigo-700 font-bold text-lg">{maxDistanceFilter} miles</div>
+            <div className="flex items-center gap-2">
+              <input
+                type="number"
+                min="1"
+                max="100"
+                value={maxDistanceFilter}
+                onChange={(e) => handleDistanceChange(parseInt(e.target.value) || 1)}
+                className="w-16 h-10 px-2 border border-gray-300 rounded-md text-center font-bold text-indigo-700"
+              />
+              <span className="text-gray-700">miles</span>
+            </div>
           </div>
           <div className="w-full md:w-2/3">
             <div className="flex items-center gap-2">
-              <span className="text-xs text-gray-600 font-medium">5 mi</span>
+              <span className="text-xs text-gray-600 font-medium">1 mi</span>
               <input
                 type="range"
-                min="5"
+                min="1"
                 max="100"
-                step="5"
+                step="1"
                 value={maxDistanceFilter}
-                onChange={handleDistanceChange}
+                onChange={(e) => handleDistanceChange(parseInt(e.target.value))}
                 className="w-full h-3 bg-gray-200 rounded-lg appearance-none cursor-pointer"
               />
               <span className="text-xs text-gray-600 font-medium">100 mi</span>
@@ -354,16 +378,13 @@ const HospitalSelectionTable = ({
               <tr 
                 key={provider.id} 
                 className={`hover:bg-gray-50 ${selectedProviders[provider.id] ? 'bg-indigo-50' : ''}`}
-                onClick={() => handleCheckboxChange(provider.id)}
+                onClick={(e) => e.stopPropagation()} // Prevent row click from auto-selecting
               >
                 <td className="px-6 py-4 whitespace-nowrap">
                   <input
                     type="checkbox"
                     checked={selectedProviders[provider.id] || false}
-                    onChange={(e) => {
-                      e.stopPropagation();
-                      handleCheckboxChange(provider.id);
-                    }}
+                    onChange={(e) => handleCheckboxChange(provider.id, e)}
                     className="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
                   />
                 </td>

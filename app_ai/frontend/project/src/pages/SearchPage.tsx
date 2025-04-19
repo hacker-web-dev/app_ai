@@ -3,10 +3,9 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import Navbar from '../components/navbar';
 import ServiceSearchForm from '../components/ServiceSearchForm'
 import HospitalSelectionTable from '../components/HospitalSelectionTable'
-import HospitalComparison from '../components/HospitalComparision';
+import StaticHospitalComparisonWithRecommendation  from '../components/StaticHospitalComparisonWithRecommendation';
 import BookingModal from '../components/BookingModel';
 import axios from 'axios';
-
 interface HospitalAddress {
   street?: string;
   city?: string;
@@ -311,7 +310,7 @@ const SearchPage = () => {
               </div>
             </div>
             
-            <HospitalComparison
+            <StaticHospitalComparisonWithRecommendation
               providers={selectedProviders}
               selectedInsurance={searchParams.insurance}
               service={searchParams.serviceDescription}
@@ -344,21 +343,25 @@ const SearchPage = () => {
                   <p className="text-sm text-gray-600 mt-1">Adjust the distance slider to see more providers</p>
                 </div>
                 <div className="w-full md:w-2/3">
-                  <div className="flex items-center gap-2">
-                    <span className="text-xs text-gray-500 font-medium">5 mi</span>
+                  <div className="flex items-center gap-4">
+                    <input
+                      type="number"
+                      min="1"
+                      max="100"
+                      value={maxDistance}
+                      onChange={(e) => handleMaxDistanceChange(parseInt(e.target.value) || 1)}
+                      className="w-16 h-10 px-2 border border-gray-300 rounded-md text-center font-bold text-indigo-700"
+                    />
+                    <span className="text-gray-700">miles</span>
                     <input
                       type="range"
-                      min="5"
+                      min="1"
                       max="100"
-                      step="5"
+                      step="1"
                       value={maxDistance}
                       onChange={(e) => handleMaxDistanceChange(parseInt(e.target.value, 10))}
                       className="w-full h-3 bg-gray-200 rounded-lg appearance-none cursor-pointer"
                     />
-                    <span className="text-xs text-gray-500 font-medium">100 mi</span>
-                    <span className="ml-2 px-2 py-1 bg-indigo-100 text-indigo-700 rounded-md font-medium">
-                      {maxDistance} miles
-                    </span>
                   </div>
                 </div>
               </div>
@@ -377,7 +380,7 @@ const SearchPage = () => {
                   type="button"
                   onClick={() => {
                     // Set to a higher distance that will show more results
-                    const newDistance = Math.min(100, Math.max(50, Math.ceil(providers[0]?.distance * 0.621371) + 5));
+                    const newDistance = Math.min(100, Math.max(25, Math.ceil(providers[0]?.distance * 0.621371) + 5));
                     handleMaxDistanceChange(newDistance);
                   }}
                   className="inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
