@@ -77,62 +77,38 @@ const StaticHospitalComparison = ({
   const topStandardCharge = getStandardCharge(topProvider);
   const topFormattedStandardCharge = formatCurrency(topStandardCharge);
   const topAddress = topProvider.address 
-    ? [topProvider.address.city, topProvider.address.state].filter(Boolean).join(', ')
+    ? `${topProvider.address.street}, ${topProvider.address.city}, ${topProvider.address.state} ${topProvider.address.zip || ''}`.trim()
     : 'N/A';
-  let topInsurancePrice = 'N/A';
-  let topSavings = null;
-  let topSavingsPercentage = null;
-
-  if (selectedInsurance && topProvider.insuranceOptions) {
-    const insuranceOption = topProvider.insuranceOptions.find(
-      option => option.insurance && option.insurance.toLowerCase() === selectedInsurance.toLowerCase()
-    );
-    if (insuranceOption && insuranceOption.negotiatedAmount) {
-      topInsurancePrice = formatCurrency(insuranceOption.negotiatedAmount);
-      topSavings = calculateSavings(topStandardCharge, insuranceOption.negotiatedAmount);
-      topSavingsPercentage = calculateSavingsPercentage(topStandardCharge, topSavings);
-    }
-  }
 
   return (
     <div className="space-y-6">
       {/* Recommendation Card */}
-      <div className="rounded-xl bg-indigo-50 shadow-lg overflow-hidden">
-        <div className="p-6">
-          <h3 className="text-lg font-medium text-indigo-800 mb-2">Recommended Provider</h3>
-          <div className="flex items-center justify-between">
-            <div>
-              <div className="text-sm font-medium text-gray-900">{topProvider.hospitalName}</div>
-              <div className="text-sm text-gray-500">{topProvider.hospitalType || 'Healthcare Provider'}</div>
-              <div className="mt-1 flex items-center">
-                {renderRating(topProvider.hospitalRating)}
-              </div>
-              <div className="text-sm text-gray-600 mt-1">{topAddress}</div>
-              {topProvider.address?.street && (
-                <div className="text-xs text-gray-500">{topProvider.address.street}</div>
-              )}
-              <div className="text-sm text-gray-600 mt-1">{(topProvider.distance * 0.621371).toFixed(1)} miles</div>
-              <div className="text-sm font-medium text-gray-900 mt-1">{topFormattedStandardCharge}</div>
-              {selectedInsurance && (
-                <>
-                  <div className="text-sm font-medium text-indigo-600 mt-1">{topInsurancePrice}</div>
-                  {topSavings > 0 && (
-                    <div className="text-sm text-green-600 font-medium mt-1">
-                      {formatCurrency(topSavings)}
-                      {topSavingsPercentage && (
-                        <span className="ml-1 text-xs">({topSavingsPercentage.toFixed(0)}%)</span>
-                      )}
-                    </div>
-                  )}
-                </>
-              )}
+      <div className="rounded-xl bg-indigo-50 shadow-lg overflow-hidden border border-indigo-200">
+        <div className="p-4 bg-indigo-100 flex items-center text-indigo-800 text-sm font-medium">
+          <Info size={14} className="mr-2" />
+          Top Rated Recommendation
+        </div>
+        <div className="p-6 flex items-center justify-between">
+          <div>
+            <div className="text-lg font-medium text-gray-900">{topProvider.hospitalName}</div>
+            <div className="text-sm text-gray-500">{topProvider.hospitalType || 'Healthcare Provider'}</div>
+            <div className="mt-2 flex items-center">
+              {renderRating(topProvider.hospitalRating)}
+            </div>
+            <div className="text-sm text-gray-600 mt-1">{topAddress}</div>
+            <div className="text-sm text-gray-600 mt-1">Distance: {(topProvider.distance * 0.621371).toFixed(1)} miles</div>
+          </div>
+          <div className="flex flex-col items-end">
+            <div className="bg-white p-2 rounded-md shadow-sm text-sm font-medium text-gray-900 mb-4">
+              Cash Price<br />
+              {topFormattedStandardCharge}
             </div>
             <button
               onClick={() => onBookAppointment(topProvider.id)}
-              className="inline-flex items-center px-3 py-1.5 border border-transparent text-xs font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+              className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
             >
-              <Calendar className="mr-1.5 h-3.5 w-3.5" />
-              Book
+              <Calendar className="mr-2 h-4 w-4" />
+              Book Appointment
             </button>
           </div>
         </div>
