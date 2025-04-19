@@ -4,7 +4,7 @@ import random
 from datetime import datetime
 
 # Create output directory if it doesn't exist
-output_dir = 'hospital_files'
+output_dir = 'app_ai/backend/services/hospital_files'
 os.makedirs(output_dir, exist_ok=True)
 
 # Sample US postal codes with their coordinates for different regions
@@ -45,13 +45,13 @@ insurances = [
     {"name": "Amerihealth", "plans": ["Amerihealth Medicaid HC", "Amerihealth Commercial", "Amerihealth Medicare"]}
 ]
 
-# Generate 5 hospital data
+# Generate 5 hospital data with ratings
 hospitals = [
-    {"id": "hospital1", "name": "General Hospital", "postal_code": postal_codes[0]},
-    {"id": "hospital2", "name": "Medical Center", "postal_code": postal_codes[1]},
-    {"id": "hospital3", "name": "Community Hospital", "postal_code": postal_codes[2]},
-    {"id": "hospital4", "name": "Regional Medical Center", "postal_code": postal_codes[3]},
-    {"id": "hospital5", "name": "University Hospital", "postal_code": postal_codes[4]}
+    {"id": "hospital1", "name": "General Hospital", "postal_code": postal_codes[0], "rating": 4.5},
+    {"id": "hospital2", "name": "Medical Center", "postal_code": postal_codes[1], "rating": 3.8},
+    {"id": "hospital3", "name": "Community Hospital", "postal_code": postal_codes[2], "rating": 4.2},
+    {"id": "hospital4", "name": "Regional Medical Center", "postal_code": postal_codes[3], "rating": 3.5},
+    {"id": "hospital5", "name": "University Hospital", "postal_code": postal_codes[4], "rating": 4.7}
 ]
 
 # Define a comprehensive list of CSV headers for the consolidated file
@@ -60,7 +60,7 @@ consolidated_headers = [
     "Hospital ID", "Hospital Name", "Hospital Type", 
     "Street", "City", "State", "Postal Code", 
     "Latitude", "Longitude", "Phone", "Email", "Website",
-    "Accepted Insurance",
+    "Accepted Insurance", "Hospital Rating",
     
     # Service information
     "Service Description", "Service Code", "Setting", 
@@ -81,6 +81,7 @@ def generate_consolidated_data():
         hospital_id = hospital["id"]
         hospital_name = hospital["name"]
         postal_code = hospital["postal_code"]
+        hospital_rating = hospital["rating"]  # Get the consistent rating for this hospital
         hospital_type = random.choice(["Hospital", "Medical Center", "Clinic", "Specialty Center"])
         street = f"{random.randint(100, 9999)} Main St"
         phone = f"(555) {random.randint(100, 999)}-{random.randint(1000, 9999)}"
@@ -103,6 +104,7 @@ def generate_consolidated_data():
             "Email": email,
             "Website": website,
             "Accepted Insurance": accepted_insurance,
+            "Hospital Rating": hospital_rating,  # Add the consistent rating to each row
         }
         
         # Select random services for this hospital
@@ -180,14 +182,14 @@ def generate_consolidated_data():
     return data
 
 def main():
-    print("Generating consolidated hospital data file...")
+    print("Generating consolidated hospital data file with hospital ratings...")
     
     # Generate the consolidated data
     all_data = generate_consolidated_data()
     
     # Create the filename with timestamp
     date_str = datetime.now().strftime("%Y%m%d")
-    filename = f"consolidated_hospital_data_{date_str}.csv"
+    filename = f"consolidated_hospital_data.csv"
     file_path = os.path.join(output_dir, filename)
     
     # Write to CSV
@@ -197,7 +199,7 @@ def main():
         writer.writerows(all_data)
     
     print(f"Successfully created {file_path} with {len(all_data)} records.")
-    print(f"File contains data for {len(hospitals)} hospitals with services and pricing information.")
+    print(f"File contains data for {len(hospitals)} hospitals with services, pricing information, and ratings.")
 
 if __name__ == "__main__":
     main()

@@ -8,7 +8,7 @@ FTP_HOST = "127.0.0.1"
 FTP_PORT = 21
 FTP_USER = "user"
 FTP_PASSWORD = "password"
-FTP_DIRECTORY = os.path.abspath("app_ai/backend/services/hospital_files")  # Use the same directory where files are generated
+FTP_DIRECTORY = os.path.abspath("hospital_files")  # Use the same directory where files are generated
 
 def main():
     # Make sure the directory exists
