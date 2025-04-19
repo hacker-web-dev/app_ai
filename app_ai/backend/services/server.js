@@ -103,6 +103,7 @@ async function processCsvFile(filePath) {
           hospitalId: data['Hospital ID'] || `GeneratedID_${Date.now()}_${Math.random()}`, // Fallback ID
           hospitalName: data['Hospital Name'] || 'Unknown Hospital',
           hospitalType: data['Hospital Type'] || 'N/A',
+          hospitalRating:data['Hospital Rating'],
           address: {
             street: data['Street'] || '',
             city: data['City'] || '',
