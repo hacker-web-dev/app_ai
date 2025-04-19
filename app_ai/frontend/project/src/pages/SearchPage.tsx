@@ -3,9 +3,10 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import Navbar from '../components/navbar';
 import ServiceSearchForm from '../components/ServiceSearchForm'
 import HospitalSelectionTable from '../components/HospitalSelectionTable'
-import StaticHospitalComparisonWithRecommendation  from '../components/StaticHospitalComparisonWithRecommendation';
+import StaticHospitalComparison from '../components/StaticHospitalComparison';
 import BookingModal from '../components/BookingModel';
 import axios from 'axios';
+// Define interfaces for the hospital data
 interface HospitalAddress {
   street?: string;
   city?: string;
@@ -310,7 +311,7 @@ const SearchPage = () => {
               </div>
             </div>
             
-            <StaticHospitalComparisonWithRecommendation
+            <StaticHospitalComparison
               providers={selectedProviders}
               selectedInsurance={searchParams.insurance}
               service={searchParams.serviceDescription}
