@@ -72,8 +72,73 @@ const StaticHospitalComparison = ({
     );
   }
 
+  // Get top-rated provider for recommendation
+  const topProvider = sortedByRating[0];
+  const topStandardCharge = getStandardCharge(topProvider);
+  const topFormattedStandardCharge = formatCurrency(topStandardCharge);
+  const topAddress = topProvider.address 
+    ? [topProvider.address.city, topProvider.address.state].filter(Boolean).join(', ')
+    : 'N/A';
+  let topInsurancePrice = 'N/A';
+  let topSavings = null;
+  let topSavingsPercentage = null;
+
+  if (selectedInsurance && topProvider.insuranceOptions) {
+    const insuranceOption = topProvider.insuranceOptions.find(
+      option => option.insurance && option.insurance.toLowerCase() === selectedInsurance.toLowerCase()
+    );
+    if (insuranceOption && insuranceOption.negotiatedAmount) {
+      topInsurancePrice = formatCurrency(insuranceOption.negotiatedAmount);
+      topSavings = calculateSavings(topStandardCharge, insuranceOption.negotiatedAmount);
+      topSavingsPercentage = calculateSavingsPercentage(topStandardCharge, topSavings);
+    }
+  }
+
   return (
     <div className="space-y-6">
+      {/* Recommendation Card */}
+      <div className="rounded-xl bg-indigo-50 shadow-lg overflow-hidden">
+        <div className="p-6">
+          <h3 className="text-lg font-medium text-indigo-800 mb-2">Recommended Provider</h3>
+          <div className="flex items-center justify-between">
+            <div>
+              <div className="text-sm font-medium text-gray-900">{topProvider.hospitalName}</div>
+              <div className="text-sm text-gray-500">{topProvider.hospitalType || 'Healthcare Provider'}</div>
+              <div className="mt-1 flex items-center">
+                {renderRating(topProvider.hospitalRating)}
+              </div>
+              <div className="text-sm text-gray-600 mt-1">{topAddress}</div>
+              {topProvider.address?.street && (
+                <div className="text-xs text-gray-500">{topProvider.address.street}</div>
+              )}
+              <div className="text-sm text-gray-600 mt-1">{(topProvider.distance * 0.621371).toFixed(1)} miles</div>
+              <div className="text-sm font-medium text-gray-900 mt-1">{topFormattedStandardCharge}</div>
+              {selectedInsurance && (
+                <>
+                  <div className="text-sm font-medium text-indigo-600 mt-1">{topInsurancePrice}</div>
+                  {topSavings > 0 && (
+                    <div className="text-sm text-green-600 font-medium mt-1">
+                      {formatCurrency(topSavings)}
+                      {topSavingsPercentage && (
+                        <span className="ml-1 text-xs">({topSavingsPercentage.toFixed(0)}%)</span>
+                      )}
+                    </div>
+                  )}
+                </>
+              )}
+            </div>
+            <button
+              onClick={() => onBookAppointment(topProvider.id)}
+              className="inline-flex items-center px-3 py-1.5 border border-transparent text-xs font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+            >
+              <Calendar className="mr-1.5 h-3.5 w-3.5" />
+              Book
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Main Comparison Table */}
       <div className="rounded-xl bg-white shadow-lg overflow-hidden">
         <div className="bg-gray-50 px-6 py-4 border-b border-gray-200">
           <h3 className="text-lg font-semibold text-gray-800">
@@ -277,7 +342,15 @@ const StaticHospitalComparison = ({
           </table>
         </div>
         
-        
+        <div className="bg-gray-50 px-6 py-4 border-t border-gray-200">
+          <div className="flex items-center text-sm text-gray-600">
+            <Info size={14} className="mr-2" />
+            <p><span className="font-medium">Service:</span> {service}</p>
+          </div>
+          <p className="mt-1 text-xs text-gray-500">
+            Note: Prices may vary based on individual circumstances. Contact each provider for the most accurate pricing information.
+          </p>
+        </div>
       </div>
     </div>
   );
