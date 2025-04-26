@@ -102,6 +102,23 @@ const StaticHospitalComparison = ({
       : 'N/A';
   };
 
+  // Get insurance options for display
+  const getInsuranceOptions = (provider) => {
+    if (!provider.insuranceOptions || provider.insuranceOptions.length === 0) {
+      return [];
+    }
+
+    // If selected insurance, filter options by that insurance
+    if (selectedInsurance) {
+      return provider.insuranceOptions.filter(
+        opt => opt.insurance && opt.insurance.toLowerCase() === selectedInsurance.toLowerCase()
+      );
+    }
+
+    // Otherwise return all options
+    return provider.insuranceOptions;
+  };
+
   // Format address
   const formatAddress = (address) => {
     if (!address) return 'N/A';
@@ -156,6 +173,7 @@ const StaticHospitalComparison = ({
   if (providers.length === 1) {
     const provider = providers[0];
     const { price: insurancePrice, savings: insuranceSavings, savingsPercent } = getInsurancePriceInfo(provider);
+    const insuranceOptions = getInsuranceOptions(provider);
     
     return (
       <div className="space-y-6">
@@ -241,80 +259,66 @@ const StaticHospitalComparison = ({
               
               {/* Right Column */}
               <div>
-                {/* Pricing Information */}
+                {/* Standard Pricing */}
                 <div className="bg-gray-50 rounded-lg p-4 border border-gray-200 mb-6">
-                  <h4 className="font-medium text-gray-700 mb-3">Pricing Information</h4>
-                  <div className="grid grid-cols-1 gap-4 mb-4">
-                    <div className="bg-white p-3 rounded-lg border border-gray-200">
-                      <div className="text-sm text-gray-500 font-medium mb-1">Cash Price</div>
-                      <div className="text-lg font-bold text-gray-900">{getCashPrice(provider)}</div>
+                  <h4 className="font-medium text-gray-700 mb-3">Standard Price</h4>
+                  <div className="bg-white rounded-lg p-4 border border-gray-200 shadow-sm">
+                    <p className="text-2xl font-bold text-gray-800">{getCashPrice(provider)}</p>
+                    <div className="mt-2 flex items-center text-sm text-gray-500">
+                      <Shield size={14} className="mr-1.5" />
+                      Without insurance
                     </div>
-                    
-                    {selectedInsurance && (
-                      <div className="bg-white p-3 rounded-lg border border-indigo-200">
-                        <div className="text-sm text-gray-500 font-medium mb-1">{selectedInsurance} Price</div>
-                        <div className="text-lg font-bold text-indigo-600">
-                          {insurancePrice}
-                        </div>
-                        {insuranceSavings !== 'N/A' && (
-                          <div className="text-sm text-green-600 mt-1">
-                            Save {insuranceSavings} ({savingsPercent})
-                          </div>
-                        )}
-                      </div>
-                    )}
-                  </div>
-                  
-                  <div className="flex flex-col gap-2">
-                    <button
-                      onClick={() => onBookAppointment(provider.id)}
-                      className="w-full px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors flex items-center justify-center"
-                    >
-                      <Calendar size={16} className="mr-2" />
-                      Book Appointment
-                    </button>
                   </div>
                 </div>
                 
-                {/* Insurance Information */}
-                <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
-                  <h4 className="font-medium text-gray-700 mb-3">Insurance Information</h4>
-                  {provider.acceptedInsurance && provider.acceptedInsurance.length > 0 ? (
-                    <div>
-                      <div className="font-medium text-gray-600 mb-2 text-sm">Accepted Insurance Plans:</div>
-                      <div className="flex flex-wrap gap-2">
-                        {provider.acceptedInsurance.map((insurance, idx) => (
-                          <span
-                            key={idx}
-                            className={`inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium ${
-                              selectedInsurance && insurance.toLowerCase() === selectedInsurance.toLowerCase()
-                                ? 'bg-indigo-100 text-indigo-800 ring-1 ring-indigo-300'
-                                : 'bg-gray-100 text-gray-700 ring-1 ring-gray-300'
-                            }`}
-                          >
-                            {insurance}
-                          </span>
+                {/* Insurance Options */}
+                <div className="bg-gray-50 rounded-lg p-4 border border-gray-200 mb-6">
+                  <h4 className="font-medium text-gray-700 mb-3">
+                    {selectedInsurance 
+                      ? `${selectedInsurance} Insurance Plans`
+                      : 'Insurance Options'}
+                  </h4>
+                  
+                  {insuranceOptions.length > 0 ? (
+                    <div className="bg-white rounded-lg border border-gray-200 shadow-sm overflow-hidden">
+                      <div className="divide-y divide-gray-100">
+                        {insuranceOptions.map((option, index) => (
+                          <div key={index} className="p-3 hover:bg-gray-50">
+                            <div className="flex justify-between items-center mb-1">
+                              <span className="font-medium text-gray-800">{option.insurance || 'Standard'}</span>
+                              <span className="text-lg font-bold text-indigo-600">
+                                ${option.negotiatedAmount?.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 }) || 'N/A'}
+                              </span>
+                            </div>
+                            {option.plan && (
+                              <div className="flex justify-between text-sm">
+                                <span className="text-gray-500">{option.plan}</span>
+                                {option.savings && (
+                                  <span className="text-green-600 font-medium">
+                                    Save ${option.savings.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                                  </span>
+                                )}
+                              </div>
+                            )}
+                          </div>
                         ))}
                       </div>
                     </div>
                   ) : (
-                    <div className="text-gray-500 italic text-sm">No insurance information available</div>
-                  )}
-                  
-                  {provider.service && (
-                    <div className="mt-4">
-                      <div className="font-medium text-gray-600 mb-2 text-sm">Service Details:</div>
-                      <div className="bg-white p-3 rounded border border-gray-200 text-sm">
-                        <div><span className="font-medium">Description:</span> {provider.service.description}</div>
-                        {provider.service.code && (
-                          <div className="mt-1"><span className="font-medium">Code:</span> {provider.service.code}</div>
-                        )}
-                        {provider.service.setting && (
-                          <div className="mt-1"><span className="font-medium">Setting:</span> {provider.service.setting}</div>
-                        )}
-                      </div>
+                    <div className="bg-gray-100 rounded-lg p-4 border border-gray-200">
+                      <p className="text-gray-500 italic">No insurance options available</p>
                     </div>
                   )}
+                </div>
+                
+                <div className="flex flex-col gap-2">
+                  <button
+                    onClick={() => onBookAppointment(provider.id)}
+                    className="w-full px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors flex items-center justify-center"
+                  >
+                    <Calendar size={16} className="mr-2" />
+                    Book Appointment
+                  </button>
                 </div>
               </div>
             </div>
@@ -536,26 +540,51 @@ const StaticHospitalComparison = ({
                           <div>
                             <h4 className="text-sm font-medium text-gray-700 mb-2">Insurance Details</h4>
                             <div className="bg-white rounded-lg p-3 border border-gray-200 text-sm">
-                              {provider.acceptedInsurance && provider.acceptedInsurance.length > 0 ? (
-                                <div>
-                                  <div className="font-medium text-gray-600 mb-2">Accepted Insurance:</div>
-                                  <div className="flex flex-wrap gap-1">
-                                    {provider.acceptedInsurance.map((insurance, idx) => (
-                                      <span
-                                        key={idx}
-                                        className={`inline-flex items-center px-2 py-0.5 rounded text-xs font-medium ${
-                                          selectedInsurance && insurance.toLowerCase() === selectedInsurance.toLowerCase()
-                                            ? 'bg-indigo-100 text-indigo-800 ring-1 ring-indigo-200'
-                                            : 'bg-gray-100 text-gray-700 ring-1 ring-gray-200'
-                                        }`}
-                                      >
-                                        {insurance}
-                                      </span>
-                                    ))}
-                                  </div>
+                              {getInsuranceOptions(provider).length > 0 ? (
+                                <div className="divide-y divide-gray-100">
+                                  {getInsuranceOptions(provider).slice(0, 3).map((option, idx) => (
+                                    <div key={idx} className="py-2 first:pt-0 last:pb-0">
+                                      <div className="flex justify-between items-center mb-1">
+                                        <span className="font-medium text-gray-800">{option.insurance || 'Standard'}</span>
+                                        <span className="text-base font-bold text-indigo-600">
+                                          ${option.negotiatedAmount?.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 }) || 'N/A'}
+                                        </span>
+                                      </div>
+                                      {option.plan && (
+                                        <div className="flex justify-between text-xs">
+                                          <span className="text-gray-500">{option.plan}</span>
+                                          {option.savings && (
+                                            <span className="text-green-600 font-medium">
+                                              Save ${option.savings.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                                            </span>
+                                          )}
+                                        </div>
+                                      )}
+                                    </div>
+                                  ))}
                                 </div>
                               ) : (
-                                <div className="text-gray-500 italic">No insurance information available</div>
+                                provider.acceptedInsurance && provider.acceptedInsurance.length > 0 ? (
+                                  <div>
+                                    <div className="font-medium text-gray-600 mb-2">Accepted Insurance:</div>
+                                    <div className="flex flex-wrap gap-1">
+                                      {provider.acceptedInsurance.map((insurance, idx) => (
+                                        <span
+                                          key={idx}
+                                          className={`inline-flex items-center px-2 py-0.5 rounded text-xs font-medium ${
+                                            selectedInsurance && insurance.toLowerCase() === selectedInsurance.toLowerCase()
+                                              ? 'bg-indigo-100 text-indigo-800 ring-1 ring-indigo-200'
+                                              : 'bg-gray-100 text-gray-700 ring-1 ring-gray-200'
+                                          }`}
+                                        >
+                                          {insurance}
+                                        </span>
+                                      ))}
+                                    </div>
+                                  </div>
+                                ) : (
+                                  <div className="text-gray-500 italic">No insurance information available</div>
+                                )
                               )}
                             </div>
                           </div>
