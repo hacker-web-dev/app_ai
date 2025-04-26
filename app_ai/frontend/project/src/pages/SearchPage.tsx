@@ -253,17 +253,26 @@ const SearchPage = () => {
                 <div className="flex mt-2">
                   <div className="w-8 text-center text-xs">Find</div>
                   <div className="w-16"></div>
-                  <div className="w-8 text-center text-xs">Compare</div>
+                  <div className="w-8 text-center text-xs">
+                    {selectedProviders.length === 1 ? 'Details' : 'Compare'}
+                  </div>
                 </div>
               </div>
               <div className="text-right">
                 <h3 className="text-lg font-medium text-gray-800">
-                  {searchStep === 'select' ? 'Select Providers to Compare' : 'Compare Selected Providers'}
+                  {searchStep === 'select' 
+                    ? 'Select Providers to Compare' 
+                    : selectedProviders.length === 1 
+                      ? 'Hospital Details' 
+                      : 'Compare Selected Providers'
+                  }
                 </h3>
                 <p className="text-sm text-gray-500">
                   {searchStep === 'select' 
                     ? 'Choose providers by checking the boxes' 
-                    : `Comparing ${selectedProviderIds.length} providers`}
+                    : selectedProviders.length === 1
+                      ? `Viewing details for 1 provider`
+                      : `Comparing ${selectedProviderIds.length} providers`}
                 </p>
               </div>
             </div>
@@ -307,7 +316,10 @@ const SearchPage = () => {
                 ← Back to Selection
               </button>
               <div className="text-sm text-gray-600">
-                Comparing {selectedProviders.length} providers for {searchParams.serviceDescription}
+                {selectedProviders.length === 1 
+                  ? "Hospital details for " + searchParams.serviceDescription
+                  : `Comparing ${selectedProviders.length} providers for ${searchParams.serviceDescription}`
+                }
               </div>
             </div>
             
