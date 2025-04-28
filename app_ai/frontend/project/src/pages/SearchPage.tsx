@@ -69,8 +69,9 @@ const SearchPage = () => {
   const [providers, setProviders] = useState<HospitalData[]>([]);
   const [filteredProviders, setFilteredProviders] = useState<HospitalData[]>([]);
   const [selectedProviderIds, setSelectedProviderIds] = useState<string[]>([]);
+  const [singleProviderId, setSingleProviderId] = useState<string | null>(null); // New state for single provider view
   const [maxDistance, setMaxDistance] = useState<number>(30);
-  const [searchStep, setSearchStep] = useState<'search' | 'select' | 'compare'>('search');
+  const [searchStep, setSearchStep] = useState<'search' | 'select' | 'compare' | 'details'>('search'); // Added 'details' step
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
   
@@ -123,6 +124,7 @@ const SearchPage = () => {
     setProviders([]);
     setFilteredProviders([]);
     setSelectedProviderIds([]);
+    setSingleProviderId(null); // Reset single provider selection
     setSearchStep('search');
 
     // Update search parameters
@@ -178,8 +180,15 @@ const SearchPage = () => {
     
     // Only navigate to compare view if explicitly requested (by clicking the Compare button)
     if (navigateToCompare && selectedIds.length > 0) {
+      setSingleProviderId(null); // Clear single provider selection
       setSearchStep('compare');
     }
+  };
+
+  // Handle single provider view - New function to handle clicking on a hospital name
+  const handleViewSingleProvider = (providerId: string) => {
+    setSingleProviderId(providerId);
+    setSearchStep('details'); // Immediately navigate to details view
   };
 
   // Handle max distance change
@@ -205,10 +214,13 @@ const SearchPage = () => {
     }
   };
 
-  // Get selected providers
-  const selectedProviders = providers.filter(
-    provider => selectedProviderIds.includes(provider.id)
-  );
+  // Get selected providers or single provider
+  const selectedProviders = searchStep === 'details' && singleProviderId 
+    ? [providers.find(p => p.id === singleProviderId)].filter(Boolean) as HospitalData[]
+    : providers.filter(provider => selectedProviderIds.includes(provider.id));
+
+  // Determine if we're in single hospital view mode
+  const isSingleView = searchStep === 'details' && singleProviderId !== null;
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -242,11 +254,11 @@ const SearchPage = () => {
             <div className="flex items-center justify-between">
               <div className="flex-1">
                 <div className="flex items-center">
-                  <div className={`flex items-center justify-center w-8 h-8 rounded-full ${searchStep === 'select' || searchStep === 'compare' ? 'bg-indigo-600 text-white' : 'bg-gray-200 text-gray-700'}`}>
+                  <div className={`flex items-center justify-center w-8 h-8 rounded-full ${searchStep !== 'search' ? 'bg-indigo-600 text-white' : 'bg-gray-200 text-gray-700'}`}>
                     1
                   </div>
-                  <div className={`h-1 w-16 mx-2 ${searchStep === 'select' || searchStep === 'compare' ? 'bg-indigo-600' : 'bg-gray-200'}`}></div>
-                  <div className={`flex items-center justify-center w-8 h-8 rounded-full ${searchStep === 'compare' ? 'bg-indigo-600 text-white' : 'bg-gray-200 text-gray-700'}`}>
+                  <div className={`h-1 w-16 mx-2 ${searchStep === 'compare' || searchStep === 'details' ? 'bg-indigo-600' : 'bg-gray-200'}`}></div>
+                  <div className={`flex items-center justify-center w-8 h-8 rounded-full ${searchStep === 'compare' || searchStep === 'details' ? 'bg-indigo-600 text-white' : 'bg-gray-200 text-gray-700'}`}>
                     2
                   </div>
                 </div>
@@ -254,7 +266,7 @@ const SearchPage = () => {
                   <div className="w-8 text-center text-xs">Find</div>
                   <div className="w-16"></div>
                   <div className="w-8 text-center text-xs">
-                    {selectedProviders.length === 1 ? 'Details' : 'Compare'}
+                    {isSingleView ? 'Details' : 'Compare'}
                   </div>
                 </div>
               </div>
@@ -262,17 +274,21 @@ const SearchPage = () => {
                 <h3 className="text-lg font-medium text-gray-800">
                   {searchStep === 'select' 
                     ? 'Select Providers to Compare' 
-                    : selectedProviders.length === 1 
-                      ? 'Hospital Details' 
-                      : 'Compare Selected Providers'
+                    : searchStep === 'details'
+                      ? 'Hospital Details'
+                      : selectedProviders.length === 1 
+                        ? 'Hospital Details' 
+                        : 'Compare Selected Providers'
                   }
                 </h3>
                 <p className="text-sm text-gray-500">
                   {searchStep === 'select' 
-                    ? 'Choose providers by checking the boxes' 
-                    : selectedProviders.length === 1
-                      ? `Viewing details for 1 provider`
-                      : `Comparing ${selectedProviderIds.length} providers`}
+                    ? 'Choose providers by checking the boxes or click a name to view details' 
+                    : searchStep === 'details'
+                      ? `Viewing details for selected provider`
+                      : selectedProviders.length === 1
+                        ? `Viewing details for 1 provider`
+                        : `Comparing ${selectedProviderIds.length} providers`}
                 </p>
               </div>
             </div>
@@ -300,9 +316,35 @@ const SearchPage = () => {
           <HospitalSelectionTable
             providers={filteredProviders}
             onSelectionChange={handleProviderSelection}
+            onViewSingleProvider={handleViewSingleProvider} // Connect the handler
             maxDistanceFilter={maxDistance}
             onMaxDistanceChange={handleMaxDistanceChange}
           />
+        )}
+
+        {/* Single Provider View */}
+        {!isLoading && searchStep === 'details' && selectedProviders.length === 1 && (
+          <div className="space-y-6">
+            <div className="flex justify-between items-center">
+              <button
+                onClick={() => setSearchStep('select')}
+                className="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors"
+              >
+                ← Back to Selection
+              </button>
+              <div className="text-sm text-gray-600">
+                Hospital details for {searchParams.serviceDescription}
+              </div>
+            </div>
+            
+            <StaticHospitalComparison
+              providers={selectedProviders}
+              selectedInsurance={searchParams.insurance}
+              service={searchParams.serviceDescription}
+              onBookAppointment={handleBookAppointment}
+              isSingleView={true} // Tell component this is a single provider view
+            />
+          </div>
         )}
 
         {/* Comparison View */}
@@ -328,6 +370,7 @@ const SearchPage = () => {
               selectedInsurance={searchParams.insurance}
               service={searchParams.serviceDescription}
               onBookAppointment={handleBookAppointment}
+              isSingleView={selectedProviders.length === 1} // Set to true if there's only one provider
             />
           </div>
         )}

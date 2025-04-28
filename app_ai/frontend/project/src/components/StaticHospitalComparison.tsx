@@ -1,144 +1,28 @@
-import React, { useState } from 'react';
-import { 
-  Building, 
-  MapPin, 
-  Star, 
-  DollarSign, 
-  Shield, 
-  Calendar,
-  ChevronDown,
-  ChevronUp,
-  Award,
-  Check,
-  Info
-} from 'lucide-react';
+import React from 'react';
+import { Star, Calendar, Info, MapPin, Phone, Globe, Shield, Building } from 'lucide-react';
 
-const StaticHospitalComparison = ({ 
-  providers = [], 
+const StaticHospitalComparison = ({
+  providers = [],
   selectedInsurance = "",
   service = "",
-  onBookAppointment = () => {}
+  onBookAppointment = () => {},
+  isSingleView = false // Prop remains, but logic for multi-view also shows details
 }) => {
-  const [expandedProviders, setExpandedProviders] = useState({});
-  const [showDetails, setShowDetails] = useState(false);
-
-  // Toggle expanded provider details
-  const toggleProviderExpanded = (providerId) => {
-    setExpandedProviders(prev => ({
-      ...prev,
-      [providerId]: !prev[providerId]
-    }));
-  };
-
-  // Toggle detailed view for single provider
-  const toggleDetailedView = () => {
-    setShowDetails(!showDetails);
-  };
-
-  // Get insurance price info for a provider
-  const getInsurancePriceInfo = (provider) => {
-    if (!provider.insuranceOptions || provider.insuranceOptions.length === 0) {
-      return { price: 'N/A', savings: 'N/A', savingsPercent: 'N/A' };
-    }
-
-    // For no insurance case, return standard charge
-    if (!selectedInsurance) {
-      const standardOption = provider.insuranceOptions.find(opt => opt.standardCharge);
-      return {
-        price: standardOption?.standardCharge 
-          ? `$${standardOption.standardCharge.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`
-          : 'N/A',
-        savings: 'N/A',
-        savingsPercent: 'N/A'
-      };
-    }
-
-    // Find the insurance option matching the selected insurance
-    const insuranceOption = provider.insuranceOptions.find(
-      option => option.insurance && option.insurance.toLowerCase() === selectedInsurance.toLowerCase()
-    );
-
-    if (!insuranceOption) {
-      // Check if this provider accepts this insurance
-      const acceptsInsurance = provider.acceptedInsurance?.some(
-        ins => ins && ins.toLowerCase() === selectedInsurance.toLowerCase()
-      );
-      return acceptsInsurance ?
-        { price: 'Call for Price', savings: 'N/A', savingsPercent: 'N/A' } :
-        { price: 'Not Covered', savings: 'N/A', savingsPercent: 'N/A' };
-    }
-
-    const price = insuranceOption.negotiatedAmount !== null
-      ? `$${insuranceOption.negotiatedAmount.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`
-      : 'N/A';
-
-    const savings = insuranceOption.savings !== null
-      ? `$${insuranceOption.savings.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`
-      : 'N/A';
-
-    // Calculate savings percent
-    let savingsPercent = 'N/A';
-    if (insuranceOption.savings !== null && insuranceOption.standardCharge !== null && insuranceOption.standardCharge > 0) {
-      const percent = (insuranceOption.savings / insuranceOption.standardCharge) * 100;
-      savingsPercent = `${percent.toFixed(0)}%`;
-    }
-
-    return { price, savings, savingsPercent };
-  };
-
-  // Get cash price for a provider
-  const getCashPrice = (provider) => {
-    if (!provider.insuranceOptions || provider.insuranceOptions.length === 0) {
-      return 'N/A';
-    }
-
-    // Find the standard charge
-    const standardOption = provider.insuranceOptions.find(
-      opt => opt.standardCharge !== null
-    );
-
-    return standardOption?.standardCharge !== null
-      ? `$${standardOption.standardCharge.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`
-      : 'N/A';
-  };
-
-  // Get insurance options for display
-  const getInsuranceOptions = (provider) => {
-    if (!provider.insuranceOptions || provider.insuranceOptions.length === 0) {
-      return [];
-    }
-
-    // If selected insurance, filter options by that insurance
-    if (selectedInsurance) {
-      return provider.insuranceOptions.filter(
-        opt => opt.insurance && opt.insurance.toLowerCase() === selectedInsurance.toLowerCase()
-      );
-    }
-
-    // Otherwise return all options
-    return provider.insuranceOptions;
-  };
-
-  // Format address
-  const formatAddress = (address) => {
-    if (!address) return 'N/A';
-    const parts = [address.street, address.city, address.state, address.postalCode].filter(Boolean);
-    return parts.join(', ') || 'N/A';
-  };
 
   // Render star rating
   const renderRating = (rating) => {
-    if (!rating) return 'No Rating';
-    
+    if (!rating) return <span className="text-sm text-gray-500">No Rating</span>;
+
     rating = parseFloat(rating);
+    if (isNaN(rating)) return <span className="text-sm text-gray-500">Invalid Rating</span>;
+
     const fullStars = Math.floor(rating);
-    const hasHalfStar = rating % 1 >= 0.5;
-    
+    // Basic fill logic, no visual half star here
     return (
       <div className="flex items-center">
         {[...Array(5)].map((_, i) => (
           <span key={i} className={i < fullStars ? "text-yellow-400" : "text-gray-300"}>
-            <Star size={16} fill={i < fullStars ? "currentColor" : (i === fullStars && hasHalfStar ? "url(#halfStar)" : "none")} />
+            <Star size={16} fill={i < fullStars ? "currentColor" : "none"} />
           </span>
         ))}
         <span className="ml-1 text-sm font-medium text-gray-600">{rating.toFixed(1)}</span>
@@ -150,11 +34,147 @@ const StaticHospitalComparison = ({
   const sortedByRating = [...providers].sort((a, b) => {
     const ratingA = parseFloat(a.hospitalRating || 0);
     const ratingB = parseFloat(b.hospitalRating || 0);
-    return ratingB - ratingA; // Higher ratings first
+    if (isNaN(ratingA) && isNaN(ratingB)) return 0;
+    if (isNaN(ratingA)) return 1;
+    if (isNaN(ratingB)) return -1;
+    return ratingB - ratingA;
   });
 
-  // Get top rated hospital
-  const topRatedHospital = providers.length > 1 ? sortedByRating[0] : null;
+  // Format currency
+  const formatCurrency = (amount) => {
+    if (amount === null || amount === undefined || isNaN(amount)) return 'N/A';
+    return `$${amount.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+  };
+
+  // Calculate savings
+  const calculateSavings = (standard, negotiated) => {
+    if (standard === null || negotiated === null || isNaN(standard) || isNaN(negotiated) || standard <= 0) return null;
+    if (negotiated >= standard) return 0; // No savings if negotiated is higher or equal
+    return standard - negotiated;
+  };
+
+  // Calculate savings percentage
+  const calculateSavingsPercentage = (standard, savings) => {
+    if (standard === null || savings === null || isNaN(standard) || isNaN(savings) || standard <= 0 || savings <= 0) return null;
+    return (savings / standard) * 100;
+  };
+
+  // Get standard charge for a provider (find first valid standard charge)
+  const getStandardCharge = (provider) => {
+    if (!provider.insuranceOptions || provider.insuranceOptions.length === 0) return null;
+    const option = provider.insuranceOptions.find(opt => opt.standardCharge !== null && opt.standardCharge !== undefined && !isNaN(opt.standardCharge));
+    return option ? option.standardCharge : null;
+  };
+
+  // Format full address
+  const formatFullAddress = (address) => {
+    if (!address) return 'N/A';
+    const parts = [
+      address.street,
+      [address.city, address.state].filter(Boolean).join(', '),
+      address.zip || address.postalCode
+    ].filter(Boolean);
+    return parts.join(', ') || 'N/A';
+  };
+
+  // Format shorter address
+  const formatShortAddress = (address) => {
+    if (!address) return 'N/A';
+    return [address.city, address.state].filter(Boolean).join(', ') || 'N/A';
+  };
+
+  // --- Reusable Insurance Detail Table Component ---
+  const InsuranceDetailTable = ({ provider, standardCharge, providerId }) => {
+      const hasValidInsuranceOptions = provider.insuranceOptions && provider.insuranceOptions.some(opt => opt.insurance && opt.insurance !== 'N/A');
+
+      if (!hasValidInsuranceOptions) {
+          return (
+              <div className="px-4 py-3 text-sm text-gray-500 bg-white">
+                  No specific insurance plan pricing available for this provider.
+              </div>
+          );
+      }
+
+      return (
+          <div className="overflow-x-auto border border-gray-200 rounded-lg"> {/* Added border and rounding */}
+              <table className="min-w-full divide-y divide-gray-200">
+                  <thead className="bg-gray-100"> {/* Changed header bg */}
+                      <tr>
+                          <th scope="col" className="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                              Insurance
+                          </th>
+                          <th scope="col" className="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                              Plan
+                          </th>
+                          <th scope="col" className="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                              Your Price
+                          </th>
+                          <th scope="col" className="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                              Savings (vs Std.)
+                          </th>
+                      </tr>
+                  </thead>
+                  <tbody className="bg-white divide-y divide-gray-200">
+                      {provider.insuranceOptions
+                          .filter(option => option.insurance && option.insurance !== 'N/A')
+                          .sort((a, b) => a.insurance.localeCompare(b.insurance))
+                          .map((option, idx) => {
+                              const isSelectedInsurance = selectedInsurance &&
+                                  option.insurance.toLowerCase() === selectedInsurance.toLowerCase();
+                              // Use option's standard if available, else provider's general standard
+                              const standardForCalc = option.standardCharge ?? standardCharge;
+                              const savings = calculateSavings(standardForCalc, option.negotiatedAmount);
+                              const savingsPercentage = calculateSavingsPercentage(standardForCalc, savings);
+
+                              return (
+                                  <tr key={`${providerId}-ins-${idx}`} className={isSelectedInsurance ? 'bg-indigo-50' : 'hover:bg-gray-50'}>
+                                      {/* Insurance Name */}
+                                      <td className="px-4 py-3 whitespace-nowrap">
+                                          <div className="flex items-center">
+                                              <span className="text-sm font-medium text-gray-900">{option.insurance}</span>
+                                              {isSelectedInsurance && (
+                                                  <span className="ml-2 inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                                                      Selected
+                                                  </span>
+                                              )}
+                                          </div>
+                                      </td>
+                                      {/* Plan Name */}
+                                      <td className="px-4 py-3 whitespace-nowrap text-sm text-gray-500">
+                                          {option.planName && option.planName !== 'N/A' ? option.planName : '-'}
+                                      </td>
+                                      {/* Negotiated Price */}
+                                      <td className="px-4 py-3 whitespace-nowrap text-sm font-medium text-indigo-600">
+                                          {formatCurrency(option.negotiatedAmount)}
+                                      </td>
+                                      {/* Savings */}
+                                      <td className="px-4 py-3 whitespace-nowrap">
+                                          {savings !== null && savings > 0 ? (
+                                              <div className="text-sm text-green-600 font-medium">
+                                                  {formatCurrency(savings)}
+                                                  {savingsPercentage !== null && (
+                                                      <span className="ml-1 text-xs">
+                                                          ({savingsPercentage.toFixed(0)}%)
+                                                      </span>
+                                                  )}
+                                              </div>
+                                          ) : savings === 0 ? (
+                                             <span className="text-sm text-gray-500">No Savings</span>
+                                          ) : (
+                                            <span className="text-sm text-gray-500">-</span>
+                                          )}
+                                      </td>
+                                  </tr>
+                              );
+                          })}
+                  </tbody>
+              </table>
+          </div>
+      );
+  };
+
+
+  // --- Render Logic ---
 
   if (!providers || providers.length === 0) {
     return (
@@ -162,458 +182,416 @@ const StaticHospitalComparison = ({
         <div className="p-6 text-center">
           <h3 className="text-lg font-medium text-gray-900 mb-2">No providers selected</h3>
           <p className="text-gray-500">
-            Please select providers to compare.
+            Please select providers to compare or search for one.
           </p>
         </div>
       </div>
     );
   }
 
-  // Single provider view
-  if (providers.length === 1) {
+  // --- Single Provider Detail View ---
+  if (isSingleView || providers.length === 1) {
     const provider = providers[0];
-    const { price: insurancePrice, savings: insuranceSavings, savingsPercent } = getInsurancePriceInfo(provider);
-    const insuranceOptions = getInsuranceOptions(provider);
-    
+    const providerId = provider.id || 0; // Use index as fallback key if id missing
+    const standardCharge = getStandardCharge(provider);
+    const formattedStandardCharge = formatCurrency(standardCharge);
+
     return (
       <div className="space-y-6">
-        {/* Single Provider Card */}
+        {/* --- Hospital Card --- */}
         <div className="rounded-xl bg-white shadow-lg overflow-hidden">
+          {/* Header */}
           <div className="bg-gray-50 px-6 py-4 border-b border-gray-200">
             <h3 className="text-lg font-semibold text-gray-800">
-              Hospital Details for {service}
+              {service ? `Details for ${service}` : 'Provider Details'}
             </h3>
           </div>
-          
-          <div className="p-6">
-            {/* Hospital Header */}
-            <div className="flex items-center mb-6">
-              <div className="flex-shrink-0 h-12 w-12 bg-indigo-100 rounded-full flex items-center justify-center">
-                <Building className="h-6 w-6 text-indigo-600" />
-              </div>
-              <div className="ml-4">
-                <h3 className="text-xl font-bold text-gray-900">{provider.hospitalName}</h3>
-                <div className="text-sm text-gray-500">{provider.hospitalType || 'Healthcare Provider'}</div>
-              </div>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {/* Left Column */}
-              <div>
-                {/* Basic Info */}
-                <div className="bg-gray-50 rounded-lg p-4 border border-gray-200 mb-6">
-                  <h4 className="font-medium text-gray-700 mb-3">Basic Information</h4>
-                  <div className="space-y-3 text-sm">
-                    <div className="flex items-start">
-                      <MapPin size={16} className="text-gray-500 mt-0.5 mr-2" />
-                      <div>
-                        <span className="font-medium text-gray-600">Address:</span>
-                        <div className="text-gray-800">{formatAddress(provider.address)}</div>
-                      </div>
-                    </div>
-                    
-                    <div className="flex items-center">
-                      <div className="mr-2 text-gray-600">Rating:</div>
-                      {renderRating(provider.hospitalRating)}
-                    </div>
-                    
-                    <div className="flex items-center">
-                      <div className="mr-2 text-gray-600">Distance:</div>
-                      <span className="text-indigo-600 font-medium">{(provider.distance * 0.621371).toFixed(1)} miles</span>
-                    </div>
-                  </div>
-                </div>
-                
-                {/* Contact Info */}
-                <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
-                  <h4 className="font-medium text-gray-700 mb-3">Contact Information</h4>
-                  <div className="space-y-3 text-sm">
-                    {provider.contact?.phone && (
-                      <div>
-                        <span className="font-medium text-gray-600">Phone:</span>
-                        <span className="ml-2 text-gray-800">{provider.contact.phone}</span>
-                      </div>
-                    )}
-                    {provider.contact?.email && (
-                      <div>
-                        <span className="font-medium text-gray-600">Email:</span>
-                        <span className="ml-2 text-gray-800">{provider.contact.email}</span>
-                      </div>
-                    )}
-                    {provider.contact?.website && (
-                      <div>
-                        <span className="font-medium text-gray-600">Website:</span>
-                        <a
-                          href={provider.contact.website}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="ml-2 text-indigo-600 hover:text-indigo-800 break-all"
-                        >
-                          {provider.contact.website}
-                        </a>
-                      </div>
-                    )}
-                  </div>
-                </div>
-              </div>
-              
-              {/* Right Column */}
-              <div>
-                {/* Standard Pricing */}
-                <div className="bg-gray-50 rounded-lg p-4 border border-gray-200 mb-6">
-                  <h4 className="font-medium text-gray-700 mb-3">Standard Price</h4>
-                  <div className="bg-white rounded-lg p-4 border border-gray-200 shadow-sm">
-                    <p className="text-2xl font-bold text-gray-800">{getCashPrice(provider)}</p>
-                    <div className="mt-2 flex items-center text-sm text-gray-500">
-                      <Shield size={14} className="mr-1.5" />
-                      Without insurance
-                    </div>
-                  </div>
-                </div>
-                
-                {/* Insurance Options */}
-                <div className="bg-gray-50 rounded-lg p-4 border border-gray-200 mb-6">
-                  <h4 className="font-medium text-gray-700 mb-3">
-                    {selectedInsurance 
-                      ? `${selectedInsurance} Insurance Plans`
-                      : 'Insurance Options'}
-                  </h4>
-                  
-                  {insuranceOptions.length > 0 ? (
-                    <div className="bg-white rounded-lg border border-gray-200 shadow-sm overflow-hidden">
-                      <div className="divide-y divide-gray-100">
-                        {insuranceOptions.map((option, index) => (
-                          <div key={index} className="p-3 hover:bg-gray-50">
-                            <div className="flex justify-between items-center mb-1">
-                              <span className="font-medium text-gray-800">{option.insurance || 'Standard'}</span>
-                              <span className="text-lg font-bold text-indigo-600">
-                                ${option.negotiatedAmount?.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 }) || 'N/A'}
-                              </span>
-                            </div>
-                            {option.plan && (
-                              <div className="flex justify-between text-sm">
-                                <span className="text-gray-500">{option.plan}</span>
-                                {option.savings && (
-                                  <span className="text-green-600 font-medium">
-                                    Save ${option.savings.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
-                                  </span>
-                                )}
-                              </div>
-                            )}
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  ) : (
-                    <div className="bg-gray-100 rounded-lg p-4 border border-gray-200">
-                      <p className="text-gray-500 italic">No insurance options available</p>
-                    </div>
-                  )}
-                </div>
-                
-                <div className="flex flex-col gap-2">
-                  <button
-                    onClick={() => onBookAppointment(provider.id)}
-                    className="w-full px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors flex items-center justify-center"
-                  >
-                    <Calendar size={16} className="mr-2" />
-                    Book Appointment
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  }
 
-  // Multiple providers comparison view (original functionality)
-  return (
-    <div className="space-y-6">
-      {/* Top Rated Recommendation */}
-      {topRatedHospital && (
-        <div className="rounded-xl bg-white shadow-lg overflow-hidden border-2 border-indigo-500">
-          <div className="bg-indigo-50 px-6 py-4 border-b border-indigo-100 flex items-center">
-            <Award className="h-6 w-6 text-indigo-600 mr-2" />
-            <h3 className="text-lg font-semibold text-indigo-800">
-              Top Rated Recommendation
-            </h3>
-          </div>
-          
+          {/* Body */}
           <div className="p-6">
-            <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
-              {/* Hospital Info */}
+            {/* Hospital Info Header */}
+            <div className="flex flex-col sm:flex-row items-start justify-between mb-6 gap-4">
+              {/* Left Side: Name, Type, Rating */}
               <div className="flex-1">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">{topRatedHospital.hospitalName}</h3>
-                <div className="flex items-center gap-1 text-gray-600 mb-2">
-                  <Building size={16} className="flex-shrink-0" />
-                  <span className="text-sm">{topRatedHospital.hospitalType || 'Healthcare Provider'}</span>
-                </div>
-                <div className="flex items-center gap-1 text-gray-600 mb-2">
-                  <MapPin size={16} className="flex-shrink-0" />
-                  <span className="text-sm">{formatAddress(topRatedHospital.address)}</span>
-                </div>
-                <div className="mb-3">
-                  {renderRating(topRatedHospital.hospitalRating)}
-                </div>
-                <div className="text-sm text-indigo-600 font-medium">
-                  Distance: {(topRatedHospital.distance * 0.621371).toFixed(1)} miles
-                </div>
-              </div>
-              
-              {/* Pricing Info */}
-              <div className="grid grid-cols-2 gap-4">
-                <div className="bg-gray-50 p-3 rounded-lg">
-                  <div className="text-xs text-gray-500 font-medium mb-1">Cash Price</div>
-                  <div className="text-lg font-bold text-gray-900">{getCashPrice(topRatedHospital)}</div>
-                </div>
-                
-                {selectedInsurance && (
-                  <div className="bg-indigo-50 p-3 rounded-lg">
-                    <div className="text-xs text-gray-500 font-medium mb-1">{selectedInsurance} Price</div>
-                    <div className="text-lg font-bold text-indigo-600">
-                      {getInsurancePriceInfo(topRatedHospital).price}
-                    </div>
-                    {getInsurancePriceInfo(topRatedHospital).savings !== 'N/A' && (
-                      <div className="text-xs text-green-600">
-                        Save {getInsurancePriceInfo(topRatedHospital).savings}
-                      </div>
-                    )}
+                <div className="flex items-center">
+                  <div className="flex-shrink-0 h-12 w-12 bg-indigo-100 rounded-full flex items-center justify-center mr-4">
+                    <Building className="h-6 w-6 text-indigo-600" />
                   </div>
-                )}
+                  <div>
+                    <h3 className="text-xl font-bold text-gray-900 mb-1">{provider.hospitalName || 'Unnamed Provider'}</h3>
+                    <div className="text-sm text-gray-600 mb-2">{provider.hospitalType || 'Healthcare Provider'}</div>
+                    <div className="mb-2">{renderRating(provider.hospitalRating)}</div>
+                  </div>
+                </div>
               </div>
-              
-              {/* Book Appointment Button */}
-              <div>
-                <button
-                  onClick={() => onBookAppointment(topRatedHospital.id)}
-                  className="w-full px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors flex items-center justify-center"
+              {/* Right Side: Book Button */}
+              <div className="flex-shrink-0 w-full sm:w-auto">
+                 <button
+                  onClick={() => onBookAppointment(providerId)}
+                  className="w-full sm:w-auto inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                 >
-                  <Calendar size={16} className="mr-2" />
+                  <Calendar className="mr-2 h-4 w-4" />
                   Book Appointment
                 </button>
               </div>
             </div>
+
+            {/* Grid Layout for Details */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+              {/* Left Column: Contact & Location Info */}
+              <div className="md:col-span-1 space-y-4">
+                <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
+                  <h4 className="font-medium text-gray-700 mb-3">Contact & Location</h4>
+                  <div className="space-y-3">
+                    {/* Address */}
+                    <div className="flex items-start">
+                      <MapPin size={16} className="text-gray-500 mt-0.5 mr-2 flex-shrink-0" />
+                      <div className="text-sm text-gray-800">{formatFullAddress(provider.address)}</div>
+                    </div>
+                    {/* Phone */}
+                    {provider.contact?.phone && (
+                      <div className="flex items-center">
+                        <Phone size={16} className="text-gray-500 mr-2 flex-shrink-0" />
+                        <div className="text-sm text-gray-800">{provider.contact.phone}</div>
+                      </div>
+                    )}
+                    {/* Website */}
+                    {provider.contact?.website && (
+                      <div className="flex items-start">
+                        <Globe size={16} className="text-gray-500 mr-2 mt-0.5 flex-shrink-0" />
+                        <a
+                          href={provider.contact.website.startsWith('http') ? provider.contact.website : `//${provider.contact.website}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-sm text-indigo-600 hover:underline break-all"
+                        >
+                          {provider.contact.website.replace(/^https?:\/\//, '')}
+                        </a>
+                      </div>
+                    )}
+                    {/* Distance */}
+                    {provider.distance !== null && provider.distance !== undefined && (
+                       <div className="flex items-center pt-1">
+                         <div className="text-sm font-medium text-indigo-600">
+                            Distance: {(provider.distance * 0.621371).toFixed(1)} miles
+                         </div>
+                       </div>
+                    )}
+                  </div>
+                </div>
+              </div>
+
+              {/* Right Columns: Pricing Info */}
+              <div className="md:col-span-2">
+                <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
+                   <h4 className="font-medium text-gray-700 mb-3">Pricing Information</h4>
+
+                  {/* Price Summary Boxes */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+                    {/* Standard Price Box */}
+                    <div className="bg-white p-4 rounded-lg border border-gray-200 shadow-sm">
+                      <div className="flex items-center text-gray-500 text-sm mb-1">
+                        <Shield size={14} className="mr-1.5" />
+                        Standard Price
+                      </div>
+                      <div className="text-2xl font-bold text-gray-900">{formattedStandardCharge}</div>
+                      <div className="mt-1 text-xs text-gray-500">Estimated cash price</div>
+                    </div>
+
+                    {/* Selected Insurance Price Box */}
+                    {selectedInsurance && (
+                      <div className="bg-white p-4 rounded-lg border border-indigo-200 shadow-sm">
+                        <div className="flex items-center text-gray-500 text-sm mb-1">
+                          <Shield size={14} className="mr-1.5" />
+                          {selectedInsurance} Price
+                        </div>
+                        {(() => {
+                          const insuranceOption = provider.insuranceOptions?.find(
+                            option => option.insurance && option.insurance.toLowerCase() === selectedInsurance.toLowerCase()
+                          );
+
+                          if (!insuranceOption || insuranceOption.negotiatedAmount === null || insuranceOption.negotiatedAmount === undefined) {
+                            const isAccepted = provider.acceptedInsurance?.some(ins => ins.toLowerCase() === selectedInsurance.toLowerCase());
+                             return (
+                              <div className="text-base text-gray-800 mt-2">
+                                {isAccepted ? "Price unavailable" : "Not listed/covered"}
+                              </div>
+                            );
+                          }
+
+                          const negotiatedAmount = insuranceOption.negotiatedAmount;
+                          const standardForCalc = insuranceOption.standardCharge ?? standardCharge;
+                          const savings = calculateSavings(standardForCalc, negotiatedAmount);
+                          const savingsPercentage = calculateSavingsPercentage(standardForCalc, savings);
+
+                          return (
+                            <>
+                              <div className="text-2xl font-bold text-indigo-600">
+                                {formatCurrency(negotiatedAmount)}
+                              </div>
+                              {savings !== null && savings > 0 && (
+                                <div className="mt-1 text-sm text-green-600">
+                                  Save {formatCurrency(savings)}
+                                  {savingsPercentage !== null && (
+                                    <span className="ml-1">({savingsPercentage.toFixed(0)}%)</span>
+                                  )}
+                                </div>
+                              )}
+                               {savings === 0 && (
+                                 <div className="mt-1 text-sm text-gray-500">Same as standard price</div>
+                               )}
+                            </>
+                          );
+                        })()}
+                      </div>
+                    )}
+                  </div> {/* End Price Summary Boxes */}
+
+                  {/* --- Insurance Options Table (Rendered Statically) --- */}
+                  <div className="mt-6">
+                      <h5 className="text-sm font-medium text-gray-600 mb-2">
+                          All Insurance Plan Details
+                      </h5>
+                     <InsuranceDetailTable provider={provider} standardCharge={standardCharge} providerId={providerId}/>
+                  </div>
+
+                </div> {/* End Pricing Info Box */}
+              </div> {/* End Right Columns */}
+            </div> {/* End Grid Layout */}
+          </div> {/* End Card Body */}
+
+          {/* Footer */}
+          <div className="bg-gray-50 px-6 py-4 border-t border-gray-200">
+            <div className="flex items-center text-sm text-gray-600">
+              <Info size={14} className="mr-2 flex-shrink-0" />
+              <p>Prices shown are estimates and may vary. Contact the provider or your insurance company for the most accurate cost information.</p>
+            </div>
+          </div>
+        </div> {/* End Hospital Card */}
+      </div> /* End Single View Container */
+    );
+  }
+
+  // --- Multiple Providers Comparison View ---
+  // Now ALSO includes the static insurance detail table per provider
+
+  const topProvider = sortedByRating[0];
+  const topStandardCharge = getStandardCharge(topProvider);
+  const topFormattedStandardCharge = formatCurrency(topStandardCharge);
+  const topAddress = formatShortAddress(topProvider.address);
+
+  // Calculate the colspan needed for the detail row
+  const baseColspan = 5; // Hospital, Rating, Location, Distance, Standard Price
+  const insuranceColspan = selectedInsurance ? 2 : 0; // Insurance Price, Savings
+  const actionColspan = 1; // Action Button
+  const totalColspan = baseColspan + insuranceColspan + actionColspan;
+
+
+  return (
+    <div className="space-y-6">
+      {/* Recommendation Card (Same as before) */}
+      <div className="rounded-xl bg-indigo-50 shadow-lg overflow-hidden border border-indigo-200">
+        <div className="p-4 bg-indigo-100 flex items-center text-indigo-800 text-sm font-medium">
+          <Star size={14} className="mr-2" />
+          Top Rated Recommendation
+        </div>
+        <div className="p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <div className="flex-1">
+            <div className="text-lg font-medium text-gray-900">{topProvider.hospitalName}</div>
+            <div className="text-sm text-gray-500">{topProvider.hospitalType || 'Healthcare Provider'}</div>
+            <div className="mt-2 flex items-center">
+              {renderRating(topProvider.hospitalRating)}
+            </div>
+            <div className="text-sm text-gray-600 mt-1 flex items-center">
+                <MapPin size={14} className="mr-1 text-gray-400"/> {topAddress}
+            </div>
+             {topProvider.distance !== null && topProvider.distance !== undefined && (
+                <div className="text-sm text-gray-600 mt-1">
+                    Distance: {(topProvider.distance * 0.621371).toFixed(1)} miles
+                </div>
+             )}
+          </div>
+          <div className="flex flex-col items-stretch sm:items-end w-full sm:w-auto">
+            <div className="bg-white p-2 rounded-md shadow-sm text-center sm:text-right text-sm font-medium text-gray-900 mb-3">
+              Standard Price<br />
+              <span className="text-lg font-bold">{topFormattedStandardCharge}</span>
+            </div>
+            <button
+              onClick={() => onBookAppointment(topProvider.id)}
+              className="w-full sm:w-auto inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+            >
+              <Calendar className="mr-2 h-4 w-4" />
+              Book Appointment
+            </button>
           </div>
         </div>
-      )}
+      </div>
 
-      {/* Comparison Table */}
+      {/* Main Comparison Table */}
       <div className="rounded-xl bg-white shadow-lg overflow-hidden">
+        {/* Table Header */}
         <div className="bg-gray-50 px-6 py-4 border-b border-gray-200">
           <h3 className="text-lg font-semibold text-gray-800">
-            Provider Comparison for {service}
+            {`Compare Providers for ${service || 'Selected Service'}`}
           </h3>
           <p className="text-sm text-gray-600 mt-1">
-            Compare pricing and details across {providers.length} providers
+            Sorted by hospital rating (highest first). Insurance details shown below each provider.
           </p>
         </div>
-        
-        {/* Table Container */}
+
+        {/* Table Content */}
         <div className="overflow-x-auto">
-          <table className="min-w-full divide-y divide-gray-200">
+          {/* Use border-collapse and manage borders carefully */}
+          <table className="min-w-full divide-y divide-gray-300 border-collapse">
+            {/* Table Head */}
             <thead className="bg-gray-50">
               <tr>
-                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                  Provider
+                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b border-gray-300">
+                  Hospital
                 </th>
-                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b border-gray-300">
                   Rating
                 </th>
-                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b border-gray-300">
+                  Location
+                </th>
+                 <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b border-gray-300">
                   Distance
                 </th>
-                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                  Cash Price
+                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b border-gray-300">
+                  Standard Price
                 </th>
                 {selectedInsurance && (
                   <>
-                    <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b border-gray-300">
                       {selectedInsurance} Price
                     </th>
-                    <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b border-gray-300">
                       Savings
                     </th>
                   </>
                 )}
-                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-b border-gray-300">
                   Action
                 </th>
               </tr>
             </thead>
-            <tbody className="bg-white divide-y divide-gray-200">
-              {providers.map((provider) => {
-                const { price: insurancePrice, savings: insuranceSavings, savingsPercent } = 
-                  getInsurancePriceInfo(provider);
-                
+            {/* Table Body - No divide-y here, manage borders manually */}
+            <tbody className="bg-white">
+              {sortedByRating.map((provider, index) => {
+                const providerId = provider.id || index; // Use index as fallback key
+                const standardCharge = getStandardCharge(provider);
+                const formattedStandardCharge = formatCurrency(standardCharge);
+                const address = formatShortAddress(provider.address);
+                let insurancePrice = 'N/A';
+                let savings = null;
+                let savingsPercentage = null;
+
+                if (selectedInsurance && provider.insuranceOptions) {
+                  const insuranceOption = provider.insuranceOptions.find(
+                    option => option.insurance && option.insurance.toLowerCase() === selectedInsurance.toLowerCase()
+                  );
+                  if (insuranceOption && insuranceOption.negotiatedAmount !== null && insuranceOption.negotiatedAmount !== undefined) {
+                    const negotiatedAmount = insuranceOption.negotiatedAmount;
+                    insurancePrice = formatCurrency(negotiatedAmount);
+                    const standardForCalc = insuranceOption.standardCharge ?? standardCharge;
+                    savings = calculateSavings(standardForCalc, negotiatedAmount);
+                    savingsPercentage = calculateSavingsPercentage(standardForCalc, savings);
+                  } else {
+                     const isAccepted = provider.acceptedInsurance?.some(ins => ins.toLowerCase() === selectedInsurance.toLowerCase());
+                     insurancePrice = isAccepted ? "Not priced" : "Not listed";
+                  }
+                }
+
+                const isTopRated = index === 0;
+                const hasValidInsuranceOptions = provider.insuranceOptions && provider.insuranceOptions.some(opt => opt.insurance && opt.insurance !== 'N/A');
+
+                // Add border bottom to the main row only if the details row WILL be shown
+                const mainRowClass = `
+                  ${isTopRated ? "bg-indigo-50 hover:bg-indigo-100" : "hover:bg-gray-50"}
+                  ${hasValidInsuranceOptions ? "" : "border-b border-gray-300"}
+                `;
+
                 return (
-                  <React.Fragment key={provider.id}>
-                    <tr className={`hover:bg-gray-50 ${provider.id === topRatedHospital?.id ? 'bg-indigo-50' : ''}`}>
-                      <td className="px-6 py-4 whitespace-nowrap">
-                        <div className="flex items-center">
-                          <div className="flex-shrink-0 h-10 w-10 bg-indigo-100 rounded-full flex items-center justify-center">
-                            <Building className="h-5 w-5 text-indigo-600" />
-                          </div>
-                          <div className="ml-4">
-                            <div className="text-sm font-medium text-gray-900">{provider.hospitalName}</div>
-                            <div className="text-sm text-gray-500">{provider.hospitalType || 'N/A'}</div>
-                          </div>
-                          {provider.id === topRatedHospital?.id && (
-                            <div className="ml-2 flex-shrink-0">
-                              <span className="px-2 py-1 text-xs font-medium rounded-full bg-indigo-100 text-indigo-800">
-                                Top Rated
-                              </span>
+                  <React.Fragment key={providerId}>
+                    {/* --- Main Provider Row --- */}
+                    <tr className={mainRowClass}>
+                      {/* Hospital Name & Type */}
+                      <td className="px-6 py-4 whitespace-nowrap align-top"> {/* Align top */}
+                         <div className="text-sm font-medium text-gray-900">{provider.hospitalName}</div>
+                         <div className="text-sm text-gray-500">{provider.hospitalType || 'Provider'}</div>
+                          {isTopRated && (
+                            <div className="mt-1 inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
+                              Top Rated
                             </div>
                           )}
-                        </div>
                       </td>
-                      <td className="px-6 py-4 whitespace-nowrap">
-                        {renderRating(provider.hospitalRating)}
+                      {/* Rating */}
+                      <td className="px-6 py-4 whitespace-nowrap align-top">{renderRating(provider.hospitalRating)}</td>
+                      {/* Location (Short Address) */}
+                      <td className="px-6 py-4 whitespace-nowrap align-top">
+                        <div className="text-sm text-gray-900">{address}</div>
                       </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                        {(provider.distance * 0.621371).toFixed(1)} mi
+                       {/* Distance */}
+                      <td className="px-6 py-4 whitespace-nowrap align-top">
+                         {provider.distance !== null && provider.distance !== undefined ? (
+                            <div className="text-sm text-gray-900">{(provider.distance * 0.621371).toFixed(1)} mi</div>
+                         ) : (
+                            <div className="text-sm text-gray-500">-</div>
+                         )}
                       </td>
-                      <td className="px-6 py-4 whitespace-nowrap">
-                        <div className="text-sm font-medium text-gray-900">{getCashPrice(provider)}</div>
+                      {/* Standard Price */}
+                      <td className="px-6 py-4 whitespace-nowrap align-top">
+                        <div className="text-sm font-medium text-gray-900">{formattedStandardCharge}</div>
                       </td>
+                      {/* Insurance Price (Conditional) */}
                       {selectedInsurance && (
-                        <>
-                          <td className="px-6 py-4 whitespace-nowrap">
-                            <div className="text-sm font-medium text-indigo-600">{insurancePrice}</div>
-                          </td>
-                          <td className="px-6 py-4 whitespace-nowrap">
-                            {insuranceSavings !== 'N/A' ? (
-                              <div className="text-sm text-green-600">
-                                {insuranceSavings} ({savingsPercent})
-                              </div>
-                            ) : (
-                              <span className="text-sm text-gray-500">-</span>
-                            )}
-                          </td>
-                        </>
+                        <td className="px-6 py-4 whitespace-nowrap align-top">
+                          <div className={`text-sm font-medium ${insurancePrice.startsWith('$') ? 'text-indigo-600' : 'text-gray-500'}`}>
+                            {insurancePrice}
+                          </div>
+                        </td>
                       )}
-                      <td className="px-6 py-4 whitespace-nowrap">
+                      {/* Savings (Conditional) */}
+                      {selectedInsurance && (
+                        <td className="px-6 py-4 whitespace-nowrap align-top">
+                          {savings !== null && savings > 0 ? (
+                            <div className="text-sm text-green-600 font-medium">
+                              {formatCurrency(savings)}
+                              {savingsPercentage !== null && (
+                                <span className="ml-1 text-xs">
+                                  ({savingsPercentage.toFixed(0)}%)
+                                </span>
+                              )}
+                            </div>
+                          ) : (
+                            <span className="text-sm text-gray-500">-</span>
+                          )}
+                        </td>
+                      )}
+                      {/* Action Button */}
+                      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium align-top">
                         <button
-                          onClick={() => onBookAppointment(provider.id)}
-                          className="px-3 py-1.5 bg-indigo-100 text-indigo-700 hover:bg-indigo-200 rounded-lg text-sm font-medium transition-colors flex items-center"
+                          onClick={() => onBookAppointment(providerId)}
+                           className="inline-flex items-center px-3 py-1.5 border border-transparent text-xs font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                         >
-                          <Calendar size={14} className="mr-1.5" />
+                          <Calendar className="mr-1.5 h-3.5 w-3.5" />
                           Book
                         </button>
                       </td>
                     </tr>
-                    <tr className={`border-t border-gray-100 ${expandedProviders[provider.id] ? 'bg-gray-50' : 'hidden'}`}>
-                      <td colSpan={selectedInsurance ? 7 : 5} className="px-6 py-4">
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                          {/* Provider Details */}
-                          <div>
-                            <h4 className="text-sm font-medium text-gray-700 mb-2">Provider Details</h4>
-                            <div className="bg-white rounded-lg p-3 border border-gray-200 text-sm space-y-2">
-                              <div>
-                                <span className="font-medium text-gray-600">Address:</span>
-                                <span className="ml-2 text-gray-800">{formatAddress(provider.address)}</span>
-                              </div>
-                              {provider.contact?.phone && (
-                                <div>
-                                  <span className="font-medium text-gray-600">Phone:</span>
-                                  <span className="ml-2 text-gray-800">{provider.contact.phone}</span>
-                                </div>
-                              )}
-                              {provider.contact?.website && (
-                                <div>
-                                  <span className="font-medium text-gray-600">Website:</span>
-                                  <a
-                                    href={provider.contact.website}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="ml-2 text-indigo-600 hover:text-indigo-800 break-all"
-                                  >
-                                    {provider.contact.website}
-                                  </a>
-                                </div>
-                              )}
-                            </div>
-                          </div>
-                          
-                          {/* Insurance Details */}
-                          <div>
-                            <h4 className="text-sm font-medium text-gray-700 mb-2">Insurance Details</h4>
-                            <div className="bg-white rounded-lg p-3 border border-gray-200 text-sm">
-                              {getInsuranceOptions(provider).length > 0 ? (
-                                <div className="divide-y divide-gray-100">
-                                  {getInsuranceOptions(provider).slice(0, 3).map((option, idx) => (
-                                    <div key={idx} className="py-2 first:pt-0 last:pb-0">
-                                      <div className="flex justify-between items-center mb-1">
-                                        <span className="font-medium text-gray-800">{option.insurance || 'Standard'}</span>
-                                        <span className="text-base font-bold text-indigo-600">
-                                          ${option.negotiatedAmount?.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 }) || 'N/A'}
-                                        </span>
-                                      </div>
-                                      {option.plan && (
-                                        <div className="flex justify-between text-xs">
-                                          <span className="text-gray-500">{option.plan}</span>
-                                          {option.savings && (
-                                            <span className="text-green-600 font-medium">
-                                              Save ${option.savings.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
-                                            </span>
-                                          )}
-                                        </div>
-                                      )}
-                                    </div>
-                                  ))}
-                                </div>
-                              ) : (
-                                provider.acceptedInsurance && provider.acceptedInsurance.length > 0 ? (
-                                  <div>
-                                    <div className="font-medium text-gray-600 mb-2">Accepted Insurance:</div>
-                                    <div className="flex flex-wrap gap-1">
-                                      {provider.acceptedInsurance.map((insurance, idx) => (
-                                        <span
-                                          key={idx}
-                                          className={`inline-flex items-center px-2 py-0.5 rounded text-xs font-medium ${
-                                            selectedInsurance && insurance.toLowerCase() === selectedInsurance.toLowerCase()
-                                              ? 'bg-indigo-100 text-indigo-800 ring-1 ring-indigo-200'
-                                              : 'bg-gray-100 text-gray-700 ring-1 ring-gray-200'
-                                          }`}
-                                        >
-                                          {insurance}
-                                        </span>
-                                      ))}
-                                    </div>
-                                  </div>
-                                ) : (
-                                  <div className="text-gray-500 italic">No insurance information available</div>
-                                )
-                              )}
-                            </div>
-                          </div>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr className={`${expandedProviders[provider.id] ? '' : 'hidden'}`}>
-                      <td colSpan={selectedInsurance ? 7 : 5} className="px-6 py-2 bg-gray-50 border-t border-gray-100">
-                        <button
-                          onClick={() => toggleProviderExpanded(provider.id)}
-                          className="flex items-center justify-center w-full text-sm text-gray-500 hover:text-gray-700"
-                        >
-                          <ChevronUp size={16} className="mr-1" />
-                          Show Less
-                        </button>
-                      </td>
-                    </tr>
-                    {!expandedProviders[provider.id] && (
-                      <tr className="border-t border-gray-100">
-                        <td colSpan={selectedInsurance ? 7 : 5} className="px-6 py-2">
-                          <button
-                            onClick={() => toggleProviderExpanded(provider.id)}
-                            className="flex items-center justify-center w-full text-sm text-gray-500 hover:text-gray-700"
-                          >
-                            <ChevronDown size={16} className="mr-1" />
-                            Show More
-                          </button>
-                        </td>
-                      </tr>
+
+                    {/* --- Static Insurance Detail Row (Conditionally Rendered) --- */}
+                    {hasValidInsuranceOptions && (
+                         <tr className="border-b border-gray-300"> {/* Add bottom border here */}
+                            {/* This cell spans all columns and contains the nested table */}
+                            <td colSpan={totalColspan} className="p-0"> {/* Remove padding */}
+                               <div className="px-6 py-4 bg-gray-50"> {/* Add padding here + bg */}
+                                  <InsuranceDetailTable provider={provider} standardCharge={standardCharge} providerId={providerId} />
+                               </div>
+                            </td>
+                        </tr>
                     )}
                   </React.Fragment>
                 );
@@ -621,8 +599,19 @@ const StaticHospitalComparison = ({
             </tbody>
           </table>
         </div>
-      </div>
-    </div>
+
+        {/* Table Footer */}
+        <div className="bg-gray-50 px-6 py-4 border-t border-gray-200">
+          <div className="flex items-center text-sm text-gray-600">
+            <Info size={14} className="mr-2" />
+             <p>Comparison based on available data. Prices are estimates.</p>
+          </div>
+           <p className="mt-1 text-xs text-gray-500">
+             Contact providers directly or check with your insurance for confirmed costs.
+          </p>
+        </div>
+      </div> {/* End Comparison Table Card */}
+    </div> /* End Multi-View Container */
   );
 };
 

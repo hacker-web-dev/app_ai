@@ -8,13 +8,16 @@ import {
   ArrowUpDown,
   Check,
   X,
-  RefreshCw
+  RefreshCw,
+  Info,
+  Eye
 } from 'lucide-react';
 
 const HospitalSelectionTable = ({ 
   providers = [], 
   isLoading = false,
   onSelectionChange = () => {},
+  onViewSingleProvider = () => {}, // New callback for viewing a single provider
   maxDistanceFilter = 30,
   onMaxDistanceChange = () => {}
 }) => {
@@ -74,6 +77,14 @@ const HospitalSelectionTable = ({
     } else if (noneSelected) {
       setSelectAll(false);
     }
+  };
+
+  // Handle single provider view
+  const handleViewSingleProvider = (providerId, event) => {
+    if (event) {
+      event.stopPropagation();
+    }
+    onViewSingleProvider(providerId);
   };
 
   // Handle select all checkbox change
@@ -239,9 +250,15 @@ const HospitalSelectionTable = ({
         <h3 className="text-lg font-semibold text-gray-800">
           Available Healthcare Providers
         </h3>
-        <p className="text-sm text-gray-600 mt-1">
-          Select providers to compare ({Object.values(selectedProviders).filter(Boolean).length} selected)
-        </p>
+        <div className="flex flex-col md:flex-row justify-between md:items-center mt-1">
+          <p className="text-sm text-gray-600">
+            Select providers to compare ({Object.values(selectedProviders).filter(Boolean).length} selected)
+          </p>
+          <div className="mt-1 md:mt-0 text-sm text-indigo-600 flex items-center">
+            <Info size={14} className="mr-1" />
+            Click on a provider's name to view detailed information
+          </div>
+        </div>
       </div>
 
       {/* Distance Filter */}
@@ -371,6 +388,9 @@ const HospitalSelectionTable = ({
               <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                 Rating
               </th>
+              <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                Actions
+              </th>
             </tr>
           </thead>
           <tbody className="bg-white divide-y divide-gray-200">
@@ -389,7 +409,12 @@ const HospitalSelectionTable = ({
                   />
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap">
-                  <div className="text-sm font-medium text-gray-900">{provider.hospitalName}</div>
+                  <button 
+                    onClick={(e) => handleViewSingleProvider(provider.id, e)}
+                    className="text-sm font-medium text-indigo-600 hover:text-indigo-900 hover:underline focus:outline-none"
+                  >
+                    {provider.hospitalName}
+                  </button>
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap">
                   <div className="text-sm text-gray-500">{provider.hospitalType || 'N/A'}</div>
@@ -403,6 +428,15 @@ const HospitalSelectionTable = ({
                 <td className="px-6 py-4 whitespace-nowrap">
                   {renderRating(provider.hospitalRating)}
                 </td>
+                <td className="px-6 py-4 whitespace-nowrap">
+                  <button
+                    onClick={(e) => handleViewSingleProvider(provider.id, e)}
+                    className="inline-flex items-center px-2 py-1 border border-transparent text-xs font-medium rounded text-indigo-700 bg-indigo-100 hover:bg-indigo-200"
+                  >
+                    <Eye size={14} className="mr-1" />
+                    View Details
+                  </button>
+                </td>
               </tr>
             ))}
           </tbody>
@@ -410,7 +444,10 @@ const HospitalSelectionTable = ({
       </div>
 
       {/* Action Button */}
-      <div className="px-6 py-4 bg-gray-50 border-t border-gray-200">
+      <div className="px-6 py-4 bg-gray-50 border-t border-gray-200 flex flex-col sm:flex-row justify-between items-center gap-4">
+        <div className="text-sm text-gray-500">
+          <span className="font-medium">Tip:</span> Click on a provider's name to view detailed information about that provider
+        </div>
         <button
           disabled={Object.values(selectedProviders).filter(Boolean).length === 0}
           className="px-4 py-2 bg-indigo-600 text-white font-medium rounded-lg disabled:opacity-50 disabled:cursor-not-allowed hover:bg-indigo-700 transition-colors"
