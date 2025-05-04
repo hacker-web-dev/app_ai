@@ -1,5 +1,3 @@
-// --- START OF FILE server.js ---
-
 require('dotenv').config(); // Load environment variables from .env file
 const express = require('express');
 const csv = require('csv-parser');
@@ -14,9 +12,8 @@ const axios = require('axios');
 const app = express();
 const port = process.env.PORT || 3000;
 
-// Track last FTP sync time to avoid redundant syncs
-let lastFtpSync = 0;
-const FTP_SYNC_INTERVAL = 30 * 60 * 1000; // 30 minutes in milliseconds
+// Track last FTP sync month (store as YYYY-MM format string)
+let lastFtpSyncMonth = ''; // Empty string means no sync has happened yet
 
 // FTP Configuration (using environment variables)
 const ftpConfig = {
@@ -41,6 +38,31 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 // --- Helper Functions ---
+
+// Function to check if FTP sync is needed (on the 2nd of each month)
+function isFtpSyncNeeded() {
+  const currentDate = new Date();
+  const currentDay = currentDate.getDate();
+  const currentMonth = `${currentDate.getFullYear()}-${(currentDate.getMonth() + 1).toString().padStart(2, '0')}`;
+  
+  // Sync is needed if:
+  // 1. It's the 2nd day of the month, AND
+  // 2. We haven't already synced this month
+  if (currentDay === 2 && currentMonth !== lastFtpSyncMonth) {
+    console.log(`FTP sync required: It's the 2nd of the month and no sync has occurred for ${currentMonth}`);
+    return true;
+  }
+  
+  console.log(`FTP sync not required: Either it's not the 2nd of the month (current: ${currentDay}) or sync already occurred for ${currentMonth}`);
+  return false;
+}
+
+// Function to update the last sync month after successful sync
+function updateLastFtpSyncMonth() {
+  const currentDate = new Date();
+  lastFtpSyncMonth = `${currentDate.getFullYear()}-${(currentDate.getMonth() + 1).toString().padStart(2, '0')}`;
+  console.log(`Updated last FTP sync month to: ${lastFtpSyncMonth}`);
+}
 
 // Calculate distance between two points using Haversine formula
 function calculateDistance(lat1, lon1, lat2, lon2) {
@@ -189,9 +211,6 @@ app.post('/sync-ftp-data', async (req, res) => {
   const tempDir = path.join(os.tmpdir(), 'ftp-downloads'); // Create a temporary directory path
 
   try {
-    // Update the last sync time
-    lastFtpSync = Date.now();
-    
     // Ensure temporary directory exists
     if (!fs.existsSync(tempDir)) {
       fs.mkdirSync(tempDir, { recursive: true });
@@ -245,6 +264,9 @@ app.post('/sync-ftp-data', async (req, res) => {
         }
       }
     }
+
+    // Update the last sync month after successful sync
+    updateLastFtpSyncMonth();
 
     res.json({
       message: 'FTP data sync completed.',
@@ -305,21 +327,21 @@ app.get('/geocode/:postalCode', async (req, res) => {
 // Endpoint to search for nearby hospitals with specific services
 app.get('/search', async (req, res) => {
   try {
-    // Only sync FTP data if it hasn't been synced recently
-    const currentTime = Date.now();
-    if (currentTime - lastFtpSync > FTP_SYNC_INTERVAL) {
-      console.log('FTP data sync needed (last sync was more than 30 minutes ago)');
+    // Check if FTP sync is needed (2nd of each month)
+    if (isFtpSyncNeeded()) {
+      console.log('Monthly FTP data sync needed (2nd of the month)');
       try {
         const ftpResponse = await axios.post(`http://localhost:${port}/sync-ftp-data`);
         if (ftpResponse.status === 200) {
           console.log('FTP data sync completed successfully');
+          // Update already happens in the sync-ftp-data endpoint
         }
       } catch (ftpError) {
         console.error('FTP sync error:', ftpError.message);
         // Continue with search even if FTP sync fails
       }
     } else {
-      console.log('Skipping FTP sync - data is recent');
+      console.log('Skipping FTP sync - not scheduled for today or already completed this month');
     }
 
     const { zipCode, serviceDescription, maxDistance = 30 } = req.query; // Use zipCode and serviceDescription
@@ -507,4 +529,3 @@ app.listen(port, () => {
   console.log(`  GET /geocode/:postalCode - Get coordinates for a postal code`);
   console.log(`  GET /search?zipCode=...&serviceDescription=...&maxDistance=... - Search providers`);
 });
-// --- END OF FILE server.js ---
