@@ -46,6 +46,7 @@ interface HospitalData {
   hospitalName: string;
   hospitalType?: string;
   hospitalRating?: number;
+  totalReviews?: number;
   address: HospitalAddress;
   location: HospitalLocation;
   contact: HospitalContact;
@@ -208,7 +209,7 @@ const SearchPage = () => {
   const handleBookAppointment = (providerId: string) => {
     const provider = providers.find(p => p.id === providerId);
     if (provider) {
-      setBookingProviderId(providerId);
+      setBookingProviderId(provider.hospitalId); // Use hospitalId for feedback system
       setBookingProviderName(provider.hospitalName);
       setIsBookingModalOpen(true);
     }

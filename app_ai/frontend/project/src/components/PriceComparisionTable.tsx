@@ -8,8 +8,12 @@ import {
   XCircle,
   ChevronDown,
   ChevronUp,
-  ArrowUpDown
+  ArrowUpDown,
+  MessageSquare,
+  Star
 } from 'lucide-react';
+import StarRating from './StarRating';
+import FeedbackModal from './FeedbackModal';
 
 const PriceComparisionTable = ({ 
   providers = [], 
@@ -17,11 +21,13 @@ const PriceComparisionTable = ({
   selectedService = "Healthcare Service",
   selectedInsurance = "", 
   isLoading = false,
-  onViewPricing = () => {}
+  onViewPricing = () => {},
+  onSubmitFeedback = () => {}
 }) => {
   const [sortBy, setSortBy] = useState('distance');
   const [sortOrder, setSortOrder] = useState('asc');
   const [expandedProviders, setExpandedProviders] = useState({});
+  const [feedbackModal, setFeedbackModal] = useState({ isOpen: false, provider: null });
 
   // Handle sort change
   const handleSortChange = (criteria) => {
@@ -135,6 +141,12 @@ const PriceComparisionTable = ({
         return sortOrder === 'asc' ? priceA - priceB : priceB - priceA;
       }
       
+      if (sortBy === 'rating') {
+        const ratingA = a.rating || 0;
+        const ratingB = b.rating || 0;
+        return sortOrder === 'asc' ? ratingA - ratingB : ratingB - ratingA;
+      }
+      
       if (sortBy === 'name') {
         return sortOrder === 'asc'
           ? a.name.localeCompare(b.name)
@@ -229,6 +241,23 @@ const PriceComparisionTable = ({
         
         <button 
           className={`px-3 py-1.5 rounded-full text-sm flex items-center ${
+            sortBy === 'rating' 
+              ? 'bg-indigo-100 text-indigo-700 font-medium' 
+              : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+          }`}
+          onClick={() => handleSortChange('rating')}
+        >
+          <Star size={14} className="mr-1.5" />
+          Rating
+          {sortBy === 'rating' && (
+            sortOrder === 'asc' 
+              ? <ChevronUp size={14} className="ml-1" />
+              : <ChevronDown size={14} className="ml-1" />
+          )}
+        </button>
+        
+        <button 
+          className={`px-3 py-1.5 rounded-full text-sm flex items-center ${
             sortBy === 'name' 
               ? 'bg-indigo-100 text-indigo-700 font-medium' 
               : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
@@ -263,9 +292,19 @@ const PriceComparisionTable = ({
                 <div className="flex flex-col md:flex-row md:items-center justify-between">
                   <div className="flex-1 mb-3 md:mb-0">
                     <h4 className="text-lg font-medium text-gray-900">{provider.name}</h4>
-                    <div className="flex items-center text-sm text-gray-500 mt-1">
-                      <MapPin size={14} className="mr-1.5 flex-shrink-0" />
-                      {provider.address?.city}, {provider.address?.state} • {provider.distanceKm} km away
+                    <div className="flex items-center gap-4 text-sm text-gray-500 mt-1">
+                      <div className="flex items-center">
+                        <MapPin size={14} className="mr-1.5 flex-shrink-0" />
+                        {provider.address?.city}, {provider.address?.state} • {provider.distanceKm} km away
+                      </div>
+                      {(provider.rating > 0 || provider.totalReviews > 0) && (
+                        <StarRating 
+                          rating={provider.rating || 0} 
+                          totalReviews={provider.totalReviews || 0}
+                          size="sm"
+                          className="flex-shrink-0"
+                        />
+                      )}
                     </div>
                   </div>
                   
@@ -291,6 +330,18 @@ const PriceComparisionTable = ({
                         <p className="text-sm font-bold text-green-700">${savings.amount.toFixed(2)}</p>
                       </div>
                     )}
+                    
+                    {/* Feedback Button */}
+                    <button 
+                      className="flex items-center justify-center w-8 h-8 rounded-full bg-gray-100 text-gray-500 hover:bg-gray-200 transition-colors"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setFeedbackModal({ isOpen: true, provider });
+                      }}
+                      title="Leave feedback"
+                    >
+                      <MessageSquare size={16} />
+                    </button>
                     
                     {/* Expand/Collapse Button */}
                     <button 
@@ -404,6 +455,18 @@ const PriceComparisionTable = ({
           );
         })}
       </div>
+      
+      {/* Feedback Modal */}
+      <FeedbackModal
+        isOpen={feedbackModal.isOpen}
+        provider={feedbackModal.provider}
+        service={selectedService}
+        onClose={() => setFeedbackModal({ isOpen: false, provider: null })}
+        onSubmit={async (feedbackData) => {
+          await onSubmitFeedback(feedbackData);
+          setFeedbackModal({ isOpen: false, provider: null });
+        }}
+      />
     </div>
   );
 };

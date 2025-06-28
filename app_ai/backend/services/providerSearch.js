@@ -2,6 +2,7 @@
 // providerSearch.js (partial update)
 const { admin, db } = require('./firebase-config');
 const { geocodePostalCode, calculateDistance } = require('./geocoding');
+const feedbackService = require('./feedbackService');
 
 // Rest of the file remains the same...
 
@@ -115,6 +116,18 @@ async function findProvidersByPostalCode(postalCode, maxDistance = 15, serviceCo
     
     // Sort by distance
     providers.sort((a, b) => a.distance - b.distance);
+    
+    // Add ratings to providers
+    if (providers.length > 0) {
+      const providerIds = providers.map(p => p.id);
+      const ratings = await feedbackService.getMultipleProviderRatings(providerIds, serviceCode);
+      
+      providers.forEach(provider => {
+        const rating = ratings[provider.id];
+        provider.rating = rating ? rating.averageRating : 0;
+        provider.totalReviews = rating ? rating.totalReviews : 0;
+      });
+    }
     
     // If service code is specified, filter by service
     if (serviceCode) {
@@ -304,6 +317,18 @@ async function getRecommendations(postalCode, serviceCode, insuranceId = null, m
         
       return aPrice - bPrice;
     });
+    
+    // Add ratings to recommendations
+    if (recommendations.length > 0) {
+      const providerIds = recommendations.map(r => r.provider.id);
+      const ratings = await feedbackService.getMultipleProviderRatings(providerIds, serviceCode);
+      
+      recommendations.forEach(recommendation => {
+        const rating = ratings[recommendation.provider.id];
+        recommendation.provider.rating = rating ? rating.averageRating : 0;
+        recommendation.provider.totalReviews = rating ? rating.totalReviews : 0;
+      });
+    }
     
     // Return top recommendations (limited to 5)
     return recommendations.slice(0, 5);

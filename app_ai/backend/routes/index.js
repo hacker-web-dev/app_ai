@@ -2,6 +2,7 @@
 const express = require('express');
 const router = express.Router();
 const providerSearch = require('../services/providerSearch'); // Adjust path as needed
+const feedbackService = require('../services/feedbackService');
 
 // Get available services
 router.get('/services', async (req, res) => {
@@ -102,6 +103,88 @@ router.get('/recommendations', async (req, res) => {
   } catch (error) {
     console.error('Error getting recommendations:', error);
     res.status(500).json({ error: error.message || 'Failed to get recommendations' });
+  }
+});
+
+// Submit feedback/rating for a provider
+router.post('/feedback', async (req, res) => {
+  try {
+    const { providerId, service, rating, review, userId } = req.body;
+    
+    if (!providerId || !service || !rating) {
+      return res.status(400).json({ 
+        error: 'Provider ID, service, and rating are required' 
+      });
+    }
+    
+    if (rating < 1 || rating > 5) {
+      return res.status(400).json({ 
+        error: 'Rating must be between 1 and 5' 
+      });
+    }
+    
+    const feedback = await feedbackService.submitFeedback({
+      providerId,
+      service,
+      rating,
+      review: review || '',
+      userId: userId || 'anonymous'
+    });
+    
+    res.json({
+      success: true,
+      data: feedback
+    });
+  } catch (error) {
+    console.error('Error submitting feedback:', error);
+    res.status(500).json({ 
+      error: error.message || 'Failed to submit feedback' 
+    });
+  }
+});
+
+// Get provider ratings
+router.get('/providers/:providerId/ratings', async (req, res) => {
+  try {
+    const { providerId } = req.params;
+    const { service } = req.query;
+    
+    const ratings = await feedbackService.getProviderRatings(providerId, service);
+    
+    res.json({
+      success: true,
+      data: ratings
+    });
+  } catch (error) {
+    console.error('Error getting provider ratings:', error);
+    res.status(500).json({ 
+      error: error.message || 'Failed to get provider ratings' 
+    });
+  }
+});
+
+// Get feedback reviews for a provider
+router.get('/providers/:providerId/reviews', async (req, res) => {
+  try {
+    const { providerId } = req.params;
+    const { service, limit, offset } = req.query;
+    
+    const reviews = await feedbackService.getProviderReviews(
+      providerId, 
+      service, 
+      Number(limit) || 10,
+      Number(offset) || 0
+    );
+    
+    res.json({
+      success: true,
+      data: reviews
+    });
+  } catch (error) {
+    console.error('Error getting provider reviews:', error);
+    res.status(500).json({ 
+      error: error.message || 'Failed to get provider reviews' 
+    });
   }
 });
  

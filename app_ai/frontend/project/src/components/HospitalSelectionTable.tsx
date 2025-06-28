@@ -21,8 +21,8 @@ const HospitalSelectionTable = ({
   maxDistanceFilter = 30,
   onMaxDistanceChange = () => {}
 }) => {
-  const [sortBy, setSortBy] = useState('distance');
-  const [sortOrder, setSortOrder] = useState('asc');
+  const [sortBy, setSortBy] = useState('rating'); // Default to rating sort
+  const [sortOrder, setSortOrder] = useState('desc'); // Higher ratings first
   const [selectedProviders, setSelectedProviders] = useState({});
   const [selectAll, setSelectAll] = useState(false);
 
@@ -109,6 +109,7 @@ const HospitalSelectionTable = ({
     onMaxDistanceChange(value);
   };
 
+
   // Sort providers
   const sortedProviders = React.useMemo(() => {
     if (!providers || providers.length === 0) return [];
@@ -140,7 +141,7 @@ const HospitalSelectionTable = ({
   };
 
   // Render star rating
-  const renderRating = (rating) => {
+  const renderRating = (rating, totalReviews = 0) => {
     if (!rating) return 'No Rating';
     
     rating = parseFloat(rating);
@@ -148,13 +149,18 @@ const HospitalSelectionTable = ({
     const hasHalfStar = rating % 1 >= 0.5;
     
     return (
-      <div className="flex items-center">
-        {[...Array(5)].map((_, i) => (
-          <span key={i} className={i < fullStars ? "text-yellow-400" : "text-gray-300"}>
-            <Star size={16} fill={i < fullStars ? "currentColor" : (i === fullStars && hasHalfStar ? "url(#halfStar)" : "none")} />
-          </span>
-        ))}
-        <span className="ml-1 text-sm font-medium text-gray-600">{rating.toFixed(1)}</span>
+      <div className="flex flex-col">
+        <div className="flex items-center">
+          {[...Array(5)].map((_, i) => (
+            <span key={i} className={i < fullStars ? "text-yellow-400" : "text-gray-300"}>
+              <Star size={16} fill={i < fullStars ? "currentColor" : (i === fullStars && hasHalfStar ? "url(#halfStar)" : "none")} />
+            </span>
+          ))}
+          <span className="ml-1 text-sm font-medium text-gray-600">{rating.toFixed(1)}</span>
+        </div>
+        {totalReviews > 0 && (
+          <span className="text-xs text-gray-500">({totalReviews} review{totalReviews !== 1 ? 's' : ''})</span>
+        )}
       </div>
     );
   };
@@ -426,7 +432,7 @@ const HospitalSelectionTable = ({
                   <div className="text-sm text-gray-500">{(provider.distance * 0.621371).toFixed(1)} miles</div>
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap">
-                  {renderRating(provider.hospitalRating)}
+                  {renderRating(provider.hospitalRating, provider.totalReviews)}
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap">
                   <button

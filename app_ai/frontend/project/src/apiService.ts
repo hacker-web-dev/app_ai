@@ -69,6 +69,8 @@ interface Provider {
     postalCode: string;
   };
   distanceKm: string;
+  rating?: number;
+  totalReviews?: number;
   matchingServices?: Service[];
 }
 
@@ -100,8 +102,36 @@ interface Recommendation {
     name: string;
     address: any;
     distance: string;
+    rating?: number;
+    totalReviews?: number;
   };
   pricing: PricingDetails;
+}
+
+interface FeedbackData {
+  providerId: string;
+  service: string;
+  rating: number;
+  review: string;
+}
+
+interface ProviderRating {
+  providerId: string;
+  service: string;
+  averageRating: number;
+  totalReviews: number;
+  ratingDistribution: { [key: number]: number };
+}
+
+interface Review {
+  id: string;
+  providerId: string;
+  service: string;
+  rating: number;
+  review: string;
+  userId: string;
+  timestamp: any;
+  createdAt: string;
 }
 
 interface ProvidersResponse {
@@ -239,6 +269,64 @@ export const apiService = {
       return response.data;
     } catch (error) {
       console.error('Error getting recommendations:', error);
+      throw error;
+    }
+  },
+
+  /**
+   * Submit feedback for a provider
+   * @param feedbackData Feedback data including rating and review
+   * @returns Success response
+   */
+  submitFeedback: async (feedbackData: FeedbackData): Promise<{success: boolean, data: any}> => {
+    try {
+      const response = await apiClient.post('/feedback', feedbackData);
+      return response.data;
+    } catch (error) {
+      console.error('Error submitting feedback:', error);
+      throw error;
+    }
+  },
+
+  /**
+   * Get provider ratings
+   * @param providerId Provider ID
+   * @param service Optional service name
+   * @returns Provider ratings
+   */
+  getProviderRatings: async (providerId: string, service?: string): Promise<ProviderRating> => {
+    try {
+      const response = await apiClient.get(`/providers/${providerId}/ratings`, {
+        params: { service }
+      });
+      return response.data.data;
+    } catch (error) {
+      console.error('Error getting provider ratings:', error);
+      throw error;
+    }
+  },
+
+  /**
+   * Get provider reviews
+   * @param providerId Provider ID
+   * @param service Optional service name
+   * @param limit Number of reviews to fetch
+   * @param offset Number of reviews to skip
+   * @returns Provider reviews
+   */
+  getProviderReviews: async (
+    providerId: string, 
+    service?: string, 
+    limit = 10, 
+    offset = 0
+  ): Promise<Review[]> => {
+    try {
+      const response = await apiClient.get(`/providers/${providerId}/reviews`, {
+        params: { service, limit, offset }
+      });
+      return response.data.data;
+    } catch (error) {
+      console.error('Error getting provider reviews:', error);
       throw error;
     }
   }
