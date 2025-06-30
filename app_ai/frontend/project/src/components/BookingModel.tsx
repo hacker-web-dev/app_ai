@@ -6,6 +6,7 @@ import { apiService } from '../apiService';
 interface BookingModalProps {
   isOpen: boolean;
   onClose: () => void;
+  onFeedbackSubmitted?: () => void;
   providerId: string;
   providerName: string;
   serviceName: string;
@@ -14,6 +15,7 @@ interface BookingModalProps {
 const BookingModal: React.FC<BookingModalProps> = ({ 
   isOpen, 
   onClose, 
+  onFeedbackSubmitted,
   providerId, 
   providerName,
   serviceName 
@@ -84,6 +86,11 @@ const BookingModal: React.FC<BookingModalProps> = ({
       await apiService.submitFeedback(feedbackData);
       setShowFeedback(false);
       console.log('Feedback submitted successfully');
+      
+      // Notify parent component that feedback was submitted
+      if (onFeedbackSubmitted) {
+        onFeedbackSubmitted();
+      }
     } catch (error) {
       console.error('Error submitting feedback:', error);
     }
@@ -207,7 +214,7 @@ const BookingModal: React.FC<BookingModalProps> = ({
                     className="inline-flex justify-center w-full rounded-md border border-transparent shadow-sm px-4 py-2 bg-green-600 text-base font-medium text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 sm:text-sm"
                     onClick={() => setShowFeedback(true)}
                   >
-                    Rate Your Experience
+                    Share Your Feedback
                   </button>
                   <button
                     type="button"

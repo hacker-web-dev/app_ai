@@ -111,13 +111,21 @@ router.post('/feedback', async (req, res) => {
   try {
     const { providerId, service, rating, review, userId } = req.body;
     
-    if (!providerId || !service || !rating) {
+    if (!providerId || !service) {
       return res.status(400).json({ 
-        error: 'Provider ID, service, and rating are required' 
+        error: 'Provider ID and service are required' 
       });
     }
     
-    if (rating < 1 || rating > 5) {
+    // Validate that either rating or review is provided
+    if (!rating && (!review || review.trim().length === 0)) {
+      return res.status(400).json({ 
+        error: 'Either rating (1-5) or review text must be provided' 
+      });
+    }
+    
+    // Validate rating if provided
+    if (rating && (rating < 1 || rating > 5)) {
       return res.status(400).json({ 
         error: 'Rating must be between 1 and 5' 
       });
@@ -126,7 +134,7 @@ router.post('/feedback', async (req, res) => {
     const feedback = await feedbackService.submitFeedback({
       providerId,
       service,
-      rating,
+      rating: rating || null, // Make rating optional
       review: review || '',
       userId: userId || 'anonymous'
     });
@@ -184,6 +192,46 @@ router.get('/providers/:providerId/reviews', async (req, res) => {
     console.error('Error getting provider reviews:', error);
     res.status(500).json({ 
       error: error.message || 'Failed to get provider reviews' 
+    });
+  }
+});
+
+// Get sentiment analysis statistics for a provider
+router.get('/providers/:providerId/sentiment', async (req, res) => {
+  try {
+    const { providerId } = req.params;
+    const { service } = req.query;
+    
+    const sentimentStats = await feedbackService.getProviderSentimentStats(providerId, service);
+    
+    res.json({
+      success: true,
+      data: sentimentStats
+    });
+  } catch (error) {
+    console.error('Error getting sentiment statistics:', error);
+    res.status(500).json({ 
+      error: error.message || 'Failed to get sentiment statistics' 
+    });
+  }
+});
+
+// Reprocess existing reviews for sentiment analysis
+router.post('/admin/reprocess-sentiment', async (req, res) => {
+  try {
+    const { providerId } = req.body;
+    
+    const results = await feedbackService.reprocessSentimentAnalysis(providerId);
+    
+    res.json({
+      success: true,
+      message: 'Sentiment analysis reprocessing completed',
+      data: results
+    });
+  } catch (error) {
+    console.error('Error reprocessing sentiment analysis:', error);
+    res.status(500).json({ 
+      error: error.message || 'Failed to reprocess sentiment analysis' 
     });
   }
 });

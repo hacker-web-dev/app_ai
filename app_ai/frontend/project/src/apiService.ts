@@ -111,7 +111,7 @@ interface Recommendation {
 interface FeedbackData {
   providerId: string;
   service: string;
-  rating: number;
+  rating?: number; // Made optional
   review: string;
 }
 

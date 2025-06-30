@@ -1,7 +1,8 @@
 import React, { useState, useEffect, FormEvent } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { DoorClosedIcon, TelescopeIcon, ArrowLeftIcon } from 'lucide-react';
+import { DoorClosedIcon, TelescopeIcon, ArrowLeftIcon, Phone, Mail } from 'lucide-react';
 import { loginUser, resetPassword } from '../authservice';
+import PhoneAuth from '../components/PhoneAuth';
 
 const LoginPage: React.FC = () => {
   const [email, setEmail] = useState<string>('');
@@ -10,6 +11,7 @@ const LoginPage: React.FC = () => {
   const [mounted, setMounted] = useState<boolean>(false);
   const [error, setError] = useState<string>('');
   const [resetSent, setResetSent] = useState<boolean>(false);
+  const [authMethod, setAuthMethod] = useState<'email' | 'phone'>('email');
   
   const navigate = useNavigate();
 
@@ -53,6 +55,17 @@ const LoginPage: React.FC = () => {
     }
   };
 
+  const handlePhoneAuthSuccess = () => {
+    // Redirect to dashboard or home page after successful phone login
+    navigate('/home');
+  };
+
+  const handleSwitchAuthMethod = (method: 'email' | 'phone') => {
+    setAuthMethod(method);
+    setError('');
+    setResetSent(false);
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-blue-50 to-purple-50 flex flex-col">
       
@@ -71,24 +84,51 @@ const LoginPage: React.FC = () => {
                 <h1 className="text-3xl font-bold">Welcome Back</h1>
                 <p className="mt-2 opacity-90">Sign in to your PriceAI account</p>
               </div>
-              <div className="w-full h-px bg-white opacity-20"></div>
+              
+              {/* Authentication Method Selector */}
+              <div className="flex bg-white bg-opacity-20 rounded-lg p-1">
+                <button
+                  onClick={() => handleSwitchAuthMethod('email')}
+                  className={`flex-1 flex items-center justify-center py-2 px-4 rounded-md text-sm font-medium transition-all duration-200 ${
+                    authMethod === 'email'
+                      ? 'bg-white text-indigo-600 shadow-sm'
+                      : 'text-white hover:bg-white hover:bg-opacity-10'
+                  }`}
+                >
+                  <Mail size={16} className="mr-2" />
+                  Email
+                </button>
+                <button
+                  onClick={() => handleSwitchAuthMethod('phone')}
+                  className={`flex-1 flex items-center justify-center py-2 px-4 rounded-md text-sm font-medium transition-all duration-200 ${
+                    authMethod === 'phone'
+                      ? 'bg-white text-indigo-600 shadow-sm'
+                      : 'text-white hover:bg-white hover:bg-opacity-10'
+                  }`}
+                >
+                  <Phone size={16} className="mr-2" />
+                  Phone
+                </button>
+              </div>
             </div>
 
             {/* Card body */}
             <div className="p-8">
-              {error && (
-                <div className="mb-4 p-3 bg-red-50 border border-red-200 text-red-700 rounded-lg">
-                  {error}
-                </div>
-              )}
-              
-              {resetSent && (
-                <div className="mb-4 p-3 bg-green-50 border border-green-200 text-green-700 rounded-lg">
-                  Password reset email sent! Please check your inbox.
-                </div>
-              )}
-              
-              <form onSubmit={handleSubmit} className="space-y-6">
+              {authMethod === 'email' && (
+                <>
+                  {error && (
+                    <div className="mb-4 p-3 bg-red-50 border border-red-200 text-red-700 rounded-lg">
+                      {error}
+                    </div>
+                  )}
+                  
+                  {resetSent && (
+                    <div className="mb-4 p-3 bg-green-50 border border-green-200 text-green-700 rounded-lg">
+                      Password reset email sent! Please check your inbox.
+                    </div>
+                  )}
+                  
+                  <form onSubmit={handleSubmit} className="space-y-6">
                 <div 
                   className="transform transition-all duration-500 delay-100"
                   style={{ opacity: mounted ? 1 : 0, transform: mounted ? 'translateY(0)' : 'translateY(20px)' }}
@@ -197,6 +237,32 @@ const LoginPage: React.FC = () => {
                   </Link>
                 </p>
               </div>
+                </>
+              )}
+
+              {authMethod === 'phone' && (
+                <div 
+                  className="transform transition-all duration-500"
+                  style={{ opacity: mounted ? 1 : 0, transform: mounted ? 'translateY(0)' : 'translateY(20px)' }}
+                >
+                  <PhoneAuth
+                    onSuccess={handlePhoneAuthSuccess}
+                    onBackToEmail={() => handleSwitchAuthMethod('email')}
+                  />
+                  
+                  <div className="mt-6 text-center">
+                    <p className="text-sm text-gray-600">
+                      Don't have an account?{' '}
+                      <Link
+                        to="/signup"
+                        className="font-medium text-indigo-600 hover:text-indigo-500 transition-colors"
+                      >
+                        Sign up
+                      </Link>
+                    </p>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
           

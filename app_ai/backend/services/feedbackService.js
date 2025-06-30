@@ -1,12 +1,13 @@
 const { admin, db } = require('./firebase-config');
+const sentimentAnalysisService = require('./sentimentAnalysisService');
 
 /**
  * Submit feedback for a provider
  * @param {Object} feedbackData - Feedback data
  * @param {string} feedbackData.providerId - Provider ID
  * @param {string} feedbackData.service - Service name
- * @param {number} feedbackData.rating - Rating (1-5)
- * @param {string} feedbackData.review - Review text
+ * @param {number} feedbackData.rating - Rating (1-5) - OPTIONAL
+ * @param {string} feedbackData.review - Review text - REQUIRED if no rating
  * @param {string} feedbackData.userId - User ID
  * @returns {Promise<Object>} - Submitted feedback
  */
@@ -14,15 +15,51 @@ async function submitFeedback(feedbackData) {
   try {
     const { providerId, service, rating, review, userId } = feedbackData;
     
-    console.log('Submitting feedback for provider:', providerId, 'service:', service, 'rating:', rating);
+    // Validate that either rating or review is provided
+    if (!rating && (!review || review.trim().length === 0)) {
+      throw new Error('Either rating or review text must be provided');
+    }
     
-    // Create feedback document
+    console.log('Submitting feedback for provider:', providerId, 'service:', service, 'rating:', rating || 'none', 'review length:', review ? review.length : 0);
+    
+    // Initialize variables
+    let sentimentAnalysis = null;
+    let finalRating = rating;
+    let adjustedRating = rating;
+    let isRatingGenerated = false;
+    
+    // If review text is provided, perform sentiment analysis
+    if (review && review.trim().length > 0) {
+      console.log('Analyzing sentiment for review:', review.substring(0, 50) + '...');
+      sentimentAnalysis = await sentimentAnalysisService.analyzeSentiment(review);
+      
+      if (rating) {
+        // User provided both rating and review - adjust the rating based on sentiment
+        adjustedRating = sentimentAnalysisService.applySentimentToRating(rating, sentimentAnalysis);
+        console.log(`Sentiment analysis complete. Original rating: ${rating}, Adjusted rating: ${adjustedRating}, Classification: ${sentimentAnalysis.classification}, Confidence: ${sentimentAnalysis.confidence}`);
+      } else {
+        // User provided only review - generate rating from sentiment
+        finalRating = sentimentAnalysisService.sentimentToStarRating(sentimentAnalysis);
+        adjustedRating = finalRating;
+        isRatingGenerated = true;
+        console.log(`Rating generated from sentiment. Generated rating: ${finalRating}, Classification: ${sentimentAnalysis.classification}, Confidence: ${sentimentAnalysis.confidence}`);
+      }
+    } else if (!rating) {
+      // This should not happen due to validation above, but handle gracefully
+      throw new Error('No review text provided for sentiment analysis');
+    }
+    
+    // Create feedback document with sentiment data
     const feedback = {
       providerId,
       service,
-      rating,
-      review,
+      rating: rating || null, // Original user rating (null if not provided)
+      finalRating: finalRating, // The rating used for calculations (user rating or generated)
+      adjustedRating: adjustedRating, // Sentiment-adjusted rating
+      review: review || '',
       userId,
+      sentimentAnalysis,
+      isRatingGenerated, // Flag to indicate if rating was generated from sentiment
       timestamp: admin.firestore.FieldValue.serverTimestamp(),
       createdAt: new Date().toISOString()
     };
@@ -31,7 +68,7 @@ async function submitFeedback(feedbackData) {
     const feedbackRef = await db.collection('provider_feedback').add(feedback);
     console.log('Feedback document created:', feedbackRef.id);
     
-    // Update provider ratings summary
+    // Update provider ratings summary using adjusted rating
     await updateProviderRatings(providerId, service);
     console.log('Provider ratings updated for:', providerId);
     
@@ -75,16 +112,25 @@ async function updateProviderRatings(providerId, service = null) {
       existingData = existingRatingDoc.data();
     }
     
-    // Calculate new ratings from user feedback
+    // Calculate new ratings from user feedback using sentiment-adjusted ratings
     let userFeedbackRating = 0;
     let userFeedbackCount = 0;
     const userRatingDistribution = { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 };
     
     snapshot.forEach(doc => {
       const data = doc.data();
-      userFeedbackRating += data.rating;
-      userFeedbackCount++;
-      userRatingDistribution[data.rating]++;
+      // Use adjusted rating if available, otherwise fall back to finalRating, then original rating
+      const effectiveRating = data.adjustedRating || data.finalRating || data.rating;
+      
+      if (effectiveRating) {
+        userFeedbackRating += effectiveRating;
+        userFeedbackCount++;
+        
+        // Round rating for distribution calculation
+        const roundedRating = Math.round(effectiveRating);
+        const validRating = Math.max(1, Math.min(5, roundedRating));
+        userRatingDistribution[validRating]++;
+      }
     });
     
     // Combine with existing data if available
@@ -292,6 +338,108 @@ async function hasUserReviewed(userId, providerId, service) {
   }
 }
 
+/**
+ * Get sentiment analysis statistics for a provider
+ * @param {string} providerId - Provider ID
+ * @param {string} service - Service name (optional)
+ * @returns {Promise<Object>} - Sentiment statistics
+ */
+async function getProviderSentimentStats(providerId, service = null) {
+  try {
+    let query = db.collection('provider_feedback')
+      .where('providerId', '==', providerId);
+    
+    if (service) {
+      query = query.where('service', '==', service);
+    }
+    
+    const snapshot = await query.get();
+    
+    if (snapshot.empty) {
+      return sentimentAnalysisService.getSentimentStatistics([]);
+    }
+    
+    const reviews = [];
+    snapshot.forEach(doc => {
+      const data = doc.data();
+      if (data.sentimentAnalysis) {
+        reviews.push(data);
+      }
+    });
+    
+    return sentimentAnalysisService.getSentimentStatistics(reviews);
+  } catch (error) {
+    console.error('Error getting sentiment statistics:', error);
+    return sentimentAnalysisService.getSentimentStatistics([]);
+  }
+}
+
+/**
+ * Reprocess existing reviews for sentiment analysis
+ * @param {string} providerId - Provider ID (optional, if not provided, processes all)
+ * @returns {Promise<Object>} - Processing results
+ */
+async function reprocessSentimentAnalysis(providerId = null) {
+  try {
+    let query = db.collection('provider_feedback');
+    
+    if (providerId) {
+      query = query.where('providerId', '==', providerId);
+    }
+    
+    // Only process reviews that don't have sentiment analysis yet and have review text
+    query = query.where('review', '!=', '');
+    
+    const snapshot = await query.get();
+    let processed = 0;
+    let errors = 0;
+    
+    console.log(`Found ${snapshot.size} reviews to process for sentiment analysis`);
+    
+    for (const doc of snapshot.docs) {
+      try {
+        const data = doc.data();
+        
+        // Skip if already has sentiment analysis
+        if (data.sentimentAnalysis) {
+          continue;
+        }
+        
+        // Perform sentiment analysis
+        const sentimentAnalysis = await sentimentAnalysisService.analyzeSentiment(data.review);
+        const adjustedRating = sentimentAnalysisService.applySentimentToRating(data.rating, sentimentAnalysis);
+        
+        // Update the document
+        await doc.ref.update({
+          sentimentAnalysis: sentimentAnalysis,
+          adjustedRating: adjustedRating
+        });
+        
+        processed++;
+        
+        // Add small delay to avoid overwhelming the API
+        await new Promise(resolve => setTimeout(resolve, 100));
+        
+      } catch (error) {
+        console.error(`Error processing sentiment for review ${doc.id}:`, error);
+        errors++;
+      }
+    }
+    
+    console.log(`Sentiment reprocessing complete. Processed: ${processed}, Errors: ${errors}`);
+    
+    // Update ratings for affected providers
+    if (providerId) {
+      await updateProviderRatings(providerId);
+    }
+    
+    return { processed, errors, total: snapshot.size };
+  } catch (error) {
+    console.error('Error reprocessing sentiment analysis:', error);
+    throw error;
+  }
+}
+
 module.exports = {
   submitFeedback,
   updateProviderRatings,
@@ -299,5 +447,7 @@ module.exports = {
   getProviderRatings,
   getProviderReviews,
   getMultipleProviderRatings,
-  hasUserReviewed
+  hasUserReviewed,
+  getProviderSentimentStats,
+  reprocessSentimentAnalysis
 };

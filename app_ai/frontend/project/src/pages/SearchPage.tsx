@@ -5,7 +5,12 @@ import ServiceSearchForm from '../components/ServiceSearchForm'
 import HospitalSelectionTable from '../components/HospitalSelectionTable'
 import StaticHospitalComparison from '../components/StaticHospitalComparison';
 import BookingModal from '../components/BookingModel';
+import Toast from '../components/Toast';
+import { RefreshCw } from 'lucide-react';
 import axios from 'axios';
+
+// API Configuration
+const API_URL = 'http://localhost:3000';
 // Define interfaces for the hospital data
 interface HospitalAddress {
   street?: string;
@@ -56,7 +61,7 @@ interface HospitalData {
   insuranceOptions: InsuranceOption[];
 }
 
-const API_URL = 'http://localhost:3000';
+
 
 const SearchPage = () => {
   // State for search parameters
@@ -74,7 +79,13 @@ const SearchPage = () => {
   const [maxDistance, setMaxDistance] = useState<number>(30);
   const [searchStep, setSearchStep] = useState<'search' | 'select' | 'compare' | 'details'>('search'); // Added 'details' step
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [isRefreshingRatings, setIsRefreshingRatings] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
+  
+  // Toast notification state
+  const [showToast, setShowToast] = useState<boolean>(false);
+  const [toastMessage, setToastMessage] = useState<string>('');
+  const [toastType, setToastType] = useState<'success' | 'error'>('success');
   
   // Booking modal state
   const [isBookingModalOpen, setIsBookingModalOpen] = useState<boolean>(false);
@@ -213,6 +224,78 @@ const SearchPage = () => {
       setBookingProviderName(provider.hospitalName);
       setIsBookingModalOpen(true);
     }
+  };
+
+  // Refresh ratings for all providers after feedback submission
+  const refreshProviderRatings = async () => {
+    if (providers.length === 0) return;
+
+    setIsRefreshingRatings(true);
+    try {
+      // Fetch updated ratings for all providers
+      const ratingPromises = providers.map(async (provider) => {
+        try {
+          const response = await axios.get(`${API_URL}/api/providers/${provider.hospitalId}/ratings`, {
+            params: { service: searchParams.serviceDescription }
+          });
+          return {
+            hospitalId: provider.hospitalId,
+            newRating: response.data.data.averageRating,
+            totalReviews: response.data.data.totalReviews
+          };
+        } catch (error) {
+          console.warn(`Failed to fetch rating for ${provider.hospitalId}:`, error);
+          return null;
+        }
+      });
+
+      const ratingUpdates = await Promise.all(ratingPromises);
+      
+      // Update providers with new ratings
+      setProviders(prevProviders => 
+        prevProviders.map(provider => {
+          const ratingUpdate = ratingUpdates.find(update => 
+            update && update.hospitalId === provider.hospitalId
+          );
+          
+          if (ratingUpdate) {
+            return {
+              ...provider,
+              hospitalRating: ratingUpdate.newRating,
+              totalReviews: ratingUpdate.totalReviews
+            };
+          }
+          return provider;
+        })
+      );
+
+      console.log('Provider ratings refreshed successfully');
+      
+      // Show success toast
+      setToastMessage('Ratings updated successfully!');
+      setToastType('success');
+      setShowToast(true);
+    } catch (error) {
+      console.error('Error refreshing provider ratings:', error);
+      
+      // Show error toast
+      setToastMessage('Failed to update ratings. Please try again.');
+      setToastType('error');
+      setShowToast(true);
+    } finally {
+      setIsRefreshingRatings(false);
+    }
+  };
+
+  // Handle feedback submission completion
+  const handleFeedbackSubmitted = async () => {
+    // Close the booking modal first
+    setIsBookingModalOpen(false);
+    
+    // Refresh ratings after a short delay to allow backend processing
+    setTimeout(() => {
+      refreshProviderRatings();
+    }, 1000);
   };
 
   // Get selected providers or single provider
@@ -358,11 +441,31 @@ const SearchPage = () => {
               >
                 ← Back to Selection
               </button>
-              <div className="text-sm text-gray-600">
-                {selectedProviders.length === 1 
-                  ? "Hospital details for " + searchParams.serviceDescription
-                  : `Comparing ${selectedProviders.length} providers for ${searchParams.serviceDescription}`
-                }
+              <div className="flex items-center space-x-4">
+                {isRefreshingRatings && (
+                  <div className="flex items-center text-indigo-600">
+                    <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-indigo-600 mr-2"></div>
+                    <span className="text-sm">Updating ratings...</span>
+                  </div>
+                )}
+                <button
+                  onClick={refreshProviderRatings}
+                  disabled={isRefreshingRatings}
+                  className="flex items-center px-3 py-1.5 text-sm bg-indigo-100 text-indigo-700 hover:bg-indigo-200 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                  title="Refresh latest ratings"
+                >
+                  <RefreshCw 
+                    size={14} 
+                    className={`mr-1.5 ${isRefreshingRatings ? 'animate-spin' : ''}`} 
+                  />
+                  Refresh Ratings
+                </button>
+                <div className="text-sm text-gray-600">
+                  {selectedProviders.length === 1 
+                    ? "Hospital details for " + searchParams.serviceDescription
+                    : `Comparing ${selectedProviders.length} providers for ${searchParams.serviceDescription}`
+                  }
+                </div>
               </div>
             </div>
             
@@ -454,9 +557,19 @@ const SearchPage = () => {
       <BookingModal
         isOpen={isBookingModalOpen}
         onClose={() => setIsBookingModalOpen(false)}
+        onFeedbackSubmitted={handleFeedbackSubmitted}
         providerId={bookingProviderId}
         providerName={bookingProviderName}
         serviceName={searchParams.serviceDescription}
+      />
+      
+      {/* Toast Notification */}
+      <Toast
+        isVisible={showToast}
+        message={toastMessage}
+        type={toastType}
+        onClose={() => setShowToast(false)}
+        duration={3000}
       />
     </div>
   );
