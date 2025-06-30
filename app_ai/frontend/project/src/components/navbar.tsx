@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X, User, LogOut, LogIn, Search, ChevronDown } from 'lucide-react';
 import { useAuth } from '../authcontext';
+import { logoutUser } from '../authservice';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [userMenuOpen, setUserMenuOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
   const { currentUser, loading } = useAuth();
 
   // Handle scroll effect
@@ -46,7 +48,8 @@ const Navbar = () => {
   const handleLogout = async () => {
     try {
       await logoutUser();
-      // You might want to redirect after logout
+      setUserMenuOpen(false);
+      navigate('/');
     } catch (error) {
       console.error('Logout failed:', error);
     }
@@ -114,11 +117,11 @@ const Navbar = () => {
               {userMenuOpen && (
                 <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-10 border border-gray-200">
                   <Link 
-                    to="/dashboard"
+                    to="/search"
                     className="flex w-full items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                   >
                     <User size={16} className="mr-2" />
-                    My Dashboard
+                    Search Prices
                   </Link>
                   <button 
                     onClick={handleLogout}
@@ -197,11 +200,11 @@ const Navbar = () => {
                   </div>
                 </div>
                 <Link 
-                  to="/dashboard" 
+                  to="/search" 
                   className="flex w-full items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded-md"
                 >
                   <User size={16} className="mr-2" />
-                  My Dashboard
+                  Search Prices
                 </Link>
                 <button 
                   onClick={handleLogout}

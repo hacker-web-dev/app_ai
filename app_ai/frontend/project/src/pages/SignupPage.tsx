@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { UserIcon, Lock, ArrowLeft, Phone, Mail } from 'lucide-react';
+import { UserIcon, Lock, Mail } from 'lucide-react';
 import { registerUser } from '../authservice';
-import PhoneSignup from '../components/PhoneSignup';
 
 interface FormData {
   fullName: string;
@@ -22,7 +21,6 @@ const SignupPage: React.FC = () => {
   const [mounted, setMounted] = useState<boolean>(false);
   const [currentStep, setCurrentStep] = useState<number>(1);
   const [error, setError] = useState<string>('');
-  const [authMethod, setAuthMethod] = useState<'email' | 'phone'>('email');
   const totalSteps = 2;
   
   const navigate = useNavigate();
@@ -80,7 +78,7 @@ const SignupPage: React.FC = () => {
     
     try {
       await registerUser(formData.email, formData.password, formData.fullName);
-      // Redirect to dashboard or home page after successful signup
+      // Redirect to landing page after successful signup
       navigate('/');
     } catch (error: any) {
       setError(error.message);
@@ -95,16 +93,6 @@ const SignupPage: React.FC = () => {
     }
   };
 
-  const handlePhoneSignupSuccess = () => {
-    // Redirect to dashboard or home page after successful phone signup
-    navigate('/');
-  };
-
-  const handleSwitchAuthMethod = (method: 'email' | 'phone') => {
-    setAuthMethod(method);
-    setError('');
-    setCurrentStep(1);
-  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-blue-50 to-purple-50 flex flex-col">
@@ -126,60 +114,30 @@ const SignupPage: React.FC = () => {
                 <p className="mt-2 opacity-90">Create your account to get started</p>
               </div>
               
-              {/* Authentication Method Selector */}
-              <div className="flex bg-white bg-opacity-20 rounded-lg p-1 mb-6">
-                <button
-                  onClick={() => handleSwitchAuthMethod('email')}
-                  className={`flex-1 flex items-center justify-center py-2 px-4 rounded-md text-sm font-medium transition-all duration-200 ${
-                    authMethod === 'email'
-                      ? 'bg-white text-indigo-600 shadow-sm'
-                      : 'text-white hover:bg-white hover:bg-opacity-10'
-                  }`}
-                >
-                  <Mail size={16} className="mr-2" />
-                  Email
-                </button>
-                <button
-                  onClick={() => handleSwitchAuthMethod('phone')}
-                  className={`flex-1 flex items-center justify-center py-2 px-4 rounded-md text-sm font-medium transition-all duration-200 ${
-                    authMethod === 'phone'
-                      ? 'bg-white text-indigo-600 shadow-sm'
-                      : 'text-white hover:bg-white hover:bg-opacity-10'
-                  }`}
-                >
-                  <Phone size={16} className="mr-2" />
-                  Phone
-                </button>
-              </div>
-              
-              {/* Progress bar - only show for email method */}
-              {authMethod === 'email' && (
-                <div className="mt-6">
-                  <div className="flex justify-between mb-1">
-                    <span className="text-xs">Step {currentStep} of {totalSteps}</span>
-                    <span className="text-xs">{Math.round((currentStep / totalSteps) * 100)}%</span>
-                  </div>
-                  <div className="w-full bg-white bg-opacity-20 rounded-full h-2">
-                    <div 
-                      className="bg-white h-2 rounded-full transition-all duration-500 ease-out"
-                      style={{ width: `${(currentStep / totalSteps) * 100}%` }}
-                    ></div>
-                  </div>
+              {/* Progress bar */}
+              <div className="mt-6">
+                <div className="flex justify-between mb-1">
+                  <span className="text-xs">Step {currentStep} of {totalSteps}</span>
+                  <span className="text-xs">{Math.round((currentStep / totalSteps) * 100)}%</span>
                 </div>
-              )}
+                <div className="w-full bg-white bg-opacity-20 rounded-full h-2">
+                  <div 
+                    className="bg-white h-2 rounded-full transition-all duration-500 ease-out"
+                    style={{ width: `${(currentStep / totalSteps) * 100}%` }}
+                  ></div>
+                </div>
+              </div>
             </div>
 
             {/* Card body */}
             <div className="p-8">
-              {authMethod === 'email' && (
-                <>
-                  {error && (
-                    <div className="mb-4 p-3 bg-red-50 border border-red-200 text-red-700 rounded-lg">
-                      {error}
-                    </div>
-                  )}
-                  
-                  <form onSubmit={handleSubmit} className="space-y-6">
+              {error && (
+                <div className="mb-4 p-3 bg-red-50 border border-red-200 text-red-700 rounded-lg">
+                  {error}
+                </div>
+              )}
+              
+              <form onSubmit={handleSubmit} className="space-y-6">
                 {currentStep === 1 && (
                   <div className="space-y-6">
                     <div 
@@ -318,46 +276,20 @@ const SignupPage: React.FC = () => {
                 </div>
                   </form>
 
-                  <div 
-                    className="mt-6 text-center transform transition-all duration-500 delay-500"
-                    style={{ opacity: mounted ? 1 : 0, transform: mounted ? 'translateY(0)' : 'translateY(20px)' }}
+              <div 
+                className="mt-6 text-center transform transition-all duration-500 delay-500"
+                style={{ opacity: mounted ? 1 : 0, transform: mounted ? 'translateY(0)' : 'translateY(20px)' }}
+              >
+                <p className="text-sm text-gray-600">
+                  Already have an account?{' '}
+                  <Link
+                    to="/login"
+                    className="font-medium text-indigo-600 hover:text-indigo-500 transition-colors"
                   >
-                    <p className="text-sm text-gray-600">
-                      Already have an account?{' '}
-                      <Link
-                        to="/"
-                        className="font-medium text-indigo-600 hover:text-indigo-500 transition-colors"
-                      >
-                        Sign in
-                      </Link>
-                    </p>
-                  </div>
-                </>
-              )}
-
-              {authMethod === 'phone' && (
-                <div 
-                  className="transform transition-all duration-500"
-                  style={{ opacity: mounted ? 1 : 0, transform: mounted ? 'translateY(0)' : 'translateY(20px)' }}
-                >
-                  <PhoneSignup
-                    onSuccess={handlePhoneSignupSuccess}
-                    onBackToEmail={() => handleSwitchAuthMethod('email')}
-                  />
-                  
-                  <div className="mt-6 text-center">
-                    <p className="text-sm text-gray-600">
-                      Already have an account?{' '}
-                      <Link
-                        to="/"
-                        className="font-medium text-indigo-600 hover:text-indigo-500 transition-colors"
-                      >
-                        Sign in
-                      </Link>
-                    </p>
-                  </div>
-                </div>
-              )}
+                    Sign in
+                  </Link>
+                </p>
+              </div>
             </div>
           </div>
           
