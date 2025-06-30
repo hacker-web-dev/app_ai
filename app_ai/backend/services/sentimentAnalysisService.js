@@ -8,7 +8,7 @@ class SentimentAnalysisService {
     
     // Hugging Face API configuration
     this.hfApiUrl = "https://router.huggingface.co/hf-inference/models/cardiffnlp/twitter-roberta-base-sentiment";
-    this.hfApiKey = ''; // Set this in your environment
+    this.hfApiKey = 'HUGGINGFACE_API_KEY_REMOVED'; // Set this in your environment
     
     // Request queue to handle rate limiting
     this.requestQueue = [];
