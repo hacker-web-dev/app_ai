@@ -49,7 +49,7 @@ const Navbar = () => {
     try {
       await logoutUser();
       setUserMenuOpen(false);
-      navigate('/');
+      navigate('/login');
     } catch (error) {
       console.error('Logout failed:', error);
     }
