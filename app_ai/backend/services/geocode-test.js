@@ -21,7 +21,7 @@ const hospitals = [
 // ======= Geocoding Function =======
 async function geocodePostalCode(postalCode, country = 'US') {
   try {
-    const apiKey = "AIzaSyAYNxP68HxL9UKOQ8lN492Fdo_7-dCyJZw"; // Using the same key from your code
+    const apiKey = "AIzaSyBoQ5dP807JSDdYMjB-XCpGvdbkHfz_ooo"; // Using the same key from your code
     
     console.log(`Geocoding postal code: ${postalCode}`);
     

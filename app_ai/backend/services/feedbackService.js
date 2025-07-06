@@ -133,34 +133,10 @@ async function updateProviderRatings(providerId, service = null) {
       }
     });
     
-    // Combine with existing data if available
-    let finalRating;
-    let finalCount;
-    let finalDistribution;
-    
-    if (existingData && existingData.isInitial) {
-      // Mix initial random rating with user feedback
-      // Weight: 70% user feedback, 30% initial random rating
-      const initialWeight = 0.3;
-      const userWeight = 0.7;
-      
-      const weightedInitialRating = existingData.averageRating * existingData.totalReviews * initialWeight;
-      const weightedUserRating = (userFeedbackRating / userFeedbackCount) * userFeedbackCount * userWeight;
-      
-      finalRating = Math.round(((weightedInitialRating + weightedUserRating) / (existingData.totalReviews * initialWeight + userFeedbackCount * userWeight)) * 10) / 10;
-      finalCount = existingData.totalReviews + userFeedbackCount;
-      
-      // Combine distributions
-      finalDistribution = { ...existingData.ratingDistribution };
-      for (let rating in userRatingDistribution) {
-        finalDistribution[rating] += userRatingDistribution[rating];
-      }
-    } else {
-      // Only user feedback
-      finalRating = Math.round((userFeedbackRating / userFeedbackCount) * 10) / 10;
-      finalCount = userFeedbackCount;
-      finalDistribution = userRatingDistribution;
-    }
+    // Use ONLY real user feedback - no mixing with initial data
+    const finalRating = Math.round((userFeedbackRating / userFeedbackCount) * 10) / 10;
+    const finalCount = userFeedbackCount;
+    const finalDistribution = userRatingDistribution;
     
     // Create ratings summary
     const ratingSummary = {
@@ -182,10 +158,7 @@ async function updateProviderRatings(providerId, service = null) {
     // Update hospital rating in main hospitals collection (for your CSV-based data)
     await updateHospitalRating(providerId, finalRating);
     
-    // Also update overall rating if this was for a specific service
-    if (service) {
-      await updateProviderRatings(providerId, null);
-    }
+    // Don't update overall rating automatically - keep service-specific ratings separate
     
   } catch (error) {
     console.error('Error updating provider ratings:', error);

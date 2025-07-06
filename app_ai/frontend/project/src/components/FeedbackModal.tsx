@@ -43,7 +43,7 @@ const FeedbackModal: React.FC<FeedbackModalProps> = ({
     setError('');
 
     try {
-      const feedbackData: any = {
+      const feedbackData = {
         providerId: provider.id,
         service,
         review: review.trim()
@@ -60,7 +60,8 @@ const FeedbackModal: React.FC<FeedbackModalProps> = ({
       setRating(0);
       setReview('');
       onClose();
-    } catch (err) {
+    } catch (error) {
+      console.error('Error submitting feedback:', error);
       setError('Failed to submit feedback. Please try again.');
     } finally {
       setIsSubmitting(false);

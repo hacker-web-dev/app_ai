@@ -25,7 +25,7 @@ const ftpConfig = {
   secure: false, // Use true if using FTPS
 };
 const ftpDirectory = '';
-const googleApiKey = "AIzaSyAYNxP68HxL9UKOQ8lN492Fdo_7-dCyJZw"; // Use environment variable
+const googleApiKey = "AIzaSyBoQ5dP807JSDdYMjB-XCpGvdbkHfz_ooo"; // Use environment variable
 
 if (!googleApiKey) {
   console.error("ERROR: GOOGLE_MAPS_API_KEY environment variable is not set.");
@@ -592,7 +592,7 @@ app.get('/search', async (req, res) => {
     // Update ratings with live feedback data
     for (let hospital of nearbyHospitals) {
       try {
-        const liveRating = await feedbackService.getProviderRatings(hospital.hospitalId);
+        const liveRating = await feedbackService.getProviderRatings(hospital.hospitalId, upperServiceDesc);
         if (liveRating && liveRating.totalReviews > 0) {
           // Use live rating if feedback exists
           hospital.hospitalRating = liveRating.averageRating;

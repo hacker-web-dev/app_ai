@@ -10,8 +10,13 @@ import {
   X,
   RefreshCw,
   Info,
-  Eye
+  Eye,
+  MessageCircle,
+  Edit3
 } from 'lucide-react';
+import FeedbackModal from './FeedbackModal';
+import FeedbackDisplay from './FeedbackDisplay';
+import { useAuth } from '../authcontext';
 
 const HospitalSelectionTable = ({ 
   providers = [], 
@@ -19,12 +24,17 @@ const HospitalSelectionTable = ({
   onSelectionChange = () => {},
   onViewSingleProvider = () => {}, // New callback for viewing a single provider
   maxDistanceFilter = 30,
-  onMaxDistanceChange = () => {}
+  onMaxDistanceChange = () => {},
+  currentService = '', // Add current service prop
+  onRatingsUpdate = () => {} // Add callback for when ratings are updated
 }) => {
   const [sortBy, setSortBy] = useState('rating'); // Default to rating sort
   const [sortOrder, setSortOrder] = useState('desc'); // Higher ratings first
   const [selectedProviders, setSelectedProviders] = useState({});
   const [selectAll, setSelectAll] = useState(false);
+  const [feedbackModal, setFeedbackModal] = useState({ isOpen: false, provider: null });
+  const [feedbackDisplay, setFeedbackDisplay] = useState({ isOpen: false, provider: null });
+  const { user } = useAuth();
 
   // Update selection when providers change
   useEffect(() => {
@@ -85,6 +95,56 @@ const HospitalSelectionTable = ({
       event.stopPropagation();
     }
     onViewSingleProvider(providerId);
+  };
+
+  // Handle feedback modal
+  const handleGiveFeedback = (provider, event) => {
+    if (event) {
+      event.stopPropagation();
+    }
+    setFeedbackModal({ isOpen: true, provider });
+  };
+
+  // Handle view feedback
+  const handleViewFeedback = (provider, event) => {
+    if (event) {
+      event.stopPropagation();
+    }
+    setFeedbackDisplay({ isOpen: true, provider });
+  };
+
+  // Handle feedback submission
+  const handleFeedbackSubmit = async (feedbackData) => {
+    try {
+      console.log('Submitting feedback:', feedbackData);
+      const response = await fetch('http://localhost:3000/api/feedback', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...feedbackData,
+          userId: user?.uid || 'anonymous'
+        })
+      });
+
+      console.log('Response status:', response.status);
+      if (!response.ok) {
+        throw new Error('Failed to submit feedback');
+      }
+
+      // Close modal and refresh ratings
+      setFeedbackModal({ isOpen: false, provider: null });
+      
+      // Trigger ratings update in parent component
+      setTimeout(() => {
+        onRatingsUpdate();
+      }, 1000); // Small delay to allow backend processing
+      
+    } catch (error) {
+      console.error('Error submitting feedback:', error);
+      throw error;
+    }
   };
 
   // Handle select all checkbox change
@@ -435,13 +495,29 @@ const HospitalSelectionTable = ({
                   {renderRating(provider.hospitalRating, provider.totalReviews)}
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap">
-                  <button
-                    onClick={(e) => handleViewSingleProvider(provider.id, e)}
-                    className="inline-flex items-center px-2 py-1 border border-transparent text-xs font-medium rounded text-indigo-700 bg-indigo-100 hover:bg-indigo-200"
-                  >
-                    <Eye size={14} className="mr-1" />
-                    View Details
-                  </button>
+                  <div className="flex items-center space-x-2">
+                    <button
+                      onClick={(e) => handleViewSingleProvider(provider.id, e)}
+                      className="inline-flex items-center px-2 py-1 border border-transparent text-xs font-medium rounded text-indigo-700 bg-indigo-100 hover:bg-indigo-200"
+                    >
+                      <Eye size={14} className="mr-1" />
+                      View Details
+                    </button>
+                    <button
+                      onClick={(e) => handleViewFeedback(provider, e)}
+                      className="inline-flex items-center px-2 py-1 border border-transparent text-xs font-medium rounded text-blue-700 bg-blue-100 hover:bg-blue-200"
+                    >
+                      <MessageCircle size={14} className="mr-1" />
+                      View Feedback
+                    </button>
+                    <button
+                      onClick={(e) => handleGiveFeedback(provider, e)}
+                      className="inline-flex items-center px-2 py-1 border border-transparent text-xs font-medium rounded text-green-700 bg-green-100 hover:bg-green-200"
+                    >
+                      <Edit3 size={14} className="mr-1" />
+                      Give Feedback
+                    </button>
+                  </div>
                 </td>
               </tr>
             ))}
@@ -465,6 +541,32 @@ const HospitalSelectionTable = ({
           Compare Selected Providers
         </button>
       </div>
+
+      {/* Feedback Modal */}
+      {feedbackModal.isOpen && feedbackModal.provider && (
+        <FeedbackModal
+          isOpen={feedbackModal.isOpen}
+          onClose={() => setFeedbackModal({ isOpen: false, provider: null })}
+          provider={{
+            id: feedbackModal.provider.hospitalId,
+            name: feedbackModal.provider.hospitalName
+          }}
+          service={currentService}
+          onSubmit={handleFeedbackSubmit}
+        />
+      )}
+
+      {/* Feedback Display Modal */}
+      {feedbackDisplay.isOpen && feedbackDisplay.provider && (
+        <FeedbackDisplay
+          isOpen={feedbackDisplay.isOpen}
+          onClose={() => setFeedbackDisplay({ isOpen: false, provider: null })}
+          providerId={feedbackDisplay.provider.hospitalId}
+          providerName={feedbackDisplay.provider.hospitalName}
+          service={currentService}
+          onRatingsUpdate={onRatingsUpdate}
+        />
+      )}
     </div>
   );
 };

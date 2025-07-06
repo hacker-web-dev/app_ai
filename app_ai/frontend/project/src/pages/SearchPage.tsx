@@ -235,13 +235,13 @@ const SearchPage = () => {
       // Fetch updated ratings for all providers
       const ratingPromises = providers.map(async (provider) => {
         try {
-          const response = await axios.get(`${API_URL}/api/providers/${provider.hospitalId}/ratings`, {
-            params: { service: searchParams.serviceDescription }
-          });
+          const response = await fetch(`http://localhost:3000/api/providers/${provider.hospitalId}/ratings?service=${searchParams.serviceDescription}`);
+          const data = await response.json();
+          console.log(`Rating refresh for ${provider.hospitalId}:`, data.data);
           return {
             hospitalId: provider.hospitalId,
-            newRating: response.data.data.averageRating,
-            totalReviews: response.data.data.totalReviews
+            newRating: data.data.averageRating,
+            totalReviews: data.data.totalReviews
           };
         } catch (error) {
           console.warn(`Failed to fetch rating for ${provider.hospitalId}:`, error);
@@ -287,16 +287,6 @@ const SearchPage = () => {
     }
   };
 
-  // Handle feedback submission completion
-  const handleFeedbackSubmitted = async () => {
-    // Close the booking modal first
-    setIsBookingModalOpen(false);
-    
-    // Refresh ratings after a short delay to allow backend processing
-    setTimeout(() => {
-      refreshProviderRatings();
-    }, 1000);
-  };
 
   // Get selected providers or single provider
   const selectedProviders = searchStep === 'details' && singleProviderId 
@@ -403,6 +393,8 @@ const SearchPage = () => {
             onViewSingleProvider={handleViewSingleProvider} // Connect the handler
             maxDistanceFilter={maxDistance}
             onMaxDistanceChange={handleMaxDistanceChange}
+            currentService={searchParams.serviceDescription} // Pass current service
+            onRatingsUpdate={refreshProviderRatings} // Pass ratings refresh function
           />
         )}
 
@@ -557,7 +549,6 @@ const SearchPage = () => {
       <BookingModal
         isOpen={isBookingModalOpen}
         onClose={() => setIsBookingModalOpen(false)}
-        onFeedbackSubmitted={handleFeedbackSubmitted}
         providerId={bookingProviderId}
         providerName={bookingProviderName}
         serviceName={searchParams.serviceDescription}

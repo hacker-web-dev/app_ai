@@ -59,7 +59,7 @@ async function geocodePostalCode(postalCode, country = 'US') {
   
   // No local or Firestore cache, call Google Maps API
   try {
-    const apiKey = "AIzaSyAYNxP68HxL9UKOQ8lN492Fdo_7-dCyJZw";
+    const apiKey = "AIzaSyBoQ5dP807JSDdYMjB-XCpGvdbkHfz_ooo";
     if (!apiKey) {
       throw new Error('Google Maps API key is missing.');
     }

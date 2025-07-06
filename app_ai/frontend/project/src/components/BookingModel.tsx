@@ -1,12 +1,9 @@
 import React, { useState } from 'react';
 import { X, Calendar, Clock, User, Phone, MessageSquare } from 'lucide-react';
-import FeedbackModal from './FeedbackModal';
-import { apiService } from '../apiService';
 
 interface BookingModalProps {
   isOpen: boolean;
   onClose: () => void;
-  onFeedbackSubmitted?: () => void;
   providerId: string;
   providerName: string;
   serviceName: string;
@@ -15,7 +12,6 @@ interface BookingModalProps {
 const BookingModal: React.FC<BookingModalProps> = ({ 
   isOpen, 
   onClose, 
-  onFeedbackSubmitted,
   providerId, 
   providerName,
   serviceName 
@@ -31,7 +27,6 @@ const BookingModal: React.FC<BookingModalProps> = ({
   const [step, setStep] = useState(1);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isBooked, setIsBooked] = useState(false);
-  const [showFeedback, setShowFeedback] = useState(false);
 
   // Handle form field changes
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -79,29 +74,12 @@ const BookingModal: React.FC<BookingModalProps> = ({
     }, 1500);
   };
 
-  // Handle feedback submission
-  const handleFeedbackSubmit = async (feedbackData) => {
-    try {
-      console.log('Submitting feedback:', feedbackData);
-      await apiService.submitFeedback(feedbackData);
-      setShowFeedback(false);
-      console.log('Feedback submitted successfully');
-      
-      // Notify parent component that feedback was submitted
-      if (onFeedbackSubmitted) {
-        onFeedbackSubmitted();
-      }
-    } catch (error) {
-      console.error('Error submitting feedback:', error);
-    }
-  };
 
   // Reset modal on close
   const handleClose = () => {
     if (!isSubmitting) {
       setStep(1);
       setIsBooked(false);
-      setShowFeedback(false);
       setFormData({
         name: '',
         phone: '',
@@ -208,14 +186,10 @@ const BookingModal: React.FC<BookingModalProps> = ({
                     A confirmation has been sent to your email and phone.
                   </p>
                 </div>
-                <div className="mt-5 space-y-3">
-                  <button
-                    type="button"
-                    className="inline-flex justify-center w-full rounded-md border border-transparent shadow-sm px-4 py-2 bg-green-600 text-base font-medium text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 sm:text-sm"
-                    onClick={() => setShowFeedback(true)}
-                  >
-                    Share Your Feedback
-                  </button>
+                <div className="mt-5">
+                  <p className="text-sm text-gray-600 mb-4">
+                    💡 You can now provide feedback for this provider in the hospital selection table.
+                  </p>
                   <button
                     type="button"
                     className="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:text-sm"
@@ -480,18 +454,6 @@ const BookingModal: React.FC<BookingModalProps> = ({
           </div>
         </div>
       </div>
-      
-      {/* Feedback Modal */}
-      <FeedbackModal
-        isOpen={showFeedback}
-        provider={{ id: providerId, name: providerName }}
-        service={serviceName}
-        onClose={() => setShowFeedback(false)}
-        onSubmit={async (feedbackData) => {
-          await handleFeedbackSubmit(feedbackData);
-          setShowFeedback(false);
-        }}
-      />
     </div>
   );
 };
