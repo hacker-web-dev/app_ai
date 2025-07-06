@@ -138,22 +138,35 @@ const FeedbackDisplay: React.FC<FeedbackDisplayProps> = ({
   };
 
   const formatDate = (timestamp: any): string => {
-    if (!timestamp) return 'Unknown date';
+    if (!timestamp) return 'Recent';
     
-    let date;
-    if (timestamp.toDate) {
-      date = timestamp.toDate();
-    } else if (timestamp.seconds) {
-      date = new Date(timestamp.seconds * 1000);
-    } else {
-      date = new Date(timestamp);
+    try {
+      let date;
+      if (timestamp.toDate) {
+        date = timestamp.toDate();
+      } else if (timestamp.seconds) {
+        date = new Date(timestamp.seconds * 1000);
+      } else if (timestamp._seconds) {
+        date = new Date(timestamp._seconds * 1000);
+      } else if (typeof timestamp === 'string') {
+        date = new Date(timestamp);
+      } else {
+        date = new Date(timestamp);
+      }
+      
+      // Check if date is valid
+      if (isNaN(date.getTime())) {
+        return 'Recent';
+      }
+      
+      return date.toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric'
+      });
+    } catch (error) {
+      return 'Recent';
     }
-    
-    return date.toLocaleDateString('en-US', {
-      year: 'numeric',
-      month: 'short',
-      day: 'numeric'
-    });
   };
 
   if (!isOpen) return null;
