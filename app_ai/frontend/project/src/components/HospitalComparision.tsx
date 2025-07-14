@@ -134,10 +134,10 @@ const HospitalComparison = ({
 
   if (!providers || providers.length === 0) {
     return (
-      <div className="rounded-xl bg-white shadow-lg overflow-hidden">
+      <div className="rounded-xl bg-white dark:bg-gray-800 shadow-lg overflow-hidden">
         <div className="p-6 text-center">
-          <h3 className="text-lg font-medium text-gray-900 mb-2">No providers selected</h3>
-          <p className="text-gray-500">
+          <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-2">No providers selected</h3>
+          <p className="text-gray-500 dark:text-gray-400">
             Please select providers to compare.
           </p>
         </div>
@@ -149,10 +149,10 @@ const HospitalComparison = ({
     <div className="space-y-6">
       {/* Top Rated Recommendation */}
       {topRatedHospital && (
-        <div className="rounded-xl bg-white shadow-lg overflow-hidden border-2 border-indigo-500">
-          <div className="bg-indigo-50 px-6 py-4 border-b border-indigo-100 flex items-center">
+        <div className="rounded-xl bg-white dark:bg-gray-800 shadow-lg overflow-hidden border-2 border-indigo-500 dark:border-indigo-400">
+          <div className="bg-indigo-50 dark:bg-indigo-900/20 px-6 py-4 border-b border-indigo-100 dark:border-indigo-800 flex items-center">
             <Award className="h-6 w-6 text-indigo-600 mr-2" />
-            <h3 className="text-lg font-semibold text-indigo-800">
+            <h3 className="text-lg font-semibold text-indigo-800 dark:text-indigo-300">
               Top Rated Recommendation
             </h3>
           </div>
@@ -161,7 +161,7 @@ const HospitalComparison = ({
             <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
               {/* Hospital Info */}
               <div className="flex-1">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">{topRatedHospital.hospitalName}</h3>
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{topRatedHospital.hospitalName}</h3>
                 <div className="flex items-center gap-1 text-gray-600 mb-2">
                   <Building size={16} className="flex-shrink-0" />
                   <span className="text-sm">{topRatedHospital.hospitalType || 'Healthcare Provider'}</span>
@@ -216,64 +216,64 @@ const HospitalComparison = ({
       )}
 
       {/* Comparison Table */}
-      <div className="rounded-xl bg-white shadow-lg overflow-hidden">
-        <div className="bg-gray-50 px-6 py-4 border-b border-gray-200">
-          <h3 className="text-lg font-semibold text-gray-800">
+      <div className="rounded-xl bg-white dark:bg-gray-800 shadow-lg overflow-hidden">
+        <div className="bg-gray-50 dark:bg-gray-700 px-6 py-4 border-b border-gray-200 dark:border-gray-600">
+          <h3 className="text-lg font-semibold text-gray-800 dark:text-white">
             Provider Comparison for {service}
           </h3>
-          <p className="text-sm text-gray-600 mt-1">
+          <p className="text-sm text-gray-600 dark:text-gray-300 mt-1">
             Compare pricing and details across {providers.length} providers
           </p>
         </div>
         
         {/* Table Container */}
         <div className="overflow-x-auto">
-          <table className="min-w-full divide-y divide-gray-200">
-            <thead className="bg-gray-50">
+          <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+            <thead className="bg-gray-50 dark:bg-gray-700">
               <tr>
-                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
                   Provider
                 </th>
-                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
                   Rating
                 </th>
-                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
                   Distance
                 </th>
-                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
                   Cash Price
                 </th>
                 {selectedInsurance && (
                   <>
-                    <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
                       {selectedInsurance} Price
                     </th>
-                    <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
                       Savings
                     </th>
                   </>
                 )}
-                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
                   Action
                 </th>
               </tr>
             </thead>
-            <tbody className="bg-white divide-y divide-gray-200">
+            <tbody className="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
               {providers.map((provider) => {
                 const { price: insurancePrice, savings: insuranceSavings, savingsPercent } = 
                   getInsurancePriceInfo(provider);
                 
                 return (
                   <React.Fragment key={provider.id}>
-                    <tr className={`hover:bg-gray-50 ${provider.id === topRatedHospital?.id ? 'bg-indigo-50' : ''}`}>
+                    <tr className={`hover:bg-gray-50 dark:hover:bg-gray-700 ${provider.id === topRatedHospital?.id ? 'bg-indigo-50 dark:bg-indigo-900/20' : ''}`}>
                       <td className="px-6 py-4 whitespace-nowrap">
                         <div className="flex items-center">
                           <div className="flex-shrink-0 h-10 w-10 bg-indigo-100 rounded-full flex items-center justify-center">
                             <Building className="h-5 w-5 text-indigo-600" />
                           </div>
                           <div className="ml-4">
-                            <div className="text-sm font-medium text-gray-900">{provider.hospitalName}</div>
-                            <div className="text-sm text-gray-500">{provider.hospitalType || 'N/A'}</div>
+                            <div className="text-sm font-medium text-gray-900 dark:text-white">{provider.hospitalName}</div>
+                            <div className="text-sm text-gray-500 dark:text-gray-400">{provider.hospitalType || 'N/A'}</div>
                           </div>
                           {provider.id === topRatedHospital?.id && (
                             <div className="ml-2 flex-shrink-0">
@@ -287,16 +287,16 @@ const HospitalComparison = ({
                       <td className="px-6 py-4 whitespace-nowrap">
                         {renderRating(provider.hospitalRating)}
                       </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">
                         {(provider.distance * 0.621371).toFixed(1)} mi
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap">
-                        <div className="text-sm font-medium text-gray-900">{getCashPrice(provider)}</div>
+                        <div className="text-sm font-medium text-gray-900 dark:text-white">{getCashPrice(provider)}</div>
                       </td>
                       {selectedInsurance && (
                         <>
                           <td className="px-6 py-4 whitespace-nowrap">
-                            <div className="text-sm font-medium text-indigo-600">{insurancePrice}</div>
+                            <div className="text-sm font-medium text-indigo-600 dark:text-indigo-400">{insurancePrice}</div>
                           </td>
                           <td className="px-6 py-4 whitespace-nowrap">
                             {insuranceSavings !== 'N/A' ? (
@@ -304,7 +304,7 @@ const HospitalComparison = ({
                                 {insuranceSavings} ({savingsPercent})
                               </div>
                             ) : (
-                              <span className="text-sm text-gray-500">-</span>
+                              <span className="text-sm text-gray-500 dark:text-gray-400">-</span>
                             )}
                           </td>
                         </>
@@ -319,21 +319,21 @@ const HospitalComparison = ({
                         </button>
                       </td>
                     </tr>
-                    <tr className={`border-t border-gray-100 ${expandedProviders[provider.id] ? 'bg-gray-50' : 'hidden'}`}>
+                    <tr className={`border-t border-gray-100 dark:border-gray-700 ${expandedProviders[provider.id] ? 'bg-gray-50 dark:bg-gray-700' : 'hidden'}`}>
                       <td colSpan={selectedInsurance ? 7 : 5} className="px-6 py-4">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                           {/* Provider Details */}
                           <div>
-                            <h4 className="text-sm font-medium text-gray-700 mb-2">Provider Details</h4>
-                            <div className="bg-white rounded-lg p-3 border border-gray-200 text-sm space-y-2">
+                            <h4 className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Provider Details</h4>
+                            <div className="bg-white dark:bg-gray-800 rounded-lg p-3 border border-gray-200 dark:border-gray-600 text-sm space-y-2">
                               <div>
-                                <span className="font-medium text-gray-600">Address:</span>
-                                <span className="ml-2 text-gray-800">{formatAddress(provider.address)}</span>
+                                <span className="font-medium text-gray-600 dark:text-gray-300">Address:</span>
+                                <span className="ml-2 text-gray-800 dark:text-gray-200">{formatAddress(provider.address)}</span>
                               </div>
                               {provider.contact?.phone && (
                                 <div>
-                                  <span className="font-medium text-gray-600">Phone:</span>
-                                  <span className="ml-2 text-gray-800">{provider.contact.phone}</span>
+                                  <span className="font-medium text-gray-600 dark:text-gray-300">Phone:</span>
+                                  <span className="ml-2 text-gray-800 dark:text-gray-200">{provider.contact.phone}</span>
                                 </div>
                               )}
                               {provider.contact?.website && (

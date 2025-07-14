@@ -73,10 +73,10 @@ const TableBasedHospitalComparison = ({
 
   if (!providers || providers.length === 0) {
     return (
-      <div className="rounded-xl bg-white shadow-lg overflow-hidden">
+      <div className="rounded-xl bg-white dark:bg-gray-800 shadow-lg overflow-hidden">
         <div className="p-6 text-center">
-          <h3 className="text-lg font-medium text-gray-900 mb-2">No providers selected</h3>
-          <p className="text-gray-500">
+          <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-2">No providers selected</h3>
+          <p className="text-gray-500 dark:text-gray-400">
             Please select providers to compare.
           </p>
         </div>
@@ -86,45 +86,45 @@ const TableBasedHospitalComparison = ({
 
   return (
     <div className="space-y-6">
-      <div className="rounded-xl bg-white shadow-lg overflow-hidden">
-        <div className="bg-gray-50 px-6 py-4 border-b border-gray-200">
-          <h3 className="text-lg font-semibold text-gray-800">
+      <div className="rounded-xl bg-white dark:bg-gray-800 shadow-lg overflow-hidden">
+        <div className="bg-gray-50 dark:bg-gray-700 px-6 py-4 border-b border-gray-200 dark:border-gray-600">
+          <h3 className="text-lg font-semibold text-gray-800 dark:text-white">
             Provider Comparison for {service}
           </h3>
-          <p className="text-sm text-gray-600 mt-1">
+          <p className="text-sm text-gray-600 dark:text-gray-300 mt-1">
             Sorted by hospital rating - highest rated shown first
           </p>
         </div>
         
         {/* Hospital Comparison Table */}
         <div className="overflow-x-auto">
-          <table className="min-w-full divide-y divide-gray-200">
-            <thead className="bg-gray-50">
+          <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+            <thead className="bg-gray-50 dark:bg-gray-700">
               <tr>
-                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
                   Hospital
                 </th>
-                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
                   Rating
                 </th>
-                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
                   Address
                 </th>
-                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
                   Distance
                 </th>
-                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
                   Standard Price
                 </th>
-                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
                   Insurance Options
                 </th>
-                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
                   Actions
                 </th>
               </tr>
             </thead>
-            <tbody className="bg-white divide-y divide-gray-200">
+            <tbody className="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
               {sortedByRating.map((provider, index) => {
                 // Get standard charge (cash price)
                 const standardCharge = getStandardCharge(provider);
@@ -145,13 +145,13 @@ const TableBasedHospitalComparison = ({
                 return (
                   <React.Fragment key={provider.id}>
                     {/* Main row */}
-                    <tr className={`${index === 0 ? "bg-indigo-50" : "hover:bg-gray-50"} cursor-pointer`} 
+                    <tr className={`${index === 0 ? "bg-indigo-50 dark:bg-indigo-900/20" : "hover:bg-gray-50 dark:hover:bg-gray-700"} cursor-pointer`} 
                        onClick={() => toggleRowExpanded(provider.id)}>
                       <td className="px-6 py-4">
                         <div className="flex items-center">
                           <div>
-                            <div className="text-sm font-medium text-gray-900">{provider.hospitalName}</div>
-                            <div className="text-sm text-gray-500">{provider.hospitalType || 'Healthcare Provider'}</div>
+                            <div className="text-sm font-medium text-gray-900 dark:text-white">{provider.hospitalName}</div>
+                            <div className="text-sm text-gray-500 dark:text-gray-400">{provider.hospitalType || 'Healthcare Provider'}</div>
                             {index === 0 && (
                               <div className="mt-1 inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
                                 Top Rated
@@ -164,17 +164,17 @@ const TableBasedHospitalComparison = ({
                         {renderRating(provider.hospitalRating)}
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap">
-                        <div className="text-sm text-gray-900">{address}</div>
+                        <div className="text-sm text-gray-900 dark:text-white">{address}</div>
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap">
-                        <div className="text-sm text-gray-900">{(provider.distance * 0.621371).toFixed(1)} miles</div>
+                        <div className="text-sm text-gray-900 dark:text-white">{(provider.distance * 0.621371).toFixed(1)} miles</div>
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap">
-                        <div className="text-sm font-medium text-gray-900">{formattedStandardCharge}</div>
+                        <div className="text-sm font-medium text-gray-900 dark:text-white">{formattedStandardCharge}</div>
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap">
                         <div className="flex items-center">
-                          <span className="text-sm text-gray-700 mr-2">{insuranceOptionsCount} options</span>
+                          <span className="text-sm text-gray-700 dark:text-gray-300 mr-2">{insuranceOptionsCount} options</span>
                           {isExpanded ? 
                             <ChevronUp size={16} className="text-gray-400" /> : 
                             <ChevronDown size={16} className="text-gray-400" />}
@@ -197,33 +197,33 @@ const TableBasedHospitalComparison = ({
                     {/* Expanded insurance details */}
                     {isExpanded && (
                       <tr>
-                        <td colSpan={7} className="px-6 py-4 bg-gray-50 border-b border-gray-200">
+                        <td colSpan={7} className="px-6 py-4 bg-gray-50 dark:bg-gray-700 border-b border-gray-200 dark:border-gray-600">
                           <div className="overflow-hidden">
-                            <h4 className="text-sm font-medium text-gray-700 mb-3">Insurance Options</h4>
+                            <h4 className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-3">Insurance Options</h4>
                             
                             {provider.insuranceOptions && provider.insuranceOptions.length > 0 ? (
                               <div className="overflow-x-auto">
-                                <table className="min-w-full divide-y divide-gray-200 border border-gray-200 rounded-lg">
-                                  <thead className="bg-gray-100">
+                                <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg">
+                                  <thead className="bg-gray-100 dark:bg-gray-600">
                                     <tr>
-                                      <th scope="col" className="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                      <th scope="col" className="px-4 py-2 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
                                         Insurance
                                       </th>
-                                      <th scope="col" className="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                      <th scope="col" className="px-4 py-2 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
                                         Plan
                                       </th>
-                                      <th scope="col" className="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                      <th scope="col" className="px-4 py-2 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
                                         Standard Price
                                       </th>
-                                      <th scope="col" className="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                      <th scope="col" className="px-4 py-2 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
                                         Negotiated Price
                                       </th>
-                                      <th scope="col" className="px-4 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                      <th scope="col" className="px-4 py-2 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
                                         Savings
                                       </th>
                                     </tr>
                                   </thead>
-                                  <tbody className="bg-white divide-y divide-gray-200">
+                                  <tbody className="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
                                     {provider.insuranceOptions
                                       .filter(option => option.insurance !== 'N/A')
                                       .map((option, idx) => {
@@ -235,10 +235,10 @@ const TableBasedHospitalComparison = ({
                                           option.insurance.toLowerCase() === selectedInsurance.toLowerCase();
                                           
                                         return (
-                                          <tr key={idx} className={`${isSelectedInsurance ? 'bg-indigo-50' : ''}`}>
+                                          <tr key={idx} className={`${isSelectedInsurance ? 'bg-indigo-50 dark:bg-indigo-900/20' : ''}`}>
                                             <td className="px-4 py-3 whitespace-nowrap">
                                               <div className="flex items-center">
-                                                <span className="text-sm font-medium text-gray-900">{option.insurance}</span>
+                                                <span className="text-sm font-medium text-gray-900 dark:text-white">{option.insurance}</span>
                                                 {isSelectedInsurance && (
                                                   <span className="ml-2 inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-indigo-100 text-indigo-800">
                                                     Selected
@@ -246,13 +246,13 @@ const TableBasedHospitalComparison = ({
                                                 )}
                                               </div>
                                             </td>
-                                            <td className="px-4 py-3 whitespace-nowrap text-sm text-gray-500">
+                                            <td className="px-4 py-3 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">
                                               {option.planName !== 'N/A' ? option.planName : '-'}
                                             </td>
-                                            <td className="px-4 py-3 whitespace-nowrap text-sm text-gray-500">
+                                            <td className="px-4 py-3 whitespace-nowrap text-sm text-gray-500 dark:text-gray-400">
                                               {formatCurrency(option.standardCharge)}
                                             </td>
-                                            <td className="px-4 py-3 whitespace-nowrap text-sm font-medium text-indigo-600">
+                                            <td className="px-4 py-3 whitespace-nowrap text-sm font-medium text-indigo-600 dark:text-indigo-400">
                                               {formatCurrency(option.negotiatedAmount)}
                                             </td>
                                             <td className="px-4 py-3 whitespace-nowrap">
@@ -266,7 +266,7 @@ const TableBasedHospitalComparison = ({
                                                   )}
                                                 </div>
                                               ) : (
-                                                <span className="text-sm text-gray-500">-</span>
+                                                <span className="text-sm text-gray-500 dark:text-gray-400">-</span>
                                               )}
                                             </td>
                                           </tr>
@@ -276,7 +276,7 @@ const TableBasedHospitalComparison = ({
                                 </table>
                               </div>
                             ) : (
-                              <div className="text-sm text-gray-500 italic">
+                              <div className="text-sm text-gray-500 dark:text-gray-400 italic">
                                 No specific insurance information available for this provider.
                               </div>
                             )}
@@ -284,7 +284,7 @@ const TableBasedHospitalComparison = ({
                             {/* Accepted Insurance Display */}
                             {provider.acceptedInsurance && provider.acceptedInsurance.length > 0 && (
                               <div className="mt-4">
-                                <h5 className="text-xs font-medium text-gray-700 mb-2">Accepted Insurance Plans:</h5>
+                                <h5 className="text-xs font-medium text-gray-700 dark:text-gray-300 mb-2">Accepted Insurance Plans:</h5>
                                 <div className="flex flex-wrap gap-1">
                                   {provider.acceptedInsurance.map((insurance, idx) => (
                                     <span
@@ -292,7 +292,7 @@ const TableBasedHospitalComparison = ({
                                       className={`inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium ${
                                         selectedInsurance && insurance.toLowerCase() === selectedInsurance.toLowerCase()
                                           ? 'bg-indigo-100 text-indigo-800'
-                                          : 'bg-gray-100 text-gray-700'
+                                          : 'bg-gray-100 dark:bg-gray-600 text-gray-700 dark:text-gray-300'
                                       }`}
                                     >
                                       {insurance}
@@ -303,7 +303,7 @@ const TableBasedHospitalComparison = ({
                             )}
                             
                             {/* Service Details */}
-                            <div className="mt-4 text-xs text-gray-500">
+                            <div className="mt-4 text-xs text-gray-500 dark:text-gray-400">
                               <div className="flex items-center">
                                 <Info size={12} className="mr-1" />
                                 <span>Service: {service} • Setting: {provider.service?.setting || 'N/A'}</span>

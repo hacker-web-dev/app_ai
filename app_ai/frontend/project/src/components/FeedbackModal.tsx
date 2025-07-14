@@ -85,23 +85,23 @@ const FeedbackModal: React.FC<FeedbackModalProps> = ({
       <div className="flex min-h-screen items-center justify-center p-4">
         {/* Backdrop */}
         <div 
-          className="fixed inset-0 bg-black bg-opacity-50 transition-opacity"
+          className="fixed inset-0 bg-black dark:bg-gray-900 bg-opacity-50 dark:bg-opacity-75 transition-opacity"
           onClick={onClose}
         />
         
         {/* Modal */}
-        <div className="relative bg-white rounded-xl shadow-xl max-w-md w-full max-h-[90vh] overflow-y-auto">
+        <div className="relative bg-white dark:bg-gray-800 rounded-xl shadow-xl max-w-md w-full max-h-[90vh] overflow-y-auto">
           {/* Header */}
-          <div className="flex items-center justify-between p-6 border-b border-gray-200">
-            <h2 className="text-xl font-semibold text-gray-900">
+          <div className="flex items-center justify-between p-6 border-b border-gray-200 dark:border-gray-700">
+            <h2 className="text-xl font-semibold text-gray-900 dark:text-white">
               Share Your Feedback
             </h2>
             <button
               onClick={onClose}
-              className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
+              className="p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors"
               disabled={isSubmitting}
             >
-              <X size={20} className="text-gray-500" />
+              <X size={20} className="text-gray-500 dark:text-gray-400" />
             </button>
           </div>
 
@@ -109,25 +109,25 @@ const FeedbackModal: React.FC<FeedbackModalProps> = ({
           <form onSubmit={handleSubmit} className="p-6">
             {/* Provider Info */}
             <div className="mb-6">
-              <h3 className="font-medium text-gray-900 mb-1">
+              <h3 className="font-medium text-gray-900 dark:text-white mb-1">
                 {provider.name}
               </h3>
-              <p className="text-sm text-gray-600">
+              <p className="text-sm text-gray-600 dark:text-gray-300">
                 Service: {service}
               </p>
             </div>
 
             {/* Info Banner */}
-            <div className="mb-6 p-3 bg-blue-50 border border-blue-200 rounded-lg">
-              <p className="text-sm text-blue-800">
+            <div className="mb-6 p-3 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg">
+              <p className="text-sm text-blue-800 dark:text-blue-400">
                 💡 <strong>Flexible Feedback:</strong> You can provide a star rating, write a review, or both! 
-                If you only write a review, our AI will analyze your comments to generate an appropriate rating.
+                If you only write a review, we'll analyze your comments to generate an appropriate rating.
               </p>
             </div>
 
             {/* Rating */}
             <div className="mb-6">
-              <label className="block text-sm font-medium text-gray-700 mb-3">
+              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-3">
                 How would you rate this provider? (optional)
               </label>
               <div className="flex gap-1 mb-2">
@@ -135,7 +135,7 @@ const FeedbackModal: React.FC<FeedbackModalProps> = ({
                   <button
                     key={star}
                     type="button"
-                    className="p-1 rounded transition-colors hover:bg-gray-100"
+                    className="p-1 rounded transition-colors hover:bg-gray-100 dark:hover:bg-gray-700"
                     onMouseEnter={() => setHoverRating(star)}
                     onMouseLeave={() => setHoverRating(0)}
                     onClick={() => handleRatingClick(star)}
@@ -152,7 +152,7 @@ const FeedbackModal: React.FC<FeedbackModalProps> = ({
                   </button>
                 ))}
               </div>
-              <div className="text-sm text-gray-500">
+              <div className="text-sm text-gray-500 dark:text-gray-400">
                 {rating > 0 ? (
                   <span>
                     {rating === 1 && 'Poor'}
@@ -160,11 +160,11 @@ const FeedbackModal: React.FC<FeedbackModalProps> = ({
                     {rating === 3 && 'Good'}
                     {rating === 4 && 'Very Good'}
                     {rating === 5 && 'Excellent'}
-                    <span className="text-gray-400 ml-2">(Click same star to remove)</span>
+                    <span className="text-gray-400 dark:text-gray-500 ml-2">(Click same star to remove)</span>
                   </span>
                 ) : (
-                  <span className="text-gray-400">
-                    No rating selected - we'll analyze your written feedback instead
+                  <span className="text-gray-400 dark:text-gray-500">
+                    No rating selected - we'll generate one from your written feedback
                   </span>
                 )}
               </div>
@@ -174,15 +174,15 @@ const FeedbackModal: React.FC<FeedbackModalProps> = ({
             <div className="mb-6">
               <label 
                 htmlFor="review" 
-                className="block text-sm font-medium text-gray-700 mb-2"
+                className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
               >
                 Share your experience {rating === 0 ? '(required if no rating)' : '(optional)'}
               </label>
               <textarea
                 id="review"
                 rows={4}
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 resize-none"
-                placeholder={rating === 0 ? "Tell others about your experience with this provider... (We'll analyze your comments to generate a rating)" : "Tell others about your experience with this provider..."}
+                className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 resize-none bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+                placeholder={rating === 0 ? "Tell others about your experience with this provider... (We'll generate a rating from your comments)" : "Tell others about your experience with this provider..."}
                 value={review}
                 onChange={(e) => {
                   setReview(e.target.value);
@@ -191,16 +191,16 @@ const FeedbackModal: React.FC<FeedbackModalProps> = ({
                 maxLength={500}
                 disabled={isSubmitting}
               />
-              <div className="text-sm text-gray-500 text-right mt-1">
+              <div className="text-sm text-gray-500 dark:text-gray-400 text-right mt-1">
                 {review.length}/500
               </div>
             </div>
 
             {/* Error */}
             {error && (
-              <div className="mb-4 p-3 bg-red-50 border border-red-200 rounded-lg flex items-center">
-                <AlertCircle size={16} className="text-red-600 mr-2 flex-shrink-0" />
-                <span className="text-sm text-red-700">{error}</span>
+              <div className="mb-4 p-3 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg flex items-center">
+                <AlertCircle size={16} className="text-red-600 dark:text-red-400 mr-2 flex-shrink-0" />
+                <span className="text-sm text-red-700 dark:text-red-400">{error}</span>
               </div>
             )}
 
@@ -209,7 +209,7 @@ const FeedbackModal: React.FC<FeedbackModalProps> = ({
               <button
                 type="button"
                 onClick={onClose}
-                className="flex-1 px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors"
+                className="flex-1 px-4 py-2 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-700 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-600 transition-colors"
                 disabled={isSubmitting}
               >
                 Cancel
