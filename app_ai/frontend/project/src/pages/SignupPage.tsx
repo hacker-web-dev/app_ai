@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { UserIcon, Lock, ArrowLeft } from 'lucide-react';
-import { registerUser } from '../authservice'; // Import the auth service
+import { UserIcon, Lock, Mail } from 'lucide-react';
+import { registerUser } from '../authservice';
 
 interface FormData {
   fullName: string;
@@ -78,7 +78,7 @@ const SignupPage: React.FC = () => {
     
     try {
       await registerUser(formData.email, formData.password, formData.fullName);
-      // Redirect to dashboard or home page after successful signup
+      // Redirect to landing page after successful signup
       navigate('/');
     } catch (error: any) {
       setError(error.message);
@@ -92,6 +92,7 @@ const SignupPage: React.FC = () => {
       setCurrentStep(currentStep - 1);
     }
   };
+
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-blue-50 to-purple-50 flex flex-col">
@@ -108,7 +109,7 @@ const SignupPage: React.FC = () => {
           <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
             {/* Card header */}
             <div className="bg-gradient-to-r from-indigo-500 to-blue-600 px-8 py-10 text-white">
-              <div className="text-center mb-4">
+              <div className="text-center mb-6">
                 <h1 className="text-3xl font-bold">Join PriceAI</h1>
                 <p className="mt-2 opacity-90">Create your account to get started</p>
               </div>
@@ -273,7 +274,7 @@ const SignupPage: React.FC = () => {
                     )}
                   </button>
                 </div>
-              </form>
+                  </form>
 
               <div 
                 className="mt-6 text-center transform transition-all duration-500 delay-500"
@@ -282,7 +283,7 @@ const SignupPage: React.FC = () => {
                 <p className="text-sm text-gray-600">
                   Already have an account?{' '}
                   <Link
-                    to="/"
+                    to="/login"
                     className="font-medium text-indigo-600 hover:text-indigo-500 transition-colors"
                   >
                     Sign in
