@@ -95,7 +95,7 @@ const SignupPage: React.FC = () => {
 
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-blue-50 to-purple-50 flex flex-col">
+    <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-blue-50 to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 flex flex-col">
       {/* Back button */}
       
 
@@ -106,9 +106,9 @@ const SignupPage: React.FC = () => {
             mounted ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
           }`}
         >
-          <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
+          <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden">
             {/* Card header */}
-            <div className="bg-gradient-to-r from-indigo-500 to-blue-600 px-8 py-10 text-white">
+            <div className="bg-gradient-to-r from-indigo-500 to-blue-600 dark:from-indigo-600 dark:to-blue-700 px-8 py-10 text-white">
               <div className="text-center mb-6">
                 <h1 className="text-3xl font-bold">Join PriceAI</h1>
                 <p className="mt-2 opacity-90">Create your account to get started</p>
@@ -132,7 +132,7 @@ const SignupPage: React.FC = () => {
             {/* Card body */}
             <div className="p-8">
               {error && (
-                <div className="mb-4 p-3 bg-red-50 border border-red-200 text-red-700 rounded-lg">
+                <div className="mb-4 p-3 bg-red-50 dark:bg-red-900/30 border border-red-200 dark:border-red-700 text-red-700 dark:text-red-300 rounded-lg">
                   {error}
                 </div>
               )}
@@ -144,12 +144,12 @@ const SignupPage: React.FC = () => {
                       className="transform transition-all duration-500 delay-100"
                       style={{ opacity: mounted ? 1 : 0, transform: mounted ? 'translateY(0)' : 'translateY(20px)' }}
                     >
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                         Full Name
                       </label>
                       <div className="relative">
                         <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                          <UserIcon className="h-5 w-5 text-gray-400" />
+                          <UserIcon className="h-5 w-5 text-gray-400 dark:text-gray-500" />
                         </div>
                         <input
                           type="text"
@@ -157,7 +157,7 @@ const SignupPage: React.FC = () => {
                           value={formData.fullName}
                           onChange={handleChange}
                           required
-                          className="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all duration-300"
+                          className="block w-full pl-10 pr-3 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-400 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all duration-300"
                           placeholder="John Doe"
                         />
                       </div>
@@ -167,12 +167,12 @@ const SignupPage: React.FC = () => {
                       className="transform transition-all duration-500 delay-200"
                       style={{ opacity: mounted ? 1 : 0, transform: mounted ? 'translateY(0)' : 'translateY(20px)' }}
                     >
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                         Email Address
                       </label>
                       <div className="relative">
                         <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                          <svg className="h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <svg className="h-5 w-5 text-gray-400 dark:text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                           </svg>
                         </div>
@@ -182,7 +182,7 @@ const SignupPage: React.FC = () => {
                           value={formData.email}
                           onChange={handleChange}
                           required
-                          className="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all duration-300"
+                          className="block w-full pl-10 pr-3 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-400 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all duration-300"
                           placeholder="you@example.com"
                         />
                       </div>
@@ -196,12 +196,12 @@ const SignupPage: React.FC = () => {
                       className="transform transition-all duration-500 delay-100"
                       style={{ opacity: mounted ? 1 : 0, transform: mounted ? 'translateY(0)' : 'translateY(20px)' }}
                     >
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                         Password
                       </label>
                       <div className="relative">
                         <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                          <Lock className="h-5 w-5 text-gray-400" />
+                          <Lock className="h-5 w-5 text-gray-400 dark:text-gray-500" />
                         </div>
                         <input
                           type="password"
@@ -209,7 +209,7 @@ const SignupPage: React.FC = () => {
                           value={formData.password}
                           onChange={handleChange}
                           required
-                          className="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all duration-300"
+                          className="block w-full pl-10 pr-3 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-400 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all duration-300"
                           placeholder="••••••••"
                         />
                       </div>
@@ -219,12 +219,12 @@ const SignupPage: React.FC = () => {
                       className="transform transition-all duration-500 delay-200"
                       style={{ opacity: mounted ? 1 : 0, transform: mounted ? 'translateY(0)' : 'translateY(20px)' }}
                     >
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                         Confirm Password
                       </label>
                       <div className="relative">
                         <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                          <Lock className="h-5 w-5 text-gray-400" />
+                          <Lock className="h-5 w-5 text-gray-400 dark:text-gray-500" />
                         </div>
                         <input
                           type="password"
@@ -232,7 +232,7 @@ const SignupPage: React.FC = () => {
                           value={formData.confirmPassword}
                           onChange={handleChange}
                           required
-                          className="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all duration-300"
+                          className="block w-full pl-10 pr-3 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-400 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all duration-300"
                           placeholder="••••••••"
                         />
                       </div>
@@ -248,7 +248,7 @@ const SignupPage: React.FC = () => {
                     <button
                       type="button"
                       onClick={handleBack}
-                      className="flex-1 py-3 px-4 border border-gray-300 rounded-lg shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-all duration-300"
+                      className="flex-1 py-3 px-4 border border-gray-300 dark:border-gray-600 rounded-lg shadow-sm text-sm font-medium text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 dark:focus:ring-offset-gray-800 focus:ring-indigo-500 transition-all duration-300"
                     >
                       Back
                     </button>
@@ -257,7 +257,7 @@ const SignupPage: React.FC = () => {
                   <button
                     type="submit"
                     disabled={isLoading}
-                    className={`${currentStep > 1 ? 'flex-1' : 'w-full'} flex justify-center items-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-all duration-300 ${
+                    className={`${currentStep > 1 ? 'flex-1' : 'w-full'} flex justify-center items-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-700 dark:hover:bg-indigo-800 focus:outline-none focus:ring-2 focus:ring-offset-2 dark:focus:ring-offset-gray-800 focus:ring-indigo-500 transition-all duration-300 ${
                       isLoading ? 'opacity-80 cursor-wait' : ''
                     }`}
                   >
@@ -280,11 +280,11 @@ const SignupPage: React.FC = () => {
                 className="mt-6 text-center transform transition-all duration-500 delay-500"
                 style={{ opacity: mounted ? 1 : 0, transform: mounted ? 'translateY(0)' : 'translateY(20px)' }}
               >
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-gray-600 dark:text-gray-400">
                   Already have an account?{' '}
                   <Link
                     to="/login"
-                    className="font-medium text-indigo-600 hover:text-indigo-500 transition-colors"
+                    className="font-medium text-indigo-600 dark:text-indigo-400 hover:text-indigo-500 dark:hover:text-indigo-300 transition-colors"
                   >
                     Sign in
                   </Link>
@@ -294,7 +294,7 @@ const SignupPage: React.FC = () => {
           </div>
           
           <div 
-            className="mt-6 text-center text-gray-500 text-sm transform transition-all duration-500 delay-600"
+            className="mt-6 text-center text-gray-500 dark:text-gray-400 text-sm transform transition-all duration-500 delay-600"
             style={{ opacity: mounted ? 1 : 0 }}
           >
             &copy; 2025 PriceAI. All rights reserved.

@@ -38,8 +38,8 @@ async function submitFeedback(feedbackData) {
         adjustedRating = sentimentAnalysisService.applySentimentToRating(rating, sentimentAnalysis);
         console.log(`Sentiment analysis complete. Original rating: ${rating}, Adjusted rating: ${adjustedRating}, Classification: ${sentimentAnalysis.classification}, Confidence: ${sentimentAnalysis.confidence}`);
       } else {
-        // User provided only review - generate rating from sentiment
-        finalRating = sentimentAnalysisService.sentimentToStarRating(sentimentAnalysis);
+        // User provided only review - generate rating from sentiment using advanced analysis
+        finalRating = await sentimentAnalysisService.commentToStarRating(review);
         adjustedRating = finalRating;
         isRatingGenerated = true;
         console.log(`Rating generated from sentiment. Generated rating: ${finalRating}, Classification: ${sentimentAnalysis.classification}, Confidence: ${sentimentAnalysis.confidence}`);

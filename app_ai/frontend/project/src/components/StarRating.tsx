@@ -49,7 +49,7 @@ const StarRating: React.FC<StarRatingProps> = ({
             ? 'text-yellow-400 fill-yellow-400' 
             : isHalfFilled
             ? 'text-yellow-400 fill-yellow-400 opacity-50'
-            : 'text-gray-300'
+            : 'text-gray-300 dark:text-gray-600'
         }`}
       />
     );
@@ -61,10 +61,10 @@ const StarRating: React.FC<StarRatingProps> = ({
         {stars}
       </div>
       {showText && (
-        <div className={`${textSize} text-gray-600 ml-1`}>
+        <div className={`${textSize} text-gray-600 dark:text-gray-300 ml-1`}>
           <span className="font-medium">{roundedRating}</span>
           {totalReviews !== undefined && (
-            <span className="text-gray-500">
+            <span className="text-gray-500 dark:text-gray-400">
               {' '}({totalReviews} review{totalReviews !== 1 ? 's' : ''})
             </span>
           )}

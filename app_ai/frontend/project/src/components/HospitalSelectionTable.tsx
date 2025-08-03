@@ -227,14 +227,14 @@ const HospitalSelectionTable = ({
 
   if (isLoading) {
     return (
-      <div className="rounded-xl bg-white shadow-lg overflow-hidden">
+      <div className="rounded-xl bg-white dark:bg-gray-800 shadow-lg overflow-hidden">
         <div className="p-6 animate-pulse">
-          <div className="h-6 bg-gray-200 rounded w-3/4 mb-4"></div>
+          <div className="h-6 bg-gray-200 dark:bg-gray-700 rounded w-3/4 mb-4"></div>
           <div className="space-y-4">
             {[1, 2, 3, 4, 5].map((i) => (
               <div key={i} className="flex flex-col md:flex-row md:items-center gap-4">
-                <div className="h-5 bg-gray-200 rounded w-2/3"></div>
-                <div className="h-5 bg-gray-200 rounded w-1/3"></div>
+                <div className="h-5 bg-gray-200 dark:bg-gray-700 rounded w-2/3"></div>
+                <div className="h-5 bg-gray-200 dark:bg-gray-700 rounded w-1/3"></div>
               </div>
             ))}
           </div>
@@ -245,21 +245,21 @@ const HospitalSelectionTable = ({
 
   if (!providers || providers.length === 0) {
     return (
-      <div className="rounded-xl bg-white shadow-lg overflow-hidden">
+      <div className="rounded-xl bg-white dark:bg-gray-800 shadow-lg overflow-hidden">
         {/* Distance Filter - Always visible even when no providers */}
-        <div className="border-b border-gray-200 bg-gray-50 px-6 py-4">
-          <h3 className="text-lg font-semibold text-gray-800">
+        <div className="border-b border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-700 px-6 py-4">
+          <h3 className="text-lg font-semibold text-gray-800 dark:text-white">
             Available Healthcare Providers
           </h3>
-          <p className="text-sm text-gray-600 mt-1">
+          <p className="text-sm text-gray-600 dark:text-gray-300 mt-1">
             Adjust distance to find more providers
           </p>
         </div>
         
         {/* Distance Filter - Made more prominent */}
-        <div className="px-6 py-6 border-b border-gray-200 bg-indigo-50">
+        <div className="px-6 py-6 border-b border-gray-200 dark:border-gray-700 bg-indigo-50 dark:bg-indigo-900/20">
           <div className="flex flex-col">
-            <label className="text-sm font-medium text-gray-700 mb-3 flex justify-between items-center">
+            <label className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-3 flex justify-between items-center">
               <span>Maximum Distance</span>
             </label>
             <div className="flex items-center gap-4">
@@ -269,11 +269,11 @@ const HospitalSelectionTable = ({
                 max="100"
                 value={maxDistanceFilter}
                 onChange={(e) => handleDistanceChange(parseInt(e.target.value) || 1)}
-                className="w-16 h-10 px-2 border border-gray-300 rounded-md text-center font-bold text-indigo-700"
+                className="w-16 h-10 px-2 border border-gray-300 dark:border-gray-600 rounded-md text-center font-bold text-indigo-700 dark:text-indigo-400 bg-white dark:bg-gray-700"
               />
-              <span className="text-gray-700">miles</span>
+              <span className="text-gray-700 dark:text-gray-300">miles</span>
               <div className="w-full flex items-center gap-2">
-                <span className="text-sm text-gray-500 font-medium">1</span>
+                <span className="text-sm text-gray-500 dark:text-gray-400 font-medium">1</span>
                 <input
                   type="range"
                   min="1"
@@ -310,17 +310,17 @@ const HospitalSelectionTable = ({
   }
 
   return (
-    <div className="rounded-xl bg-white shadow-lg overflow-hidden">
+    <div className="rounded-xl bg-white dark:bg-gray-800 shadow-lg overflow-hidden">
       {/* Table Header */}
-      <div className="border-b border-gray-200 bg-gray-50 px-6 py-4">
-        <h3 className="text-lg font-semibold text-gray-800">
+      <div className="border-b border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-700 px-6 py-4">
+        <h3 className="text-lg font-semibold text-gray-800 dark:text-white">
           Available Healthcare Providers
         </h3>
         <div className="flex flex-col md:flex-row justify-between md:items-center mt-1">
-          <p className="text-sm text-gray-600">
+          <p className="text-sm text-gray-600 dark:text-gray-300">
             Select providers to compare ({Object.values(selectedProviders).filter(Boolean).length} selected)
           </p>
-          <div className="mt-1 md:mt-0 text-sm text-indigo-600 flex items-center">
+          <div className="mt-1 md:mt-0 text-sm text-indigo-600 dark:text-indigo-400 flex items-center">
             <Info size={14} className="mr-1" />
             Click on a provider's name to view detailed information
           </div>
@@ -328,10 +328,10 @@ const HospitalSelectionTable = ({
       </div>
 
       {/* Distance Filter */}
-      <div className="px-6 py-4 border-b border-gray-200 bg-indigo-50">
+      <div className="px-6 py-4 border-b border-gray-200 dark:border-gray-700 bg-indigo-50 dark:bg-indigo-900/20">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
           <div>
-            <label className="text-sm font-medium text-gray-700">
+            <label className="text-sm font-medium text-gray-700 dark:text-gray-300">
               Filter by Distance
             </label>
             <div className="flex items-center gap-2">
@@ -341,9 +341,9 @@ const HospitalSelectionTable = ({
                 max="100"
                 value={maxDistanceFilter}
                 onChange={(e) => handleDistanceChange(parseInt(e.target.value) || 1)}
-                className="w-16 h-10 px-2 border border-gray-300 rounded-md text-center font-bold text-indigo-700"
+                className="w-16 h-10 px-2 border border-gray-300 dark:border-gray-600 rounded-md text-center font-bold text-indigo-700 dark:text-indigo-400 bg-white dark:bg-gray-700"
               />
-              <span className="text-gray-700">miles</span>
+              <span className="text-gray-700 dark:text-gray-300">miles</span>
             </div>
           </div>
           <div className="w-full md:w-2/3">
@@ -368,14 +368,14 @@ const HospitalSelectionTable = ({
       </div>
 
       {/* Table Controls */}
-      <div className="px-6 py-3 border-b border-gray-200 flex flex-wrap gap-2 items-center">
-        <span className="text-sm text-gray-500 font-medium">Sort by:</span>
+      <div className="px-6 py-3 border-b border-gray-200 dark:border-gray-700 flex flex-wrap gap-2 items-center">
+        <span className="text-sm text-gray-500 dark:text-gray-400 font-medium">Sort by:</span>
         
         <button 
           className={`px-3 py-1.5 rounded-full text-sm flex items-center ${
             sortBy === 'distance' 
               ? 'bg-indigo-100 text-indigo-700 font-medium' 
-              : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+              : 'bg-gray-100 dark:bg-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-500'
           }`}
           onClick={() => handleSortChange('distance')}
         >
@@ -392,7 +392,7 @@ const HospitalSelectionTable = ({
           className={`px-3 py-1.5 rounded-full text-sm flex items-center ${
             sortBy === 'rating' 
               ? 'bg-indigo-100 text-indigo-700 font-medium' 
-              : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+              : 'bg-gray-100 dark:bg-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-500'
           }`}
           onClick={() => handleSortChange('rating')}
         >
@@ -409,7 +409,7 @@ const HospitalSelectionTable = ({
           className={`px-3 py-1.5 rounded-full text-sm flex items-center ${
             sortBy === 'name' 
               ? 'bg-indigo-100 text-indigo-700 font-medium' 
-              : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+              : 'bg-gray-100 dark:bg-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-500'
           }`}
           onClick={() => handleSortChange('name')}
         >
@@ -425,10 +425,10 @@ const HospitalSelectionTable = ({
 
       {/* Table */}
       <div className="overflow-x-auto">
-        <table className="min-w-full divide-y divide-gray-200">
-          <thead className="bg-gray-50">
+        <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+          <thead className="bg-gray-50 dark:bg-gray-700">
             <tr>
-              <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
                 <div className="flex items-center">
                   <input
                     type="checkbox"
@@ -439,31 +439,31 @@ const HospitalSelectionTable = ({
                   <span className="ml-2">Select All</span>
                 </div>
               </th>
-              <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
                 Provider
               </th>
-              <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
                 Type
               </th>
-              <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
                 Location
               </th>
-              <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
                 Distance
               </th>
-              <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
                 Rating
               </th>
-              <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
                 Actions
               </th>
             </tr>
           </thead>
-          <tbody className="bg-white divide-y divide-gray-200">
+          <tbody className="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
             {sortedProviders.map((provider) => (
               <tr 
                 key={provider.id} 
-                className={`hover:bg-gray-50 ${selectedProviders[provider.id] ? 'bg-indigo-50' : ''}`}
+                className={`hover:bg-gray-50 dark:hover:bg-gray-700 ${selectedProviders[provider.id] ? 'bg-indigo-50 dark:bg-indigo-900/20' : ''}`}
                 onClick={(e) => e.stopPropagation()} // Prevent row click from auto-selecting
               >
                 <td className="px-6 py-4 whitespace-nowrap">
@@ -477,19 +477,19 @@ const HospitalSelectionTable = ({
                 <td className="px-6 py-4 whitespace-nowrap">
                   <button 
                     onClick={(e) => handleViewSingleProvider(provider.id, e)}
-                    className="text-sm font-medium text-indigo-600 hover:text-indigo-900 hover:underline focus:outline-none"
+                    className="text-sm font-medium text-indigo-600 dark:text-indigo-400 hover:text-indigo-900 dark:hover:text-indigo-300 hover:underline focus:outline-none"
                   >
                     {provider.hospitalName}
                   </button>
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap">
-                  <div className="text-sm text-gray-500">{provider.hospitalType || 'N/A'}</div>
+                  <div className="text-sm text-gray-500 dark:text-gray-400">{provider.hospitalType || 'N/A'}</div>
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap">
-                  <div className="text-sm text-gray-500">{formatAddress(provider.address)}</div>
+                  <div className="text-sm text-gray-500 dark:text-gray-400">{formatAddress(provider.address)}</div>
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap">
-                  <div className="text-sm text-gray-500">{(provider.distance * 0.621371).toFixed(1)} miles</div>
+                  <div className="text-sm text-gray-500 dark:text-gray-400">{(provider.distance * 0.621371).toFixed(1)} miles</div>
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap">
                   {renderRating(provider.hospitalRating, provider.totalReviews)}
@@ -526,8 +526,8 @@ const HospitalSelectionTable = ({
       </div>
 
       {/* Action Button */}
-      <div className="px-6 py-4 bg-gray-50 border-t border-gray-200 flex flex-col sm:flex-row justify-between items-center gap-4">
-        <div className="text-sm text-gray-500">
+      <div className="px-6 py-4 bg-gray-50 dark:bg-gray-700 border-t border-gray-200 dark:border-gray-600 flex flex-col sm:flex-row justify-between items-center gap-4">
+        <div className="text-sm text-gray-500 dark:text-gray-400">
           <span className="font-medium">Tip:</span> Click on a provider's name to view detailed information about that provider
         </div>
         <button

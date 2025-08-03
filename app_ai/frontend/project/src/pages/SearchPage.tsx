@@ -297,14 +297,14 @@ const SearchPage = () => {
   const isSingleView = searchStep === 'details' && singleProviderId !== null;
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
       <Navbar />
 
       {/* Search Header */}
-      <div className="bg-gradient-to-r from-indigo-600 to-blue-600 pt-24 pb-20">
+      <div className="bg-gradient-to-r from-indigo-600 to-blue-600 dark:from-indigo-700 dark:to-blue-700 pt-24 pb-20">
         <div className="container mx-auto px-4 md:px-8">
-          <h1 className="text-3xl font-bold text-white mb-6">Find Healthcare Services</h1>
-          <p className="text-white text-lg mb-8">Compare prices and find the best healthcare providers in your area</p>
+          <h1 className="text-3xl font-bold text-white dark:text-gray-100 mb-6">Find Healthcare Services</h1>
+          <p className="text-white dark:text-gray-200 text-lg mb-8">Compare prices and find the best healthcare providers in your area</p>
 
           {/* Search Form */}
           <div className="max-w-4xl mx-auto">
@@ -328,24 +328,24 @@ const SearchPage = () => {
             <div className="flex items-center justify-between">
               <div className="flex-1">
                 <div className="flex items-center">
-                  <div className={`flex items-center justify-center w-8 h-8 rounded-full ${searchStep !== 'search' ? 'bg-indigo-600 text-white' : 'bg-gray-200 text-gray-700'}`}>
+                  <div className={`flex items-center justify-center w-8 h-8 rounded-full ${searchStep !== 'search' ? 'bg-indigo-600 dark:bg-indigo-500 text-white dark:text-gray-100' : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300'}`}>
                     1
                   </div>
-                  <div className={`h-1 w-16 mx-2 ${searchStep === 'compare' || searchStep === 'details' ? 'bg-indigo-600' : 'bg-gray-200'}`}></div>
-                  <div className={`flex items-center justify-center w-8 h-8 rounded-full ${searchStep === 'compare' || searchStep === 'details' ? 'bg-indigo-600 text-white' : 'bg-gray-200 text-gray-700'}`}>
+                  <div className={`h-1 w-16 mx-2 ${searchStep === 'compare' || searchStep === 'details' ? 'bg-indigo-600 dark:bg-indigo-500' : 'bg-gray-200 dark:bg-gray-700'}`}></div>
+                  <div className={`flex items-center justify-center w-8 h-8 rounded-full ${searchStep === 'compare' || searchStep === 'details' ? 'bg-indigo-600 dark:bg-indigo-500 text-white dark:text-gray-100' : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300'}`}>
                     2
                   </div>
                 </div>
                 <div className="flex mt-2">
-                  <div className="w-8 text-center text-xs">Find</div>
+                  <div className="w-8 text-center text-xs text-gray-600 dark:text-gray-400">Find</div>
                   <div className="w-16"></div>
-                  <div className="w-8 text-center text-xs">
+                  <div className="w-8 text-center text-xs text-gray-600 dark:text-gray-400">
                     {isSingleView ? 'Details' : 'Compare'}
                   </div>
                 </div>
               </div>
               <div className="text-right">
-                <h3 className="text-lg font-medium text-gray-800">
+                <h3 className="text-lg font-medium text-gray-800 dark:text-gray-200">
                   {searchStep === 'select' 
                     ? 'Select Providers to Compare' 
                     : searchStep === 'details'
@@ -355,7 +355,7 @@ const SearchPage = () => {
                         : 'Compare Selected Providers'
                   }
                 </h3>
-                <p className="text-sm text-gray-500">
+                <p className="text-sm text-gray-500 dark:text-gray-400">
                   {searchStep === 'select' 
                     ? 'Choose providers by checking the boxes or click a name to view details' 
                     : searchStep === 'details'
@@ -373,14 +373,14 @@ const SearchPage = () => {
         {isLoading && (
           <div className="text-center py-12">
             <div className="inline-block animate-spin rounded-full h-12 w-12 border-4 border-indigo-500 border-t-transparent mb-4"></div>
-            <p className="text-gray-600">Searching for providers...</p>
+            <p className="text-gray-600 dark:text-gray-300">Searching for providers...</p>
           </div>
         )}
 
         {/* Error Message */}
         {!isLoading && error && (
-          <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded-lg mb-6" role="alert">
-            <strong className="font-bold">Error:</strong>
+          <div className="bg-red-100 dark:bg-red-900/30 border border-red-400 dark:border-red-600 text-red-700 dark:text-red-300 px-4 py-3 rounded-lg mb-6" role="alert">
+            <strong className="font-bold text-red-800 dark:text-red-200">Error:</strong>
             <span className="block sm:inline"> {error}</span>
           </div>
         )}
@@ -404,11 +404,11 @@ const SearchPage = () => {
             <div className="flex justify-between items-center">
               <button
                 onClick={() => setSearchStep('select')}
-                className="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors"
+                className="px-4 py-2 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors"
               >
                 ← Back to Selection
               </button>
-              <div className="text-sm text-gray-600">
+              <div className="text-sm text-gray-600 dark:text-gray-400">
                 Hospital details for {searchParams.serviceDescription}
               </div>
             </div>
@@ -429,21 +429,21 @@ const SearchPage = () => {
             <div className="flex justify-between items-center">
               <button
                 onClick={() => setSearchStep('select')}
-                className="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors"
+                className="px-4 py-2 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors"
               >
                 ← Back to Selection
               </button>
               <div className="flex items-center space-x-4">
                 {isRefreshingRatings && (
-                  <div className="flex items-center text-indigo-600">
-                    <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-indigo-600 mr-2"></div>
+                  <div className="flex items-center text-indigo-600 dark:text-indigo-400">
+                    <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-indigo-600 dark:border-indigo-400 mr-2"></div>
                     <span className="text-sm">Updating ratings...</span>
                   </div>
                 )}
                 <button
                   onClick={refreshProviderRatings}
                   disabled={isRefreshingRatings}
-                  className="flex items-center px-3 py-1.5 text-sm bg-indigo-100 text-indigo-700 hover:bg-indigo-200 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="flex items-center px-3 py-1.5 text-sm bg-indigo-100 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300 hover:bg-indigo-200 dark:hover:bg-indigo-900/50 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                   title="Refresh latest ratings"
                 >
                   <RefreshCw 
@@ -452,7 +452,7 @@ const SearchPage = () => {
                   />
                   Refresh Ratings
                 </button>
-                <div className="text-sm text-gray-600">
+                <div className="text-sm text-gray-600 dark:text-gray-400">
                   {selectedProviders.length === 1 
                     ? "Hospital details for " + searchParams.serviceDescription
                     : `Comparing ${selectedProviders.length} providers for ${searchParams.serviceDescription}`
@@ -473,12 +473,12 @@ const SearchPage = () => {
         
         {/* No Results Message */}
         {!isLoading && searchStep === 'select' && providers.length === 0 && !error && (
-          <div className="text-center py-10 px-6 bg-white shadow rounded-lg border border-gray-200">
-            <svg className="mx-auto h-12 w-12 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+          <div className="text-center py-10 px-6 bg-white dark:bg-gray-800 shadow rounded-lg border border-gray-200 dark:border-gray-600">
+            <svg className="mx-auto h-12 w-12 text-gray-400 dark:text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
               <path vectorEffect="non-scaling-stroke" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
-            <h3 className="mt-2 text-sm font-medium text-gray-900">No providers found</h3>
-            <p className="mt-1 text-sm text-gray-500">
+            <h3 className="mt-2 text-sm font-medium text-gray-900 dark:text-gray-100">No providers found</h3>
+            <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
               We couldn't find any providers matching your search criteria. Try adjusting your search terms or location.
             </p>
           </div>
@@ -486,13 +486,13 @@ const SearchPage = () => {
         
         {/* No Results After Distance Filter */}
         {!isLoading && searchStep === 'select' && providers.length > 0 && filteredProviders.length === 0 && (
-          <div className="bg-white shadow rounded-lg border border-gray-200 overflow-hidden">
+          <div className="bg-white dark:bg-gray-800 shadow rounded-lg border border-gray-200 dark:border-gray-600 overflow-hidden">
             {/* Distance Filter Control - Always visible */}
-            <div className="px-6 py-4 border-b border-gray-200 bg-indigo-50">
+            <div className="px-6 py-4 border-b border-gray-200 dark:border-gray-600 bg-indigo-50 dark:bg-indigo-900/20">
               <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                 <div>
-                  <h3 className="text-lg font-medium text-gray-900">No providers within {maxDistance} miles</h3>
-                  <p className="text-sm text-gray-600 mt-1">Adjust the distance slider to see more providers</p>
+                  <h3 className="text-lg font-medium text-gray-900 dark:text-gray-100">No providers within {maxDistance} miles</h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-300 mt-1">Adjust the distance slider to see more providers</p>
                 </div>
                 <div className="w-full md:w-2/3">
                   <div className="flex items-center gap-4">
@@ -502,9 +502,9 @@ const SearchPage = () => {
                       max="100"
                       value={maxDistance}
                       onChange={(e) => handleMaxDistanceChange(parseInt(e.target.value) || 1)}
-                      className="w-16 h-10 px-2 border border-gray-300 rounded-md text-center font-bold text-indigo-700"
+                      className="w-16 h-10 px-2 border border-gray-300 dark:border-gray-600 rounded-md text-center font-bold text-indigo-700 dark:text-indigo-300 bg-white dark:bg-gray-700"
                     />
-                    <span className="text-gray-700">miles</span>
+                    <span className="text-gray-700 dark:text-gray-300">miles</span>
                     <input
                       type="range"
                       min="1"
@@ -512,7 +512,7 @@ const SearchPage = () => {
                       step="1"
                       value={maxDistance}
                       onChange={(e) => handleMaxDistanceChange(parseInt(e.target.value, 10))}
-                      className="w-full h-3 bg-gray-200 rounded-lg appearance-none cursor-pointer"
+                      className="w-full h-3 bg-gray-200 dark:bg-gray-700 rounded-lg appearance-none cursor-pointer"
                     />
                   </div>
                 </div>
@@ -520,11 +520,11 @@ const SearchPage = () => {
             </div>
             
             <div className="text-center py-10 px-6">
-              <svg className="mx-auto h-12 w-12 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <svg className="mx-auto h-12 w-12 text-gray-400 dark:text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                 <path vectorEffect="non-scaling-stroke" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
-              <h3 className="mt-2 text-sm font-medium text-gray-900">Found {providers.length} providers, but none within {maxDistance} miles</h3>
-              <p className="mt-1 text-sm text-gray-500">
+              <h3 className="mt-2 text-sm font-medium text-gray-900 dark:text-gray-100">Found {providers.length} providers, but none within {maxDistance} miles</h3>
+              <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
                 Try increasing your distance filter using the slider above or search in a different location.
               </p>
               <div className="mt-6">
@@ -535,7 +535,7 @@ const SearchPage = () => {
                     const newDistance = Math.min(100, Math.max(25, Math.ceil(providers[0]?.distance * 0.621371) + 5));
                     handleMaxDistanceChange(newDistance);
                   }}
-                  className="inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                  className="inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white dark:text-gray-100 bg-indigo-600 dark:bg-indigo-500 hover:bg-indigo-700 dark:hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 dark:focus:ring-offset-gray-800 focus:ring-indigo-500 dark:focus:ring-indigo-400"
                 >
                   Show All Available Providers
                 </button>

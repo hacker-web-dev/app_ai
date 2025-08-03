@@ -151,15 +151,15 @@ const BookingModal: React.FC<BookingModalProps> = ({
     <div className="fixed inset-0 z-50 overflow-y-auto">
       <div className="flex items-center justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
         {/* Background overlay */}
-        <div className="fixed inset-0 transition-opacity bg-gray-500 bg-opacity-75" onClick={handleClose}></div>
+        <div className="fixed inset-0 transition-opacity bg-gray-500 dark:bg-gray-900 bg-opacity-75 dark:bg-opacity-75" onClick={handleClose}></div>
 
         {/* Modal panel */}
-        <div className="inline-block overflow-hidden text-left align-bottom transition-all transform bg-white rounded-lg shadow-xl sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
+        <div className="inline-block overflow-hidden text-left align-bottom transition-all transform bg-white dark:bg-gray-800 rounded-lg shadow-xl sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
           {/* Close button */}
           <div className="absolute top-0 right-0 pt-4 pr-4">
             <button
               type="button"
-              className="text-gray-400 bg-white rounded-md hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+              className="text-gray-400 dark:text-gray-500 bg-white dark:bg-gray-800 rounded-md hover:text-gray-500 dark:hover:text-gray-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
               onClick={handleClose}
             >
               <span className="sr-only">Close</span>
@@ -168,31 +168,31 @@ const BookingModal: React.FC<BookingModalProps> = ({
           </div>
 
           {/* Modal content */}
-          <div className="px-4 pt-5 pb-4 bg-white sm:p-6 sm:pb-4">
+          <div className="px-4 pt-5 pb-4 bg-white dark:bg-gray-800 sm:p-6 sm:pb-4">
             {/* Success message */}
             {isBooked ? (
               <div className="text-center py-10">
-                <div className="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-green-100">
-                  <svg className="h-6 w-6 text-green-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <div className="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-green-100 dark:bg-green-900/30">
+                  <svg className="h-6 w-6 text-green-600 dark:text-green-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                 </div>
-                <h3 className="mt-3 text-lg font-medium text-gray-900">Appointment Booked!</h3>
+                <h3 className="mt-3 text-lg font-medium text-gray-900 dark:text-white">Appointment Booked!</h3>
                 <div className="mt-2">
-                  <p className="text-sm text-gray-500">
+                  <p className="text-sm text-gray-500 dark:text-gray-400">
                     Your appointment with {providerName} has been confirmed for {formData.date} at {formData.time}.
                   </p>
-                  <p className="text-sm text-gray-500 mt-1">
+                  <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
                     A confirmation has been sent to your email and phone.
                   </p>
                 </div>
                 <div className="mt-5">
-                  <p className="text-sm text-gray-600 mb-4">
+                  <p className="text-sm text-gray-600 dark:text-gray-300 mb-4">
                     💡 You can now provide feedback for this provider in the hospital selection table.
                   </p>
                   <button
                     type="button"
-                    className="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:text-sm"
+                    className="inline-flex justify-center w-full rounded-md border border-gray-300 dark:border-gray-600 shadow-sm px-4 py-2 bg-white dark:bg-gray-700 text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:text-sm"
                     onClick={handleClose}
                   >
                     Close
@@ -203,11 +203,11 @@ const BookingModal: React.FC<BookingModalProps> = ({
               <>
                 <div className="sm:flex sm:items-start">
                   <div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left w-full">
-                    <h3 className="text-lg font-medium leading-6 text-gray-900">
+                    <h3 className="text-lg font-medium leading-6 text-gray-900 dark:text-white">
                       Book an Appointment
                     </h3>
                     <div className="mt-2">
-                      <p className="text-sm text-gray-500">
+                      <p className="text-sm text-gray-500 dark:text-gray-400">
                         Schedule your appointment with {providerName} for {serviceName}.
                       </p>
                     </div>
@@ -215,10 +215,10 @@ const BookingModal: React.FC<BookingModalProps> = ({
                     {/* Progress bar */}
                     <div className="mt-4">
                       <div className="flex justify-between mb-1">
-                        <span className="text-xs text-gray-500">Step {step} of 2</span>
-                        <span className="text-xs text-gray-500">{(step / 2) * 100}%</span>
+                        <span className="text-xs text-gray-500 dark:text-gray-400">Step {step} of 2</span>
+                        <span className="text-xs text-gray-500 dark:text-gray-400">{(step / 2) * 100}%</span>
                       </div>
-                      <div className="w-full bg-gray-200 rounded-full h-2">
+                      <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
                         <div 
                           className="bg-indigo-600 h-2 rounded-full"
                           style={{ width: `${(step / 2) * 100}%` }}
@@ -230,19 +230,19 @@ const BookingModal: React.FC<BookingModalProps> = ({
                     {step === 1 && (
                       <div className="mt-6">
                         <div className="mb-4">
-                          <label className="block text-sm font-medium text-gray-700 mb-1">
+                          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                             Preferred Date
                           </label>
                           <div className="relative rounded-md shadow-sm">
                             <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                              <Calendar className="h-5 w-5 text-gray-400" />
+                              <Calendar className="h-5 w-5 text-gray-400 dark:text-gray-500" />
                             </div>
                             <select
                               name="date"
                               value={formData.date}
                               onChange={handleChange}
                               required
-                              className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                              className="block w-full pl-10 pr-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white sm:text-sm"
                             >
                               <option value="">Select a date</option>
                               {generateDates().map((date) => (
@@ -255,19 +255,19 @@ const BookingModal: React.FC<BookingModalProps> = ({
                         </div>
 
                         <div className="mb-4">
-                          <label className="block text-sm font-medium text-gray-700 mb-1">
+                          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                             Preferred Time
                           </label>
                           <div className="relative rounded-md shadow-sm">
                             <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                              <Clock className="h-5 w-5 text-gray-400" />
+                              <Clock className="h-5 w-5 text-gray-400 dark:text-gray-500" />
                             </div>
                             <select
                               name="time"
                               value={formData.time}
                               onChange={handleChange}
                               required
-                              className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                              className="block w-full pl-10 pr-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white sm:text-sm"
                             >
                               <option value="">Select a time</option>
                               {generateTimeSlots().map((slot) => (
@@ -279,7 +279,7 @@ const BookingModal: React.FC<BookingModalProps> = ({
                           </div>
                         </div>
                         
-                        <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 mt-4">
+                        <div className="bg-yellow-50 dark:bg-yellow-900/20 border-l-4 border-yellow-400 dark:border-yellow-600 p-4 mt-4">
                           <div className="flex">
                             <div className="flex-shrink-0">
                               <svg className="h-5 w-5 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
@@ -287,7 +287,7 @@ const BookingModal: React.FC<BookingModalProps> = ({
                               </svg>
                             </div>
                             <div className="ml-3">
-                              <p className="text-sm text-yellow-700">
+                              <p className="text-sm text-yellow-700 dark:text-yellow-400">
                                 Appointments are subject to confirmation by the healthcare provider.
                               </p>
                             </div>
@@ -300,7 +300,7 @@ const BookingModal: React.FC<BookingModalProps> = ({
                     {step === 2 && (
                       <div className="mt-6 space-y-4">
                         <div>
-                          <label className="block text-sm font-medium text-gray-700 mb-1">
+                          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                             Full Name
                           </label>
                           <div className="relative rounded-md shadow-sm">
@@ -313,19 +313,19 @@ const BookingModal: React.FC<BookingModalProps> = ({
                               value={formData.name}
                               onChange={handleChange}
                               required
-                              className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                              className="block w-full pl-10 pr-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white sm:text-sm"
                               placeholder="John Doe"
                             />
                           </div>
                         </div>
 
                         <div>
-                          <label className="block text-sm font-medium text-gray-700 mb-1">
+                          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                             Phone Number
                           </label>
                           <div className="relative rounded-md shadow-sm">
                             <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                              <Phone className="h-5 w-5 text-gray-400" />
+                              <Phone className="h-5 w-5 text-gray-400 dark:text-gray-500" />
                             </div>
                             <input
                               type="tel"
@@ -333,14 +333,14 @@ const BookingModal: React.FC<BookingModalProps> = ({
                               value={formData.phone}
                               onChange={handleChange}
                               required
-                              className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                              className="block w-full pl-10 pr-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white sm:text-sm"
                               placeholder="(123) 456-7890"
                             />
                           </div>
                         </div>
 
                         <div>
-                          <label className="block text-sm font-medium text-gray-700 mb-1">
+                          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                             Email Address
                           </label>
                           <div className="relative rounded-md shadow-sm">
@@ -354,14 +354,14 @@ const BookingModal: React.FC<BookingModalProps> = ({
                               name="email"
                               value={formData.email}
                               onChange={handleChange}
-                              className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                              className="block w-full pl-10 pr-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white sm:text-sm"
                               placeholder="you@example.com"
                             />
                           </div>
                         </div>
 
                         <div>
-                          <label className="block text-sm font-medium text-gray-700 mb-1">
+                          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                             Additional Notes
                           </label>
                           <div className="relative rounded-md shadow-sm">
@@ -373,13 +373,13 @@ const BookingModal: React.FC<BookingModalProps> = ({
                               value={formData.notes}
                               onChange={handleChange}
                               rows={3}
-                              className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                              className="block w-full pl-10 pr-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white sm:text-sm"
                               placeholder="Any specific concerns or questions..."
                             ></textarea>
                           </div>
                         </div>
                         
-                        <div className="bg-indigo-50 border-l-4 border-indigo-400 p-4 mt-4">
+                        <div className="bg-indigo-50 dark:bg-indigo-900/20 border-l-4 border-indigo-400 dark:border-indigo-600 p-4 mt-4">
                           <div className="flex">
                             <div className="flex-shrink-0">
                               <svg className="h-5 w-5 text-indigo-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
@@ -387,7 +387,7 @@ const BookingModal: React.FC<BookingModalProps> = ({
                               </svg>
                             </div>
                             <div className="ml-3">
-                              <p className="text-sm text-indigo-700">
+                              <p className="text-sm text-indigo-700 dark:text-indigo-400">
                                 Your personal information is protected under our privacy policy.
                               </p>
                             </div>
@@ -399,7 +399,7 @@ const BookingModal: React.FC<BookingModalProps> = ({
                 </div>
                 
                 {/* Modal footer */}
-                <div className="px-4 py-3 bg-gray-50 sm:px-6 sm:flex sm:flex-row-reverse">
+                <div className="px-4 py-3 bg-gray-50 dark:bg-gray-700 sm:px-6 sm:flex sm:flex-row-reverse">
                   {step === 1 ? (
                     <button
                       type="button"
@@ -431,7 +431,7 @@ const BookingModal: React.FC<BookingModalProps> = ({
                       </button>
                       <button
                         type="button"
-                        className="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
+                        className="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 dark:border-gray-600 shadow-sm px-4 py-2 bg-white dark:bg-gray-700 text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
                         onClick={handlePreviousStep}
                         disabled={isSubmitting}
                       >
@@ -442,7 +442,7 @@ const BookingModal: React.FC<BookingModalProps> = ({
                   {step === 1 && (
                     <button
                       type="button"
-                      className="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
+                      className="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 dark:border-gray-600 shadow-sm px-4 py-2 bg-white dark:bg-gray-700 text-base font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
                       onClick={handleClose}
                     >
                       Cancel

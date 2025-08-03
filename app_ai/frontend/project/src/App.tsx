@@ -6,12 +6,20 @@ import SearchPage from './pages/SearchPage';
 import SignupPage from './pages/SignupPage';
 import { AuthProvider } from './authcontext'
 import PrivateRoute from './privateroute';
+import { useTheme } from './contexts/ThemeContext';
 
-const App: React.FC = () => {
+const AppContent: React.FC = () => {
+  const { isDarkMode } = useTheme();
+  
   return (
-    <Router>
-      {/* Wrap everything in AuthProvider to provide auth context */}
-      <AuthProvider>
+    <div className={`min-h-screen transition-colors duration-300 ${
+      isDarkMode 
+        ? 'bg-gray-900 text-white' 
+        : 'bg-white text-gray-900'
+    }`}>
+      <Router>
+        {/* Wrap everything in AuthProvider to provide auth context */}
+        <AuthProvider>
         <Routes>
           {/* Make LandingPage the default public route */}
           <Route path="/" element={<LandingPage />} />
@@ -36,9 +44,14 @@ const App: React.FC = () => {
           {/* Keep backward compatibility - redirect /home to / */}
           <Route path="/home" element={<Navigate to="/" replace />} />
         </Routes>
-      </AuthProvider>
-    </Router>
+        </AuthProvider>
+      </Router>
+    </div>
   );
+};
+
+const App: React.FC = () => {
+  return <AppContent />;
 };
 
 export default App;

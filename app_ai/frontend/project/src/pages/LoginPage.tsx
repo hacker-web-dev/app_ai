@@ -198,29 +198,29 @@ const LoginPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-blue-50 to-purple-50 flex flex-col">
+    <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-blue-50 to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 flex flex-col">
       <div className="flex-1 flex items-center justify-center p-4">
         <div 
           className={`w-full max-w-md transform transition-all duration-700 ${
             mounted ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
           }`}
         >
-          <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
+          <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden">
             {/* Header */}
-            <div className="bg-gradient-to-r from-indigo-500 to-blue-600 px-8 py-10 text-white">
+            <div className="bg-gradient-to-r from-indigo-500 to-blue-600 dark:from-indigo-600 dark:to-blue-700 px-8 py-10 text-white">
               <div className="text-center mb-6">
                 <h1 className="text-3xl font-bold">Welcome Back</h1>
                 <p className="mt-2 opacity-90">Sign in to your PriceAI account</p>
               </div>
               
               {/* Auth Method Selector */}
-              <div className="flex bg-white bg-opacity-20 rounded-lg p-1">
+              <div className="flex bg-white bg-opacity-20 dark:bg-gray-800 dark:bg-opacity-30 rounded-lg p-1">
                 <button
                   onClick={() => handleSwitchAuthMethod('email')}
                   className={`flex-1 flex items-center justify-center py-2 px-4 rounded-md text-sm font-medium transition-all duration-200 ${
                     authMethod === 'email'
-                      ? 'bg-white text-indigo-600 shadow-sm'
-                      : 'text-white hover:bg-white hover:bg-opacity-10'
+                      ? 'bg-white dark:bg-gray-700 text-indigo-600 dark:text-indigo-400 shadow-sm'
+                      : 'text-white hover:bg-white hover:bg-opacity-10 dark:hover:bg-gray-700 dark:hover:bg-opacity-20'
                   }`}
                 >
                   <Mail size={16} className="mr-2" />
@@ -230,8 +230,8 @@ const LoginPage: React.FC = () => {
                   onClick={() => handleSwitchAuthMethod('phone')}
                   className={`flex-1 flex items-center justify-center py-2 px-4 rounded-md text-sm font-medium transition-all duration-200 ${
                     authMethod === 'phone'
-                      ? 'bg-white text-indigo-600 shadow-sm'
-                      : 'text-white hover:bg-white hover:bg-opacity-10'
+                      ? 'bg-white dark:bg-gray-700 text-indigo-600 dark:text-indigo-400 shadow-sm'
+                      : 'text-white hover:bg-white hover:bg-opacity-10 dark:hover:bg-gray-700 dark:hover:bg-opacity-20'
                   }`}
                 >
                   <Phone size={16} className="mr-2" />
@@ -243,13 +243,13 @@ const LoginPage: React.FC = () => {
             {/* Body */}
             <div className="p-8">
               {error && (
-                <div className="mb-4 p-3 bg-red-50 border border-red-200 text-red-700 rounded-lg">
+                <div className="mb-4 p-3 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 text-red-700 dark:text-red-400 rounded-lg">
                   {error}
                 </div>
               )}
               
               {resetSent && (
-                <div className="mb-4 p-3 bg-green-50 border border-green-200 text-green-700 rounded-lg">
+                <div className="mb-4 p-3 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 text-green-700 dark:text-green-400 rounded-lg">
                   Password reset email sent! Please check your inbox.
                 </div>
               )}
@@ -258,38 +258,38 @@ const LoginPage: React.FC = () => {
               {authMethod === 'email' && (
                 <form onSubmit={handleEmailLogin} className="space-y-6">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                       Email Address
                     </label>
                     <div className="relative">
                       <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                        <Mail className="h-5 w-5 text-gray-400" />
+                        <Mail className="h-5 w-5 text-gray-400 dark:text-gray-500" />
                       </div>
                       <input
                         type="email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         required
-                        className="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all duration-300"
+                        className="block w-full pl-10 pr-3 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400 focus:border-indigo-500 dark:focus:border-indigo-400 transition-all duration-300"
                         placeholder="you@example.com"
                       />
                     </div>
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                       Password
                     </label>
                     <div className="relative">
                       <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                        <Lock className="h-5 w-5 text-gray-400" />
+                        <Lock className="h-5 w-5 text-gray-400 dark:text-gray-500" />
                       </div>
                       <input
                         type="password"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                         required
-                        className="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all duration-300"
+                        className="block w-full pl-10 pr-3 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400 focus:border-indigo-500 dark:focus:border-indigo-400 transition-all duration-300"
                         placeholder="••••••••"
                       />
                     </div>
@@ -299,7 +299,7 @@ const LoginPage: React.FC = () => {
                     <button
                       type="button"
                       onClick={handleForgotPassword}
-                      className="text-sm font-medium text-indigo-600 hover:text-indigo-500 transition-colors"
+                      className="text-sm font-medium text-indigo-600 dark:text-indigo-400 hover:text-indigo-500 dark:hover:text-indigo-300 transition-colors"
                     >
                       Forgot password?
                     </button>
@@ -308,7 +308,7 @@ const LoginPage: React.FC = () => {
                   <button
                     type="submit"
                     disabled={isLoading}
-                    className={`w-full flex justify-center items-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-all duration-300 ${
+                    className={`w-full flex justify-center items-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-indigo-600 dark:bg-indigo-600 hover:bg-indigo-700 dark:hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 dark:focus:ring-offset-gray-800 focus:ring-indigo-500 dark:focus:ring-indigo-400 transition-all duration-300 ${
                       isLoading ? 'opacity-80 cursor-wait' : ''
                     }`}
                   >
@@ -323,27 +323,27 @@ const LoginPage: React.FC = () => {
                   {phoneStep === 'phone' && (
                     <form onSubmit={handlePhoneSubmit} className="space-y-6">
                       <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                           Phone Number
                         </label>
                         <div className="relative">
                           <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                            <Phone className="h-5 w-5 text-gray-400" />
+                            <Phone className="h-5 w-5 text-gray-400 dark:text-gray-500" />
                           </div>
                           <div className="absolute inset-y-0 left-10 pl-3 flex items-center pointer-events-none">
-                            <span className="text-gray-500 text-sm">+91</span>
+                            <span className="text-gray-500 dark:text-gray-400 text-sm">+91</span>
                           </div>
                           <input
                             type="tel"
                             value={phoneNumber}
                             onChange={(e) => setPhoneNumber(formatPhoneNumber(e.target.value))}
                             required
-                            className="block w-full pl-20 pr-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all duration-300"
+                            className="block w-full pl-20 pr-3 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400 focus:border-indigo-500 dark:focus:border-indigo-400 transition-all duration-300"
                             placeholder="9876543210"
                             maxLength={10}
                           />
                         </div>
-                        <p className="mt-1 text-xs text-gray-500">
+                        <p className="mt-1 text-xs text-gray-500 dark:text-gray-400">
                           Enter your 10-digit mobile number
                         </p>
                       </div>
@@ -355,7 +355,7 @@ const LoginPage: React.FC = () => {
                       <button
                         type="submit"
                         disabled={isLoading || phoneNumber.length !== 10}
-                        className={`w-full flex justify-center items-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-all duration-300 ${
+                        className={`w-full flex justify-center items-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-indigo-600 dark:bg-indigo-600 hover:bg-indigo-700 dark:hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 dark:focus:ring-offset-gray-800 focus:ring-indigo-500 dark:focus:ring-indigo-400 transition-all duration-300 ${
                           isLoading || phoneNumber.length !== 10 ? 'opacity-50 cursor-not-allowed' : ''
                         }`}
                       >
@@ -367,18 +367,18 @@ const LoginPage: React.FC = () => {
                   {phoneStep === 'otp' && (
                     <div className="space-y-6">
                       <div className="text-center">
-                        <div className="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-indigo-100">
-                          <Shield className="h-6 w-6 text-indigo-600" />
+                        <div className="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-indigo-100 dark:bg-indigo-900">
+                          <Shield className="h-6 w-6 text-indigo-600 dark:text-indigo-400" />
                         </div>
-                        <h3 className="mt-2 text-lg font-medium text-gray-900">Verify Your Phone</h3>
-                        <p className="mt-1 text-sm text-gray-500">
+                        <h3 className="mt-2 text-lg font-medium text-gray-900 dark:text-white">Verify Your Phone</h3>
+                        <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
                           We've sent a 6-digit code to +91 {phoneNumber}
                         </p>
                       </div>
 
                       <form onSubmit={handleOtpSubmit} className="space-y-6">
                         <div>
-                          <label className="block text-sm font-medium text-gray-700 mb-2">
+                          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                             Enter OTP
                           </label>
                           <input
@@ -386,7 +386,7 @@ const LoginPage: React.FC = () => {
                             value={otp}
                             onChange={(e) => setOtp(e.target.value.replace(/\D/g, '').slice(0, 6))}
                             required
-                            className="block w-full px-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all duration-300 text-center text-lg tracking-widest"
+                            className="block w-full px-3 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400 focus:border-indigo-500 dark:focus:border-indigo-400 transition-all duration-300 text-center text-lg tracking-widest"
                             placeholder="123456"
                             maxLength={6}
                           />
@@ -395,7 +395,7 @@ const LoginPage: React.FC = () => {
                         <button
                           type="submit"
                           disabled={isLoading || otp.length !== 6}
-                          className={`w-full flex justify-center items-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-all duration-300 ${
+                          className={`w-full flex justify-center items-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-indigo-600 dark:bg-indigo-600 hover:bg-indigo-700 dark:hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 dark:focus:ring-offset-gray-800 focus:ring-indigo-500 dark:focus:ring-indigo-400 transition-all duration-300 ${
                             isLoading || otp.length !== 6 ? 'opacity-50 cursor-not-allowed' : ''
                           }`}
                         >
@@ -405,14 +405,14 @@ const LoginPage: React.FC = () => {
 
                       <div className="text-center">
                         {countdown > 0 ? (
-                          <p className="text-sm text-gray-500">
+                          <p className="text-sm text-gray-500 dark:text-gray-400">
                             Resend OTP in {countdown} seconds
                           </p>
                         ) : (
                           <button
                             onClick={handleResendOtp}
                             disabled={isLoading || !canResend}
-                            className="flex items-center justify-center mx-auto text-sm text-indigo-600 hover:text-indigo-500 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                            className="flex items-center justify-center mx-auto text-sm text-indigo-600 dark:text-indigo-400 hover:text-indigo-500 dark:hover:text-indigo-300 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                           >
                             <RotateCcw size={14} className="mr-1" />
                             Resend OTP
@@ -423,7 +423,7 @@ const LoginPage: React.FC = () => {
                       <div className="text-center">
                         <button
                           onClick={handleBackToPhone}
-                          className="text-sm text-gray-500 hover:text-gray-700 transition-colors"
+                          className="text-sm text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 transition-colors"
                         >
                           Change phone number
                         </button>
@@ -434,11 +434,11 @@ const LoginPage: React.FC = () => {
               )}
 
               <div className="mt-6 text-center">
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-gray-600 dark:text-gray-400">
                   Don't have an account?{' '}
                   <Link
                     to="/signup"
-                    className="font-medium text-indigo-600 hover:text-indigo-500 transition-colors"
+                    className="font-medium text-indigo-600 dark:text-indigo-400 hover:text-indigo-500 dark:hover:text-indigo-300 transition-colors"
                   >
                     Sign up
                   </Link>
@@ -447,7 +447,7 @@ const LoginPage: React.FC = () => {
             </div>
           </div>
           
-          <div className="mt-6 text-center text-gray-500 text-sm">
+          <div className="mt-6 text-center text-gray-500 dark:text-gray-400 text-sm">
             &copy; 2025 PriceAI. All rights reserved.
           </div>
         </div>
